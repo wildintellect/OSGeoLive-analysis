@@ -23,19 +23,18 @@
 \maketitle
 
 \section{OSGeo Live}
-Making it easier for anyone to try geospatial tools by eliminating the need to install.
-I've been involved for over a year to develop a GIS workstation available in a variety of formats:
-a Live DVD, Live USB, Virtual Machines and live through the web. The workstation consists entirely of Free and Open Source Software (Over 40 applications), is available in multiple languages, contains sample data and only requires modest hardware to run. Over 1000 copies have been handed out physically and the annual FOSS4G conference and just as many have been downloaded.
+The initial goal of OSGeo Live was to make it easier for anyone to try geospatial tools, particularly Free and Open Source ones, by eliminating the need to install.
+I've been involved for over a year in developing a GIS workstation available in a variety of formats:
+a Live DVD, Live USB, Virtual Machines and live through the web. The workstation consists entirely of Free and Open Source Software (Over 40 applications), is available in multiple languages, contains sample data and only requires modest hardware to run. We've released 3 major revisions and are on schedule to create a new release every 6 months. Over 1000 copies have been handed out physically at the annual FOSS4G conference and just as many have been downloaded.
 
-There are lot of possible uses of OSGeo Live and in particular I want to focus on it's usefulness as a teaching tool. I've already piloted it's usage for a 2 hour lab as part of the International Seminar on Climate Change and Natural Resources Management through the US Forest Service and facilitated by ICE. It's also becoming the norm for workshops at FOSS4G. But have yet to collect any formal feedback(informally: interest from developers wanting to add their software and volunteers to help translate), or thoroughly analyze the downloads/conference audience.
+There are lot of possible uses of OSGeo Live and in particular I want to focus on it's usefulness as a teaching tool. I've already piloted it's usage for a 2 hour lab as part of the International Seminar on Climate Change and Natural Resources Management through the US Forest Service and facilitated by ICE. It's also becoming the norm for workshops at FOSS4G. However I have yet to collect any formal feedback(informally: interest from developers wanting to add their software and volunteers to help translate), or thoroughly analyze the downloads/conference audience.
 
 Methods:
 \begin{enumerate}
-\item Analyze the download data to better understand who it's reaching (Also get similar data from OSGeo attendance)
-\item 
+\item Analyze the download data to better understand who it's reaching (By at least Country level) and also obtain similar demographic data from OSGeo attendance records.
+\item Survey (Opt-in, could require IRB short form for anonymous participation) of users of the disc \& web visitors
 	\begin{enumerate}
-		\item Survey (Opt-in, could require IRB short form for anonymous participation) of users of the disc \& web visitors
-		\item What role they play in their 'company' implementer, decision maker, researcher, grunt
+		\item What role they play in their 'company': implementer, decision maker, researcher, labor
 		\item Prior experience with GIS
 		\item Prior experience with Open Source
 		\item Prior experience with Open Source GIS
@@ -44,7 +43,7 @@ Methods:
 	\end{enumerate}
 \end{enumerate}
 
-Background: Adoption of Open Source solutions is occurring in nations like India, Spain, Brazil etc.. but is skipping the prior method of buying into the Commercial Product and jumping directly to use of Free and Open Source software including the funding of customization of existing applications and development of new applications.
+Additional Background Notes: Adoption of Open Source solutions is occurring in nations like India, Spain, Brazil etc.. but is skipping the prior method of buying into the Commercial Product and jumping directly to use of Free and Open Source software including the funding of customization of existing applications and development of new applications.
 
 \url{http://live.osgeo.org}
 
@@ -53,13 +52,13 @@ Background: Adoption of Open Source solutions is occurring in nations like India
 \section{Everday Cartography Tools}
 
 \subsection{Projection Assistant}
-A tool to help someone select an appropriate projection for a map they want to make. Based on the USGS chart of distortions by map projection and including new projections like Spherical Mercator walk the user through a process of selecting a projection based on where they are mapping, how big of an area they are mapping and what distortion they want to minimize.
+A tool to help someone select an appropriate projection for a map they want to make. Based on the USGS chart of distortions by map projection and including new projections like Spherical Mercator walk the user through a process of selecting a projection based on where they are mapping, how big of an area they are mapping and what distortion they want to minimize. \href{http://Spatialreference.org}{Spatialreference.org} is a great start but you can't search based on bounding box or distortion type.
 
-Possibly implemented as a Web based application or QGIS plugin. This project is an evolution from the Indiemapper (\url{http://indiemapper.com} ) online cartography tool and the Flex Projector (\url{http://www.flexprojector.com} ) project. The goal is simply to fill a gap in the current projection selection inside of GIS tools much in the same way that ColorBrewer and TypeBrewer have aided color and text selection respectively. 
+Possibly implemented as a Web based application or QGIS plugin, this project is an evolution from the Indiemapper (\url{http://indiemapper.com} ) online cartography tool, the Flex Projector (\url{http://www.flexprojector.com} ) project and the previously mentioned \href{http://Spatialreference.org}{Spatialreference.org}. The goal is simply to fill a gap in the current projection selection inside of GIS tools much in the same way that ColorBrewer and TypeBrewer have aided color and text selection respectively. 
 
 
 \subsection{Open Symbology}
-A new tool to embed keywords in iconography and for searching and cataloging place markers by set, theme, content in an open manner that can be used by anyone. Focuses on the conversion of freely available icons to more usable formats(Public Domain icons from US government agencies- NPS,USGS,USFS, etc). Specifically, this idea relies on the relatively new format of Scalable Vector Graphics (svg) which has actually been a web standardized format for several years. The tool could possibly be implemented as a Web based application or QGIS plugin.
+A new tool to embed keywords in iconography and for searching and cataloging place markers by set, theme,  and content in an open manner that can be used by anyone. Focuses on the conversion of freely available icons to more usable formats(Public Domain icons from US government agencies- NPS,USGS,USFS, etc). Specifically, this idea relies on the relatively new format of Scalable Vector Graphics (svg) which has actually been a web standardized format for several years. The tool could possibly be implemented as a Web based application or QGIS plugin.
 
 Traditionally symbology in GIS has been distributed as fonts or as raster images (ie jpg, png, gif). Editing of fonts is quite a mystery to most people outside of font graphic artists and can be somewhat ardous to create. Raster images simply don't scale well without loss of quality (pixelation). SVG presents an interesting additional feature on top of it's easier editing, the file itself is a plain text xml implementation. Due to it's adoption for web uses svg good editors exist in both the Commercial and Open Source markets (Adobe Illustrator, Inkscape). Because of this file format, and the svg standard(W3C), embedding of metadata (ie keywords) inside the file itself is possible which should enable the implementation of tools that can semantically catalog the icons based on a search. This search capability should make it much easier to find the icon one wants and to more easily mix and match icons from different sets.
 
@@ -68,13 +67,11 @@ This project would be done in collaboration with the OSGeo Graphics project, a c
 \\ Example: National Park service Ai/pdf/font to svg
 
 \section{Engaging the Student via Community Contributed Mapping}
-'Neo-geographers' have come up with a lot of interesting contributions to maps in society in the last decade. Some might argue that the contributions of Google Earth, Bing Maps, GPS embedded smartphones etc have had a much more significant impact on the re-interest in mapping than advancements in traditional GIS.
+'Neo-geographers' have come up with a lot of interesting contributions to maps in society in the last decade. Some might argue that the contributions of Google Earth, Bing Maps, GPS embedded smartphones etc have had a much more significant impact on the re-interest in mapping amongst businesses and the general public than advancements in traditional GIS.
 
-One such neo-geography project, \href{http://openstreetmap.org}{Openstreetmap.org} has brought in a whole new discussion about user contributed(wiki-style) map creation, termed Volunteered Geographic Information(VGI) by the academic geography community.
+One such neo-geography project, \href{http://openstreetmap.org}{Openstreetmap.org} has brought in a whole new discussion about user contributed(wiki-style) map creation, termed Volunteered Geographic Information(VGI) by the academic geography community. As of yet there are few implementations of such geographic data collection by 'Official' entities for a variety of reasons concerning data quality, ownership, liability, etc. However in the volunteer/ngo community such data sources have already proven highly valuable (OpenStreetMap usage in Haiti disaster relief).
 
-As of yet there are few implementations of such geographic data collection by 'Official' entities for a variety of reasons concerning data quality, ownership, liability, etc. However in the volunteer, ngo community such data sources have already proven highly valuable (OpenStreetMap usage in Haiti disaster relief).
-
-I think that properly training future GIS professionals in the contribution, ethics and usage of such data sets will lead to a better understanding and wider adoption of such data collection models in the future. To facilitate this I propose to write a lesson plan an lab suitable for an introductory GIS or general education course at a college level (Community, Tier II or Tier I). The lesson plan will be tested on students at several colleges and a survey will be used to measure and improve the lesson. Most likely the study will include students from CSU Stanislas and UC Davis (Possibly also San Jose State and UCSB).
+I think that properly training future GIS professionals in the creation, ethics and usage of such data sets will lead to a better understanding and wider adoption of such data collection models in the future. To facilitate this I propose to write a lesson plan and lab suitable for an introductory GIS or general education geography course at a college level (Community, Tier II or Tier I). The lesson plan will be tested on students at several colleges and a survey will be used to measure and improve the lesson. Most likely the study will include students from CSU Stanislas and UC Davis (Possibly also San Jose State and UCSB).
 
 The course will focus on OpenStreetMap and be able to run entirely from the OSGeo Live DVD/USB.
 
@@ -91,16 +88,16 @@ Outline:
 \item Edit OSM
 \item Push changes back to OSM
 \end{enumerate}
-Methods: Test this lesson plan in the classroom. Possible before and after questionarre to gauge what students think about VGI, it's importance in the future of GIS and the issues that arise (governence, quality, etc.)
+Methods: Test this lesson plan in the classroom. Possibly with a before and after questionnaire to gauge what students think about VGI, it's importance in the future of GIS and the issues that arise (governance, quality, ethics, etc.)
 
-Notes:
+Additional Background Notes:
 \\ How OpenStreetmap(Indirectly) pushed Google to allow for submission of corrections and POIs.
 \\ How modern tools, and everyday web, phone applications are based in spatial cognition.
-\\ Building on that to provide geography education
+\\ Building on the everyday relevance to inspire geography education.
 \\ Keywords: Crowd sourcing, Virtual Globes, Location awareness
 
 \section{Web Mapping for the community group}
-	There are a lot of reasons why a group of people might want to build a collaborative web map. And while there are many free tools available they have restrictions to their uses either by technological barriers, by licensing barriers, or cost barriers. Additionally I want to ensure that the options available to communities make it easy to collaborate with researchers when wanted. That primarily entails ensuring that the backend data storage and export options are of an acceptable quality and format for GIS analysis.
+	There are a lot of reasons why a group of people might want to build a collaborative web map. While there are many paid and free tools available they have restrictions to their uses either by technological barriers, by licensing barriers, or cost barriers. Additionally I want to ensure that the options available to communities make it easy to collaborate with researchers when wanted. That primarily entails ensuring that the backend data storage and export options are of an acceptable quality and format for GIS analysis (ie: KML from Google does not satisfy this requirement adequately).
 	
 My goal is to help identify the barriers to building a community website around a geospatial component for and by communities. 
 \begin{enumerate}
@@ -123,15 +120,16 @@ Why the demand for web based map tools only going to increase in the near future
 \begin{itemize}
 \item Increase in always connected low power devices - netbooks, tablets, smartphones.
 \item Trend: Google Maps, Google Earth, GPS Navigation, IPhone and Android Apps  
-\end{itemize} 
+\end{itemize}
+Possible Applications derived from Community Groups:
 \begin{itemize}
 \item Potential for Citizen Science
 \item cultural preservation
 \item eco/agro/etc/tourism
 \end{itemize} 
 
-Making the case for how Open Source makes this easier, either by access to tools or by forcing the competition to offer better products. Similar to Google's disruptive technology methodology, offering something better for free.
-
 I'm currently in discussion with UC Extension Specialists and the Placer Grown organization in Placer County to develop a participant driven agro-tourism web map. The community process to create this map could serve as the basis of answering the proposed question in a participatory research manner.
 
+Additional Background Notes:
+Making the case for how Open Source makes this easier, either by access to tools or by forcing the competition to offer better products. Similar to Google's disruptive technology methodology, offering something better for free.
 \end{document}
