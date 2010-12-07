@@ -1,0 +1,27 @@
+Course Committee:
+	1st options
+		Chris Benner?
+		Bertram Ludascher?
+	2nd Options
+		Patsy Owens?
+		Ken Joy?
+
+Orals Committee:
+	Library Science:
+		Tom Moritz?
+		Catherine Candee - UCOP digital Lib?
+	Design:
+		?
+	Computer Science:
+		?
+	Geoinformatics:
+		Robert Hijmans?
+		Bertram?
+		Jim Quinn
+	Community Development/LDA:
+		?
+
+Dissertation Committee:	
+	Jim Quinn
+	Robert Hijmans?
+	?
