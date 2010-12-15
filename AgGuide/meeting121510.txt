@@ -1,0 +1,28 @@
+Agenda
+	Introductions
+	Goals discussion
+	Examples
+	Goals in the context of examples
+		Site Access
+			Registration by approval
+			Automated registration with self policing
+			Several models would work, but the more restrictions the more complicated the programming.
+		Map
+			Custom Iconography
+			Custom Directions
+			Custom Cartography
+			Trip Planner?
+		Sharing the data automatically to other sites, users
+	How the partnership might work
+		What they get out of it
+			An Ag tourism site
+		What I get out of it
+			Identify barriers to the creation of such sites by small communities. (Technical, Cost, Social)
+			Participation in usability study, surveys, group meetings, interviews.
+
+	Budget
+		Software - $0
+		Development - ?
+		Hosting - ?
+
+

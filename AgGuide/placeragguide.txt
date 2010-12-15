@@ -1,0 +1,26 @@
+Placer Agro Tourism Ideas
+	Initial development hosting can be done on ICE servers
+		Potentially could host site in the future
+	Hosting requirements, 
+		A linux server with full ssh (shell access)
+		A domain or subdomain
+		Pricing
+			Domain ~$10-20/year (if includes email)
+			Hosting ~$20/month (Linode)
+
+Steps
+	Determine the goals of the Project
+	Define needs/ideas
+		Route saving for bypassing Google directions that might be wrong
+		Trip planner for visiting multiple locations
+		Editing by Business owner? who else would be able to update data?
+
+Timeline
+	IRB
+	Scoping
+		Focus Groups, Charets, or surveys
+	Develop basic site
+	Revisit scoping, does the site meet the requirements
+	Test usability
+	Revisit scoping
+	Deployment
