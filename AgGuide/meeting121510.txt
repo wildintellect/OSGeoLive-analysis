@@ -16,6 +16,7 @@ Agenda
 	How the partnership might work
 		What they get out of it
 			An Ag tourism site
+			Cartography
 		What I get out of it
 			Identify barriers to the creation of such sites by small communities. (Technical, Cost, Social)
 			Participation in usability study, surveys, group meetings, interviews.
@@ -24,5 +25,83 @@ Agenda
 		Software - $0
 		Development - ?
 		Hosting - ?
+-------
+Who was there:
+	Karin Sinclair
+	Claudia Blossomhill
+	Dan (Flying Mule)
+	Alan Edwards
+	Steve (? Produce)
+	Jocelyn Maddux
+	Bob (Ueki Flowers)
+	Karen Killebrew (PlacerGrown[PlGN])
+	Josh Huntsinger (Ag Dept)
+	Carol (Ag Dept)
+	Cindy Fake
+
+
+-------
+Notes:
+	----
+	Initial Brain Storm of Purpose and Content
+	
+	After introductions I asked the group "What's the purpose of this website"
+	Go & Visit Farms
+	Interactive Map
+	Trip Planner
+	Good at showing the farm, the printed guide is a 'poor format'
+		The scale of the printed map is inadequate
+	Interaction with the Guide
+		Filtering by Type of Product, Tour availability,
+	Telling a Story - example "Original mandarin farm..."
+	Value Added Listing - What each farm offers beyond just the agricultural product: environmental features, sustainability, family ownership, local
+	Events - Coordination
+		Farm & Barn Tour
+	Define how open to the public each farm is:
+		Details of visitation (Hours, etc), Need to call first for some (By appt only or limited hours/seasons)
+	Link back to other retail venues (Farmer's markets, farm stands)
+	Portal to Agricultural Tourism
+	Who is open for School Tours
+	Referral System to help people find what they want
+		Seasonality, not everything is available all the time. (Compare to PlaceGrown info)
+	"Is that on the web?" (A common question from people who pick up the Ag Guide)
+	Open to anyone who wants to be listed (As long as they are Ag in Placer County?) - Followup question: Define Ag
+	Farms in my backyard(neighborhood)
+	Directory for talking to other farmers (White pages)
+	Resource Listings:
+		Feedstore
+		Tractor Repair services
+	Land Listings, specifically for farming (disputed)
+
+	Alex Idea, didn't mention this to the group - but a phone app in a later phase, should make the site work well via a smartphones and a web api maybe for extracting data to other apps. Need to look into if kml or something similar would work well; check trip planning apps for iphone/droid.
+	----
+	Editing Discussion:
+		Most likely there will be 2 roles
+			Visitors and Farmers
+			Visitors can log in and browse, share trip plans. What about comments?
+			Farmers can log in add new items and edit existing items
+				Includes: Farm profiles, Resources, Custom Direction Corrections, Open Streetmap (Should the site use openid, does OSM use openid?)
+		Still to be determined, can farmers edit items they don't own?
+		Activation of Farmer would be by approval of ? - Ag Commission, 3rd Party like Cindy or a Board of Directors? (Does an idea like this require a entity(ngo) in order to be governable or can it exist as a loose collection of people?
+
+	----
+	Why haven't they already done this?
+		Time, money, didn't know the techonology
+		Know what 
+
+		I was the Outside Catalyst
+
+	----
+	Potential funding is possible from several sources.
+	Need to put together a scope for what can be outsourced and get a idea of how much it might cost.
+	Carol's time is available - what would have been put towards the printed guide.
+
+
+	----
+	Timeline
+		Try to have the site up for use in May
+		Next meeting Jan 26 4:30pm, either same place or Ag Dept.
+		Survey out by mid Jan to participating group to refine idea
+		IRB beginning of Jan
 
 
