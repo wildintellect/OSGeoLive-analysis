@@ -1,0 +1,272 @@
+AWSTATS DATA FILE 6.9 (build 1.925)
+# If you remove this file, all statistics for date 201102 will be lost/reset.
+
+# Position (offset in bytes) in this file of beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1864                
+POS_TIME 2548                
+POS_VISITOR 3492                
+POS_DAY 4331                
+POS_DOMAIN 4510                
+POS_LOGIN 4823                
+POS_ROBOT 4978                
+POS_WORMS 5363                
+POS_EMAILSENDER 5494                
+POS_EMAILRECEIVER 5637                
+POS_SESSION 5713                
+POS_SIDER 5881                
+POS_FILETYPES 6143                
+POS_OS 6244                
+POS_BROWSER 6354                
+POS_SCREENSIZE 6488                
+POS_UNKNOWNREFERER 6562                
+POS_UNKNOWNREFERERBROWSER 6672                
+POS_ORIGIN 6754                
+POS_SEREFERRALS 6886                
+POS_PAGEREFS 7030                
+POS_SEARCHWORDS 7493                
+POS_KEYWORDS 7645                
+POS_MISC 2212                
+POS_ERRORS 7704                
+POS_CLUSTER 4679                
+POS_SIDER_404 7811                
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20110301000025 1188 201301 25987294270
+FirstTime 20110227090447
+LastTime 20110228212425
+LastUpdate 20110328134837 1188 0 1159 28 0
+TotalVisits 17                  
+TotalUnique 13                  
+MonthHostsKnown 11                  
+MonthHostsUnknown 2                   
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 1 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 0 0 0 14 14 25081452
+1 0 0 0 15 15 143785855
+2 0 0 0 12 12 11220
+3 0 0 0 15 15 13608940
+4 0 0 0 13 13 14416512
+5 0 0 0 15 15 164059301
+6 0 0 0 14 14 13090
+7 0 0 0 114 114 67538988
+8 1 4 2208 69 69 96462842
+9 10 10 8917990 177 177 1231337469
+10 6 6 631817054 47 47 1019651468
+11 4 4 1339047780 46 46 6490804254
+12 1 1 18980 36 39 809152899
+13 0 0 0 49 49 230240602
+14 1 1 18980 32 32 2375808989
+15 0 0 0 28 28 284457950
+16 0 0 0 26 26 144382975
+17 1 1 403656 41 41 790601474
+18 0 0 0 30 30 131075400
+19 0 0 0 56 56 97790176
+20 1 4 2207 38 38 55654153
+21 3 3 1160766552 149 149 3480793871
+22 1 1 59257200 58 58 224845492
+23 0 0 0 25 25 1862124
+END_TIME
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 13
+p548d62d3.dip.t-dialin.net 10 10 653760 20110227114459
+net-93-66-113-178.cust.dsl.vodafone.it 7 7 22408620 20110228140150
+p5dd28ad3.dip0.t-ipconnect.de 2 2 1160747676 20110228212425
+port-92-202-127-8.dynamic.qsc.de 1 1 59257200 20110227220310
+p5dd283c4.dip0.t-ipconnect.de 1 1 18876 20110228210503
+host118-180-dynamic.252-95-r.retail.telecomitalia.it 1 1 2933520 20110227090447
+152.96.245.196 1 1 253472748 20110227103019
+www-cache.rz.uni-passau.de 1 4 2208 20110228082936
+87.107.115.152 1 1 13434544 20110227102147
+proxy-2.nic.rlp.de 1 1 347973492 20110228101216
+173.59.136.95.rev.vodafone.pt 1 1 1338944100 20110228110431
+ip11-113-174-82.adsl2.static.versatel.nl 1 1 403656 20110227173543
+host31-208-dynamic.18-79-r.retail.telecomitalia.it 1 4 2207 20110228203500
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 2
+20110227 21 21 352545068 10
+20110228 8 14 2847707539 7
+END_DAY
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 6
+de 16 19 1568653212
+it 9 12 25344347
+pt 1 1 1338944100
+nl 1 1 403656
+ir 1 1 13434544
+ch 1 1 253472748
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 7
+nagios 494 461890 20110228235525 0
+slurp 11 861612112 20110228160007 0
+googlebot 7 3676 20110228120342 0
+ichiro 6 41584 20110228095117 0
+docomo 5 11362 20110228100347 0
+bot[+:,\.\;\/\\-] 2 1462 20110228032730 0
+[+:,\.\;\/\\-]bot 2 3682 20110228135359 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Session range - Number of visits
+BEGIN_SESSION 3
+5mn-15mn 2
+30s-2mn 3
+0s-30s 12
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 3
+/osgeolive/4.0.1/osgeolive-4.0.1.iso 26 3186813648 14 14
+/osgeolive/4.0.1/ 2 1538 2 2
+/osgeolive/4.0.1/osgeolive-4.0.1-mini.iso 1 13434544 1 1
+END_SIDER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 3
+html 2 1538 0 0
+iso 27 3200248192 0 0
+gif 6 2877 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 7
+macosx 1
+winlong 3
+winxp 4
+win2003 3
+linuxubuntu 8
+Unknown 9
+win2008 7
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 7
+msie8.0 5
+firefox3.0.16 1
+fdm 9
+firefox3.0.10 4
+msie7.0 3
+safari 1
+firefox3.6.13 12
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 1
+FDM_2.x 20110227114459
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 0
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 2 2
+From1 0 0
+From2 0 0
+From3 27 33
+From4 0 0
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 0
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 6
+http://live.osgeo.org/download.html 16 16
+http://download.osgeo.org/livedvd/release/4.0.1/osgeolive-4.0.1.iso 6 6
+http://download.osgeo.org/livedvd/ 2 2
+http://projects.mapbender.osgeo.org/mapbender_2.6/ 2 2
+http://169.237.167.53/osgeo/4.0.1/osgeolive-4.0.1.iso 1 1
+http://mirror.wikisquare.de/osgeolive/4.0.1/ 0 6
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 0
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 0
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 2
+206 584 17031296525
+404 11 5203
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 1
+/robots.txt 11 -
+END_SIDER_404

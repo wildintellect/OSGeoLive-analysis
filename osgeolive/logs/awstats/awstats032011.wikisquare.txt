@@ -1,0 +1,442 @@
+AWSTATS DATA FILE 6.9 (build 1.925)
+# If you remove this file, all statistics for date 201103 will be lost/reset.
+
+# Position (offset in bytes) in this file of beginning of each section for
+# direct I/O access. If you made changes somewhere in this file, you should
+# also remove completely the MAP section (AWStats will rewrite it at next
+# update).
+BEGIN_MAP 27
+POS_GENERAL 1864                
+POS_TIME 2553                
+POS_VISITOR 3727                
+POS_DAY 8514                
+POS_DOMAIN 9169                
+POS_LOGIN 9883                
+POS_ROBOT 10038               
+POS_WORMS 10601               
+POS_EMAILSENDER 10732               
+POS_EMAILRECEIVER 10875               
+POS_SESSION 10951               
+POS_SIDER 11157               
+POS_FILETYPES 11466               
+POS_OS 11573               
+POS_BROWSER 11748               
+POS_SCREENSIZE 12076               
+POS_UNKNOWNREFERER 12150               
+POS_UNKNOWNREFERERBROWSER 12291               
+POS_ORIGIN 12404               
+POS_SEREFERRALS 12540               
+POS_PAGEREFS 12695               
+POS_SEARCHWORDS 13596               
+POS_KEYWORDS 13770               
+POS_MISC 2217                
+POS_ERRORS 13851               
+POS_CLUSTER 9739                
+POS_SIDER_404 13985               
+END_MAP
+
+# LastLine    = Date of last record processed - Last record line number in last log - Last record offset in last log - Last record signature value
+# FirstTime   = Date of first visit for history file
+# LastTime    = Date of last visit for history file
+# LastUpdate  = Date of last update - Nb of parsed records - Nb of parsed old records - Nb of parsed new records - Nb of parsed corrupted - Nb of parsed dropped
+# TotalVisits = Number of visits
+# TotalUnique = Number of unique visitors
+# MonthHostsKnown   = Number of hosts known
+# MonthHostsUnKnown = Number of hosts unknown
+BEGIN_GENERAL 8
+LastLine 20110327122009 12611 2268117 26054665541
+FirstTime 20110301001230
+LastTime 20110326124616
+LastUpdate 20110328134837 12611 0 12508 103 0
+TotalVisits 94                  
+TotalUnique 87                  
+MonthHostsKnown 64                  
+MonthHostsUnknown 23                  
+END_GENERAL
+
+# Misc ID - Pages - Hits - Bandwidth
+BEGIN_MISC 10
+QuickTimeSupport 0 0 0
+JavaEnabled 0 0 0
+JavascriptDisabled 0 0 0
+PDFSupport 0 0 0
+WindowsMediaPlayerSupport 0 0 0
+AddToFavourites 0 6 0
+RealPlayerSupport 0 0 0
+TotalMisc 0 0 0
+DirectorSupport 0 0 0
+FlashSupport 0 0 0
+END_MISC
+
+# Hour - Pages - Hits - Bandwidth - Not viewed Pages - Not viewed Hits - Not viewed Bandwidth
+BEGIN_TIME 24
+0 2 5 18396144 305 305 1547109381
+1 1 1 20717136 391 391 151192998
+2 3 3 5713888304 327 327 3489424428
+3 2 2 495369772 480 480 1021523572
+4 2 5 1729672 717 717 383579481
+5 3 3 1739880 603 603 828022950
+6 1 1 1182600 641 641 463048273
+7 3 3 4642913996 1285 1285 1672815685
+8 9 9 6569328180 959 959 4980488378
+9 6 9 818705290 499 499 1844260822
+10 14 20 6308173309 757 758 1406019134
+11 13 23 13138611886 358 358 1867730150
+12 4 4 2511417030 374 374 2695890493
+13 5 5 6647245231 346 346 1150389768
+14 13 13 15101762907 327 327 5647470370
+15 10 13 1491610231 350 350 1016103661
+16 14 17 5540265877 334 334 6129348330
+17 18 24 3523649518 301 301 3903388168
+18 9 9 4997861108 337 337 2504670858
+19 13 26 164879539 280 280 321558972
+20 6 11 5454154793 276 278 5342823634
+21 7 10 4652747820 280 280 1403967586
+22 5 13 118885134 267 267 65473024
+23 5 5 4644539567 270 270 198089372
+END_TIME
+
+# Host - Pages - Hits - Bandwidth - Last visit date - [Start date of last visit] - [Last page of last visit]
+# [Start date of last visit] and [Last page of last visit] are saved only if session is not finished
+# The 10 first Hits must be first (order not required for others)
+BEGIN_VISITOR 87
+77-108-41-122-static.bbbell.com 14 17 698122995 20110308090341
+p57a81b57.dip0.t-ipconnect.de 14 14 131395680 20110309181320
+p5b3eb693.dip.t-dialin.net 6 10 6442 20110302190811
+firewalln.rb-com.de 6 9 1524433122 20110311104102
+proxy.csita.unige.it 5 8 292311 20110302124321
+p579d0ebf.dip.t-dialin.net 4 4 978218333 20110314142726
+p5df20563.dip0.t-ipconnect.de 3 3 56628 20110324085012
+host86-162-184-237.range86-162.btcentralplus.com 3 6 135243281 20110308195646
+kref-5d83377d.pool.mediaways.net 3 8 115981134 20110321224535
+194.105.50.21 3 7 4172 20110311111907
+p508474ca.dip.t-dialin.net 2 2 732801895 20110321150032
+187.49.209.2 1 1 1182600 20110312064001
+193.145.150.120 2 2 7223575584 20110323134829
+218.64.64.138 1 1 23168 20110322025541
+gw-geo.unibuc.ro 2 2 9285251688 20110323070621
+p5dd28ad3.dip0.t-ipconnect.de 2 5 18396144 20110301001233
+5400e056.dsl.pool.telekom.hu 1 1 41567604 20110313092655
+cfscm2.carnet.hr 2 2 770289249 20110304140749
+78.251.110.27 2 5 29615188 20110303191221
+13.85-84-141.dynamic.clientes.euskaltel.es 1 1 4642625844 20110325100751
+201.62.broadband12.iol.cz 1 1 90024 20110320100901
+180.248.158.106 2 2 693000 20110312054329
+175.141.25.158 2 2 151507 20110324233015
+p5ddf730b.dip.t-dialin.net 1 1 3499989299 20110314142523
+ip-178-203-191-36.unitymediagroup.de 2 5 2977 20110324165623
+p578b3a7c.dip0.t-ipconnect.de 1 1 1547208 20110322083902
+224.subnet110-138-176.speedy.telkom.net.id 1 1 2225080 20110310174758
+89.96.217.12 1 1 347897560 20110308112810
+cust.static.213-200-250-1.cybernet.ch 1 1 12420 20110301193150
+201-1-141-248.dsl.telesp.net.br 2 2 6973920 20110303135921
+146.red-83-61-21.staticip.rima-tde.net 1 1 3529812 20110308143854
+p5498cd1d.dip.t-dialin.net 2 5 4642628050 20110323113320
+109-92-220-230.dynamic.isp.telekom.rs 2 2 36432200 20110308154546
+87-204-27-13.ip.netia.com.pl 1 1 169358868 20110310084052
+83.222.163.135 2 2 43800 20110307175710
+ip-91.net-81-220-219.henin.rev.numericable.fr 2 2 865780 20110302183046
+kref-4db6807e.pool.mediaways.net 2 7 1376583206 20110309203517
+dslb-094-219-093-089.pools.arcor-ip.net 1 1 4884528 20110326113306
+115.249.47.9 1 1 199824 20110311105825
+ip-78-94-90-232.unitymediagroup.de 1 1 4642625844 20110322230509
+222.33.200.70 1 1 1727464 20110324040348
+095160059244.elblag.vectranet.pl 2 2 4647237724 20110309211452
+58-191-187-176f1.osk1.eonet.ne.jp 1 1 495278772 20110313031703
+125.71.228.74 2 2 3337920 20110308150002
+109.104.34.143 2 2 5489641063 20110308142144
+110.45.214.148 2 2 1762216 20110320235936
+151.67.141.21 2 2 41102600 20110314185246
+81.80.62.214 1 4 2208 20110307092829
+pd9e88e81.dip0.t-ipconnect.de 1 4 2208 20110309224133
+host81-151-113-0.range81-151.btcentralplus.com 1 1 2901792 20110309223217
+p5df209aa.dip0.t-ipconnect.de 1 1 18876 20110322160457
+94.126.240.2 1 1 81743180 20110302094546
+95.73.84.65 1 4 2207 20110312175903
+148-195.105-92.cust.bluewin.ch 1 1 2987487460 20110311201927
+82.159.126.252.dyn.user.ono.com 2 2 46720 20110307210758
+alyon-157-1-54-140.w83-201.abo.wanadoo.fr 1 4 2208 20110310041706
+varinex.hu 1 1 7993703 20110322130304
+no-dns-yet.demon.co.uk 1 1 4642625844 20110309181822
+em114-51-56-137.pool.e-mobile.ne.jp 1 1 597851020 20110311081843
+150.80-180-91.adsl-dyn.isp.belgacom.be 2 2 5713865136 20110324024950
+madrid.sdc.uam.es 1 1 4642625844 20110304114051
+webusers.gov.si 2 2 1157888612 20110308083203
+213-63-25-16.static-dsl.net.artelecom.pt 1 1 2302344222 20110326124616
+cerberus.its.ac.id 2 2 209022192 20110304122138
+frnk-590f74f9.pool.mediaways.net 1 4 2207 20110325212514
+186.42.72.28 1 1 91000 20110307030549
+c1.linkfactory.dk 1 1 935 20110304205209
+2.93.32.144 1 4 2208 20110325192041
+114.subnet118-97-187.astinet.telkom.net.id 1 1 9761560 20110312154030
+112.201.166.49.pldt.net 1 1 461360 20110304113507
+host86-174-217-183.range86-174.btcentralplus.com 1 1 769 20110309212829
+dslb-188-102-233-247.pools.arcor-ip.net 2 2 1090083192 20110302202152
+ppp91-77-90-105.pppoe.mtu-net.ru 1 1 1046880 20110326053157
+proxyuser.sante.gouv.fr 2 2 2968383320 20110325100559
+mail3.tuev-nord.de 2 2 4673481584 20110311144548
+212.71.166.74 1 1 5460400 20110312211430
+13.red-88-16-1.dynamicip.rima-tde.net 1 1 20717136 20110305015033
+62.42.141.60.dyn.user.ono.com 1 1 3499989299 20110311115641
+proxy2.tcfsh.tc.edu.tw 1 1 256296 20110325100621
+89-97-244-162.ip19.fastwebnet.it 2 5 1713744 20110311153317
+87-93-128-131.bb.dnainternet.fi 2 2 372950519 20110302180914
+59.75.131.49 2 2 288152 20110304072254
+nieuwland-188.customer.bit.nl 1 1 3499989299 20110323171416
+intgate3b.hessen.de 1 4 2209 20110303104807
+dslb-188-102-236-178.pools.arcor-ip.net 1 1 666516688 20110305151547
+cpe-58-168-99-121.lns7.ken.bigpond.net.au 1 1 25452 20110312104220
+141.41.254.6 1 1 1676221555 20110321145933
+END_VISITOR
+
+# Date - Pages - Hits - Bandwidth - Visits
+BEGIN_DAY 20
+20110301 3 6 18408564 2
+20110302 18 25 1545941424 7
+20110303 5 11 36591317 3
+20110304 9 9 5622687732 6
+20110305 2 2 687233824 2
+20110307 18 24 350606745 6
+20110308 15 18 7521670426 8
+20110309 22 30 10800747223 7
+20110310 4 7 2999549560 4
+20110311 17 27 13285160225 8
+20110312 7 10 17125219 6
+20110313 2 2 536846376 2
+20110314 7 7 4519310232 4
+20110320 4 4 4644478084 3
+20110321 6 11 2525004584 3
+20110322 6 6 7233158539 6
+20110323 5 8 17427869037 4
+20110324 10 13 5715803712 5
+20110325 5 11 4783306471 5
+20110326 3 3 2308275630 3
+END_DAY
+
+# Domain - Pages - Hits - Bandwidth
+# The 10 first Pages must be first (order not required for others)
+BEGIN_DOMAIN 30
+de 61 93 31265518030
+it 27 40 1089133382
+es 10 10 20114853419
+fr 8 17 2998868704
+cn 6 6 5376704
+gb 6 9 4780771686
+id 6 6 221701832
+unknown 5 11 156692
+br 3 3 8156520
+pl 3 3 4816596592
+pt 1 1 2302344222
+rs 2 2 36432200
+jp 2 2 1093129792
+ph 1 1 461360
+tw 1 1 256296
+kr 2 2 1762216
+ru 2 5 1049087
+au 1 1 25452
+ro 2 2 9285251688
+in 1 1 199824
+ch 2 2 2987499880
+ec 1 1 91000
+bg 2 2 43800
+si 2 2 1157888612
+hu 2 2 49561307
+cz 2 2 5550424
+nl 1 1 3499989299
+fi 2 2 372950519
+hr 2 2 770289249
+be 2 2 5713865136
+END_DOMAIN
+
+# Cluster ID - Pages - Hits - Bandwidth
+BEGIN_CLUSTER 0
+END_CLUSTER
+
+# Login - Pages - Hits - Bandwidth - Last visit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_LOGIN 0
+END_LOGIN
+
+# Robot ID - Hits - Bandwidth - Last visit - Hits on robots.txt
+# The 10 first Hits must be first (order not required for others)
+BEGIN_ROBOT 12
+nagios 6092 5696020 20110327122009 0
+slurp 163 15531904845 20110327080505 0
+robot 54 35308 20110324162929 0
+googlebot 34 19700 20110327064034 0
+yandex 22 13705 20110323213126 0
+[+:,\.\;\/\\-]bot 19 34979 20110325140054 0
+docomo 18 38741 20110310160834 0
+crawl 17 11341 20110310070518 0
+msnbot 14 9266 20110320090729 0
+ichiro 10 57094 20110310161433 0
+bot[+:,\.\;\/\\-] 5 10697539 20110314055046 0
+mj12bot 9 91948 20110325192502 0
+END_ROBOT
+
+# Worm ID - Hits - Bandwidth - Last visit
+# The 5 first Hits must be first (order not required for others)
+BEGIN_WORMS 0
+END_WORMS
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first Hits must be first (order not required for others)
+BEGIN_EMAILSENDER 0
+END_EMAILSENDER
+
+# EMail - Hits - Bandwidth - Last visit
+# The 20 first hits must be first (order not required for others)
+BEGIN_EMAILRECEIVER 0
+END_EMAILRECEIVER
+
+# Session range - Number of visits
+BEGIN_SESSION 7
+1h+ 1
+5mn-15mn 2
+30s-2mn 2
+15mn-30mn 3
+0s-30s 78
+2mn-5mn 7
+30mn-1h 1
+END_SESSION
+
+# URL - Pages - Bandwidth - Entry - Exit
+# The 10 first Pages must be first (order not required for others)
+BEGIN_SIDER 5
+/osgeolive/4.0.1/osgeolive-4.0.1.iso 99 75205422706 62 56
+/osgeolive/4.0.1/osgeolive-4.0.1-mini.iso 37 17374293762 14 24
+/osgeolive/4.0.1/ 24 21805 17 11
+/ 4 2903 1 2
+/osgeolive/ 4 3228 0 1
+END_SIDER
+
+# Files type - Hits - Bandwidth - Bandwidth without compression - Bandwidth after compression
+BEGIN_FILETYPES 3
+html 32 27936 0 0
+iso 136 92579716468 0 0
+gif 66 30520 0 0
+END_FILETYPES
+
+# OS ID - Hits
+BEGIN_OS 12
+winlong 4
+winxp 87
+win2000 1
+linuxubuntu 34
+linuxfedora 1
+linux 17
+macosx 9
+winunknown 2
+win2003 2
+linuxdebian 1
+Unknown 15
+win2008 61
+END_OS
+
+# Browser ID - Hits
+BEGIN_BROWSER 22
+msie6.0 8
+firefox3.6.14 2
+chrome 20
+opera 8
+firefox3.5.16 3
+firefox3.6.6 5
+epiphany 1
+firefox4.0 18
+firefox3.5.15 1
+firefox3.6.16 2
+firefox3.6.15 40
+msie8.0 24
+konqueror 1
+msie7.0 6
+msie 2
+firefox3.6.10 6
+fdm 14
+msie9.0 15
+Unknown 1
+firefox3.0.10 17
+safari 11
+firefox3.6.13 29
+END_BROWSER
+
+# Screen size - Hits
+BEGIN_SCREENSIZE 0
+END_SCREENSIZE
+
+# Unknown referer OS - Last visit date
+BEGIN_UNKNOWNREFERER 2
+cmsworldmap.com 20110304205209
+FDM_3.x 20110312054329
+END_UNKNOWNREFERER
+
+# Unknown referer Browser - Last visit date
+BEGIN_UNKNOWNREFERERBROWSER 1
+cmsworldmap.com 20110304205209
+END_UNKNOWNREFERERBROWSER
+
+# Origin - Pages - Hits 
+BEGIN_ORIGIN 6
+From0 19 19
+From1 0 0
+From2 3 3
+From3 146 212
+From4 0 0
+From5 0 0
+END_ORIGIN
+
+# Search engine referers ID - Pages - Hits
+BEGIN_SEREFERRALS 1
+google 3 3
+END_SEREFERRALS
+
+# External page referers - Pages - Hits
+# The 10 first Pages must be first (order not required for others)
+BEGIN_PAGEREFS 13
+http://live.osgeo.org/download.html 80 80
+http://mirror.wikisquare.de/osgeolive/4.0.1/ 23 87
+http://download.osgeo.org/livedvd/ 18 18
+http://download.osgeo.org/livedvd/release/4.0.1/osgeolive-4.0.1-mini.iso 7 7
+http://download.osgeo.org/livedvd/release/4.0.1/osgeolive-4.0.1.iso 5 5
+http://mirror.wikisquare.de/osgeolive/ 3 5
+http://download.osgeo.org 2 2
+http://mirror.wikisquare.de 2 2
+http://mirror.wikisquare.de/osgeolive/4.0.1/osgeolive-4.0.1.iso 2 2
+http://169.237.167.53/osgeo/4.0.1/osgeolive-4.0.1.iso 1 1
+http://169.237.167.53/osgeo/4.0.1/osgeolive-4.0.1-mini.iso 1 1
+http://forum.chip.co.id/chip-dvd/160466-request-live-dvd-linux-osgeo-live-4-0-gis-opensource.html 1 1
+http://mirror.wikisquare.de/osgeolive/4.0.1/osgeolive-4.0.1-mini.iso 1 1
+END_PAGEREFS
+
+# Search keyphrases - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_SEARCHWORDS 1
+osgeolive-4.0.1.iso 3
+END_SEARCHWORDS
+
+# Search keywords - Number of search
+# The 10 first number of search must be first (order not required for others)
+BEGIN_KEYWORDS 1
+osgeolive-4.0.1.iso 3
+END_KEYWORDS
+
+# Errors - Hits - Bandwidth
+BEGIN_ERRORS 4
+403 31 14771
+206 4423 34485688946
+301 7 3846
+404 149 71439
+END_ERRORS
+
+# URL with 404 errors - Hits - Last URL referer
+BEGIN_SIDER_404 10
+/CHANGELOG.txt 1 -
+/robots.txt 133 -
+/osgeolive/osgeolive-4.0.1.iso 1 -
+/osgeolive/osgeolive-4.0.1.iso.md5 1 -
+/osgeolive/index.html 8 -
+/umbraco/css/umbracoGui.css 1 -
+/osgeolive/osgeolive-4.0.1-mini.iso.md5 1 -
+/osgeolive/osgeolive-4.0.1-mini.iso 1 -
+/misc/tabledrag.js 1 -
+/sitecore/login 1 -
+END_SIDER_404
