@@ -4,7 +4,7 @@
 %\onehalfspace
 %\doublespace
 %\setlength{\parindent}{1cm}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
@@ -21,6 +21,8 @@
 }
 \usepackage[sorting=nyt,natbib=true,citestyle=authoryear,bibstyle=authoryear,maxnames=3]{biblatex}
 \bibliography{proposal}
+\defbibheading{bibliography}{%
+	\section{References}}
 
 \author{Alex Mandel}
 \title{Bridging the geospatial technological divide with free and open source software
@@ -32,7 +34,7 @@
 \maketitle
 \section{Abstract}
 
-	With the advent of the internet, gps enabled devices and... there has been an explosion in Location based services, Mashups,Spinning Globes, Geospatial Science, Geographic Information Systems(GIS), etc . The power of quality map making is no longer limited to the 'State' but is now in the hands of anyone who has a story to tell or agenda to push \parencite(Wood2010). The democratization of geospatial knowledge like many other knowledges in the Internet age has great potential to positively influence the lives of many citizens. However, just because the tools exists, many of them free of monetary cost, does not mean that everyone can overcome the "...financial, temporal, and experience and skills barriers that can impede access to and use of GIS and digital data..." \parencite{Elwood2006}. 
+	With the advent of the internet, gps enabled devices and... there has been an explosion in Location based services, Mashups,Spinning Globes, Geospatial Science, Geographic Information Systems(GIS), etc . The power of quality map making is no longer limited to the 'State' but is now in the hands of anyone who has a story to tell or agenda to push \parencite{Wood2010}. The democratization of geospatial knowledge like many other knowledges in the Internet age has great potential to positively influence the lives of many citizens. However, just because the tools exists, many of them free of monetary cost, does not mean that everyone can overcome the "...financial, temporal, and experience and skills barriers that can impede access to and use of GIS and digital data..." \parencite{Elwood2006}. 
 
 %"Researchers have identified the financial, temporal, and experience and skills barriers that can impede access to and use of GIS and digital data by resource poor organizations and social groups (Weiner et al. 1995, Sawicki and Craig 1996, Barndt 1998, Craig and Elwood 1998)." .
 
@@ -94,19 +96,17 @@ Additional Background Notes: Adoption of Open Source solutions is occurring in n
 %Note: Funding of the development of the solutions early on to ensure they meet the needs.
 \section{Compare a Map}
 \subsection{Introduction}
-Maps/Map oriented interfaces are becoming more common in electronic form (cite) but the field of Cartography as historically practiced is considered by some to be dead (Wood?). Many people are getting into the business/recreation of making maps and most of this is online.
+The majority of web-based interactive maps use one of the widely-available 3rd party cartographic products (e.g. Google, Mapquest, OpenStreetMap, etc.) as the base layer (more commonly referred to as a base map) for which to construct a map. Deciding which base map to use involves checking to ensure a chosen option adequately displays the features of interest and is visually complimentary with custom cartographic overlays.  Presented here is a multiple map comparison tool allowing web cartographers to compare side-by-side the majority of available maps along with more customizable options on a single web page. Panning and zooming is linked between the maps to ensure the accuracy of the comparison. Users can focus on comparing cartographic style and data availability as the multiple map tool handles the differences in application programming interfaces (API), projections, and geocoding.  Providing an easy comparison should assist in the choosing of the most appropriate mix of base layers for the construction of a web map.
+%Maps/Map oriented interfaces are becoming more common in electronic form (cite) but the field of Cartography as historically practiced is considered by some to be dead (Wood?). Many people are getting into the business/recreation of making maps and most of this is online.
 
-Why - It's easier when a basic map is already provided for you, no need to learn projections, find data, or run a web server (removes part of the technical barrier). However just because the foundation layers of the map are provided does not mean they are best suited to a given project. Clearly there are choices, Google is not the only map provider as visitors of many websites will note there is a wide variety of tools in use. Generally the non-profit or casual user can freely move between systems but for businesses wanting to include maps this decision will impact their budgets as licensing fees and IT staff times are required. In the world of mashups this appears to result in a lot of use of Google maps (the first to the game with a free API) amongst the first group with many businesses continuing to use whatever product they started using before Google.  
+	To understand why such a comparison is necessary one has to take into account that the creation of interactive cartographic products for the web requires a complex set of software collectively referred to as Spatial Data Infrastructure. Realizing just how much time it takes to learn and configure such an infrastructure makes it clear that it's much easier when a basic map is already provided for you; there is no need to learn projections, find data, or run a web server. However just because the foundation layers of the map are provided does not mean they are best suited to a given project. Clearly there are choices, Google is not the only map provider as visitors of many websites will note there is a wide variety of tools in use. Generally the non-profit or casual user can freely move between systems but for businesses and organizations wanting to include maps this decision will impact their budgets through  licensing fees and IT staff time requirements. In the world of mashups this appears to result in a lot of use of Google Maps, the first to release a free public Application Programming Interface(API) \parencite{Turner2006}, amongst neographers while many businesses have continued to use other products they had a previous relationship with.
+	  This tool extends the discourse on cartography in the digital age along the trend set by such tools as ColorBrewer \parencite{Harrower2003}, Typebrewer \parencite{Sheesley2008}, Mapshaper \parencite{Bloch2006}, FlexProjector \parencite{Jenny2010} , etc. It is unique in that it's the first instance I know of to compare more than 2 map providers on the same page at the same time and intends to cover all of the major providers. As an added bonus the website also demonstrates how to create a webmap with any of the data sources as all the code; Javascript, HTML, CSS, is avialable under a Free and Open Source license directly from the site.
+	
 
 
-Like Colorbrewer \parencite{Brewer2003}, Typebrewer, Cartography2.0, Mapshaper, etc. a tool to help cartographers (anyone who makes a map whether they have training in cartography). Allow a user to simultaneously compare the "base" maps available through the major API providers; Google, Bing, Yahoo, Mapquest, OpenStreetMap.
 
-Other comparison websites? (2x), only let you compare 2 providers
+%Like Colorbrewer \parencite{Brewer2003}, Typebrewer\parencite{Sheeshley2008}, Cartography2.0, Mapshaper, etc. a tool to help cartographers (anyone who makes a map whether they have training in cartography). Allow a user to simultaneously compare the "base" maps available through the major API providers;  Google, Bing, Yahoo, Mapquest, OpenStreetMap.
 
-If you're going to make a web map the cartography does matter. Even though the data is similar betweeen the sources it's not the same and the fundamental cartography is different. 
-Fonts, colors, scale dependent labels, inclusion and exclusions of non-road features.
-
-The website also demonstrates how to create a webmap with any of the data sources. All the code; Javascript, HTML, CSS is available.
 
 \subsection{Methods}
 Created a website using Openlayers toolkit (library) which should fit on a single screen for most computer users (dimensions?)
@@ -116,6 +116,11 @@ There is a place based search tool to recenter the map, currently based on city,
 A zoom slider is provided, to change the zoom. It only goes between the zooms that all the providers share 1-15 (Google and some of the others go to 18 - finest detail)
 
 \url{http://maps.ice.ucdavis.edu/compare-a-map}
+
+Provide a short tutorial for users on the most effective way to use the tool.
+
+If you're going to make a web map the cartography does matter. Even though the data is similar betweeen the sources it's not the same and the fundamental cartography is different. 
+Fonts, colors, scale dependent labels, inclusion and exclusions of non-road features.
 
 I'd like to also do the same for aerial imagery, and hybrid maps. This doesn't cover geocoding but could, although several studies have been completed on that topic (cite) as the precision is much easier to compare numerically than the aesthetics of the cartography. A sub component which has been studied somewhat also is the accuracy of the road network data, but that too is highly variable depending on the service and where in the world you compare. Hence this tool does provide a means of also visually comparing.
 
@@ -170,6 +175,10 @@ I'd like to also do the same for aerial imagery, and hybrid maps. This doesn't c
 
 \section{Web Mapping for the community group}
 \subsection{Introduction}
+	
+
+
+
 	There are a lot of reasons why a group of people might want to build a collaborative web map. While there are many paid and free tools available they have restrictions to their uses either by technological barriers, by licensing barriers, or cost barriers. Additionally I want to ensure that the options available to communities make it easy to collaborate with researchers when wanted. That primarily entails ensuring that the backend data storage and export options are of an acceptable quality and format for GIS analysis (e.g.: KML from Google does not satisfy this requirement adequately).
 	
 \parencite{Dunn2007} - use of Free and Open Source is recommended if the writing of new GIS algorithms is necessary to implement more participatory research agendas because it provides the underlying software components to create a usable GIS system but has no restrictions on it's adaptation.
@@ -219,6 +228,6 @@ I'm currently in discussion with UC Extension Specialists and the Placer Grown o
 Additional Background Notes:
 Making the case for how Open Source makes this easier, either by access to tools or by forcing the competition to offer better products. Similar to Google's disruptive technology methodology, offering something better for free.
 
-\printbibliography
+\printbibliography[heading=bibliography]
 
 \end{document}
