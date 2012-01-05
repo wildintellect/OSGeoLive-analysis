@@ -4,17 +4,19 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{hyperref}
+\usepackage{color}
+\definecolor{titlegreen} {RGB}{110,145,60}
 \hypersetup{
 	%driver=pdftex,
 	colorlinks=true,
 	urlcolor=blue,
 	linkcolor=red,          % color of internal links
-    citecolor=green,        % color of links to bibliography
+    citecolor=titlegreen,        % color of links to bibliography
     filecolor=magenta
 }
-\usepackage[sorting=ydnt,natbib=true]{biblatex}
+\usepackage[sorting=nyt,natbib=true,citestyle=authoryear,bibstyle=authoryear,maxnames=3]{biblatex}
 \bibliography{proposal}
-\usepackage{color}
+
 \author{Alex Mandel}
 \title{Bridging the geospatial technological divide with free and open source software
 \\	
@@ -26,17 +28,45 @@
 
 \section{Introduction}
 
+Location based services, web mashups
+
+"Researchers have identified the financial, temporal, and experience and skills barriers
+that can impede access to and use of GIS and digital data by resource poor organizations
+and social groups (Weiner et al. 1995, Sawicki and Craig 1996, Barndt 1998, Craig and
+Elwood 1998)." \parencite{Elwood2006}.
+
+There are several approaches to exploring the topic of making map related technologies more acccessible to more people. There are several distinct groups of users, those with a GIS background (aka Geographers) and those who come from outside the academic approach (aka neogeographers?)
+
+
 \section{OSGeo Live}
 
 \subsection{Introduction}
-The initial goal of OSGeo Live was to make it easier for anyone to try geospatial tools, particularly Free and Open Source ones, by eliminating the need to install.
-I've been involved for over a year in developing a GIS workstation available in a variety of formats:
-a Live DVD, Live USB, Virtual Machines and live through the web. The workstation consists entirely of Free and Open Source Software (Over 40 applications), is available in multiple languages, contains sample data and only requires modest hardware to run. We've released 3 major revisions and are on schedule to create a new release every 6 months. Over 1000 copies have been handed out physically at the annual FOSS4G conference and just as many have been downloaded.
+	Depending on who you ask in the field of GIS historically (pre 2000) there have only been a handful of software options primarly targeted at the personal computer desktop user. With the growth of the Internet and information technology there's been a growth in software options for the desktop but also the web and mobile platforms. A significant part of this growth has been in Free and Open Source software.
+	A substantial barrier to software adoption in general, especially in regards to web services is the technical knowledge and time to install. In particular the time to learn how to setup and configure different applications prevents users from comparing all of their options before committing to a product. 
+	From an academic perspective solving this issue would also open up possibilities for expanding instruction in geospatial technologies. Being able to provide a variety of software options ready for use in computer laboratories and for student use at home...
 
-There are lot of possible uses of OSGeo Live and in particular I want to focus on it's usefulness as a teaching tool. I've already piloted it's usage for a 2 hour lab as part of the International Seminar on Climate Change and Natural Resources Management through the US Forest Service and facilitated by ICE. It's also becoming the norm for workshops at FOSS4G. However I have yet to collect any formal feedback(informally: interest from developers wanting to add their software and volunteers to help translate), or thoroughly analyze the downloads/conference audience.
+
+%The initial goal of OSGeo Live was to make it easier for anyone to try geospatial tools, particularly Free and Open Source ones, by eliminating the need to install.
+%I've been involved for over a year in developing a GIS workstation available in a variety of formats:
+%a Live DVD, Live USB, Virtual Machines and live through the web. The workstation consists entirely of Free and Open Source Software (Over 40 applications), is available in multiple languages, contains sample data and only requires modest hardware to run. We've released 3 major revisions and are on schedule to create a new release every 6 months. Over 1000 copies have been handed out physically at the annual FOSS4G conference and just as many have been downloaded.
+%
+%There are lot of possible uses of OSGeo Live and in particular I want to focus on it's usefulness as a teaching tool. I've already piloted it's usage for a 2 hour lab as part of the International Seminar on Climate Change and Natural Resources Management through the US Forest Service and facilitated by ICE. It's also becoming the norm for workshops at FOSS4G. However I have yet to collect any formal feedback(informally: interest from developers wanting to add their software and volunteers to help translate), or thoroughly analyze the downloads/conference audience.
 
 
 \subsection{Methods}
+Build the product (Updated every 6 months)
+Distribute the product: Internet (DVD ISO image file ready to burn, Virtual Machine compatible with common Virtual Machine software freely available - VMWare player, VirtualBox - , Conferences (As DVD or USB flash drive)
+Use in various Education settings:
+	FS Workshops
+	Classroom Setting
+Analyze the distribution/downloading 
+Create an online feedback survey - Snowball sampling via website, mailing lists and word of mouth(ex conference booths)
+	Better Understand the audience of product
+	Who (Fields and Jobs) is using the product Where and for what purpose
+	Rate GIS Experience
+	Does localization of material matter (Translation)	
+Analyze who has participated in the development of the product. Same survey or interviews?	
+	
 Methods:
 \begin{enumerate}
 \item Analyze the download data to better understand who it's reaching (By at least Country level, City/Region where possible) and also obtain similar demographic data from OSGeo attendance records.
@@ -58,7 +88,12 @@ Additional Background Notes: Adoption of Open Source solutions is occurring in n
 %Note: Funding of the development of the solutions early on to ensure they meet the needs.
 \section{Compare a Map}
 \subsection{Introduction}
-Like Colorbrewer, Typebrewer, Cartography2.0, Mapshaper, etc. a tool to help cartographers (anyone who makes a map whether they have training in cartography). Allow a user to simultaneously compare the "base" maps available through the major API providers; Google, Bing, Yahoo, Mapquest, OpenStreetMap.
+Maps/Map oriented interfaces are becoming more common in electronic form (cite) but the field of Cartography as historically practiced is considered by some to be dead (Wood?). Many people are getting into the business/recreation of making maps and most of this is online.
+
+Why - It's easier when a basic map is already provided for you, no need to learn projections, find data, or run a web server (removes part of the technical barrier). However just because the foundation layers of the map are provided does not mean they are best suited to a given project. Clearly there are choices, Google is not the only map provider as visitors of many websites will note there is a wide variety of tools in use. Generally the non-profit or casual user can freely move between systems but for businesses wanting to include maps this decision will impact their budgets as licensing fees and IT staff times are required. In the world of mashups this appears to result in a lot of use of Google maps (the first to the game with a free API) amongst the first group with many businesses continuing to use whatever product they started using before Google.  
+
+
+Like Colorbrewer \parencite{Brewer2003}, Typebrewer, Cartography2.0, Mapshaper, etc. a tool to help cartographers (anyone who makes a map whether they have training in cartography). Allow a user to simultaneously compare the "base" maps available through the major API providers; Google, Bing, Yahoo, Mapquest, OpenStreetMap.
 
 Other comparison websites? (2x), only let you compare 2 providers
 
@@ -76,9 +111,9 @@ A zoom slider is provided, to change the zoom. It only goes between the zooms th
 
 \url{http://maps.ice.ucdavis.edu/compare-a-map}
 
-I'd like to also do the same for aerial imagery, and hybrid maps.
+I'd like to also do the same for aerial imagery, and hybrid maps. This doesn't cover geocoding but could, although several studies have been completed on that topic (cite) as the precision is much easier to compare numerically than the aesthetics of the cartography. A sub component which has been studied somewhat also is the accuracy of the road network data, but that too is highly variable depending on the service and where in the world you compare. Hence this tool does provide a means of also visually comparing.
 
-
+%\printbibliography[section=2]
 %\section{Everday Cartography Tools}
 
 %\subsection{Projection Assistant}
@@ -175,4 +210,7 @@ I'm currently in discussion with UC Extension Specialists and the Placer Grown o
 
 Additional Background Notes:
 Making the case for how Open Source makes this easier, either by access to tools or by forcing the competition to offer better products. Similar to Google's disruptive technology methodology, offering something better for free.
+
+\printbibliography
+
 \end{document}
