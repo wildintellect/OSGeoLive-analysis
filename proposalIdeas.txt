@@ -4,3 +4,18 @@ that can impede access to and use of GIS and digital data by resource poor organ
 and social groups (Weiner et al. 1995, Sawicki and Craig 1996, Barndt 1998, Craig and
 Elwood 1998). 
 
+----
+Current State of Geospatial Science adoption?
+Significance of Free and Open Source software
+	General concept
+	How if differs from simply Freeware (eg section 3 about new algorithms)
+Relate it back to academic inquiry
+
+
+
+Paid to make maps/Those who just want to make maps
+GIS Training & Experience/Those without
+High technical skills/Everyone else
+
+Define the term Mashup - especially in the context of web maps.
+ - The merging of 2 different data source on the web together in one page, by using the data directly from different sources at the same time.

@@ -1,4 +1,9 @@
 \documentclass[12pt,letterpaper]{article}
+\usepackage{setspace}
+\singlespace
+%\onehalfspace
+%\doublespace
+%\setlength{\parindent}{1cm}
 \usepackage[latin1]{inputenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
@@ -25,19 +30,15 @@
 
 \begin{document}
 \maketitle
+\section{Abstract}
 
-\section{Introduction}
+	With the advent of the internet, gps enabled devices and... there has been an explosion in Location based services, Mashups,Spinning Globes, Geospatial Science, Geographic Information Systems(GIS), etc . The power of quality map making is no longer limited to the 'State' but is now in the hands of anyone who has a story to tell or agenda to push \parencite(Wood2010). The democratization of geospatial knowledge like many other knowledges in the Internet age has great potential to positively influence the lives of many citizens. However, just because the tools exists, many of them free of monetary cost, does not mean that everyone can overcome the "...financial, temporal, and experience and skills barriers that can impede access to and use of GIS and digital data..." \parencite{Elwood2006}. 
 
-Location based services, web mashups
+%"Researchers have identified the financial, temporal, and experience and skills barriers that can impede access to and use of GIS and digital data by resource poor organizations and social groups (Weiner et al. 1995, Sawicki and Craig 1996, Barndt 1998, Craig and Elwood 1998)." .
 
-"Researchers have identified the financial, temporal, and experience and skills barriers
-that can impede access to and use of GIS and digital data by resource poor organizations
-and social groups (Weiner et al. 1995, Sawicki and Craig 1996, Barndt 1998, Craig and
-Elwood 1998)." \parencite{Elwood2006}.
+	There are several approaches to exploring the topic of making map related technologies more acccessible to more people. The approach depends partly on the GIS and Information Technology experience and the profession, if map making is their job, of the end user. The following studies aim to provide an easy entrance for assessing the capabilities and learning of Geospatial software, tools to assist in the creation of better web based maps, and better defining the specific technical barriers that impede communities from building collaborative maps on their own. Particular interest is focused on Free and Open Source Software with the notion that the licensing and community structure around such products in itself reduces some financial, temporal, and skill barriers while also sharing the philosphical principles ??? 
 
-There are several approaches to exploring the topic of making map related technologies more acccessible to more people. There are several distinct groups of users, those with a GIS background (aka Geographers) and those who come from outside the academic approach (aka neogeographers?)
-
-
+\tableofcontents
 \section{OSGeo Live}
 
 \subsection{Introduction}
@@ -45,6 +46,7 @@ There are several approaches to exploring the topic of making map related techno
 	A substantial barrier to software adoption in general, especially in regards to web services is the technical knowledge and time to install. In particular the time to learn how to setup and configure different applications prevents users from comparing all of their options before committing to a product. 
 	From an academic perspective solving this issue would also open up possibilities for expanding instruction in geospatial technologies. Being able to provide a variety of software options ready for use in computer laboratories and for student use at home...
 
+This project takes advantage of the ability to freely distribute Free and Open Source Software to ensure that anyone can download and use the software.
 
 %The initial goal of OSGeo Live was to make it easier for anyone to try geospatial tools, particularly Free and Open Source ones, by eliminating the need to install.
 %I've been involved for over a year in developing a GIS workstation available in a variety of formats:
@@ -62,22 +64,26 @@ Use in various Education settings:
 Analyze the distribution/downloading 
 Create an online feedback survey - Snowball sampling via website, mailing lists and word of mouth(ex conference booths)
 	Better Understand the audience of product
-	Who (Fields and Jobs) is using the product Where and for what purpose
-	Rate GIS Experience
-	Does localization of material matter (Translation)	
+	Who (Fields and Jobs) is using the product Where and for what purpose?
+	Are we reaching people who are new to GIS?
+	Does localization of material matter (Translation)?	
+	
 Analyze who has participated in the development of the product. Same survey or interviews?	
 	
 Methods:
 \begin{enumerate}
-\item Analyze the download data to better understand who it's reaching (By at least Country level, City/Region where possible) and also obtain similar demographic data from OSGeo attendance records.
+\item Analyze the download data to better understand who it's reaching (By at least Country level, City/Region where possible) and also obtain similar demographic data from conference attendance records where OSGeo Live is distributed.
 \item Survey (Opt-in, could require IRB short form for anonymous participation) of users of the disc \& web visitors
 	\begin{enumerate}
-		\item What role they play in their 'company': implementer, decision maker, researcher, labor
+		\item What role they play in their 'company': implementer, decision maker, researcher, labor?
 		\item Prior experience with GIS
 		\item Prior experience with Open Source
 		\item Prior experience with Open Source GIS
 		\item Expectations
 		\item Usage in learning Open Source GIS, GIS in general
+		\item Location, Native location if different
+		\item Languages, Primary Language if not English
+		\item Does providing the documentation and software in a native make it easier to use?
 	\end{enumerate}
 \end{enumerate}
 
@@ -164,8 +170,11 @@ I'd like to also do the same for aerial imagery, and hybrid maps. This doesn't c
 
 \section{Web Mapping for the community group}
 \subsection{Introduction}
-	There are a lot of reasons why a group of people might want to build a collaborative web map. While there are many paid and free tools available they have restrictions to their uses either by technological barriers, by licensing barriers, or cost barriers. Additionally I want to ensure that the options available to communities make it easy to collaborate with researchers when wanted. That primarily entails ensuring that the backend data storage and export options are of an acceptable quality and format for GIS analysis (ie: KML from Google does not satisfy this requirement adequately).
+	There are a lot of reasons why a group of people might want to build a collaborative web map. While there are many paid and free tools available they have restrictions to their uses either by technological barriers, by licensing barriers, or cost barriers. Additionally I want to ensure that the options available to communities make it easy to collaborate with researchers when wanted. That primarily entails ensuring that the backend data storage and export options are of an acceptable quality and format for GIS analysis (e.g.: KML from Google does not satisfy this requirement adequately).
 	
+\parencite{Dunn2007} - use of Free and Open Source is recommended if the writing of new GIS algorithms is necessary to implement more participatory research agendas because it provides the underlying software components to create a usable GIS system but has no restrictions on it's adaptation.
+
+\subsection{Methods}
 My goal is to help identify the barriers to building a community website around a geospatial component for and by communities. The primary focus of the direct user surveys will be to asses aspects of website design both visually (cartographic) and contextually (general web site usability issues - ie can you find what you are looking for)
 \begin{enumerate}
 \item What do communities really need?
@@ -173,7 +182,6 @@ My goal is to help identify the barriers to building a community website around 
 \item Methods for testing ease of use?
 \end{enumerate}
 
-\subsection{Methods}
 Possible Methods(Most will require IRB approval):
 \begin{enumerate}
 \item Community Meetings
