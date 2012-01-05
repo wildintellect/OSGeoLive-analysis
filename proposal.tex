@@ -15,8 +15,8 @@
 	%driver=pdftex,
 	colorlinks=true,
 	urlcolor=blue,
-	linkcolor=red,          % color of internal links
-    citecolor=titlegreen,        % color of links to bibliography
+	linkcolor=blue,          % color of internal links
+    citecolor=blue,        % color of links to bibliography
     filecolor=magenta
 }
 \usepackage[sorting=nyt,natbib=true,citestyle=authoryear,bibstyle=authoryear,maxnames=3]{biblatex}
@@ -34,21 +34,24 @@
 \maketitle
 \section{Abstract}
 
-	With the advent of the internet, gps enabled devices and... there has been an explosion in Location based services, Mashups,Spinning Globes, Geospatial Science, Geographic Information Systems(GIS), etc . The power of quality map making is no longer limited to the 'State' but is now in the hands of anyone who has a story to tell or agenda to push \parencite{Wood2010}. The democratization of geospatial knowledge like many other knowledges in the Internet age has great potential to positively influence the lives of many citizens. However, just because the tools exists, many of them free of monetary cost, does not mean that everyone can overcome the "...financial, temporal, and experience and skills barriers that can impede access to and use of GIS and digital data..." \parencite{Elwood2006}. 
+	With the advent of the Internet, Global Positioning System(GPS) enabled devices and... there has been an explosion in Location based services, Mashups, Spinning Globes, Geospatial Science, Geographic Information Systems(GIS), etc . The power of quality map making is no longer limited to the 'State' but is now in the hands of anyone who has a story to tell or agenda to push \parencite{Wood2010}. The democratization of geospatial knowledge like many other knowledges in the Internet age has great potential to positively influence the lives of many citizens. However, just because the tools exists, many of them free of monetary cost, does not mean that everyone can overcome the "...financial, temporal, and experience and skills barriers that can impede access to and use of GIS and digital data..." \parencite{Elwood2006}. 
 
 %"Researchers have identified the financial, temporal, and experience and skills barriers that can impede access to and use of GIS and digital data by resource poor organizations and social groups (Weiner et al. 1995, Sawicki and Craig 1996, Barndt 1998, Craig and Elwood 1998)." .
 
-	There are several approaches to exploring the topic of making map related technologies more acccessible to more people. The approach depends partly on the GIS and Information Technology experience and the profession, if map making is their job, of the end user. The following studies aim to provide an easy entrance for assessing the capabilities and learning of Geospatial software, tools to assist in the creation of better web based maps, and better defining the specific technical barriers that impede communities from building collaborative maps on their own. Particular interest is focused on Free and Open Source Software with the notion that the licensing and community structure around such products in itself reduces some financial, temporal, and skill barriers while also sharing the philosphical principles ??? 
+	There are several approaches to exploring the topic of making map related technologies more accessible to more people. The approach depends partly on the GIS and Information Technology experience and the profession, if map making is their job, of the end user. The following studies aim to provide an easy entrance for users to assess the capabilities and learn of Geospatial software, tools to assist in the creation of better web based maps, and better defining the specific technical barriers that impede communities from building collaborative maps on their own. Particular interest is focused on Free and Open Source Software with the notion that the licensing and community structure around such products in itself reduces some financial, temporal, and skill barriers while also sharing the philosophical principles ??? 
 
 \tableofcontents
 \section{OSGeo Live}
 
 \subsection{Introduction}
-	Depending on who you ask in the field of GIS historically (pre 2000) there have only been a handful of software options primarly targeted at the personal computer desktop user. With the growth of the Internet and information technology there's been a growth in software options for the desktop but also the web and mobile platforms. A significant part of this growth has been in Free and Open Source software.
-	A substantial barrier to software adoption in general, especially in regards to web services is the technical knowledge and time to install. In particular the time to learn how to setup and configure different applications prevents users from comparing all of their options before committing to a product. 
-	From an academic perspective solving this issue would also open up possibilities for expanding instruction in geospatial technologies. Being able to provide a variety of software options ready for use in computer laboratories and for student use at home...
+	Historically (pre 2000) there have only been a handful of Geospatial software options primarily targeted at the personal computer desktop user. With the growth of the Internet and information technology in general there has been a notable expansion in Geospatial software options for the desktop, web and mobile platforms. A substantial part of this growth has been in Free and Open Source software.
 
-This project takes advantage of the ability to freely distribute Free and Open Source Software to ensure that anyone can download and use the software.
+	Some barriers to software adoption in general, especially in regards to web services is the amount technical knowledge and time required to assess, install and configure. In particular the time to learn how to setup and configure different applications prevents users from comparing all of their options before committing to a product. For this and other reasons only 1 or 2 GIS and remote sensing software packages are generally taught to students at most universities. This does a disservice to students by not adequately preparing them for jobs and research in Geospatial Techonologies as outlined by the U.S. Department of Labor \parencite{DepartmentofLabor2011}.
+	
+	Without getting into arguments about which software should be the one taught, a more reasonable approach seems to be to teach using several software packages. The differences between the options and the selection of tools more appropriate to tasks seems more in line with getting students to understand the implementations of geospatial concepts in software \parencite{Cammack2005}. It should also provide students with more options when making software decisions in their careers and not be limited by the idea that there is one standard GIS software that does everything. The biggest problems with this solution revolves around licensing and IT support time to manage a computer lab with software that most IT staff are unfamiliar with. 
+	
+	%From an academic perspective solving this issue would also open up possibilities for expanding instruction in geospatial technologies. Being able to provide a variety of software options ready for use in computer laboratories and for student use at home...
+	The OSGeo Live project aims to alleviate some of these issues by providing a consistent platform on which to build educational curriculum that covers a wide variety of Geospatial Technologies while reducing IT barriers and providing a resource which students can continue to use after they graduate. This project takes advantage of the ability to freely distribute Free and Open Source Software to ensure that anyone can download and use the software, eliminating licensing issues. It also builds upon years of experience in the Linux community creating bootable media \parencite{Negus2006,Knopper2006} which can run a whole computer and transitioning that concept to also work in the new reality of virtual machines both of which should decrease IT staff requirements.
 
 %The initial goal of OSGeo Live was to make it easier for anyone to try geospatial tools, particularly Free and Open Source ones, by eliminating the need to install.
 %I've been involved for over a year in developing a GIS workstation available in a variety of formats:
@@ -58,18 +61,43 @@ This project takes advantage of the ability to freely distribute Free and Open S
 
 
 \subsection{Methods}
-Build the product (Updated every 6 months)
-Distribute the product: Internet (DVD ISO image file ready to burn, Virtual Machine compatible with common Virtual Machine software freely available - VMWare player, VirtualBox - , Conferences (As DVD or USB flash drive)
-Use in various Education settings:
-	FS Workshops
-	Classroom Setting
-Analyze the distribution/downloading 
-Create an online feedback survey - Snowball sampling via website, mailing lists and word of mouth(ex conference booths)
-	Better Understand the audience of product
+\subsubsection{What is OSGeo Live}
+In collaboration with a few other members of the Open Source Geospatial Foundation(OSGeo), we created OSGeo Live (\url{http://live.osgeo.org}). We've been building and releasing an updated version approximately every 6 months since. We initially started with approximately 3-5 people and now have over 20 active collaborators. Additionally more than 20 people have begun to contribute translations of the documentation.  
+
+OSGeo Live contains:
+\begin{enumerate}
+\item More than 40 Geospatial applications that represent what the community considers some of the best Free and Open Source applications for desktop GIS, geographic web services, spatial databases, spatial statistics, web cartography, spatial software development libraries, and navigation tools.
+\item Documentation is provided online and on the disc for each application in the form of a short description and a quick 5 minute tutorial on how to get started with a given application.
+\item Several free data samples are provided from OpenStreetMap, NaturalEarthData, 
+\end{enumerate}
+
+OSGeo Live is distributed via the Internet as:
+\begin{enumerate}
+\item DVD ISO image file ready to burn or be booted in a Virtual Machine (Does not save between sessions, unless you write to another media)
+\item DVD mini ISO optimized to be put onto a bootalbe usb flash drive. Instructions on how to create a bootable flash drive are provided on the website.
+\item Virtual Machine image compatible with common Virtual Machine software freely available. (e.g. VMWare player, VirtualBox, etc.)
+\end{enumerate}
+
+Additionally print runs of both DVDs and USB flash drives have been manufactured and given out a booths and in conference registration bags at several international geospatial conferences. Interest continues to grow in including OSGeo Live materials at more conferences.
+
+\subsubsection{Testing}
+Personally, I've used OSGeo Live to teach a 2 hour lesson on applications of GIS for studying climate change to annual international workshop hosted by the Forest Service and the Information Center for the Environment. I've also successfully had OSGeo Live virtual machines installed in the UC Davis Informatics Center for optional use by several graduate level courses. 
+
+
+\subsubsection{Log Analysis and Surveys}
+Now that the OSGeo Live is well established and in use by the Free and Open Source Geospatial community I'd like to explore if it's had any success achieving it's stated goals. To resolve those questions I plan to first analyze the distribution of OSGeo Live via the Internet using the log files from the servers to geolocate all downloads to country, region and city (where possible). Specifically I want to see if the distribution is limited primarily to North America and Europe or if up an coming nations who are just now beginning to invest in GIS are showing interest (e.g. India, Brazil, China, etc.)
+ 
+Second I plan to create an online feedback survey to asses the community of users and provide a mechanism to improve the tools. Sampling will be done via 'Snowball' techniques using the  website, mailing lists and word of mouth at events (e.g. conference booths) to try and reach as many users as possible. The response rate itself should provide useful feedback on the interest and dispersion of the project. Hopefully the geographic distribution will match the download logs and make it easier to eliminate false positives from the log analysis (e.g. web crawling bots in Russia)
+
+The main focus of the questions will be to:
+\begin{enumerate}
+\item Better Understand the audience of product
 	Who (Fields and Jobs) is using the product Where and for what purpose?
 	Are we reaching people who are new to GIS?
 	Does localization of material matter (Translation)?	
-	
+
+\end{enumerate}
+		
 Analyze who has participated in the development of the product. Same survey or interviews?	
 	
 Methods:
@@ -91,38 +119,43 @@ Methods:
 
 Additional Background Notes: Adoption of Open Source solutions is occurring in nations like India, Spain, Brazil etc.. but is skipping the prior method of buying into the Commercial Product and jumping directly to use of Free and Open Source software including the funding of customization of existing applications and development of new applications.
 
-\url{http://live.osgeo.org}
+
 
 %Note: Funding of the development of the solutions early on to ensure they meet the needs.
-\section{Compare a Map}
+\section{Compare-a-Map}
 \subsection{Introduction}
 The majority of web-based interactive maps use one of the widely-available 3rd party cartographic products (e.g. Google, Mapquest, OpenStreetMap, etc.) as the base layer (more commonly referred to as a base map) for which to construct a map. Deciding which base map to use involves checking to ensure a chosen option adequately displays the features of interest and is visually complimentary with custom cartographic overlays.  Presented here is a multiple map comparison tool allowing web cartographers to compare side-by-side the majority of available maps along with more customizable options on a single web page. Panning and zooming is linked between the maps to ensure the accuracy of the comparison. Users can focus on comparing cartographic style and data availability as the multiple map tool handles the differences in application programming interfaces (API), projections, and geocoding.  Providing an easy comparison should assist in the choosing of the most appropriate mix of base layers for the construction of a web map.
 %Maps/Map oriented interfaces are becoming more common in electronic form (cite) but the field of Cartography as historically practiced is considered by some to be dead (Wood?). Many people are getting into the business/recreation of making maps and most of this is online.
 
-	To understand why such a comparison is necessary one has to take into account that the creation of interactive cartographic products for the web requires a complex set of software collectively referred to as Spatial Data Infrastructure. Realizing just how much time it takes to learn and configure such an infrastructure makes it clear that it's much easier when a basic map is already provided for you; there is no need to learn projections, find data, or run a web server. However just because the foundation layers of the map are provided does not mean they are best suited to a given project. Clearly there are choices, Google is not the only map provider as visitors of many websites will note there is a wide variety of tools in use. Generally the non-profit or casual user can freely move between systems but for businesses and organizations wanting to include maps this decision will impact their budgets through  licensing fees and IT staff time requirements. In the world of mashups this appears to result in a lot of use of Google Maps, the first to release a free public Application Programming Interface(API) \parencite{Turner2006}, amongst neographers while many businesses have continued to use other products they had a previous relationship with.
-	  This tool extends the discourse on cartography in the digital age along the trend set by such tools as ColorBrewer \parencite{Harrower2003}, Typebrewer \parencite{Sheesley2008}, Mapshaper \parencite{Bloch2006}, FlexProjector \parencite{Jenny2010} , etc. It is unique in that it's the first instance I know of to compare more than 2 map providers on the same page at the same time and intends to cover all of the major providers. As an added bonus the website also demonstrates how to create a webmap with any of the data sources as all the code; Javascript, HTML, CSS, is avialable under a Free and Open Source license directly from the site.
+	To understand why such a comparison is necessary one has to take into account that the creation of interactive cartographic products for the web requires a complex set of software collectively referred to as Spatial Data Infrastructure. Realizing just how much time it takes to learn and configure such an infrastructure makes it clear that it's much easier when a basic map is already provided for you; there is no need to learn projections, find data, or run a web server. However just because the foundation layers of the map are provided does not mean they are best suited to a given project and too often popularity is the deciding factor at a cost to quality. There are choices, Google is not the only map provider as visitors of many websites will note (a random selection of Store Locator tools on various business websites demonstrates this) there is a wide variety of tools in use. Generally the non-profit or casual user can freely move between systems but for businesses and organizations wanting to include maps this decision will impact their budgets through  licensing fees and IT staff time requirements. In the world of mashups this appears to result in a significant use of Google Maps, the first to release a free public Application Programming Interface(API) \parencite{Turner2006}, amongst neographers while many businesses have continued to use other products they had a previous relationship with.
+	  
+	  The Compare-A-Map tool intends to extend the discourse on cartography in the digital age along the trend set by such tools as ColorBrewer \parencite{Harrower2003}, Typebrewer \parencite{Sheesley2008}, Mapshaper \parencite{Bloch2006}, FlexProjector \parencite{Jenny2010} , etc. It is unique in that it's the first instance I know of to compare more than 2 map providers on the same page at the same time and intends to cover all of the major providers. As an added bonus the website also demonstrates how to create a webmap with any of the data sources as all the code; Javascript, HTML, CSS, is avialable under a Free and Open Source license directly from the site.
 	
-
-
-
 %Like Colorbrewer \parencite{Brewer2003}, Typebrewer\parencite{Sheeshley2008}, Cartography2.0, Mapshaper, etc. a tool to help cartographers (anyone who makes a map whether they have training in cartography). Allow a user to simultaneously compare the "base" maps available through the major API providers;  Google, Bing, Yahoo, Mapquest, OpenStreetMap.
 
 
 \subsection{Methods}
-Created a website using Openlayers toolkit (library) which should fit on a single screen for most computer users (dimensions?)
-5 Windows are available with:
-If you pan any of the windows the other move to match.
-There is a place based search tool to recenter the map, currently based on city,st as the reference dataset is not a full geocoder. Nominatim was picked partly because it's a unique data source with much more liberal licensing based on OpenStreetMap data.
-A zoom slider is provided, to change the zoom. It only goes between the zooms that all the providers share 1-15 (Google and some of the others go to 18 - finest detail)
+Compare-A-Map (\url{http://maps.ice.ucdavis.edu/compare-a-map}) is a website. A single webpage that shows 5 map providers side by side; Google, Bing, Yahoo, Mapquest(OpenStreetMap Data), and OpenStreetMap. It is built using Free and Open Source tools available to any web developer; Openlayers, HTML, CSS, JQuery and Apache HTTP.
 
-\url{http://maps.ice.ucdavis.edu/compare-a-map}
+Additional Features:
+\begin{itemize}
+\item The site is designed to fit on a single screen for most desktop, laptop, and netbook computer users in the world (1000x600 or less pixels).
+\item If you pan any of the windows the other move to match. (There's a bug in the Yahoo code right now so moving that window first does not work correctly)
+\item If you zoom in or out using the scroll wheel or the scroll toggle provided on screen all of the maps zoom together. It only goes between the zooms that all the providers share 1-15 (Google and some of the others go to 18 - finest detail). Zoom levels are approximately similar resolutions/map scale but are not identical between the providers.
+\item The maps can be re-centered using a place-name geocoder search box, which currently is only tested with City names and zip codes. Nominatim \parencite{Mapquest2012} was picked as the geocoding tool because it's a unique data source with much more liberal licensing based on OpenStreetMap data, the downside is that it does not fully support address level geocoding yet. 
+\end{itemize}
 
-Provide a short tutorial for users on the most effective way to use the tool.
 
-If you're going to make a web map the cartography does matter. Even though the data is similar betweeen the sources it's not the same and the fundamental cartography is different. 
-Fonts, colors, scale dependent labels, inclusion and exclusions of non-road features.
+Additional Planned Features:
+\begin{itemize}
+\item Provide a short tutorial for users on the most effective way to use the tool.
+\item Provide some example comparisons that demonstrate that even though the data is similar between the sources it's not the same and the fundamental cartography is different. This includes but is not limited to fonts, colors, scale dependent labels, inclusion and exclusions of non-road features.
+\item A similar one page comparison of aerial imagery and another of hybrid (aerial with road data over-layed).
+\item Provide a suggestion submission mechanism to take feedback and ideas from visitors.
+\item While the code running the site is currently accessible to people who know how websites work, it will be better to publish the code on a code sharing website for easier download.
+\end{itemize}
 
-I'd like to also do the same for aerial imagery, and hybrid maps. This doesn't cover geocoding but could, although several studies have been completed on that topic (cite) as the precision is much easier to compare numerically than the aesthetics of the cartography. A sub component which has been studied somewhat also is the accuracy of the road network data, but that too is highly variable depending on the service and where in the world you compare. Hence this tool does provide a means of also visually comparing.
+%This doesn't cover geocoding but could, although several studies have been completed on that topic (cite) as the precision is much easier to compare numerically than the aesthetics of the cartography. A sub component which has been studied somewhat also is the accuracy of the road network data, but that too is highly variable depending on the service and where in the world you compare. Hence this tool does provide a means of also visually comparing.
 
 %\printbibliography[section=2]
 %\section{Everday Cartography Tools}
