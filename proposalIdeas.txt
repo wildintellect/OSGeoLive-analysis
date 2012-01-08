@@ -4,6 +4,20 @@ that can impede access to and use of GIS and digital data by resource poor organ
 and social groups (Weiner et al. 1995, Sawicki and Craig 1996, Barndt 1998, Craig and
 Elwood 1998). 
 
+	For these groups, the most valuable function of GIS
+is not its spatial analysis capabilities, but the capacity to experiment with spatial repre-
+sentations and produce visual texts to support shifting portrayals of community space
+and needs. Other participatory GIS projects have illustrated how GIS may function as a
+conflict mediator in contentious community decision making, as groups examine different
+spatial scenarios and representations (Kyem 2004a). In this instance, the visualization
+capabilities of GIS are again central, along with the capacity to model multiple scenarios
+and outcomes. While some participatory GIS initiatives mirror other kinds of GIS applica-
+tions, there are many that are quite different and we need to continue to include these
+diverse applications in our efforts to unpack the full range of ways that GIS is used in
+the production of knowledge and power.
+
+
+
 ----
 Current State of Geospatial Science adoption?
 Significance of Free and Open Source software
