@@ -33,3 +33,14 @@ High technical skills/Everyone else
 
 Define the term Mashup - especially in the context of web maps.
  - The merging of 2 different data source on the web together in one page, by using the data directly from different sources at the same time.
+
+---------
+Crampton 2005
+	“insurrection of knowledges”  cartography is being undisciplined; that is, freed from the confines of the academic and opened up to the people
+	a mixture of
+“open source” collaborative tools, mobile mapping applications, and geotagging.
+
+Leszczynski
+Sieber 2006
+Sheppard 2005
+Harris 2005
