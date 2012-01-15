@@ -42,5 +42,22 @@ Crampton 2005
 
 Leszczynski
 Sieber 2006
+-----
 Sheppard 2005
+	Yet PPGIS that remains focused on off-the-shelf GIS software is always in danger of accommodating its research trajectory to
+that software. Of course, GIS software is continually
+evolving, as layer-based systems are supplemented by
+object-oriented approaches, software supporting collec-
+tive decision making is developed, and sketch-map
+supplements to mainstream software come onto the
+market. Each of these has the potential to enhance
+the capability of off-the-shelf software for PPGIS,
+although the accessibility of such innovations to grass-
+roots organizations remains in question and their impact
+on democratizing decision making requires research.
+
+
+----
 Harris 2005
+
+
