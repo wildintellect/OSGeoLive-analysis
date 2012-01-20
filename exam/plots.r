@@ -19,4 +19,4 @@ png(file="OSGeoByType.png", width=400, height=400, units="px")
 barplot(as.matrix(d2[,2:4]),beside=TRUE,ylim=c(0,5000),legend=c("VM","Mini","ISO"), args.legend=c(title="Type"))
 dev.off()
 
-con.close()
+dbDisconnect(con)
