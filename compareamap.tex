@@ -1,0 +1,69 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{setspace}
+\singlespace
+%\onehalfspace
+%\doublespace
+%\setlength{\parindent}{1cm}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\usepackage{color}
+\definecolor{titlegreen} {RGB}{110,145,60}
+\hypersetup{
+	%driver=pdftex,
+	colorlinks=true,
+	urlcolor=blue,
+	linkcolor=blue,          % color of internal links
+    citecolor=blue,        % color of links to bibliography
+    filecolor=magenta
+}
+\usepackage[sorting=nyt,natbib=true,citestyle=authoryear,bibstyle=authoryear,maxnames=3]{biblatex}
+\bibliography{proposal}
+\defbibheading{bibliography}{%
+	\section{References}
+	}
+	
+\begin{document}
+
+\section{Compare-a-Map}
+\subsection{Introduction}
+The majority of web-based interactive maps use one of the widely-available 3rd party cartographic products (e.g. Google, Mapquest, OpenStreetMap, etc.) as the base layer (more commonly referred to as a base map) for which to construct a map. Deciding which base map to use involves checking to ensure a chosen option adequately displays the features of interest and is visually complimentary with custom cartographic overlays.  Presented here is a multiple map comparison tool allowing web cartographers to compare side-by-side the majority of available maps along with more customizable options on a single web page. Panning and zooming is linked between the maps to ensure the accuracy of the comparison. Users can focus on comparing cartographic style and data availability as the multiple map tool handles the differences in application programming interfaces (API), projections, and geocoding.  Providing an easy comparison via the small multiple methodology should assist in the choosing \parencite{Tufte1990} of the most appropriate mix of base layers for the construction of a web map.
+%Maps/Map oriented interfaces are becoming more common in electronic form (cite) but the field of Cartography as historically practiced is considered by some to be dead (Wood?). Many people are getting into the business/recreation of making maps and most of this is online.
+
+	To understand why such a comparison is necessary one has to take into account that the creation of interactive cartographic products for the web requires a complex set of software collectively referred to as Spatial Data Infrastructure (SDI). Realizing just how much time it takes to learn and configure such an infrastructure makes it clear that it's much easier when a basic map is already provided for you; there is no need to learn projections, find data, or run a web server. However just because the foundation layers of the map are provided does not mean they are best suited to a given project and too often popularity is the deciding factor at a cost to quality. There are choices, Google is not the only map provider as visitors of many websites will note \footnote{A random selection of Store Location tools on various business websites demonstrates this point fairly well} there is a wide variety of tools in use. Generally the non-profit or casual user can freely move between systems but for businesses and organizations wanting to include maps this decision will impact their budgets through  licensing fees and IT staff time requirements. In the world of mash-ups this appears to result in a significant use of Google Maps, the first to release a free public Application Programming Interface(API) \parencite{Turner2006}, amongst neographers while many businesses have continued to use other products they had a previous relationship with or possibly due to better licensing terms.
+	  
+	  The Compare-A-Map tool intends to extend the discourse on cartography in the digital age along the trend set by such tools as ColorBrewer \parencite{Harrower2003}, Typebrewer \parencite{Sheesley2008}, Mapshaper \parencite{Bloch2006}, FlexProjector \parencite{Jenny2010} , etc. It is unique in that it's the first instance I know of to compare more than 2 map providers on the same page at the same time and intends to cover all of the major providers. As an added bonus the website also demonstrates how to create a webmap with any of the data sources as all the code; Javascript, HTML, CSS, is avialable under a free and open source license directly from the site.
+	
+%Like Colorbrewer \parencite{Brewer2003}, Typebrewer\parencite{Sheeshley2008}, Cartography2.0, Mapshaper, etc. a tool to help cartographers (anyone who makes a map whether they have training in cartography). Allow a user to simultaneously compare the "base" maps available through the major API providers;  Google, Bing, Yahoo, Mapquest, OpenStreetMap.
+
+
+\subsection{Methods}
+Compare-A-Map (\url{http://maps.ice.ucdavis.edu/compare-a-map}) is a website. A single webpage that shows 5 map providers side by side; Google, Bing, Yahoo, Mapquest(OpenStreetMap Data), and OpenStreetMap. It is built using Free and Open Source tools available to any web developer; Openlayers, HTML, CSS, JQuery and Apache HTTP.
+
+\subparagraph{Additional Features:}
+\begin{itemize}
+\item The site is designed to fit on a single screen for most desktop, laptop, and netbook computer users in the world (1000x600 or less pixels).
+\item If you pan any of the windows the others move to match. \footnote{There is a known bug in the Yahoo code right now so moving that window first does not work correctly}
+\item If you zoom in or out using the scroll wheel or the scroll toggle provided on screen all of the maps zoom together. It only goes between the zooms that all the providers share 1-15 (Google and some of the others go to 18 - finest detail). Zoom levels are approximately similar resolutions/map scale but are not identical between the providers.
+\item The maps can be re-centered using a place-name geocoder search box, which currently is only tested with City names and zip codes. Nominatim \parencite{Mapquest2012} was picked as the geocoding tool because it's a unique data source with much more liberal licensing based on OpenStreetMap data, the downside is that it does not fully support address level geocoding yet. 
+\end{itemize}
+
+
+\subparagraph{Additional Planned Features:}
+\begin{itemize}
+\item Provide a short tutorial for users on the most effective way to use the tool.
+\item Provide some example comparisons that demonstrate that even though the data is similar between the sources it's not the same and the fundamental cartography is different. This includes but is not limited to fonts, colors, scale dependent labels, inclusion and exclusions of non-road features.
+\item A similar one page comparison of aerial imagery and another of hybrid (aerial with road data over-layed).
+\item Provide a suggestion submission mechanism to take feedback and ideas from visitors.
+\item While the code running the site is currently accessible to people who know how websites work, it will be better to publish the code on a code sharing website for easier download.
+\item Clicking on the Title of a mini-map will take you to the same center point on the service provider's full screen home map.
+\end{itemize}
+
+%This doesn't cover geocoding but could, although several studies have been completed on that topic (cite) as the precision is much easier to compare numerically than the aesthetics of the cartography. A sub component which has been studied somewhat also is the accuracy of the road network data, but that too is highly variable depending on the service and where in the world you compare. Hence this tool does provide a means of also visually comparing.
+
+
+\printbibliography[heading=bibliography]
+
+\end{document}
