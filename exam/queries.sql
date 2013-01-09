@@ -11,3 +11,13 @@ Union
 SELECT "7z",sum(viewed),sum(entry),sum(exit) FROM osgeodowndata2011 WHERE file LIKE "%7z%"
 Union
 SELECT "fullsize",sum(viewed),sum(entry),sum(exit) FROM osgeodowndata2011 WHERE file NOT LIKE "%7z%" OR file NOT LIKE "%mini%";
+
+-- Sum downloads by country
+SELECT Countries,Code,sum(GB) as GB FROM bycountry2011
+GROUP BY Countries
+
+-- Join to shp
+SELECT ScaleRank, Geometry,Countries as Country, Code, (GB * 1.0) as GB ,People FROM "110m_admin_0_countries" JOIN (
+SELECT Countries,upper(Code) as Code,sum(GB) as GB FROM bycountry2011
+GROUP BY Countries) 
+ON SOVISO LIKE Code
