@@ -24,11 +24,11 @@
 \defbibheading{bibliography}{%
 	\section{References}
 	}
-	
+\title{Compare-a-Map}	
 \begin{document}
 
-\section{Compare-a-Map}
-\subsection{Introduction}
+
+\section{Introduction}
 The majority of web-based interactive maps use one of the widely-available 3rd party cartographic products (e.g. Google, Mapquest, OpenStreetMap, etc.) as the base layer (more commonly referred to as a base map) for which to construct a map. Deciding which base map to use involves checking to ensure a chosen option adequately displays the features of interest and is visually complimentary with custom cartographic overlays.  Presented here is a multiple map comparison tool allowing web cartographers to compare side-by-side the majority of available maps along with more customizable options on a single web page. Panning and zooming is linked between the maps to ensure the accuracy of the comparison. Users can focus on comparing cartographic style and data availability as the multiple map tool handles the differences in application programming interfaces (API), projections, and geocoding.  Providing an easy comparison via the small multiple methodology should assist in the choosing \parencite{Tufte1990} of the most appropriate mix of base layers for the construction of a web map.
 %Maps/Map oriented interfaces are becoming more common in electronic form (cite) but the field of Cartography as historically practiced is considered by some to be dead (Wood?). Many people are getting into the business/recreation of making maps and most of this is online.
 
@@ -39,30 +39,65 @@ The majority of web-based interactive maps use one of the widely-available 3rd p
 %Like Colorbrewer \parencite{Brewer2003}, Typebrewer\parencite{Sheeshley2008}, Cartography2.0, Mapshaper, etc. a tool to help cartographers (anyone who makes a map whether they have training in cartography). Allow a user to simultaneously compare the "base" maps available through the major API providers;  Google, Bing, Yahoo, Mapquest, OpenStreetMap.
 
 
-\subsection{Methods}
+\section{Methods}
 Compare-A-Map (\url{http://maps.ice.ucdavis.edu/compare-a-map}) is a website. A single webpage that shows 5 map providers side by side; Google, Bing, Yahoo, Mapquest(OpenStreetMap Data), and OpenStreetMap. It is built using Free and Open Source tools available to any web developer; Openlayers, HTML, CSS, JQuery and Apache HTTP.
 
-\subparagraph{Additional Features:}
+
+\section{How to use}
+All of the choices you'll make in the interface are based on the goal of the map you want to make.
+
 \begin{itemize}
-\item The site is designed to fit on a single screen for most desktop, laptop, and netbook computer users in the world (1000x600 or less pixels).
-\item If you pan any of the windows the others move to match. \footnote{There is a known bug in the Yahoo code right now so moving that window first does not work correctly}
-\item If you zoom in or out using the scroll wheel or the scroll toggle provided on screen all of the maps zoom together. It only goes between the zooms that all the providers share 1-15 (Google and some of the others go to 18 - finest detail). Zoom levels are approximately similar resolutions/map scale but are not identical between the providers.
-\item The maps can be re-centered using a place-name geocoder search box, which currently is only tested with City names and zip codes. Nominatim \parencite{Mapquest2012} was picked as the geocoding tool because it's a unique data source with much more liberal licensing based on OpenStreetMap data, the downside is that it does not fully support address level geocoding yet. 
+\item Pick what type you want to compare - Street, Satellite (aka AirPhoto), Terrain or OpenStreetMap.
+\item Optionally type in a place to recenter the map - City, State (Full addresses do not always work with the Nominatim backend)
+\item Optionally change the zoom level with the slider to show more detail or a wider area.
+\item Pan and zoom the maps as necessary to review the comparision you are interested in.
+\end{itemize}
+
+\subsection{What to Look For}
+\subsubsection{Street}
+Street view is the most common default on all the mapping services. It's often used as the base for navigation and reference to the built environment.
+
+\subsubsection{Satellite}
+This page compares aerial photography, while not always from Satellites thats what most of the map providers label it as. The key features to pay attention to on this page is the colors, seasonality, year, maximum resolution (how inches/meters per pixel).
+
+\subsubsection{Terrain}
+The definition of what makes a terrain map seems to vary the widest. Many of the providers don't provide a separate terrain map but put it into mid level regional zooms. The most commonly shared feature is hillshading effects, and color tones that reflect nature over the urban environment. Thing to compare include color scheme, presence/absence of contour lines, and labelling of National Forest, National Parks, etc.
+
+\subsubsection{OpenStreetMap}
+This genre highlights what is possible when you build your own basemap with available data. Interesting features of OpenStreetMap include the focus on footpaths, cycle paths, trails and other non car oriented features. It also boasts really good data in unexpected places where commerical providers haven't had enough financial incentive to create or provide data.
+
+
+
+
+\subsection{Additional Features:}
+\begin{itemize}
+	\item The site is designed to fit on a single screen for most desktop, laptop, and netbook computer users in the world (1000x600 or less pixels).
+	\item If you pan any of the windows the others move to match. \footnote{There is a known bug in the Yahoo code right now so moving that window does not work correctly}
+	\item If you zoom in or out using the scroll wheel or the scroll toggle provided on screen all of the maps zoom together. It only goes between the zooms that all the providers share 1-15 (Google and some of the others go to 18 - finest detail). Zoom levels are approximately similar resolutions/map scale but are not identical between the providers.
+	\item The maps can be re-centered using a place-name geocoder search box, which currently is only tested with City names and zip codes. Nominatim 	\parencite{Mapquest2012} was picked as the geocoding tool because it's a unique data source with much more liberal licensing based on OpenStreetMap data, the downside is that it does not fully support address level geocoding yet. 
 \end{itemize}
 
 
 \subparagraph{Additional Planned Features:}
 \begin{itemize}
-\item Provide a short tutorial for users on the most effective way to use the tool.
-\item Provide some example comparisons that demonstrate that even though the data is similar between the sources it's not the same and the fundamental cartography is different. This includes but is not limited to fonts, colors, scale dependent labels, inclusion and exclusions of non-road features.
-\item A similar one page comparison of aerial imagery and another of hybrid (aerial with road data over-layed).
-\item Provide a suggestion submission mechanism to take feedback and ideas from visitors.
-\item While the code running the site is currently accessible to people who know how websites work, it will be better to publish the code on a code sharing website for easier download.
-\item Clicking on the Title of a mini-map will take you to the same center point on the service provider's full screen home map.
+	\item Provide a short tutorial for users on the most effective way to use the tool.
+	\item Provide some example comparisons that demonstrate that even though the data is similar between the sources it's not the same and the fundamental cartography is different. This includes but is not limited to fonts, colors, scale dependent labels, inclusion and exclusions of non-road features.
+	\item A similar one page comparison of aerial imagery and another of hybrid (aerial with road data over-layed).
+	\item Provide a suggestion submission mechanism to take feedback and ideas from visitors.
+	\item While the code running the site is currently accessible to people who know how websites work, it will be better to publish the code on a code sharing website for easier download.
+	\item Clicking on the Title of a mini-map will take you to the same center point on the service provider's full screen home map.
 \end{itemize}
 
 %This doesn't cover geocoding but could, although several studies have been completed on that topic (cite) as the precision is much easier to compare numerically than the aesthetics of the cartography. A sub component which has been studied somewhat also is the accuracy of the road network data, but that too is highly variable depending on the service and where in the world you compare. Hence this tool does provide a means of also visually comparing.
 
+
+\section{Conclusion}
+\subsection{Future}
+\begin{itemize}
+	\item Geocode compare (ref ucla or was it usc work)
+	\item License compare
+	\item to see more visit the project code repository on github
+\end{itemize}
 
 \printbibliography[heading=bibliography]
 
