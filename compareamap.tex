@@ -24,9 +24,13 @@
 \defbibheading{bibliography}{%
 	\section{References}
 	}
-\title{Compare-a-Map}	
-\begin{document}
 
+\title{Compare-a-Map}
+\author{Alex Mandel}
+	
+\begin{document}
+\maketitle
+\tableofcontents
 
 \section{Introduction}
 The majority of web-based interactive maps use one of the widely-available 3rd party cartographic products (e.g. Google, Mapquest, OpenStreetMap, etc.) as the base layer (more commonly referred to as a base map) for which to construct a map. Deciding which base map to use involves checking to ensure a chosen option adequately displays the features of interest and is visually complimentary with custom cartographic overlays.  Presented here is a multiple map comparison tool allowing web cartographers to compare side-by-side the majority of available maps along with more customizable options on a single web page. Panning and zooming is linked between the maps to ensure the accuracy of the comparison. Users can focus on comparing cartographic style and data availability as the multiple map tool handles the differences in application programming interfaces (API), projections, and geocoding.  Providing an easy comparison via the small multiple methodology should assist in the choosing \parencite{Tufte1990} of the most appropriate mix of base layers for the construction of a web map.
@@ -40,31 +44,42 @@ The majority of web-based interactive maps use one of the widely-available 3rd p
 
 
 \section{Methods}
-Compare-A-Map (\url{http://maps.ice.ucdavis.edu/compare-a-map}) is a website. A single webpage that shows 5 map providers side by side; Google, Bing, Yahoo, Mapquest(OpenStreetMap Data), and OpenStreetMap. It is built using Free and Open Source tools available to any web developer; Openlayers, HTML, CSS, JQuery and Apache HTTP.
+Compare-A-Map (\url{http://maps.ice.ucdavis.edu/compare-a-map}) is a website. A single webpage that shows 5 map providers side by side;
+% fix
+Google, Bing, Yahoo, Mapquest(OpenStreetMap Data), and OpenStreetMap. It is built using Free and Open Source tools available to any web developer; Openlayers, HTML, CSS, JQuery and Apache HTTP.
 
+There are several ways to use such a tool, to see what data exists for your neighborhood, explore some interesting place, or to find the right starting point for you to use as a canvas on which to construct your own map. This paper focuses on using Compare-A-Map to evaluate and choose an appropriate basemap to use in a webmap you want to construct.
 
 \section{How to use}
 All of the choices you'll make in the interface are based on the goal of the map you want to make.
 
-\begin{itemize}
-\item Pick what type you want to compare - Street, Satellite (aka AirPhoto), Terrain or OpenStreetMap.
-\item Optionally type in a place to recenter the map - City, State (Full addresses do not always work with the Nominatim backend)
+\subsection{Basic Usage}
+\begin{enumerate}
+\item Pick what map type you want to compare - Street, Satellite (aka AirPhoto), Terrain or OpenStreetMap.
+\item Optionally type in a place to recenter the map - City, State (Full addresses do not always work with the Nominatim backend) %Cite Nominatim
 \item Optionally change the zoom level with the slider to show more detail or a wider area.
-\item Pan and zoom the maps as necessary to review the comparision you are interested in.
-\end{itemize}
+\item Pan and zoom the maps as necessary to review the comparison you are interested in.
+\end{enumerate}
+
+\subsection{Basic Questions}
+These are generic questions to ask yourself when critiquing each basemap for it's suitability in the end map you envision creating.
+\item Is there data for the area of interest?
+\item Is the data from an appropriate time period?
+\item Are points of interest and landmarks your end users would recognize in the map and easily discrenable?
+\item Will the basemap conflict with your overlay data you plan to add? This could be because there is too much information on the page, or the color palette is too similar, too different, or doesn't leave you any options for colors not already in use.
 
 \subsection{What to Look For}
 \subsubsection{Street}
-Street view is the most common default on all the mapping services. It's often used as the base for navigation and reference to the built environment.
+Street view is the most common default on all the mapping services. It's often used as the base for navigation and reference to the built environment. The most obvious difference will be the color selection, typography and type placement. More subtle differences include data availability (which includes selective data inclusion and lack of data), data quality, place and street name differences.  
 
 \subsubsection{Satellite}
-This page compares aerial photography, while not always from Satellites thats what most of the map providers label it as. The key features to pay attention to on this page is the colors, seasonality, year, maximum resolution (how inches/meters per pixel).
+This page compares aerial photography, while not always from Satellites that is what most of the map providers label it as. The key features to pay attention to on this page is the colors, seasonality, year, maximum resolution (how many inches/meters per pixel when zoomed in as close as possible).
 
 \subsubsection{Terrain}
-The definition of what makes a terrain map seems to vary the widest. Many of the providers don't provide a separate terrain map but put it into mid level regional zooms. The most commonly shared feature is hillshading effects, and color tones that reflect nature over the urban environment. Thing to compare include color scheme, presence/absence of contour lines, and labelling of National Forest, National Parks, etc.
+The definition of what makes a terrain map seems to vary the widest. Many of the providers don't provide a separate terrain map but put it into mid level regional zooms of their Street layer. The most commonly shared feature is hill-shading effects, and color tones that reflect nature over the urban environment. Things to compare include color scheme, presence/absence of contour lines, and labeling of National Forest, National Parks, and other significant natural resources.
 
 \subsubsection{OpenStreetMap}
-This genre highlights what is possible when you build your own basemap with available data. Interesting features of OpenStreetMap include the focus on footpaths, cycle paths, trails and other non car oriented features. It also boasts really good data in unexpected places where commerical providers haven't had enough financial incentive to create or provide data.
+This genre highlights what is possible when you build your own basemap with available data. In this case OpenStreetMap data is licensed in such a way that it is free to everyone. The only requirement of usage is proper attribution to the data source. Interesting features of OpenStreetMap include the focus on footpaths, cycle paths, trails and other non auto oriented features. It also boasts really good data in unexpected places where commercial providers haven't had enough financial incentive to create or provide data.
 
 
 
