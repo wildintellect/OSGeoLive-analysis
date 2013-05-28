@@ -72,16 +72,24 @@ These are generic questions to ask yourself when critiquing each basemap for it'
 
 \subsection{What to Look For}
 \subsubsection{Street}
-Street view is the most common default on all the mapping services. It's often used as the base for navigation and reference to the built environment. The most obvious difference will be the color selection, typography and type placement. More subtle differences include data availability (which includes selective data inclusion and lack of data), data quality, place and street name differences.  
+Street view is the most common default on all the mapping services. It's often used as the base for navigation and reference to the built environment. The most obvious difference will be the color selection, typography and type placement. More subtle differences include data availability (which includes selective data inclusion and lack of data), data quality, place and street name differences.
+
+Common usage examples using the "Street" type include road atlas, driving directions, navigation via GPS or Smartphone, infrastructure  
+
 
 \subsubsection{Satellite}
-This page compares aerial photography, while not always from Satellites that is what most of the map providers label it as. The key features to pay attention to on this page is the colors, seasonality, year, maximum resolution (how many inches/meters per pixel when zoomed in as close as possible).
+This page compares aerial photography, while not always from Satellites that is what most of the map providers label it as. Photography tends to provide better context to what a place actually looks like than other forms of basemaps, highlighting vegetation and land uses well. The key features to pay attention to on this page is the colors, seasonality, year, maximum resolution (how many inches/meters per pixel when zoomed in as close as possible).
+
 
 \subsubsection{Terrain}
-The definition of what makes a terrain map seems to vary the widest. Many of the providers don't provide a separate terrain map but put it into mid level regional zooms of their Street layer. The most commonly shared feature is hill-shading effects, and color tones that reflect nature over the urban environment. Things to compare include color scheme, presence/absence of contour lines, and labeling of National Forest, National Parks, and other significant natural resources.
+The definition of what makes a terrain map seems to vary the widest. The highlight of most terrain maps is the physically topography (elevation), which makes hills, mountains, valleys and other land forms more recognizable. Many of the providers don't provide a separate terrain map but insert terrain features into mid level regional zooms of their "Street" layer. The most commonly shared feature is hill-shading effects, and color tones that reflect nature over the urban environment. Things to compare include color scheme, presence/absence of contour lines, and labeling of National Forest, National Parks, and other significant natural resources.
 
 \subsubsection{OpenStreetMap}
-This genre highlights what is possible when you build your own basemap with available data. In this case OpenStreetMap data is licensed in such a way that it is free to everyone. The only requirement of usage is proper attribution to the data source. Interesting features of OpenStreetMap include the focus on footpaths, cycle paths, trails and other non auto oriented features. It also boasts really good data in unexpected places where commercial providers haven't had enough financial incentive to create or provide data.
+This genre highlights what is possible when you build your own basemap with available data. In this case OpenStreetMap data is licensed in such a way that it is free to everyone. The only requirement of usage is proper attribution to the data source. Interesting features of OpenStreetMap include the focus on footpaths, cycle paths, trails and other non-automotive oriented features. It also boasts good data in some places where commercial providers haven't had enough financial incentive to create or provide data.
+
+This page of Compare-A-Map demonstrates that mulitple basemap types can be constructed from the same dataset
+
+
 
 
 
@@ -108,10 +116,15 @@ This genre highlights what is possible when you build your own basemap with avai
 %This doesn't cover geocoding but could, although several studies have been completed on that topic (cite-UCLA?or USC?) as the precision is much easier to compare numerically than the aesthetics of the cartography. A sub component which has been studied somewhat also is the accuracy of the road network data, but that too is highly variable depending on the service and where in the world you compare. Hence this tool does provide a means of also visually comparing.
 
 
+\section{Discussion}
+What works, what doesn't (for a basemap)
+
+%Anecdote: First thing people seem to always do is zoom to their house (or place they know well and spend a lot time). 2nd thing is to proclaim that map X is wrong, either missing data, incorrectly labelled, etc...
+
 \section{Conclusion}
 \subsection{Future}
 \begin{itemize}
-	\item Geocode compare (ref ucla or was it usc work)
+	\item Geocode compare (ref usc work: Goldberg)
 	\item License compare
 	\item to see more visit the project code repository on github
 \end{itemize}
