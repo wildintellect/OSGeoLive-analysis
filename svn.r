@@ -22,7 +22,8 @@ barplot(sizes,col=c("blue","lightblue","orange"),beside=TRUE, names.arg=d4$versi
 dev.off()
 
 #plot together
-png(file="OSGeoCommitters.png", width=400, height=400, units="px")
+# Todo: add number of applications and number of languages as axis or marks
+png(file="OSGeoLiveCommitters.png", width=400, height=400, units="px")
 xrange <- c(0,max(d4$rev))
 yrange <- c(0,100)
 colors <- c("blue","orange")
