@@ -9,28 +9,32 @@
 
 function history_of_file() {
     url=$1 # current url of file
-    svn log -q $url | grep -E -e "^r[[:digit:]]+" -o | cut -c2- | sort -n | {
+    svn log -r $revStart:$revEnd -q $url$revEnd | grep -E -e "^r[[:digit:]]+" -o | cut -c2- | sort -n | {
+    #svn log -q $url | grep -E -e "^r[[:digit:]]+" -o | cut -c2- | sort -n | {
 
 #       first revision as full text
         echo $r
         read r
-        #svn log -r$r $url@HEAD >> replay/$url-timestamps.txt
-        svn cat -r$r $url@HEAD > replay/$r$url
+        #svn log -r$r $url$revEnd >> replay/$url-timestamps.txt
+        svn cat -r$r $url$revEnd > replay/$r-$url
         #echo
 
 #       remaining revisions as differences to previous revision
         while read r
         do
             echo $r
-            #svn log -r$r $url@HEAD >> replay/$url-timestamps.txt
+            #svn log -r$r $url$revEnd >> replay/$url-timestamps.txt
 #           svn diff -c$r $url@HEAD
-	        svn cat -r$r $url@HEAD > replay/$r$url 
+	        svn cat -r$r $url$url$revEnd > replay/$r-$url 
             #echo
         done
     }
 }
 
+revStart=$2
+# TODO: if not arg 3 use @HEAD
+revEnd=@$3
 history_of_file $1
 
-#Get all revisions for a timeline
+#Get list of all revision timestamps
 svn log -q > replay/svn-revisions.txt
