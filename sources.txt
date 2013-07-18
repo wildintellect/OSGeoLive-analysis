@@ -1,0 +1,10 @@
+Sources:
+
+Release dates based on Tags
+https://trac.osgeo.org/osgeo/browser/livedvd/gisvm/tags
+
+File size printouts, sourceforge
+
+
+osgeodown2011
+http://downloads.ice.ucdavis.edu/stats/awstats.pl?month=all&year=2011&output=main&config=downloads.ice.ucdavis.edu&framename=index
