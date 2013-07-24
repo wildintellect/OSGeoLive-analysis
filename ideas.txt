@@ -1,0 +1,3 @@
+Map Internet speed to language group by primary language of countries?
+Compare distribution and growth of contributors to Internet access (defined by speed and percent of population with access)
+Compare distribution of downloads to distribution of Contributors/Translators to Internet access
