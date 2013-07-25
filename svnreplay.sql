@@ -42,50 +42,39 @@ UPDATE contributors SET country = "Netherlands" WHERE country LIKE "The Netherla
 
 --
 -- Clean-up of translators
-SELECT DISTINCT(trim(country)) FROM translators;
+SELECT DISTINCT(country) FROM translators;
 SELECT country, Count(DISTINCT(name)) as people FROM translators GROUP BY country;
+--only the current rev, as names have changed slight each version
+SELECT country, Count(DISTINCT(name)) as people FROM translators  WHERE rev = (SELECT max(rev) FROM translators) GROUP BY country;
 
 UPDATE translators SET country = trim(country);
-
---Check by hand
-"???"
 
 --Spelling
 "Itally" --fix language too "Italilan"
 UPDATE translators SET country="Italy",language="Italian" WHERE country = "Itally" OR language = "Italilan"; 
  
 --Part of peoples names
-"Sanchez"
-"Sanz"
-"Di Stefano"
-"Puppin"
-"Kastl"
+UPDATE translators SET country=email,name = (name || country),email = osgeo_id WHERE country IN ("Sanchez","Sanz","Di Stefano","Puppin","Kastl") ;
 
 --Last names of Japanese people
-"Seki"
-"Iwasaki"
-"Kayama"
+UPDATE translators SET country="Japan",name = (name || country),email = osgeo_id WHERE country IN ("Seki","Iwasaki","Kayama") ;
 
 -- move to email
 SELECT country FROM translators WHERE country LIKE "%com" or country LIKE "%.ru" ;
 
 UPDATE translators SET email = country,country = "Russia" WHERE country LIKE "%.ru" ; 
-"lucadeluge gmail com"
-"estela.llorente gmail com"
-"amuriy gmail.com"
-"voltron ua.fm"
 "ardjakov rambler.ru" --russia
-"signmotion gmail.com"
 "novi-mail mail.ru" --russia
-"d.svidzinska gmail.com"
-"rykovd gmail.com"
 "polimax mail.ru" --russia
-"nikulin.e gmail.com"
 "filip83pov yandex.ru" --russia
 "grozhentsov gispro.ru" --russia
-"sim gis-lab.info"
-"Nadiia.gorash gmail.com"
-"pashtet51 gmail.com"
 "ergo list.ru" --russia
 "avk_h mail.ru" --russia
-"kuzkok gmail.com"
+
+SELECT * FROM translators WHERE country IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
+SELECT country FROM translators WHERE email IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
+UPDATE translators SET country = (SELECT b.country FROM translators as b WHERE translators.country = b.email LIMIT 1) WHERE translators.country IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
+
+--Check by hand
+"???"
+UPDATE translators SET country = "Spain" WHERE name = "Estela Llorente" ;
