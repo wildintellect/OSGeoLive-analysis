@@ -28,12 +28,18 @@ UPDATE contributors SET country="Australia" ,email="<Cameron.Shorter lisasoft co
 UPDATE contributors SET country="Australia" ,email="<stefan.hansen lisasoft com>" WHERE country LIKE "<stefan.hansen lisasoft com>" ;
 UPDATE contributors SET country="USA" ,osgeo_id="darkblue_b" WHERE country LIKE "darkblue_b" ;
 UPDATE contributors SET country="Australia" ,osgeo_id="jive" WHERE country LIKE "jive" ;
+-- Based on email he's clearly from the UK
 UPDATE contributors SET country="UK" ,osgeo_id="guygriffiths" WHERE country LIKE "guygriffiths" ;
+-- Was in the US at start of contribution
 UPDATE contributors SET osgeo_id="ianturton" ,country = "USA" WHERE country Like "ianturton" ;
 UPDATE contributores SET country = "USA" WHERE osgeo_id Like "ianturton" and country LIKE "?" ;
 UPDATE contributors SET country = "Japan" WHERE osgeo_id LIKE "anton" ;
 UPDATE contributors SET country = "Australia" WHERE name LIKE "Jackie Ng" AND country LIKE "";
 UPDATE contributors SET name="Argyros Argyridis",email="arargyridis gmail com",country="Greece",osgeo_id="arargyridis" WHERE country LIKE "" AND email LIKE "%arargyridis%";
+-- Stefan Stieniger was in Canada at start of contribution
+UPDATE contributors SET country = "Canada" WHERE osgeo_id LIKE "mentaer"; 
+
+
 
 -- Standardize country names to match natural earth
 UPDATE contributors SET country = "United States" WHERE country LIKE "USA" ;
@@ -75,6 +81,6 @@ SELECT * FROM translators WHERE country IN ("signmotion gmail.com","d.svidzinska
 SELECT country FROM translators WHERE email IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
 UPDATE translators SET country = (SELECT b.country FROM translators as b WHERE translators.country = b.email LIMIT 1) WHERE translators.country IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
 
---Check by hand
-"???"
+--Check by hand "???"
 UPDATE translators SET country = "Spain" WHERE name = "Estela Llorente" ;
+
