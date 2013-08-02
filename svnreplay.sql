@@ -20,6 +20,8 @@ CREATE TABLE if not Exists release
 -- Trim empty space
 SELECT DISTINCT(trim(country)) FROM contributors;
 SELECT country, Count(DISTINCT(name)) as people FROM contributors GROUP BY country;
+--only the current rev, as names have changed slight each version
+SELECT country, Count(DISTINCT(name)) as people FROM contributors  WHERE rev = (SELECT max(rev) FROM contributors) GROUP BY country;
 UPDATE contributors SET country = trim(country);
 
 -- Move names to osgeo_id, or flip email with country, or add missing 
@@ -74,7 +76,11 @@ UPDATE translators SET email = country,country = "Russia" WHERE country LIKE "%.
 SELECT * FROM translators WHERE country IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
 SELECT country FROM translators WHERE email IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
 UPDATE translators SET country = (SELECT b.country FROM translators as b WHERE translators.country = b.email LIMIT 1) WHERE translators.country IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
+UPDATE translators SET country = "Russia" WHERE name="Vera" AND country="";
 
 --Check by hand
 "???"
 UPDATE translators SET country = "Spain" WHERE name = "Estela Llorente" ;
+
+-- Standardize country names to match natural earth
+UPDATE translators SET country = "United Kingdom" WHERE country LIKE "UK" ;
