@@ -39,7 +39,9 @@ UPDATE contributors SET country = "Japan" WHERE osgeo_id LIKE "anton" ;
 UPDATE contributors SET country = "Australia" WHERE name LIKE "Jackie Ng" AND country LIKE "";
 UPDATE contributors SET name="Argyros Argyridis",email="arargyridis gmail com",country="Greece",osgeo_id="arargyridis" WHERE country LIKE "" AND email LIKE "%arargyridis%";
 -- Stefan Stieniger was in Canada at start of contribution
-UPDATE contributors SET country = "Canada" WHERE osgeo_id LIKE "mentaer"; 
+UPDATE contributors SET country = "Canada" WHERE osgeo_id LIKE "mentaer";
+-- Klokan lives/works in switzerland
+UPDATE contributors SET country = "Switzerland" WHERE osgeo_id LIKE "klokan";
 
 
 
