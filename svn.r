@@ -34,5 +34,16 @@ axis(3,at=d4$rev,labels=d4$version, las=2)
 legend("topleft",legend=c("Contributors","Translators"),fill=colors)
 dev.off()
 
+# By date to space out the releases better for plotting along side other data
+png(file="OSGeoLiveCommittersByDate.png", width=400, height=400, units="px")
+xrange <- c(min(as.POSIXct(d4$time)),max(as.POSIXct(d4$time)))
+yrange <- c(0,100)
+colors <- c("blue","orange")
+plot(xrange,yrange,type="n",xlab="SVN Revision Number",ylab="Count")
+lines(as.POSIXct(contrib$time),contrib$count,col=colors[1])
+lines(as.POSIXct(trans$time),trans$count,col=colors[2])
+axis(3,at=as.POSIXct(d4$time),labels=d4$version, las=2)
+legend("topleft",legend=c("Contributors","Translators"),fill=colors)
+dev.off()
 
 dbDisconnect(con)
