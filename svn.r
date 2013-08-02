@@ -6,6 +6,7 @@ start <- function(){
     return(con)
 }
 
+#Variable scope isn't right so this function is useless for now
 dataloading <- function(con){
     q1 <- "SELECT c.rev, COUNT(name) as count,time FROM contributors as c, svnversion as v WHERE c.rev = v.rev GROUP BY c.rev"
     contrib <- dbGetQuery(con,q1)
@@ -48,6 +49,14 @@ ReleaseSizes <- function(con){
     colors <- c("blue","lightblue","orange")
     barplot(sizes,col=colors,beside=TRUE, names.arg=d4  $version,ylim=c(0,6),ylab="Size in GB",xlab="Release Number")
 legend("topleft",legend=c("iso","mini","vm"),fill=colors,horiz=TRUE)
+}
+
+DownloadPlot <- function(con){
+    q3 <- "SELECT version,type,(sum(viewed)) as downloads FROM osgeodowndata2011 GROUP BY version, type"
+    d5 <- dbGetQuery(con,q3)
+    temp <- cast(d5,version~type)
+    barplot(rbind(temp[,2],temp[,3],temp[,4]))
+
 }
 
 end <- function(con){dbDisconnect(con)}

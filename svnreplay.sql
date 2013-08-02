@@ -14,6 +14,19 @@ CREATE TABLE if not Exists release
   vm REAL,
 );
 
+-- Sort download numbers for plotting
+-- clean version numbers
+SELECT ltrim(ltrim(rtrim(rtrim(rtrim(rtrim(file,".iso"),".7z"),"-min"),".1"),"osgeo-live"),"mini-") FROM osgeodowndata2011
+UPDATE osgeodowndata2011 SET version =  ltrim(ltrim(rtrim(rtrim(rtrim(rtrim(file,".iso"),".7z"),"-min"),".1"),"osgeo-live"),"mini-")  WHERE version !=3 OR version IS NULL;
+-- set type
+UPDATE osgeodowndata2011 SET type="mini" WHERE file LIKE "%mini%";
+UPDATE osgeodowndata2011 SET type="full" WHERE file NOT LIKE "%mini%" AND file LIKE "%iso";
+UPDATE osgeodowndata2011 SET type="vm" WHERE file LIKE "%7z";
+
+-- select data for plot
+SELECT version,type,(sum(viewed)) as downloads FROM osgeodowndata2011 GROUP BY version, type
+
+
 --
 -- Clean-up of contributors
 
