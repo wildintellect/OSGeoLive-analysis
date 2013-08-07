@@ -49,7 +49,7 @@ ReleaseSizes <- function(con,colors){
     nwidths = unlist(lapply(widths, rep,times=3 ))/3
     #plotting
     #colors <- c(gray(0.1),"lightgray","white")
-    barplot(sizes,beside=TRUE, names.arg=d4  $version,ylim=c(0,6),ylab="Size in GB",xlab="Release Number",col=colors)
+    barplot(sizes,beside=TRUE, names.arg=d4  $version,ylim=c(0,6),ylab="Size in GB",xlab="Release Number",col=colors,space=c(0,.75))
     legend("topleft",legend=c("iso","mini","vm"),fill=colors,horiz=TRUE)
 }
 
@@ -87,7 +87,8 @@ separatePlot <- function(con){
 #plot together
 # 2 Plots stacked
 stackPlot <- function(con){
-    png(file="OSGeoLiveInfographic.png", width=400,height=600, units="px")
+    #Todo, export pdf of svg for better quality
+    png(file="OSGeoLiveInfographic.png", width=400,height=800, units="px")
     par(mfrow=c(3,1))
     colors <- c(gray(0.2),gray(0.5),gray(0.8))
     ReleaseSizes(con,colors)
