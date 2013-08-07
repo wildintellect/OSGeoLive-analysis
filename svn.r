@@ -41,21 +41,30 @@ CommittersByDate <- function(con){
     legend("topleft",legend=c   ("Contributors","Translators"),fill=colors)
 }
 
-ReleaseSizes <- function(con){
+ReleaseSizes <- function(con,colors){
     d4 <- dbReadTable(con,"release")
     sizes <- rbind(as.numeric(d4$iso),as.numeric(d4$mini),as.numeric(d4$vm))
+    #get time widths of each release
     widths <- diff(c(as.Date(d4$time), max(as.Date(d4$time)+100)))
     nwidths = unlist(lapply(widths, rep,times=3 ))/3
-    colors <- c("blue","lightblue","orange")
-    barplot(sizes,col=colors,beside=TRUE, names.arg=d4  $version,ylim=c(0,6),ylab="Size in GB",xlab="Release Number")
-legend("topleft",legend=c("iso","mini","vm"),fill=colors,horiz=TRUE)
+    #plotting
+    #colors <- c(gray(0.1),"lightgray","white")
+    barplot(sizes,beside=TRUE, names.arg=d4  $version,ylim=c(0,6),ylab="Size in GB",xlab="Release Number",col=colors)
+    legend("topleft",legend=c("iso","mini","vm"),fill=colors,horiz=TRUE)
 }
 
-DownloadPlot <- function(con){
+DownloadPlot <- function(con,colors){
+    require(reshape)
     q3 <- "SELECT version,type,(sum(viewed)) as downloads FROM osgeodowndata2011 GROUP BY version, type"
     d5 <- dbGetQuery(con,q3)
+    #get the widths of each release
+    d4 <- dbReadTable(con,"release")
+    widths <- diff(c(as.Date(d4$time), max(as.Date(d4$time)+100)))
+    #nwidths = unlist(widths)
+    #reshape data for plotting
     temp <- cast(d5,version~type)
-    barplot(rbind(temp[,2],temp[,3],temp[,4]))
+    barplot(rbind(temp[,2],temp[,3],temp[,4]),ylim=c(0,6000),names.arg=temp$version, col=colors,width=as.vector(widths),space=.15,ylab="Number of Downloads",xlab="Release Number")
+    legend("topleft",legend=c("iso","mini","vm"),fill=colors,horiz=TRUE)
 
 }
 
@@ -79,8 +88,10 @@ separatePlot <- function(con){
 # 2 Plots stacked
 stackPlot <- function(con){
     png(file="OSGeoLiveInfographic.png", width=400,height=600, units="px")
-    par(mfrow=c(2,1))
-    ReleaseSizes(con)
+    par(mfrow=c(3,1))
+    colors <- c(gray(0.2),gray(0.5),gray(0.8))
+    ReleaseSizes(con,colors)
+    DownloadPlot(con,colors)
     CommittersByDate(con)
     dev.off()
 }
