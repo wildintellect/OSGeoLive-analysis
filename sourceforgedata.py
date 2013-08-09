@@ -39,7 +39,28 @@ def tables(connection):
         '''
     connection.execute(sourceforgebymonth)
     
+    #Cheat, only count Windows, Mac, Linux, All others
+    cleardata= '''DROP TABLE if exists sfosbycountry'''
+    connection.execute(cleardata)
+    sourceforgeosbycountry = '''CREATE TABLE if not exists sfosbycountry
+        (version DOUBLE,
+        type TEXT,
+        country TEXT,
+        win INTEGER,
+        mac INTEGER,
+        lin INTEGER,
+        other INTEGER,
+        lastupdate TIMESTAMP
+        )
+        '''
+    connection.execute(sourceforgeosbycountry)
+    
     connection.commit()
+    return
+
+def tableOsByCountry(oses):
+    '''idea to dynamically add fields to table if a new OS pops up in the data'''
+    # Too difficult
     return
 
 def fetchData(connection):
@@ -85,21 +106,38 @@ def fetchData(connection):
             #call the data import
             importCountries([tuple([version[0],file[1]]+item+[version[1],version[2],jsondata['stats_updated']]) for item in jsondata['countries']],connection)
             importByMonth([tuple([version[0],file[1]]+item+[jsondata['stats_updated']]) for item in jsondata['downloads']],connection)
-            #importByOs()
+            #get list of countries
+            #jsondbyc = jsondata['oses_by_country']
+            prepdata = []
+            for item in jsondata['oses_by_country'].keys():
+                #for each country get Win, Lin, Mac and Other as sum
+                win = jsondata['oses_by_country'][item].pop("Windows",0)
+                mac = jsondata['oses_by_country'][item].pop("Macintosh",0)
+                lin = jsondata['oses_by_country'][item].pop("Linux",0)
+                other = sum(jsondata['oses_by_country'][item].values())
+                prepdata.append(tuple([version[0],file[1],item,win,mac,lin,other,jsondata['stats_updated']]))
+            importOS(prepdata,connection)
     return
     
 
 def importCountries(data,connection):
     '''import json data into database table'''
-    # Todo if data exists clear records and update with newer data, based on newest date?
+    # TODO: if data exists clear records and update with newer data, based on newest date?
     connection.executemany("INSERT INTO sfcountries VALUES(?,?,?,?,?,?,?)",data)
     connection.commit()
     return    
 
 def importByMonth(data,connection):
     '''import json data into database table'''
-    # Todo if data exists clear records and update with newer data, based on newest date?
+    # TODO: if data exists clear records and update with newer data, based on newest date?
     connection.executemany("INSERT INTO sfbymonth VALUES(?,?,?,?,?)",data)
+    connection.commit()
+    return
+
+def importOS(data,connection):
+    '''import json data into database table'''
+    # TODO: if data exists clear records and update with newer data, based on newest date?
+    connection.executemany("INSERT INTO sfosbycountry VALUES(?,?,?,?,?,?,?,?)",data)
     connection.commit()
     return  
 
