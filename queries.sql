@@ -45,4 +45,43 @@ SELECT a.country,a.downloads,b.geometry FROM
     JOIN mapcountries as b 
     ON country = name_long
 
+--
 -- Now to map contributors and translators
+--
+
+-- Higher the count the longer+more people from a given country
+SELECT country, count(a.name) as count 
+FROM contributors as a 
+LEFT JOIN ne_10m_admin_0_countries as b
+ON country = b.name
+GROUP BY country;   
+
+--True count
+SELECT country, count(distinct(a.name)) as count 
+FROM contributors as a 
+LEFT JOIN ne_10m_admin_0_countries as b
+ON country = b.name
+GROUP BY country;
+
+--Join with map data
+-- Join the rev dates first
+SELECT country, name, a.rev, time 
+FROM contributors as a,svnversion as b
+WHERE a.rev = b.rev;
+
+--Check that countries match
+SELECT country, a.name,b.geometry 
+FROM contributors as a 
+LEFT JOIN ne_10m_admin_0_countries as b
+ON country = b.name
+GROUP BY country;
+
+SELECT a.rev,country,a.count,a.time,b.geometry  
+FROM (SELECT country, a.rev,count(distinct(name)) as count, min(time) as time 
+    FROM contributors as a,svnversion as b
+    WHERE a.rev = b.rev
+    GROUP BY country, a.rev
+    ) as a 
+LEFT JOIN ne_10m_admin_0_countries as b
+ON country = b.name
+ORDER BY rev, country;
