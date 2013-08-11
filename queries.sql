@@ -35,12 +35,14 @@ SELECT sovereignt, name_long,GEOMETRY FROM ne_10m_admin_0_countries WHERE name N
 UNION
 SELECT sovereignt, name_long,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
 
--- Join the data for a map
-CREATE VIEW sfdownbycountry as
+-- Join the data for a map, VIEW doesn't carry column type correctly
+-- What about % of population
+CREATE TABLE sfdownbycountry as
 SELECT a.country,a.downloads,b.geometry FROM 
     (SELECT country, sum(downloads) as downloads 
     FROM sfcountries 
     GROUP BY country) as a
     JOIN mapcountries as b 
     ON country = name_long
-    
+
+-- Now to map contributors and translators

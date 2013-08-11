@@ -4,19 +4,19 @@
     <mapcanvas>
         <units>meters</units>
         <extent>
-            <xmin>-16123985.380088</xmin>
-            <ymin>-12204685.042235</ymin>
-            <xmax>16123985.380088</xmax>
-            <ymax>11303181.493220</ymax>
+            <xmin>-17841676.777649</xmin>
+            <ymin>-13147482.762976</ymin>
+            <xmax>17841676.777649</xmax>
+            <ymax>12864681.510979</ymax>
         </extent>
         <projections>1</projections>
         <destinationsrs>
             <spatialrefsys>
                 <proj4>+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</proj4>
-                <srsid>100002</srsid>
+                <srsid>100003</srsid>
                 <srid>0</srid>
-                <authid>USER:100002</authid>
-                <description>Robinson</description>
+                <authid>USER:100003</authid>
+                <description> * Generated CRS (+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs)</description>
                 <projectionacronym>robin</projectionacronym>
                 <ellipsoidacronym>WGS84</ellipsoidacronym>
                 <geographicflag>false</geographicflag>
@@ -24,14 +24,9 @@
         </destinationsrs>
     </mapcanvas>
     <legend updateDrawingOrder="true">
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="ne_10m_admin_0_map_units" showFeatureCount="0">
-            <filegroup open="false" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="ne_10m_admin_0_map_units20130810172949012" visible="0"/>
-            </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="SqlResult" showFeatureCount="0">
+        <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="sfdownbycountry" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-                <legendlayerfile isInOverview="0" layerid="SqlResult20130811005440186" visible="1"/>
+                <legendlayerfile isInOverview="0" layerid="sfdownbycountry20130811104116605" visible="1"/>
             </filegroup>
         </legendlayer>
         <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="ne_10m_admin_0_countries" showFeatureCount="0">
@@ -39,14 +34,19 @@
                 <legendlayerfile isInOverview="0" layerid="ne_10m_admin_0_countries20130810145114232" visible="1"/>
             </filegroup>
         </legendlayer>
+        <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="OGRGeoJSON" showFeatureCount="0">
+            <filegroup open="false" hidden="false">
+                <legendlayerfile isInOverview="0" layerid="graticule_30dd20130811105449365" visible="1"/>
+            </filegroup>
+        </legendlayer>
     </legend>
     <projectlayers layercount="3">
-        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>SqlResult20130811005440186</id>
-            <datasource>dbname='./osgeolivedata.sqlite' key='PKUID' table="(SELECT * FROM 'sfdownbycountry')" (Geometry) sql=</datasource>
+        <maplayer minimumScale="0" maximumScale="1e+08" geometry="Line" type="vector" hasScaleBasedVisibilityFlag="0">
+            <id>graticule_30dd20130811105449365</id>
+            <datasource>../../../code/workspace/pyGraticule/output/graticule_30dd.geojson</datasource>
             <title></title>
             <abstract></abstract>
-            <layername>SqlResult</layername>
+            <layername>OGRGeoJSON</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -60,18 +60,20 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <provider encoding="UTF-8">spatialite</provider>
+            <provider encoding="UTF-8">ogr</provider>
             <vectorjoins/>
             <renderer-v2 symbollevels="0" type="singleSymbol">
                 <symbols>
-                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
-                        <layer pass="0" class="SimpleFill" locked="0">
-                            <prop k="color" v="37,68,159,255"/>
-                            <prop k="color_border" v="0,0,0,255"/>
-                            <prop k="offset" v="0,0"/>
-                            <prop k="style" v="solid"/>
-                            <prop k="style_border" v="solid"/>
-                            <prop k="width_border" v="0.26"/>
+                    <symbol outputUnit="MM" alpha="1" type="line" name="0">
+                        <layer pass="0" class="SimpleLine" locked="0">
+                            <prop k="capstyle" v="square"/>
+                            <prop k="color" v="209,209,209,255"/>
+                            <prop k="customdash" v="5;2"/>
+                            <prop k="joinstyle" v="bevel"/>
+                            <prop k="offset" v="0"/>
+                            <prop k="penstyle" v="solid"/>
+                            <prop k="use_custom_dash" v="0"/>
+                            <prop k="width" v="0.26"/>
                         </layer>
                     </symbol>
                 </symbols>
@@ -79,7 +81,7 @@
                 <sizescale field=""/>
             </renderer-v2>
             <customproperties/>
-            <displayfield></displayfield>
+            <displayfield>degrees</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -101,6 +103,12 @@
                 <multilineenabled fieldname="" on=""/>
                 <selectedonly on=""/>
             </labelattributes>
+            <edittypes>
+                <edittype type="0" name="dd"/>
+                <edittype type="0" name="degrees"/>
+                <edittype type="0" name="direction"/>
+                <edittype type="0" name="display"/>
+            </edittypes>
             <editform></editform>
             <editforminit></editforminit>
             <annotationform></annotationform>
@@ -232,17 +240,17 @@
                 <edittype type="0" name="wikipedia"/>
                 <edittype type="0" name="woe_id"/>
             </edittypes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <attributeactions/>
         </maplayer>
         <maplayer minimumScale="0" maximumScale="1e+08" geometry="Polygon" type="vector" hasScaleBasedVisibilityFlag="0">
-            <id>ne_10m_admin_0_map_units20130810172949012</id>
-            <datasource>../../../gis/naturalearth/2.0/ne_10m_admin_0_map_units/ne_10m_admin_0_map_units.shp</datasource>
+            <id>sfdownbycountry20130811104116605</id>
+            <datasource>dbname='./osgeolivedata.sqlite' table="sfdownbycountry" (Geometry) sql=</datasource>
             <title></title>
             <abstract></abstract>
-            <layername>ne_10m_admin_0_map_units</layername>
+            <layername>sfdownbycountry</layername>
             <srs>
                 <spatialrefsys>
                     <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
@@ -256,26 +264,134 @@
                 </spatialrefsys>
             </srs>
             <transparencyLevelInt>255</transparencyLevelInt>
-            <provider encoding="UTF-8">ogr</provider>
+            <provider encoding="UTF-8">spatialite</provider>
             <vectorjoins/>
-            <renderer-v2 symbollevels="0" type="singleSymbol">
+            <renderer-v2 attr="downloads" symbollevels="0" type="graduatedSymbol">
+                <ranges>
+                    <range symbol="0" lower="1" upper="50" label="1.0000 - 50.0000"/>
+                    <range symbol="1" lower="50" upper="143" label="50.0000 - 143.0000"/>
+                    <range symbol="2" lower="143" upper="272" label="143.0000 - 272.0000"/>
+                    <range symbol="3" lower="272" upper="542" label="272.0000 - 542.0000"/>
+                    <range symbol="4" lower="542" upper="972" label="542.0000 - 972.0000"/>
+                    <range symbol="5" lower="972" upper="1414" label="972.0000 - 1414.0000"/>
+                    <range symbol="6" lower="1414" upper="1777" label="1414.0000 - 1777.0000"/>
+                    <range symbol="7" lower="1777" upper="3101" label="1777.0000 - 3101.0000"/>
+                    <range symbol="8" lower="3101" upper="4421" label="3101.0000 - 4421.0000"/>
+                </ranges>
                 <symbols>
                     <symbol outputUnit="MM" alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
-                            <prop k="color" v="134,14,132,255"/>
-                            <prop k="color_border" v="255,0,0,255"/>
+                            <prop k="color" v="158,234,116,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
                             <prop k="offset" v="0,0"/>
-                            <prop k="style" v="no"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="1">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="138,221,101,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="2">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="118,208,87,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="3">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="98,195,72,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="4">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="79,182,58,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="5">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="59,169,43,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="6">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="39,156,29,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="7">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="19,143,14,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="8">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="0,131,0,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
                             <prop k="width_border" v="0.26"/>
                         </layer>
                     </symbol>
                 </symbols>
+                <source-symbol>
+                    <symbol outputUnit="MM" alpha="1" type="fill" name="0">
+                        <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="color" v="166,67,166,255"/>
+                            <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="offset" v="0,0"/>
+                            <prop k="style" v="solid"/>
+                            <prop k="style_border" v="solid"/>
+                            <prop k="width_border" v="0.26"/>
+                        </layer>
+                    </symbol>
+                </source-symbol>
+                <colorramp type="gradient" name="[source]">
+                    <prop k="color1" v="158,234,116,255"/>
+                    <prop k="color2" v="0,131,0,255"/>
+                </colorramp>
+                <mode name="jenks"/>
                 <rotation field=""/>
                 <sizescale field=""/>
             </renderer-v2>
             <customproperties/>
-            <displayfield>name</displayfield>
+            <displayfield>PKUID</displayfield>
             <label>0</label>
             <labelattributes>
                 <label fieldname="" text="Label"/>
@@ -298,69 +414,9 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype type="0" name="abbrev"/>
-                <edittype type="0" name="abbrev_len"/>
-                <edittype type="0" name="adm0_a3"/>
-                <edittype type="0" name="adm0_a3_is"/>
-                <edittype type="0" name="adm0_a3_un"/>
-                <edittype type="0" name="adm0_a3_us"/>
-                <edittype type="0" name="adm0_a3_wb"/>
-                <edittype type="0" name="adm0_dif"/>
-                <edittype type="0" name="admin"/>
-                <edittype type="0" name="brk_a3"/>
-                <edittype type="0" name="brk_diff"/>
-                <edittype type="0" name="brk_group"/>
-                <edittype type="0" name="brk_name"/>
-                <edittype type="0" name="continent"/>
-                <edittype type="0" name="economy"/>
-                <edittype type="0" name="featurecla"/>
-                <edittype type="0" name="fips_10"/>
-                <edittype type="0" name="formal_en"/>
-                <edittype type="0" name="formal_fr"/>
-                <edittype type="0" name="gdp_md_est"/>
-                <edittype type="0" name="gdp_year"/>
-                <edittype type="0" name="geou_dif"/>
-                <edittype type="0" name="geounit"/>
-                <edittype type="0" name="gu_a3"/>
-                <edittype type="0" name="homepart"/>
-                <edittype type="0" name="income_grp"/>
-                <edittype type="0" name="iso_a2"/>
-                <edittype type="0" name="iso_a3"/>
-                <edittype type="0" name="iso_n3"/>
-                <edittype type="0" name="labelrank"/>
-                <edittype type="0" name="lastcensus"/>
-                <edittype type="0" name="level"/>
-                <edittype type="0" name="long_len"/>
-                <edittype type="0" name="mapcolor13"/>
-                <edittype type="0" name="mapcolor7"/>
-                <edittype type="0" name="mapcolor8"/>
-                <edittype type="0" name="mapcolor9"/>
-                <edittype type="0" name="name"/>
-                <edittype type="0" name="name_alt"/>
-                <edittype type="0" name="name_len"/>
-                <edittype type="0" name="name_long"/>
-                <edittype type="0" name="name_sort"/>
-                <edittype type="0" name="note_adm0"/>
-                <edittype type="0" name="note_brk"/>
-                <edittype type="0" name="pop_est"/>
-                <edittype type="0" name="pop_year"/>
-                <edittype type="0" name="postal"/>
-                <edittype type="0" name="region_un"/>
-                <edittype type="0" name="region_wb"/>
-                <edittype type="0" name="scalerank"/>
-                <edittype type="0" name="sov_a3"/>
-                <edittype type="0" name="sovereignt"/>
-                <edittype type="0" name="su_a3"/>
-                <edittype type="0" name="su_dif"/>
-                <edittype type="0" name="subregion"/>
-                <edittype type="0" name="subunit"/>
-                <edittype type="0" name="tiny"/>
-                <edittype type="0" name="type"/>
-                <edittype type="0" name="un_a3"/>
-                <edittype type="0" name="wb_a2"/>
-                <edittype type="0" name="wb_a3"/>
-                <edittype type="0" name="wikipedia"/>
-                <edittype type="0" name="woe_id"/>
+                <edittype type="0" name="PKUID"/>
+                <edittype type="0" name="country"/>
+                <edittype type="0" name="downloads"/>
             </edittypes>
             <editform></editform>
             <editforminit></editforminit>
@@ -377,7 +433,7 @@
             <active type="int">1</active>
             <timeFrameType type="QString">days</timeFrameType>
             <loopAnimation type="int">0</loopAnimation>
-            <currentMapTimePosition type="int">1376168109</currentMapTimePosition>
+            <currentMapTimePosition type="int">1376242754</currentMapTimePosition>
             <animationFrameLength type="int">2000</animationFrameLength>
             <timeLayerList type="QStringList"/>
             <playBackwards type="int">0</playBackwards>
@@ -388,18 +444,18 @@
         </Identify>
         <WMSContactPhone type="QString"></WMSContactPhone>
         <SpatialRefSys>
-            <ProjectCRSProj4String type="QString">+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs</ProjectCRSProj4String>
+            <ProjectCRSProj4String type="QString">+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</ProjectCRSProj4String>
             <ProjectCrs type="QString">EPSG:4326</ProjectCrs>
-            <ProjectCRSID type="int">100002</ProjectCRSID>
+            <ProjectCRSID type="int">100003</ProjectCRSID>
             <ProjectionsEnabled type="int">1</ProjectionsEnabled>
         </SpatialRefSys>
         <Paths>
             <Absolute type="bool">false</Absolute>
         </Paths>
         <Gui>
-            <SelectionColorBluePart type="int">0</SelectionColorBluePart>
-            <CanvasColorGreenPart type="int">255</CanvasColorGreenPart>
-            <CanvasColorRedPart type="int">255</CanvasColorRedPart>
+            <SelectionColorBluePart type="int">127</SelectionColorBluePart>
+            <CanvasColorGreenPart type="int">170</CanvasColorGreenPart>
+            <CanvasColorRedPart type="int">0</CanvasColorRedPart>
             <SelectionColorRedPart type="int">255</SelectionColorRedPart>
             <SelectionColorAlphaPart type="int">255</SelectionColorAlphaPart>
             <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
