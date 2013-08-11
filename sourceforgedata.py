@@ -5,6 +5,7 @@
 #
 # Alex Mandel 2013
 # tech@wildintellect.com
+# requires urllib2 (python 2.6+), simplejson
 
 import urllib2
 import simplejson
@@ -147,7 +148,8 @@ if __name__ == '__main__':
     #format osgeo-live-vm-6.5.7z
     #standard ending stats/json?start_date=?&end_date=?
     #date format 2013-08-02
-    connection = sqlite3.connect("test.db")
+    #connection = sqlite3.connect("test.db")
+    connection = sqlite3.connect("osgeolivedata.sqlite")
     try:
         tables(connection)
         fetchData(connection)
