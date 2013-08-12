@@ -20,3 +20,7 @@ barplot(as.matrix(d2[,2:4]),beside=TRUE,ylim=c(0,10000),legend=c("VM","Mini","IS
 dev.off()
 
 dbDisconnect(con)
+
+#loading spatialite views as sp objects
+library(rgdal)
+test <- readOGR("osgeolivedata.sqlite","mapContribTime",verbose=TRUE,disambiguateFIDs=TRUE)
