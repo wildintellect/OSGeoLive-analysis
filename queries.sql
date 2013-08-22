@@ -76,6 +76,8 @@ LEFT JOIN ne_10m_admin_0_countries as b
 ON country = b.name
 GROUP BY country;
 
+-- CREATE VIEW
+CREATE VIEW mapContribTime AS
 SELECT a.rev,country,a.count,a.time,b.geometry  
 FROM (SELECT country, a.rev,count(distinct(name)) as count, min(time) as time 
     FROM contributors as a,svnversion as b
@@ -85,3 +87,7 @@ FROM (SELECT country, a.rev,count(distinct(name)) as count, min(time) as time
 LEFT JOIN ne_10m_admin_0_countries as b
 ON country = b.name
 ORDER BY rev, country;
+--register it as spatial
+INSERT INTO views_geometry_columns
+(view_name, view_geometry, view_rowid, f_table_name, f_geometry_column)
+VALUES ('mapContribTime', 'geometry', 'ROWID', 'ne_10m_admin_0_countries', 'geometry');

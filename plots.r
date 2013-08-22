@@ -24,3 +24,5 @@ dbDisconnect(con)
 #loading spatialite views as sp objects
 library(rgdal)
 test <- readOGR("osgeolivedata.sqlite","mapContribTime",verbose=TRUE,disambiguateFIDs=TRUE)
+library(ggplot2)
+ggplot(test,aes())+geom_polygon()+facet_wrap(~rev)
