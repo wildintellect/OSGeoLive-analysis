@@ -21,6 +21,56 @@ dev.off()
 
 dbDisconnect(con)
 
+
+### Plotting maps
 #loading spatialite views as sp objects
 library(rgdal)
-test <- readOGR("osgeolivedata.sqlite","mapContribTime",verbose=TRUE,disambiguateFIDs=TRUE)
+library(RSQLite)
+library(reshape)
+library(RColorBrewer)
+m <- dbDriver("SQLite")
+con <- dbConnect(m, dbname = "osgeolivedata.sqlite")
+#test <- readOGR("osgeolivedata.sqlite","mapContribTime",verbose=TRUE,disambiguateFIDs=TRUE)
+
+#Define Robinson Projection
+rob.proj <- "+proj=robin +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"
+
+
+# Import table then merge with Spatial
+ne <- readOGR("osgeolivedata.sqlite","mapcountriesT",disambiguateFIDs=TRUE)
+ne.rob <- spTransform(ne,CRS(rob.proj)) 
+
+sql <- "SELECT country, a.rev,count(distinct(name)) as count FROM contributors as a,svnversion as b WHERE a.rev = b.rev GROUP BY country, a.rev ORDER BY a.rev desc,a.country asc"
+data <- dbGetQuery(con,sql)
+tdata <- cast(data,country~rev,value="count")
+#replace NA with 0 
+tdata[is.na(tdata)] <- 0
+
+#Keep only the country name for matching
+ne.rob@data <- as.data.frame(ne.rob@data["name"])
+
+# Match up and add to attribute table
+# http://www.maths.lancs.ac.uk/~rowlings/Teaching/UseR2012/crime.html#img-unnamed-chunk-8
+mdata <- tdata[match(ne.rob$name,tdata$country),]
+#ne.rob@data <- cbind(ne.rob@data,mdata[,-1])
+ne.rob@data[is.na(ne.rob@data)] <- 0
+#ne.rob@data <- as.data.frame(mdata[,-1])
+ne.rob@data <- as.data.frame(mdata[,-1])
+
+#have to set the number of possible levels so all plots match
+ne.rob@data <- as.data.frame(lapply(ne.rob@data,factor,levels=c(0:17) ))
+#examples
+spplot(ne.rob,c("X10004","X10006"))
+spplot(ne.rob,names(ne.rob@data[,c(5:10)]))
+spplot(ne.rob,c("X10004","X10006"),col.regions=colset, col=gray(.8))
+
+#by hand figure out number of factor levels
+str(ne.rob@data["X10004"])
+#Strech colorbrewer over that
+colset <- colorRampPalette(brewer.pal(9,"RdPu"))(17)
+#add white as 0
+colset <-append("#FFFFFF",colset)
+
+pdf("ContributorMap.pdf",width=36,height=24)
+spplot(ne.rob,col.regions=colset,edge.col=gray(.8))
+dev.off()

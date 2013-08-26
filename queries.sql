@@ -31,9 +31,9 @@ UPDATE sfcountries SET country="Côte d'Ivoire" WHERE country LIKE "%Ivory Coast
 -- However splitting France does help
 -- Get France subunits and replace main France in new view that can be mapped and linked to other data
 CREATE VIEW mapcountries AS
-SELECT sovereignt, name_long,GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
+SELECT sovereignt,name,name_long,GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
 UNION
-SELECT sovereignt, name_long,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
+SELECT sovereignt,name,name_long,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
 
 -- Join the data for a map, VIEW doesn't carry column type correctly
 -- What about % of population
@@ -76,6 +76,7 @@ LEFT JOIN ne_10m_admin_0_countries as b
 ON country = b.name
 GROUP BY country;
 
+-- CREATE VIEW mapContribTime As
 SELECT a.rev,country,a.count,a.time,b.geometry  
 FROM (SELECT country, a.rev,count(distinct(name)) as count, min(time) as time 
     FROM contributors as a,svnversion as b
@@ -85,3 +86,19 @@ FROM (SELECT country, a.rev,count(distinct(name)) as count, min(time) as time
 LEFT JOIN ne_10m_admin_0_countries as b
 ON country = b.name
 ORDER BY rev, country;
+
+
+--Create Table 1st then insert records ensures right column types
+CREATE TABLE mapContribTimeT2(
+  rev INT,
+  country TEXT,
+  count INT,
+  time timestamp,
+  Geometry NUM
+)
+--Insert
+INSERT INTO mapContribTimeT2 
+SELECT "rev", "country", "count", substr("time",1,16), "Geometry"
+FROM "mapContribTime"
+
+
