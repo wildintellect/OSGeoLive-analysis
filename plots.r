@@ -74,3 +74,8 @@ colset <-append("#FFFFFF",colset)
 pdf("ContributorMap.pdf",width=36,height=24)
 spplot(ne.rob,col.regions=colset,edge.col=gray(.8))
 dev.off()
+
+# Way slow with ggplot2
+test <- readOGR("osgeolivedata.sqlite","mapContribTime",verbose=TRUE,disambiguateFIDs=TRUE)
+library(ggplot2)
+ggplot(test,aes())+geom_polygon()+facet_wrap(~rev)
