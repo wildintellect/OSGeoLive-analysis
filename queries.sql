@@ -31,9 +31,9 @@ UPDATE sfcountries SET country="Côte d'Ivoire" WHERE country LIKE "%Ivory Coast
 -- However splitting France does help
 -- Get France subunits and replace main France in new view that can be mapped and linked to other data
 CREATE VIEW mapcountries AS
-SELECT sovereignt,name,name_long,GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
+SELECT sovereignt,name,name_long,iso_a2,GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
 UNION
-SELECT sovereignt,name,name_long,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
+SELECT sovereignt,name,name_long,iso_a2,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
 
 -- Join the data for a map, VIEW doesn't carry column type correctly
 -- What about % of population
@@ -76,7 +76,7 @@ LEFT JOIN ne_10m_admin_0_countries as b
 ON country = b.name
 GROUP BY country;
 
-<<<<<<< HEAD
+
 -- CREATE VIEW mapContribTime As
 CREATE VIEW mapContribTime AS
 SELECT a.rev,country,a.count,a.time,b.geometry  
@@ -109,4 +109,10 @@ FROM "mapContribTime"
 
 
 
+---- Import of NetIndex data from Ookla
+--Find countries that don't match natural earth (used as the standard)
+SELECT DISTINCT a.country,a.country_code
+FROM country_daily_speeds as a 
+WHERE a.country_code NOT IN (SELECT iso_a2 FROM mapcountries)
+--result 1 Netherlands Islands
 
