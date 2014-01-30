@@ -79,3 +79,16 @@ dev.off()
 test <- readOGR("osgeolivedata.sqlite","mapContribTime",verbose=TRUE,disambiguateFIDs=TRUE)
 library(ggplot2)
 ggplot(test,aes())+geom_polygon()+facet_wrap(~rev)
+
+
+## Reshape ITU data to long format and save back to sqlite
+library(reshape2)
+inp1 <- dbReadTable(con,"'ITU-Internet'")
+outp1 <- melt(inp1,id=c("PK_UID","Country","iso_a2"))
+dbWriteTable(con,"ITU-InternetByYear",outp1)
+
+inp2 <- dbReadTable(con,"'ITU-Subscriptions'")
+outp2 <- melt(inp1,id=c("PK_UID","Country"))
+dbWriteTable(con,"ITU-SubscriptionsByYear",outp2)
+
+

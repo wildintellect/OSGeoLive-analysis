@@ -101,11 +101,11 @@ CREATE TABLE mapContribTimeT2(
   count INT,
   time timestamp,
   Geometry NUM
-)
+);
 --Insert
 INSERT INTO mapContribTimeT2 
 SELECT "rev", "country", "count", substr("time",1,16), "Geometry"
-FROM "mapContribTime"
+FROM "mapContribTime";
 
 
 
@@ -113,6 +113,28 @@ FROM "mapContribTime"
 --Find countries that don't match natural earth (used as the standard)
 SELECT DISTINCT a.country,a.country_code
 FROM country_daily_speeds as a 
-WHERE a.country_code NOT IN (SELECT iso_a2 FROM mapcountries)
+WHERE a.country_code NOT IN (SELECT iso_a2 FROM mapcountries);
 --result 1 Netherlands Islands
 
+----Import data from ITU
+--Cleanup country code
+SELECT DISTINCT a.country, b.name, b.name_long, b.iso_a2
+FROM "ITU-Internet" as a, mapcountries as b
+WHERE a.country LIKE b.name OR replace(a.country,'&','and') LIKE b.name_long;
+
+--Add iso code column to imports
+ALTER TABLE "ITU-Internet"
+ADD Column 'iso_a2'
+--update matches
+UPDATE "ITU-Internet" SET iso_a2 = (SELECT b.iso_a2
+FROM mapcountries as b
+WHERE country LIKE b.name OR replace(country,'&','and') LIKE b.name_long)
+
+--Add iso code column to imports
+ALTER TABLE "ITU-Subscriptions"
+ADD Column 'iso_a2'
+
+--update matches
+UPDATE "ITU-Subscriptions" SET iso_a2 = (SELECT b.iso_a2
+FROM mapcountries as b
+WHERE country LIKE b.name OR replace(country,'&','and') LIKE b.name_long)
