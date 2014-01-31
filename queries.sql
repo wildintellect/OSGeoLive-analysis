@@ -124,17 +124,46 @@ WHERE a.country LIKE b.name OR replace(a.country,'&','and') LIKE b.name_long;
 
 --Add iso code column to imports
 ALTER TABLE "ITU-Internet"
-ADD Column 'iso_a2'
+ADD Column 'iso_a2';
 --update matches
 UPDATE "ITU-Internet" SET iso_a2 = (SELECT b.iso_a2
 FROM mapcountries as b
-WHERE country LIKE b.name OR replace(country,'&','and') LIKE b.name_long)
+WHERE country LIKE b.name OR replace(country,'&','and') LIKE b.name_long);
+--fix nulls
+UPDATE "ITU-Internet" SET iso_a2 = (SELECT b.iso_a2
+FROM ITUtoNEmap as b
+WHERE "ITU-Internet".country LIKE b.country)
+WHERE iso_a2 IS NULL;
 
 --Add iso code column to imports
 ALTER TABLE "ITU-Subscriptions"
-ADD Column 'iso_a2'
+ADD Column 'iso_a2';
 
+--repeat for other ITU data
 --update matches
 UPDATE "ITU-Subscriptions" SET iso_a2 = (SELECT b.iso_a2
 FROM mapcountries as b
-WHERE country LIKE b.name OR replace(country,'&','and') LIKE b.name_long)
+WHERE country LIKE b.name OR replace(country,'&','and') LIKE b.name_long);
+
+--fix nulls
+UPDATE "ITU-Subscriptions" SET iso_a2 = (SELECT b.iso_a2
+FROM ITUtoNEmap as b
+WHERE "ITU-Subscriptions".country LIKE b.country)
+WHERE iso_a2 IS NULL;
+
+---- Analysis, how long does it take someone to download
+-- Calculate download times per country
+SELECT DISTINCT "country","country_code", max(download_kbps) as kbps, 
+((4.7*8000000)/((max(download_kbps)*3600)) as hours
+FROM country_daily_speeds
+GROUP BY "Country"
+
+--With broadband subscriptions (broadband is > ISDN?)
+SELECT DISTINCT a."country","country_code", max(download_kbps) as kbps,((4.7*8000000)/((max(download_kbps)*3600))) as hours, b."2012" as users
+FROM country_daily_speeds as a
+JOIN "ITU-Subscriptions" as b
+ON b.iso_a2 = a.country_code 
+GROUP BY a."Country"
+
+
+---- Analysis, what influence does internet speed, % of people with internet(broadband)
