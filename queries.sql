@@ -38,13 +38,14 @@ SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1) as economy, 
 
 -- Join the data for a map, VIEW doesn't carry column type correctly
 -- What about % of population
+DROP TABLE IF EXISTS mapsfdownbycountry;
 CREATE TABLE mapsfdownbycountry as
-SELECT a.country,a.downloads,b.geometry FROM 
+SELECT a.country,a.downloads,b.iso_a2, b.geometry FROM 
     (SELECT country, sum(downloads) as downloads 
     FROM sfcountries 
     GROUP BY country) as a
     JOIN mapcountries as b 
-    ON country = name_long
+    ON country = name_long;
 
 --
 -- Now to map contributors and translators
@@ -183,13 +184,14 @@ CREATE VIEW Metrics2012noITU AS
 -- missing some countries? Cameroon, perhaps no speed data?
 SELECT a.country,b.iso_a2,a.downloads,b.pop,b.economy,b.income,(a.downloads/b.pop)*100 as downbypop, b.avg
 FROM mapsfdownbycountry as a
-LEFT JOIN
+--LEFT join to see missing data
+JOIN
     (SELECT c.country, c.country_code as iso_a2,c.min,c.max,c.avg,pop_est as pop,economy,income 
     FROM SpeedByCountry2012 as c
     JOIN mapcountries as d
     ON c.country_code = d.iso_a2) 
 as b
-ON a.country = b.country
+ON a.iso_a2 = b.iso_a2
 
 --Complete set of data for anaylsis
 --problem, no data on broadband for 2012, should take max from any previous year or drop?
