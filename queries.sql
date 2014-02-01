@@ -30,14 +30,15 @@ UPDATE sfcountries SET country="Côte d'Ivoire" WHERE country LIKE "%Ivory Coast
 -- Map Units from Natural Earth didn't pan out
 -- However splitting France does help
 -- Get France subunits and replace main France in new view that can be mapped and linked to other data
+DROP VIEW If Exists mapcountries; 
 CREATE VIEW mapcountries AS
-SELECT sovereignt,name,name_long,iso_a2,GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
+SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1) as economy, substr(income_grp,1,1) as income,GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
 UNION
-SELECT sovereignt,name,name_long,iso_a2,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
+SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1) as economy, substr(income_grp,1,1) as income,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
 
 -- Join the data for a map, VIEW doesn't carry column type correctly
 -- What about % of population
-CREATE TABLE sfdownbycountry as
+CREATE TABLE mapsfdownbycountry as
 SELECT a.country,a.downloads,b.geometry FROM 
     (SELECT country, sum(downloads) as downloads 
     FROM sfcountries 
@@ -167,3 +168,35 @@ GROUP BY a."Country"
 
 
 ---- Analysis, what influence does internet speed, % of people with internet(broadband)
+SELECT country, strftime('%Y',date) as year, min(download_kbps) as min, avg(download_kbps) as avg, max(download_kbps) as max
+FROM country_daily_speeds
+GROUP BY country, year
+
+--Build up view that has all data for analysis
+CREATE VIEW SpeedByCountry2012 AS
+SELECT country, country_code, strftime('%Y',date) as year, min(download_kbps) as min, avg(download_kbps) as avg, max(download_kbps) as max
+FROM country_daily_speeds
+WHERE strftime('%Y',date) LIKE '2012'
+GROUP BY country, year
+
+CREATE VIEW Metrics2012noITU AS
+-- missing some countries? Cameroon, perhaps no speed data?
+SELECT a.country,b.iso_a2,a.downloads,b.pop,b.economy,b.income,(a.downloads/b.pop)*100 as downbypop, b.avg
+FROM mapsfdownbycountry as a
+LEFT JOIN
+    (SELECT c.country, c.country_code as iso_a2,c.min,c.max,c.avg,pop_est as pop,economy,income 
+    FROM SpeedByCountry2012 as c
+    JOIN mapcountries as d
+    ON c.country_code = d.iso_a2) 
+as b
+ON a.country = b.country
+
+--Complete set of data for anaylsis
+--problem, no data on broadband for 2012, should take max from any previous year or drop?
+CREATE VIEW Metrics2012all AS
+SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,b."2012" as broadband
+FROM Metrics2012noITU as a
+JOIN "ITU-Subscriptions" as b
+ON a.iso_a2 = b.iso_a2
+
+
