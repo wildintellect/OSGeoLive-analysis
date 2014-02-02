@@ -116,3 +116,15 @@ exploreplots <- function {
     ggplot(dspeed,aes(d,download_kbps,color=cc))+geom_line()
 }
 
+
+#Regression test download data against country metrics
+downloadregression <- function(){
+    downdata <-dbReadTable(con,"Metrics2012all")
+    #cor(downdata[-(1:2)])
+    scatterplotMatrix(downdata[-(1:4)])
+    lmresult <-lm(downbypop ~ economy+income+avg+broadband,downdata)    
+    par(mfrow=c(2,2))
+    plot(lmresult)
+
+}
+

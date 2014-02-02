@@ -30,11 +30,11 @@ UPDATE sfcountries SET country="Côte d'Ivoire" WHERE country LIKE "%Ivory Coast
 -- Map Units from Natural Earth didn't pan out
 -- However splitting France does help
 -- Get France subunits and replace main France in new view that can be mapped and linked to other data
-DROP VIEW If Exists mapcountries; 
+DROP VIEW If EXISTS mapcountries; 
 CREATE VIEW mapcountries AS
-SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1) as economy, substr(income_grp,1,1) as income,GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
+SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1)*1 as economy, substr(income_grp,1,1)*1 as income,GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
 UNION
-SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1) as economy, substr(income_grp,1,1) as income,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
+SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1)*1 as economy, substr(income_grp,1,1)*1 as income,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
 
 -- Join the data for a map, VIEW doesn't carry column type correctly
 -- What about % of population
@@ -161,10 +161,11 @@ FROM country_daily_speeds
 GROUP BY "Country"
 
 --With broadband subscriptions (broadband is > ISDN?)
-SELECT DISTINCT a."country","country_code", max(download_kbps) as kbps,((4.7*8000000)/((max(download_kbps)*3600))) as hours, b."2012" as users
+SELECT DISTINCT a."country","country_code", max(download_kbps) as maxkbps,((4.7*8000000)/((max(download_kbps)*3600))) as hours, avg(download_kbps) as avgkbps,((4.7*8000000)/((avg(download_kbps)*3600))) as avghours,b."2012" as broadband
 FROM country_daily_speeds as a
 JOIN "ITU-Subscriptions" as b
-ON b.iso_a2 = a.country_code 
+ON b.iso_a2 = a.country_code
+WHERE strftime('%Y',date) LIKE '2012' 
 GROUP BY a."Country"
 
 
