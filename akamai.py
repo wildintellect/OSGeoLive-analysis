@@ -29,6 +29,12 @@ def importdata(infile,table,connection):
         listb = pd.Series([item.split(';')[0] for item in df1[0]])
         df1[0].update(listb)
         df1[1] = lista
+        #Convert column type to int or float
+        if df[1][0].isdigit():
+            df[1] = df[1].astype(int)
+        else:
+            df[1] = df[1].astype(float)
+        #rename columns for easier merging    
         df1.columns = ['iso_a2',sheet.replace(' ','')]
         
         # Merge all the sheets together by the key

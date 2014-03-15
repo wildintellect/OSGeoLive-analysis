@@ -119,7 +119,8 @@ exploreplots <- function {
 
 #Regression test download data against country metrics
 downloadregression <- function(){
-    downdata <-dbReadTable(con,"Metrics2012all")
+    require(car)
+    downdata <-dbReadTable(con,"Metrics2012wAkamai")
     #cor(downdata[-(1:2)])
     scatterplotMatrix(downdata[-(1:4)])
     lmresult <-lm(downbypop ~ economy+income+avg+broadband,downdata)    

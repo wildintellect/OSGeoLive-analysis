@@ -118,6 +118,14 @@ FROM country_daily_speeds as a
 WHERE a.country_code NOT IN (SELECT iso_a2 FROM mapcountries);
 --result 1 Netherlands Islands
 
+----import data from Akamai
+SELECT DISTINCT a.iso_a2
+FROM akamai2013 as a 
+WHERE a.iso_a2 NOT IN (SELECT iso_a2 FROM mapcountries);
+
+-- 3 mismatches
+--BQ part of Netherlands,EU not a country,TK part of NZ
+
 ----Import data from ITU
 --Cleanup country code
 SELECT DISTINCT a.country, b.name, b.name_long, b.iso_a2
@@ -196,10 +204,18 @@ ON a.iso_a2 = b.iso_a2
 
 --Complete set of data for anaylsis
 --problem, no data on broadband for 2012, should take max from any previous year or drop?
-CREATE VIEW Metrics2012all AS
+CREATE VIEW Metrics2012wITU AS
 SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,b."2012" as broadband
 FROM Metrics2012noITU as a
 JOIN "ITU-Subscriptions" as b
 ON a.iso_a2 = b.iso_a2
+
+-- join akamai data
+CREATE VIEW Metrics2012wAkamai AS
+SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,a.broadband as itubroadband,b."uniqueip", b."average", b."peak", b."highbroadband", b."broadband"as akamaibroadband, b."narrowband"
+FROM Metrics2012wITU as a
+JOIN akamai2013 as b
+ON a.iso_a2 = b.iso_a2
+
 
 
