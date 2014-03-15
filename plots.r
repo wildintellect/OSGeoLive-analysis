@@ -121,11 +121,14 @@ exploreplots <- function {
 downloadregression <- function(){
     require(car)
     downdata <-dbReadTable(con,"Metrics2012wAkamai")
-    #cor(downdata[-(1:2)])
+    #Scatterplot is diagnostic
     scatterplotMatrix(downdata[-(1:4)])
-    lmresult <-lm(downbypop ~ economy+income+avg+broadband,downdata)    
+    #do I need to do more sophisticated analysis considering interaction between variables?
+    lmresult <-lm(downbypop ~ economy+income+average+akamaibroadband,downdata)
+    capture.output(lmresult,of="download-regression.txt")    
     par(mfrow=c(2,2))
     plot(lmresult)
+    #todo: save useful plot
 
 }
 

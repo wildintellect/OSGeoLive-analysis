@@ -21,7 +21,7 @@ def importdata(infile,table,connection):
     
     for sheet in names:
     # Import each worksheet from excel file
-        df1 = pd.read_excel('/space/logs/akamai/2013/Q3 2013 map data viz.xlsx', sheet, index_col=None, na_values=['NA'],header=None)
+        df1 = pd.read_excel(infile, sheet, index_col=None, na_values=['NA'],header=None)
         
         # Split the single column by ; into 2 columns, col 1 country iso is the key field
         lista = [item.split(';')[1] for item in df1[0]]
@@ -30,18 +30,20 @@ def importdata(infile,table,connection):
         df1[0].update(listb)
         df1[1] = lista
         #Convert column type to int or float
-        if df[1][0].isdigit():
-            df[1] = df[1].astype(int)
+        if df1[1][0].isdigit():
+            df1[1] = df1[1].astype(int)
         else:
-            df[1] = df[1].astype(float)
+            df1[1] = df1[1].astype(float)
         #rename columns for easier merging    
         df1.columns = ['iso_a2',sheet.replace(' ','')]
-        
+        #print(df1.dtypes)
         # Merge all the sheets together by the key
         if len(df) == 0:
             df = df1
         else:
             df = pd.merge(df,df1,on='iso_a2')
+
+    #print(df.dtypes)
 
     df.to_sql(table,connection,flavor='sqlite',if_exists='replace')
     return()
@@ -53,7 +55,8 @@ def importdata(infile,table,connection):
 if __name__ == '__main__':
     #update the infile and the table if doing more data or getting it from a different path
     connection = sqlite3.connect("osgeolivedata.sqlite")
-    infile = '/space/logs/akamai/2013/Q3 2013 map data viz.xlsx'
+    #infile = '/space/logs/akamai/2013/Q3 2013 map data viz.xlsx'
+    infile = 'Q3 2013 map data viz.xlsx'
     table = 'akamai2013'
     try:
         importdata(infile,table,connection)
