@@ -1,4 +1,5 @@
 # R code to plot preliminary results for OSGeoLive 2011
+# install.packages(c("RSQLite","car","spdep","rgdal","reshape","RColorBrewer")
 library(RSQLite)
 m <- dbDriver("SQLite")
 con <- dbConnect(m, dbname = "osgeolivedata.sqlite",loadable.extensions = TRUE)
