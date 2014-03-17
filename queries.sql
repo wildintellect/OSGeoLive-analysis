@@ -218,4 +218,6 @@ JOIN akamai2013 as b
 ON a.iso_a2 = b.iso_a2
 
 
+--join 
+
 
