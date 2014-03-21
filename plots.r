@@ -133,3 +133,14 @@ downloadregression <- function(){
 
 }
 
+
+exploreprojections <- function {
+    require(maps)
+    require(mapproj)
+    require(rgdal)
+    require(RSQLite)
+    require(reshape)
+    require(RColorBrewer)
+    ne <- readOGR("osgeolivedata.sqlite","mapcountriesT",disambiguateFIDs=TRUE)
+
+}
