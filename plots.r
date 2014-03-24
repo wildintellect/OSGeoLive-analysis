@@ -144,3 +144,20 @@ exploreprojections <- function {
     ne <- readOGR("osgeolivedata.sqlite","mapcountriesT",disambiguateFIDs=TRUE)
 
 }
+
+spatialauto <- function{
+    require(cshapes)
+    require(psData)
+    #load countries
+    countrylist <- cshp(date=as.Date("2012-6-30"),useGW=TRUE)
+    #make a neighborlist, warning this is CPU resource intensive
+    countrynb <-distlist(date=as.Date("2012-6-30"),useGW=TRUE,type="mindist",tolerance=0.1)
+    #swap in the ISO1AL2 country codes
+    #match the country codes to data for correlation test
+
+    #calculate spatial-autocorrelation
+
+
+    #download polity IV database of governments, save to db
+}
+
