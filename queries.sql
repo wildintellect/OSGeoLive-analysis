@@ -230,4 +230,13 @@ FROM Metrics2012wAkamai as a
 JOIN polity as b
 ON a.iso_a2 = b.iso2c
 
+--add isoa2 to democracy index
+--check matches
+SELECT Country, b.iso_a2
+FROM DemocracyIndex2012 as a
+LEFT JOIN mapcountries as b
+ON b.name = a.country 
 
+--add the iso codes
+UPDATE DemocracyIndex2012 SET isoa2 = 
+(SELECT mapcountries.iso_a2 FROM mapcountries WHERE  mapcountries.name = country )
