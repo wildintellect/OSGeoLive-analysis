@@ -218,6 +218,16 @@ JOIN akamai2013 as b
 ON a.iso_a2 = b.iso_a2
 
 
---join 
+--check polity data
+SELECT ROWID, "row_names", "iso2c", "country", "democ", "autoc", "polity", "polity2", "durable"
+FROM "polity"
+ORDER BY ROWID 
+
+-- join polity data
+CREATE VIEW Metrics2012wPolity AS
+SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,a.itubroadband,a."uniqueip", a."average", a."peak", a."highbroadband", a.akamaibroadband, a."narrowband", b."polity2",b."durable"
+FROM Metrics2012wAkamai as a
+JOIN polity as b
+ON a.iso_a2 = b.iso2c
 
 
