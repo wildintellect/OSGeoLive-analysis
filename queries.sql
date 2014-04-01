@@ -40,7 +40,8 @@ SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1)*1 as economy
 -- What about % of population
 DROP TABLE IF EXISTS mapsfdownbycountry;
 CREATE TABLE mapsfdownbycountry as
-SELECT a.country,a.downloads,b.iso_a2,b.region_un,subregion,b.geometry FROM 
+SELECT a.country,a.downloads,b.iso_a2,b.region_un,b.subregion,b.geometry 
+FROM 
     (SELECT country, sum(downloads) as downloads 
     FROM sfcountries 
     GROUP BY country) as a
@@ -81,7 +82,7 @@ GROUP BY country;
 
 -- CREATE VIEW mapContribTime As
 CREATE VIEW mapContribTime AS
-SELECT a.rev,country,a.count,a.time,b.geometry  
+SELECT a.rev,country,a.count,a.time,b.region_un,b.subregion,b.geometry 
 FROM (SELECT country, a.rev,count(distinct(name)) as count, min(time) as time 
     FROM contributors as a,svnversion as b
     WHERE a.rev = b.rev
@@ -90,10 +91,10 @@ FROM (SELECT country, a.rev,count(distinct(name)) as count, min(time) as time
 LEFT JOIN ne_10m_admin_0_countries as b
 ON country = b.name
 ORDER BY rev, country;
---register it as spatial
+--register it as spatial, case sensite now
 INSERT INTO views_geometry_columns
 (view_name, view_geometry, view_rowid, f_table_name, f_geometry_column)
-VALUES ('mapContribTime', 'geometry', 'ROWID', 'ne_10m_admin_0_countries', 'geometry');
+VALUES ('mapContribTime', 'geometry', 'ROWID', 'ne_10m_admin_0_countries', 'Geometry');
 
 
 --Create Table 1st then insert records ensures right column types

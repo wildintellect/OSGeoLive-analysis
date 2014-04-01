@@ -32,8 +32,9 @@ makemaps <- function(){
     require(RSQLite)
     require(reshape)
     require(RColorBrewer)
-    m <- dbDriver("SQLite")
-    con <- dbConnect(m, dbname = "osgeolivedata.sqlite")
+    #DB connection is global for now
+    #m <- dbDriver("SQLite")
+    #con <- dbConnect(m, dbname = "osgeolivedata.sqlite")
     #test <- readOGR("osgeolivedata.sqlite","mapContribTime",verbose=TRUE,disambiguateFIDs=TRUE)
 
     #Define Robinson Projection
@@ -100,7 +101,7 @@ fixITUdata <- function(){
 }
 
 
-exploreplots <- function {
+exploreplots <- function(){
     codes <- unique(dspeed$country_code)
     plot(range(as.POSIXct(dspeed$date)),range(dspeed$download_kbps))
     colors <- rainbow(length(codes))
@@ -134,7 +135,7 @@ downloadregression <- function(){
 }
 
 
-exploreprojections <- function {
+exploreprojections <- function(){
     require(maps)
     require(mapproj)
     require(rgdal)
@@ -145,7 +146,7 @@ exploreprojections <- function {
 
 }
 
-spatialauto <- function{
+spatialauto <- function(){
     require(cshapes)
     require(psData)
     #load countries
