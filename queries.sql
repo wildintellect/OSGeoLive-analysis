@@ -32,15 +32,15 @@ UPDATE sfcountries SET country="Côte d'Ivoire" WHERE country LIKE "%Ivory Coast
 -- Get France subunits and replace main France in new view that can be mapped and linked to other data
 DROP VIEW If EXISTS mapcountries; 
 CREATE VIEW mapcountries AS
-SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1)*1 as economy, substr(income_grp,1,1)*1 as income,GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
+SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1)*1 as economy, substr(income_grp,1,1)*1 as income, "region_un", "subregion",GEOMETRY FROM ne_10m_admin_0_countries WHERE name NOT LIKE "France"
 UNION
-SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1)*1 as economy, substr(income_grp,1,1)*1 as income,GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
+SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1)*1 as economy, substr(income_grp,1,1)*1 as income,"region_un", "subregion",GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
 
 -- Join the data for a map, VIEW doesn't carry column type correctly
 -- What about % of population
 DROP TABLE IF EXISTS mapsfdownbycountry;
 CREATE TABLE mapsfdownbycountry as
-SELECT a.country,a.downloads,b.iso_a2, b.geometry FROM 
+SELECT a.country,a.downloads,b.iso_a2,b.region_un,subregion,b.geometry FROM 
     (SELECT country, sum(downloads) as downloads 
     FROM sfcountries 
     GROUP BY country) as a
@@ -223,7 +223,7 @@ SELECT ROWID, "row_names", "iso2c", "country", "democ", "autoc", "polity", "poli
 FROM "polity"
 ORDER BY ROWID 
 
--- join polity data
+-- join polity data, 120 matches
 CREATE VIEW Metrics2012wPolity AS
 SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,a.itubroadband,a."uniqueip", a."average", a."peak", a."highbroadband", a.akamaibroadband, a."narrowband", b."polity2",b."durable"
 FROM Metrics2012wAkamai as a
@@ -240,3 +240,21 @@ ON b.name = a.country
 --add the iso codes
 UPDATE DemocracyIndex2012 SET isoa2 = 
 (SELECT mapcountries.iso_a2 FROM mapcountries WHERE  mapcountries.name = country )
+
+--join democracyindex, 130 matches
+CREATE VIEW Metrics2012wDemIndex AS
+SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,a.itubroadband,a."uniqueip", a."average", a."peak", a."highbroadband", a.akamaibroadband, a."narrowband", b."2012"
+FROM Metrics2012wAkamai as a
+JOIN DemocracyIndex2012 as b
+ON a.iso_a2 = b.isoa2
+
+
+--UN Regions
+-- In memory import Countries and Regions csv, merge
+SELECT a."UNCode", a."Country", a."ISOa3",b."region",b."subregion"
+FROM "UNm49country" as a
+JOIN "UNm49region" as b ON
+a."UNCode" = b."UNcode"
+ORDER BY a."Country"
+--Export results to csv and import to db, then join by ISO3 to naturalearth
+
