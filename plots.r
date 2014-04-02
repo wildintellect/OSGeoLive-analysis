@@ -162,3 +162,47 @@ spatialauto <- function(){
     #download polity IV database of governments, save to db
 }
 
+
+testRandom <- function(){
+    #Set the seed to the psuedo random number generator for repeatable results
+    set.seed(9)
+    require(randomForest)
+    require(ROCR)
+    downdata <-dbReadTable(con,"Metrics2012wDemIndex")
+    #Set the seed?, is this necessary?
+    #set.seed(1)
+    #split the data into training and test data, 1/2
+    train = sample(1:nrow(downdata),nrow(downdata)/2)
+
+    #economy and income should probably be factors
+    downdata$economy <- as.factor(downdata$economy)
+    downdata$income <- as.factor(downdata$income)
+    #build a random forest regression
+    #mtry default is p/3 unless doing bagging
+    #ntree can be change
+    #Potentially use tuneRF to find the mtry and ntree values to use
+    # itu-broadband had nulls values
+    downdata.rf <- randomForest(downbypop ~ economy+income+avg+uniqueip+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex, data=downdata, subset=train, keep.forest=TRUE,importance = TRUE)
+    
+    #party might be better since its a mix of categorical(ordinal) and (interval)
+    downdata.cf <- cforest(downbypop ~ economy+income+avg+uniqueip+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex, data=downdata, subset=train)
+
+    #Is the formula right?
+    #Maybe don't need to divided downloads by population, so that forest can tell if population matters
+    #uniqueip is dangerous since number of ip's is highly controlled, and early adopters have larger share - maybe this makes it a good measure?
+    downdata.cf <- cforest(downloads ~ pop+economy+income+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex+itubroadband, data=downdata, subset=train)
+    
+    #Try to figure out which variables are important, conditional means assume the variables are correlated
+    varimp(downdata.cf, conditional=TRUE)
+       
+}
+
+
+contanalysis <- function(){
+    require(RVAideMemoire)
+    downbyos <- dbReadTable(con,"TotDownByOs")
+    compbyos <- c(92.02,6.81,1.16,0.01)
+    downbyos.mat <- as.matrix(downbyos[1,-1]/sum(downbyos[1,-1])*100)
+    downbyos.cont <- rbind(downbyos.mat,compbyos)
+    row.names(downbyos.cont) <- c("downloads","computers")      
+}

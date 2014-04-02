@@ -244,7 +244,7 @@ UPDATE DemocracyIndex2012 SET isoa2 =
 
 --join democracyindex, 130 matches
 CREATE VIEW Metrics2012wDemIndex AS
-SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,a.itubroadband,a."uniqueip", a."average", a."peak", a."highbroadband", a.akamaibroadband, a."narrowband", b."2012"
+SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,a.itubroadband,a."uniqueip", a."average", a."peak", a."highbroadband", a.akamaibroadband, a."narrowband", b."2012" as DemIndex
 FROM Metrics2012wAkamai as a
 JOIN DemocracyIndex2012 as b
 ON a.iso_a2 = b.isoa2
@@ -258,4 +258,16 @@ JOIN "UNm49region" as b ON
 a."UNCode" = b."UNcode"
 ORDER BY a."Country"
 --Export results to csv and import to db, then join by ISO3 to naturalearth
+
+
+
+/* Contingency table building */
+SELECT "country", sum("win") as windows, sum("mac") as mac, sum("lin") as linux, sum("other") as other
+FROM "sfosbycountry"
+GROUP BY country
+
+--Total counts per type
+CREATE View TotDownByOs AS
+SELECT 'downloads' as type, sum("win") as windows, sum("mac") as mac, sum("lin") as linux, sum("other") as other
+FROM "sfosbycountry"
 
