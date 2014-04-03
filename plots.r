@@ -183,9 +183,11 @@ testRandom <- function(){
     #Potentially use tuneRF to find the mtry and ntree values to use
     # itu-broadband had nulls values
     downdata.rf <- randomForest(downbypop ~ economy+income+avg+uniqueip+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex, data=downdata, subset=train, keep.forest=TRUE,importance = TRUE)
+    importance(downdata.rf)
     
     #party might be better since its a mix of categorical(ordinal) and (interval)
     downdata.cf <- cforest(downbypop ~ economy+income+avg+uniqueip+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex, data=downdata, subset=train)
+    
 
     #Is the formula right?
     #Maybe don't need to divided downloads by population, so that forest can tell if population matters
@@ -193,16 +195,36 @@ testRandom <- function(){
     downdata.cf <- cforest(downloads ~ pop+economy+income+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex+itubroadband, data=downdata, subset=train)
     
     #Try to figure out which variables are important, conditional means assume the variables are correlated
-    varimp(downdata.cf, conditional=TRUE)
+    downdata.varimp <- varimp(downdata.cf, conditional=TRUE)
+
+    #Plot with a line at the abs(of the biggest negative)
+    #http://www.stanford.edu/~stephsus/R-randomforest-guide.pdf
+    par(oma=c(2,4,2,2))
+    barplot(sort(downdata.varimp),horiz=TRUE, las=1)
+    abline(v=abs(min(downdata.varimp)), col='red',lty='longdash', lwd=2)
+
+    require(corrgram)
+    corrgram(downdata, order=TRUE, lower.panel=panel.shade,  upper.panel=panel.pie, text.panel=panel.txt,  main="OSGeo Download, PCA ordered") 
+
        
 }
 
 
 contanalysis <- function(){
-    require(RVAideMemoire)
+    #Two nominal variables - County and Operating System
+    #http://udel.edu/~mcdonald/statgtestind.html
+    require(Deducer)
     downbyos <- dbReadTable(con,"TotDownByOs")
     compbyos <- c(92.02,6.81,1.16,0.01)
     downbyos.mat <- as.matrix(downbyos[1,-1]/sum(downbyos[1,-1])*100)
     downbyos.cont <- rbind(downbyos.mat,compbyos)
     row.names(downbyos.cont) <- c("downloads","computers")      
+    chisq.test(downbyos.cont)
+    likelihood.test(downbyos.cont)
+#	Pearson's Chi-squared test
+
+#data:  downbyos.cont
+#X-squared = 25.4531, df = 3, p-value = 1.241e-05
+
+
 }
