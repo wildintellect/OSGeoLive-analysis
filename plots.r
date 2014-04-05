@@ -215,7 +215,7 @@ contanalysis <- function(){
     #http://udel.edu/~mcdonald/statgtestind.html
     require(Deducer)
     downbyos <- dbReadTable(con,"TotDownByOs")
-    compbyos <- c(92.02,6.81,1.16,0.01)
+    compbyos <- c(92.02,6.81,1.16,0.00)
     downbyos.mat <- as.matrix(downbyos[1,-1]/sum(downbyos[1,-1])*100)
     downbyos.cont <- rbind(downbyos.mat,compbyos)
     row.names(downbyos.cont) <- c("downloads","computers")      
