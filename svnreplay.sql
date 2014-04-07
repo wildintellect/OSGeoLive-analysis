@@ -104,3 +104,17 @@ UPDATE translators SET country = "Spain" WHERE name = "Estela Llorente" ;
 
 -- Standardize country names to match natural earth
 UPDATE translators SET country = "United Kingdom" WHERE country LIKE "UK" ;
+
+
+--Add OSGeo-Live release version to svnrevision info
+ALTER TABLE svnversion ADD COLUMN release TEXT;
+UPDATE svnversion SET release = CASE WHEN rev BETWEEN 0 AND 2503 THEN 2
+WHEN rev BETWEEN 2504 AND 4351 THEN 3
+WHEN rev BETWEEN 4352 AND 4882 THEN 4
+WHEN rev BETWEEN 4882 AND 6052 THEN 4.5
+WHEN rev BETWEEN 6052 AND 7175 THEN 5
+WHEN rev BETWEEN 7176 AND 7817 THEN 5.5
+WHEN rev BETWEEN 7818 AND 9097 THEN 6.0
+WHEN rev BETWEEN 9097 AND 10041 THEN 6.5
+WHEN rev > 10041 THEN 7
+END;

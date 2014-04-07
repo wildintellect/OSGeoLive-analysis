@@ -228,3 +228,17 @@ contanalysis <- function(){
 
 
 }
+
+fancyplot <- function(){
+    #Get a List of the release dates and versions
+    d1 <- dbReadTable(con,"release")
+    
+
+    #Setup a stacked set of plots
+    #row 1, map by version
+    #row 2, downloads by region - barplot
+    #row 3, line graph of contributors and translators
+    ltest <- rbind(seq(1,5),rep(6,5),rep(7,5))
+    nf <- layout(ltest)
+    layout.show(nf)
+}
