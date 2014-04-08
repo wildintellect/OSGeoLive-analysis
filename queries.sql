@@ -206,14 +206,14 @@ ON a.iso_a2 = b.iso_a2
 --Complete set of data for anaylsis
 --problem, no data on broadband for 2012, should take max from any previous year or drop?
 CREATE VIEW Metrics2012wITU AS
-SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,b."2012" as broadband
+SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg as OoklaAverage,b."2012" as ITUbroadband
 FROM Metrics2012noITU as a
 JOIN "ITU-Subscriptions" as b
 ON a.iso_a2 = b.iso_a2
 
 -- join akamai data
 CREATE VIEW Metrics2012wAkamai AS
-SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,a.broadband as itubroadband,b."uniqueip", b."average", b."peak", b."highbroadband", b."broadband"as akamaibroadband, b."narrowband"
+SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.OoklaAverage,a.itubroadband,b."uniqueip" as AkUniqueIP, b."average" as AkAverage, b."peak" as AkPeak, b."highbroadband" as AkHighBroadband, b."broadband"as AkBroadband, b."narrowband" as AkNarrowband
 FROM Metrics2012wITU as a
 JOIN akamai2013 as b
 ON a.iso_a2 = b.iso_a2
@@ -226,7 +226,9 @@ ORDER BY ROWID
 
 -- join polity data, 120 matches
 CREATE VIEW Metrics2012wPolity AS
-SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,a.itubroadband,a."uniqueip", a."average", a."peak", a."highbroadband", a.akamaibroadband, a."narrowband", b."polity2",b."durable"
+SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.OoklaAverage,a.itubroadband,
+a.AkUniqueIP,a.AkAverage, a.AkPeak, a.AkHighBroadband, a.AkBroadband, a.AkNarrowband,
+b."polity2",b."durable"
 FROM Metrics2012wAkamai as a
 JOIN polity as b
 ON a.iso_a2 = b.iso2c
@@ -244,7 +246,9 @@ UPDATE DemocracyIndex2012 SET isoa2 =
 
 --join democracyindex, 130 matches
 CREATE VIEW Metrics2012wDemIndex AS
-SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg,a.itubroadband,a."uniqueip", a."average", a."peak", a."highbroadband", a.akamaibroadband, a."narrowband", b."2012" as DemIndex
+SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.OoklaAverage,a.itubroadband,
+a.AkUniqueIP,a.AkAverage, a.AkPeak, a.AkHighBroadband, a.AkBroadband, a.AkNarrowband, 
+b."2012" as DemIndex
 FROM Metrics2012wAkamai as a
 JOIN DemocracyIndex2012 as b
 ON a.iso_a2 = b.isoa2
@@ -268,7 +272,7 @@ GROUP BY country
 
 --Total counts per type
 CREATE View TotDownByOs AS
-SELECT 'downloads' as type, sum("win") as windows, sum("mac") as mac, sum("lin") as linux, sum("other") as other
+SELECT 'downloads' as type, sum("win") as Windows, sum("mac") as Mac, sum("lin") as Linux, sum("other") as Other
 FROM "sfosbycountry"
 
 /* Infographic building and Contingency Table*/
