@@ -271,3 +271,21 @@ CREATE View TotDownByOs AS
 SELECT 'downloads' as type, sum("win") as windows, sum("mac") as mac, sum("lin") as linux, sum("other") as other
 FROM "sfosbycountry"
 
+/* Infographic building and Contingency Table*/
+--Query returns count of people per country per release
+CREATE View ContribRegion AS
+SELECT country,b.release as release,count(distinct(name))as count,subregion  
+FROM (SELECT c.country,c.name, c.rev,region_un,subregion FROM contributors as c,mapContribTime as d WHERE c.country = d.country) as a,
+svnversion as b 
+WHERE a.rev = b.rev 
+GROUP BY country, b.release 
+ORDER BY a.country asc, b.release asc;
+
+CREATE View TransRegion AS
+SELECT country,b.release as release,count(distinct(name))as count,subregion  
+FROM (SELECT c.country,c.name, c.rev,region_un,subregion FROM translators as c,mapContribTime as d WHERE c.country = d.country) as a,
+svnversion as b 
+WHERE a.rev = b.rev 
+GROUP BY country, b.release 
+ORDER BY a.country asc, b.release asc;
+

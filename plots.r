@@ -230,15 +230,47 @@ contanalysis <- function(){
 }
 
 fancyplot <- function(){
+    require(RColorBrewer)
     #Get a List of the release dates and versions
     d1 <- dbReadTable(con,"release")
+    #d2 <- dbReadTable(con,"ContribRegion")
+    d2sql <- "SELECT release,subregion,sum(count) as count FROM ContribRegion GROUP BY release,subregion"    
+    d2 <- dbGetQuery(con,d2sql)
+
+    d3sql <- "SELECT release,subregion,sum(count) as Tcount FROM TransRegion GROUP BY release,subregion"    
+    d3 <- dbGetQuery(con,d3sql)
+
     
+    #Contrib plot
+    d2t <-xtabs(count~subregion+release,data=d2)
+
+    colset <- brewer.pal(9,"Set1")
+    barplot(d2t,col=colset)
+    legend("topleft",legend=rownames(d2t),fill=colset)
+
+    #Trans plot - TODO merge somehow with contrin plot
+    d3t <-xtabs(Tcount~subregion+release,data=d3)
+
+    colset <- brewer.pal(9,"Set1")
+    barplot(d3t,col=colset)
+    legend("topleft",legend=rownames(d3t),fill=colset)
+
+    #get total number of releases
+    cnt <- length(d1)
+
+
+    #Query returns count of people per country per release
+    d2 <- "SELECT release,subregion,sum(count) as count FROM ContribRegion GROUP BY release,subregion"
+
+
 
     #Setup a stacked set of plots
     #row 1, map by version
     #row 2, downloads by region - barplot
     #row 3, line graph of contributors and translators
-    ltest <- rbind(seq(1,5),rep(6,5),rep(7,5))
+    #ltest <- rbind(seq(1,7),rep(8,7),rep(9,7))
+    #dynamic version
+    ltest <- rbind(seq(1,cnt),rep(cnt+1,cnt),rep(cnt+2,cnt))
     nf <- layout(ltest)
     layout.show(nf)
 }
