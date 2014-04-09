@@ -97,14 +97,17 @@ UPDATE translators SET email = country,country = "Russia" WHERE country LIKE "%.
 SELECT * FROM translators WHERE country IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
 SELECT country FROM translators WHERE email IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
 UPDATE translators SET country = (SELECT b.country FROM translators as b WHERE translators.country = b.email LIMIT 1) WHERE translators.country IN ("signmotion gmail.com","d.svidzinska gmail.com","rykovd gmail.com","kuzkok gmail.com","nikulin.e gmail.com","sim gis-lab.info","Nadiia.gorash gmail.com","pashtet51 gmail.com","lucadeluge gmail com","estela.llorente gmail com","amuriy gmail.com","voltron ua.fm") ;
-UPDATE translators SET country = "Russia" WHERE name="Vera" AND country="";
+UPDATE translators SET country = "Russia" WHERE trim(name)="Vera" AND country="";
 
 --Check by hand "???"
 UPDATE translators SET country = "Spain" WHERE name = "Estela Llorente" ;
 
 -- Standardize country names to match natural earth
-UPDATE translators SET country = "United Kingdom" WHERE country LIKE "UK" ;
+UPDATE translators SET country = "United Kingdom" WHERE trim(country) LIKE "UK" ;
 
+-- A few more corrections
+UPDATE translators SET country = "Colombia" WHERE name Like "Andrea Y%";
+UPDATE translators SET country = "Spain" WHERE name Like "Diego G%";
 
 --Add OSGeo-Live release version to svnrevision info
 ALTER TABLE svnversion ADD COLUMN release TEXT;
@@ -118,3 +121,29 @@ WHEN rev BETWEEN 7818 AND 9097 THEN 6.0
 WHEN rev BETWEEN 9097 AND 10041 THEN 6.5
 WHEN rev > 10041 THEN 7
 END;
+
+
+--Cleaning up name changes to avoid double counting
+UPDATE Translators SET name = 'Diego González' WHERE name Like 'Diego GonzÃ¡lez';
+UPDATE Translators SET name = 'Agustín Díez' WHERE name Like 'AgustÃ­n DÃ­ez' OR name LIKE 'Agustín Díez' OR name LIKE 'Agustín Dí­ez';
+UPDATE Translators SET name = 'Anna Muñoz' WHERE name Like 'Anna MuÃ±oz';
+UPDATE Translators SET name = 'Assumpció Termens' WHERE name Like 'Assumpcio Termens';
+UPDATE Translators SET name = 'Javier Sánchez' WHERE name Like 'Javier Sanchez';
+UPDATE Translators SET name = 'Jesús Gómez' WHERE name Like 'JesÃºs GÃ³mez';
+UPDATE Translators SET name = 'Jorge Arévalo' WHERE name Like 'Jorge ArÃ©valo';
+UPDATE Translators SET name = 'Lucía Sanjaime' WHERE name Like 'LucÃ­a Sanjaime';
+UPDATE Translators SET name = 'Roberto Antolín' WHERE name Like 'Roberto AntolÃ­n';
+UPDATE Translators SET name = 'Òscar Fonts' WHERE name Like 'Oscar Fonts' OR name LIKE 'Ã’scar Fonts';
+UPDATE Translators SET name = 'Daniel Kastl' WHERE name Like 'DanielKastl';
+UPDATE Translators SET name = 'Haruyuki Seki' WHERE name Like 'HaruyukiSeki';
+UPDATE Translators SET name = 'Javier Sánchez' WHERE name Like 'JavierSanchez';
+UPDATE Translators SET name = 'Jorge Sanz' WHERE name Like 'JorgeSanz';
+UPDATE Translators SET name = 'José Antonio Canalejo' WHERE name Like 'JosÃ© Antonio Canalejo';
+UPDATE Translators SET name = 'Massimo Di Stefano' WHERE name Like 'MassimoDi Stefano';
+UPDATE Translators SET name = 'Nobusuke Iwasaki' WHERE name Like 'NobusukeIwasaki';
+UPDATE Translators SET name = 'Roberto Antolín' WHERE name Like 'Roberto Antolí­n';
+UPDATE Translators SET name = 'Valenty González' WHERE name Like 'Valenty Gonzalez';
+UPDATE Translators SET name = 'avk_h' WHERE email Like 'avk_h mail.ru';
+UPDATE Translators SET name = 'kuzkok' WHERE email Like 'kuzkok';
+UPDATE Translators SET name = 'Yoichi Kayama' WHERE name Like 'YoichiKayama';
+UPDATE Translators SET name = 'Marc-André Barbeau' WHERE name Like 'Marc-Andre Barbeau';

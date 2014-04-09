@@ -237,9 +237,9 @@ fancyplot <- function(){
     d2sql <- "SELECT release,subregion,sum(count) as count FROM ContribRegion GROUP BY release,subregion"    
     d2 <- dbGetQuery(con,d2sql)
 
-    d3sql <- "SELECT release,subregion,sum(count) as Tcount FROM TransRegion GROUP BY release,subregion"    
-    d3 <- dbGetQuery(con,d3sql)
-
+    #d3sql <- "SELECT release,subregion,sum(count) as Tcount FROM TransRegion GROUP BY release,subregion"    
+    #d3 <- dbGetQuery(con,d3sql)
+    d3 <- dbReadTable(con,"TransRegion")
     
     #Contrib plot
     d2t <-xtabs(count~subregion+release,data=d2)
@@ -249,7 +249,7 @@ fancyplot <- function(){
     legend("topleft",legend=rownames(d2t),fill=colset)
 
     #Trans plot - TODO merge somehow with contrin plot
-    d3t <-xtabs(Tcount~subregion+release,data=d3)
+    d3t <-xtabs(count~subregion+release,data=d3)
 
     colset <- brewer.pal(9,"Set1")
     barplot(d3t,col=colset)

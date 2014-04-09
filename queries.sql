@@ -287,9 +287,17 @@ ORDER BY a.country asc, b.release asc;
 
 CREATE View TransRegion AS
 SELECT country,b.release as release,count(distinct(name))as count,subregion  
-FROM (SELECT c.country,c.name, c.rev,region_un,subregion FROM translators as c,mapContribTime as d WHERE c.country = d.country) as a,
-svnversion as b 
+FROM (SELECT c.country,c.name, c.rev,region_un,subregion FROM translators as c,mapcountries as d WHERE c.country = d.name) as a,svnversion as b 
 WHERE a.rev = b.rev 
-GROUP BY country, b.release 
-ORDER BY a.country asc, b.release asc;
+GROUP BY subregion, b.release 
+ORDER BY b.release asc,a.country asc;
+--alternate method, not quite the same results
+SELECT a.release as release,subregion,count(Distinct(a.name)) as count
+FROM (SELECT name, t.country, t.rev, release 
+	FROM translators as t
+	JOIN svnversion as v
+	ON t.rev = v.rev) as a
+JOIN mapcountries as m
+ON a.country = m.name
+GROUP BY release,subregion
 
