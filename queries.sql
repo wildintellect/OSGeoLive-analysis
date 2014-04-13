@@ -270,10 +270,33 @@ SELECT "country", sum("win") as windows, sum("mac") as mac, sum("lin") as linux,
 FROM "sfosbycountry"
 GROUP BY country
 
+
 --Total counts per type
 CREATE View TotDownByOs AS
 SELECT 'downloads' as type, sum("win") as Windows, sum("mac") as Mac, sum("lin") as Linux, sum("other") as Other
 FROM "sfosbycountry"
+
+--ADD total to each entry
+ALTER TABLE "sfosbycountry"
+ADD Column 'total' INTEGER;
+--Update the total
+UPDATE "sfosbycountry" SET total = ("win"+"mac"+"lin"+"other");
+
+-- Percentage for each entry
+SELECT ROWID, "version", "type", "country",("win"*1.0/total) as winpr, ("mac"*1.0/total) as macpr, ("lin"*1.0/total) as linpr, ("other"*1.0/total) as other
+FROM "sfosbycountry"
+ORDER BY ROWID
+
+-- Percentage by country and type
+SELECT ROWID,"type", "country",(sum("win")*1.0/sum(total)) as winpr, (sum("mac")*1.0/sum(total)) as macpr, (sum("lin")*1.0/sum(total)) as linpr, (sum("other")*1.0/sum(total)) as other
+FROM "sfosbycountry"
+GROUP BY country,type
+ORDER BY country
+
+--Contingency, type by OS
+SELECT type, sum("win") as Windows, sum("mac") as Mac, sum("lin") as Linux, sum("other") as Other
+FROM "sfosbycountry"
+GROUP BY Type
 
 /* Infographic building and Contingency Table*/
 --Query returns count of people per country per release

@@ -210,7 +210,7 @@ testRandom <- function(){
 }
 
 
-contanalysis <- function(){
+OSanalysis <- function(){
     #Two nominal variables - County and Operating System
     #http://udel.edu/~mcdonald/statgtestind.html
     require(Deducer)
@@ -226,6 +226,8 @@ contanalysis <- function(){
 #data:  downbyos.cont
 #X-squared = 25.4531, df = 3, p-value = 1.241e-05
 
+    #Summary information
+    #Convert to percentages, calculate min, max, avg, std_dev by column
 
 }
 
