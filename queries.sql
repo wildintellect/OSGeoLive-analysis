@@ -285,18 +285,44 @@ UPDATE "sfosbycountry" SET total = ("win"+"mac"+"lin"+"other");
 -- Percentage for each entry
 SELECT ROWID, "version", "type", "country",("win"*1.0/total) as winpr, ("mac"*1.0/total) as macpr, ("lin"*1.0/total) as linpr, ("other"*1.0/total) as other
 FROM "sfosbycountry"
-ORDER BY ROWID
+ORDER BY ROWID;
 
 -- Percentage by country and type
 SELECT ROWID,"type", "country",(sum("win")*1.0/sum(total)) as winpr, (sum("mac")*1.0/sum(total)) as macpr, (sum("lin")*1.0/sum(total)) as linpr, (sum("other")*1.0/sum(total)) as other
 FROM "sfosbycountry"
 GROUP BY country,type
-ORDER BY country
+ORDER BY country;
 
 --Contingency, type by OS
+CREATE VIEW TypeByOS AS
 SELECT type, sum("win") as Windows, sum("mac") as Mac, sum("lin") as Linux, sum("other") as Other
 FROM "sfosbycountry"
-GROUP BY Type
+GROUP BY Type;
+
+--Contingency, Country by Downloads, Contributors, Translators
+SELECT ROWID, "country", sum(total) as downloads
+FROM "sfosbycountry"
+GROUP BY country
+ORDER BY country;
+
+SELECT country,count(name) as translators FROM
+translators as a,
+(SELECT max(rev) as mrev
+FROM "translators") as b
+WHERE rev = mrev
+GROUP BY Country;
+
+SELECT country,count(name) as contributors FROM
+contributors as a,
+(SELECT max(rev) as mrev
+FROM "contributors") as b
+WHERE rev = mrev
+GROUP BY Country;
+
+
+-- Join all 3 together, but in 0 for no data(or do in R)
+-- Much easier in R
+
 
 /* Infographic building and Contingency Table*/
 --Query returns count of people per country per release

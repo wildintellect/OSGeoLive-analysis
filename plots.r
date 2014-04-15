@@ -221,14 +221,46 @@ OSanalysis <- function(){
     row.names(downbyos.cont) <- c("downloads","computers")      
     chisq.test(downbyos.cont)
     likelihood.test(downbyos.cont)
-#	Pearson's Chi-squared test
-
-#data:  downbyos.cont
-#X-squared = 25.4531, df = 3, p-value = 1.241e-05
+    #	Pearson's Chi-squared test
+    #data:  downbyos.cont
+    #X-squared = 25.4531, df = 3, p-value = 1.241e-05
 
     #Summary information
     #Convert to percentages, calculate min, max, avg, std_dev by column
 
+
+    #Contigency analysis of Type of Download by OS of Downloader 
+    typebyos <- dbReadTable(con,"TypeByOS")
+    typebyos.cont <- as.matrix(as.integer(typebyos[,-1]))
+    row.names(typebyos.cont) <- typebyos[,1]
+    likelihood.test(typebyos)
+
+    #	Log likelihood ratio (G-test) test of independence without correction
+    #data:  typebyos.cont
+    #Log likelihood ratio statistic (G) = 950.6209, X-squared df = 6,
+    #p-value < 2.2e-16
+    
+    #Contingency analysis of Countries by Downloads, Contributors and Translators
+    downsSQL <- 'SELECT "country", sum(total) as downloads FROM "sfosbycountry"GROUP BY country ORDER BY country;'
+    downs <- dbGetQuery(con,downsSQL)
+    contribSQL <- 'SELECT country,count(name) as contributors FROM contributors as a, (SELECT max(rev) as mrev FROM "contributors") as b WHERE rev = mrev GROUP BY Country;'
+    contrib <- dbGetQuery(con,contribSQL)
+    transSQL <- 'SELECT country,count(name) as translators FROM translators as a,(SELECT max(rev) as mrev FROM "translators") as b WHERE rev = mrev GROUP BY Country;'
+    trans <- dbGetQuery(con,transSQL)
+    country.df <- merge(downs,contrib,all.x=TRUE)
+    country.df <- merge(country.cont,trans,all.x=TRUE)
+    #Replace NA with 0
+    country.df[is.na(country.df)] <- 0
+    #Convert to martix contingency table
+    country.cont <- as.matrix((country.df[,-1]))
+    row.names(country.cont) <- country.df[,1]
+    likelihood.test(country.cont)
+
+    #Log likelihood ratio (G-test) test of independence without correction
+    #data:  country.cont
+    #Log likelihood ratio statistic (G) = 367.4859, X-squared df = 320,
+    #p-value = 0.03457
+    
 }
 
 fancyplot <- function(){
