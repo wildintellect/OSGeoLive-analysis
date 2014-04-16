@@ -261,6 +261,9 @@ OSanalysis <- function(){
     #data:  country.cont
     #Log likelihood ratio statistic (G) = 367.4859, X-squared df = 320,
     #p-value = 0.03457
+    cor.s = cor.test(country.cont[,1],country.cont[,2],method="kendall")
+    
+    
 
     #Contingency analysis of Countries By OS variation
     # the tails of Windows use(none/100) seem to have something in common
