@@ -293,6 +293,14 @@ FROM "sfosbycountry"
 GROUP BY country,type
 ORDER BY country;
 
+--Contingency Country by OS, in percentages
+CREATE VIEW CountryByOS AS
+SELECT "country",(sum("win")*1.0/sum(total))*100 as Windows, (sum("mac")*1.0/sum(total))*100 as Mac, (sum("lin")*1.0/sum(total))*100 as Linux, (sum("other")*1.0/sum(total))*100 as Other
+FROM "sfosbycountry"
+GROUP BY country
+ORDER BY country;
+
+
 --Contingency, type by OS
 CREATE VIEW TypeByOS AS
 SELECT type, sum("win") as Windows, sum("mac") as Mac, sum("lin") as Linux, sum("other") as Other
