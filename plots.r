@@ -211,9 +211,10 @@ testRandom <- function(){
 
 
 OSanalysis <- function(){
+    require(Deducer)
+
     #Two nominal variables - County and Operating System
     #http://udel.edu/~mcdonald/statgtestind.html
-    require(Deducer)
     downbyos <- dbReadTable(con,"TotDownByOs")
     compbyos <- c(92.02,6.81,1.16,0.00)
     downbyos.mat <- as.matrix(downbyos[1,-1]/sum(downbyos[1,-1])*100)
@@ -252,7 +253,7 @@ OSanalysis <- function(){
     #Replace NA with 0
     country.df[is.na(country.df)] <- 0
     #Convert to martix contingency table
-    country.cont <- as.matrix((country.df[,-1]))
+    country.cont <- as.matrix(country.df[,-1])
     row.names(country.cont) <- country.df[,1]
     likelihood.test(country.cont)
 
@@ -260,6 +261,18 @@ OSanalysis <- function(){
     #data:  country.cont
     #Log likelihood ratio statistic (G) = 367.4859, X-squared df = 320,
     #p-value = 0.03457
+
+    #Contingency analysis of Countries By OS variation
+    # the tails of Windows use(none/100) seem to have something in common
+    countrybyos <- dbReadTable(con,"CountryByOS")
+    countrybyos.cont <- as.matrix(countrybyos[,-1])
+    row.names(countrybyos.cont) <- countrybyos[,1]
+    likelihood.test(countrybyos.cont)
+    
+    #Log likelihood ratio (G-test) test of independence without correction
+    #data:  countrybyos.cont
+    #Log likelihood ratio statistic (G) = 10848.92, X-squared df = 480,
+    #p-value < 2.2e-16
     
 }
 
