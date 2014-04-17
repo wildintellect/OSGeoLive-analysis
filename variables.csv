@@ -1,4 +1,4 @@
-Name ,Description,Source
+Variable ,Description,Source
 country,Country Name,Natural Earth
 iso_a2,Country ISO 2 Letter Code,Natural Earth
 downloads,Total Number of Downloads,OSGeo-Live Sourceforge
