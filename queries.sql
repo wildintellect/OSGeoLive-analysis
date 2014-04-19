@@ -331,6 +331,14 @@ GROUP BY Country;
 -- Join all 3 together, but in 0 for no data(or do in R)
 -- Much easier in R
 
+-- Version by type, when data is available 
+SELECT version,type,(sum(viewed)) as downloads FROM osgeodowndata2011 
+WHERE Version < 6
+GROUP BY version, type
+UNION 
+SELECT version,(CASE WHEN type Like '7z' Then 'vm' WHEN type Like 'iso' THEN 'full' ELSE type END) as type,(sum(downloads)) as downloads FROM sfcountries
+GROUP BY version,type
+
 
 /* Infographic building and Contingency Table*/
 --Query returns count of people per country per release

@@ -1,5 +1,6 @@
 # R code to create infographic of OSGeoLive history
 start <- function(){
+    #usage con <- start()
     require(RSQLite)
     m <- dbDriver("SQLite")
     con <- dbConnect(m, dbname = "osgeolivedata.sqlite",loadable.extensions = TRUE)
@@ -29,7 +30,8 @@ CommittersByDate <- function(con){
 
     q2 <- "SELECT c.rev, COUNT(name) as count,time FROM translators as c, svnversion as v WHERE c.rev = v.rev GROUP BY c.rev"
     trans <- dbGetQuery(con,q2)
-    d4 <- dbReadTable(con,"release")
+    d4a <- dbReadTable(con,"release")
+    d4 <- d4a[1:8,]
     
     xrange <- c(min(as.Date(d4$time)),max(as.Date(d4$time)+100))
     yrange <- c(0,100)
@@ -39,10 +41,12 @@ CommittersByDate <- function(con){
     lines(as.Date(trans$time),trans$count,col=colors[2])
     axis(3,at=as.Date(d4$time),labels=d4$version, las=2)
     legend("topleft",legend=c   ("Contributors","Translators"),fill=colors)
+    return(colors)
 }
 
 ReleaseSizes <- function(con,colors){
-    d4 <- dbReadTable(con,"release")
+    d4a <- dbReadTable(con,"release")
+    d4 <- d4a[1:8,]
     sizes <- rbind(as.numeric(d4$iso),as.numeric(d4$mini),as.numeric(d4$vm))
     #get time widths of each release
     widths <- diff(c(as.Date(d4$time), max(as.Date(d4$time)+100)))
@@ -55,15 +59,20 @@ ReleaseSizes <- function(con,colors){
 
 DownloadPlot <- function(con,colors){
     require(reshape)
-    q3 <- "SELECT version,type,(sum(viewed)) as downloads FROM osgeodowndata2011 GROUP BY version, type"
+    #q3 <- "SELECT version,type,(sum(viewed)) as downloads FROM osgeodowndata2011 GROUP BY version, type"
+    #Sourceforge + Mirrorbrain data
+    q3 <-"SELECT version,type,(sum(viewed)) as downloads FROM osgeodowndata2011 WHERE Version < 6 GROUP BY version, type UNION SELECT version,(CASE WHEN type Like '7z' Then 'vm' WHEN type Like 'iso' THEN 'full' ELSE type END) as type,(sum(downloads)) as downloads FROM sfcountries GROUP BY version,type"
+
     d5 <- dbGetQuery(con,q3)
+
     #get the widths of each release
-    d4 <- dbReadTable(con,"release")
+    d4a <- dbReadTable(con,"release")
+    d4 <- d4a[1:8,]
     widths <- diff(c(as.Date(d4$time), max(as.Date(d4$time)+100)))
     #nwidths = unlist(widths)
     #reshape data for plotting
     temp <- cast(d5,version~type)
-    barplot(rbind(temp[,2],temp[,3],temp[,4]),ylim=c(0,6000),names.arg=temp$version, col=colors,width=as.vector(widths),space=.15,ylab="Number of Downloads",xlab="Release Number")
+    barplot(rbind(temp[,2],temp[,3],temp[,4]),ylim=c(0,25000),names.arg=temp$version, col=colors,width=as.vector(widths),space=.15,ylab="Number of Downloads",xlab="Release Number")
     legend("topleft",legend=c("iso","mini","vm"),fill=colors,horiz=TRUE)
 
 }
@@ -73,13 +82,15 @@ end <- function(con){dbDisconnect(con)}
 
 #plot showing the size of each type of release
 separatePlot <- function(con){
-    png(file="OSGeoLiveReleases.png", width=400, height=400, units="px")
+    #png(file="OSGeoLiveReleases.png", width=400, height=400, units="px")
+    pdf(file="OSGeoLiveReleases.pdf", width=4, height=4)
     ReleaseSizes(con)    
     dev.off()
     
     # Todo: add number of applications and number of languages as axis or marks
     # By date to space out the releases better for plotting along side other data
-    png(file="OSGeoLiveCommittersByDate.png", width=400, height=400, units="px")
+    #png(file="OSGeoLiveCommittersByDate.png", width=400, height=400, units="px")
+    pdf(file="OSGeoLiveCommittersByDate.pdf", width=4, height=4)
     CommittersByDate(con)
     dev.off()
 }
@@ -88,7 +99,8 @@ separatePlot <- function(con){
 # 2 Plots stacked
 stackPlot <- function(con){
     #Todo, export pdf of svg for better quality
-    png(file="OSGeoLiveInfographic.png", width=400,height=800, units="px")
+    #png(file="OSGeoLiveInfographic.png", width=400,height=800, units="px")
+    pdf(file="OSGeoLiveInfographic.pdf", width=8.5,height=11)
     par(mfrow=c(3,1))
     colors <- c(gray(0.2),gray(0.5),gray(0.8))
     ReleaseSizes(con,colors)

@@ -71,12 +71,19 @@ def fetchData(connection):
                 ["6.0","2012-08-19",datetime.date.today().isoformat(),
                  [["osgeo-live-vm-6.0.7z","7z"],
                   ["osgeo-live-6.0-1.iso","iso"],
-                  ["osgeo-live-mini-6.0.iso","mini"]]],
+                  ["osgeo-live-mini-6.0.iso","mini"]
+                 ]],
                 ["6.5","2013-02-22",datetime.date.today().isoformat(),
                  [["osgeo-live-vm-6.5.7z","7z"],
                  ["osgeo-live-6.5.iso","iso"],
-                 ["osgeo-live-mini-6.5.iso","mini"]],
-                ]]
+                 ["osgeo-live-mini-6.5.iso","mini"]
+                 ]],
+                ["7.0","2013-08-27",datetime.date.today().isoformat(),
+                 [["osgeo-live-vm-7.0.7z","7z"],
+                 ["osgeo-live-7.0.iso","iso"],
+                 ["osgeo-live-mini-7.0.iso","mini"]
+                 ]]
+               ]
     #hard coded order to match above
     type = ["7z","iso","mini"]
     # Doesn't work because files are not identically named between versions due to point release
