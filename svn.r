@@ -33,7 +33,7 @@ CommittersByDate <- function(con){
     d4a <- dbReadTable(con,"release")
     d4 <- d4a[1:8,]
     
-    xrange <- c(min(as.Date(d4$time)),max(as.Date(d4$time)+100))
+    xrange <- c(min(as.Date(d4$time)),max(as.Date(d4$time)+185))
     yrange <- c(0,100)
     colors <- c("blue","orange")
     plot(xrange,yrange,type="n",xlab="Date",ylab="Count")
@@ -47,34 +47,39 @@ CommittersByDate <- function(con){
 ReleaseSizes <- function(con,colors){
     d4a <- dbReadTable(con,"release")
     d4 <- d4a[1:8,]
-    sizes <- rbind(as.numeric(d4$iso),as.numeric(d4$mini),as.numeric(d4$vm))
+    sizes <- rbind(as.numeric(d4$vm),as.numeric(d4$mini),as.numeric(d4$iso))
     #get time widths of each release
     widths <- diff(c(as.Date(d4$time), max(as.Date(d4$time)+100)))
     nwidths = unlist(lapply(widths, rep,times=3 ))/3
     #plotting
     #colors <- c(gray(0.1),"lightgray","white")
     barplot(sizes,beside=TRUE, names.arg=d4  $version,ylim=c(0,6),ylab="Size in GB",xlab="Release Number",col=colors,space=c(0,.75))
-    legend("topleft",legend=c("iso","mini","vm"),fill=colors,horiz=TRUE)
+    legend("topleft",legend=c("vm","mini","iso"),fill=colors,horiz=TRUE)
+    #Add lines showing max size allowed for iso and mini
+    abline(h=c(3.8,4.7),lty=c(3,2),col="black")
+
 }
 
 DownloadPlot <- function(con,colors){
     require(reshape)
+    #Need to mark that versions 2-5.5 are not from all servers, assuming load balancing between EU and non-EU ~25%
+
     #q3 <- "SELECT version,type,(sum(viewed)) as downloads FROM osgeodowndata2011 GROUP BY version, type"
-    #Sourceforge + Mirrorbrain data
-    q3 <-"SELECT version,type,(sum(viewed)) as downloads FROM osgeodowndata2011 WHERE Version < 6 GROUP BY version, type UNION SELECT version,(CASE WHEN type Like '7z' Then 'vm' WHEN type Like 'iso' THEN 'full' ELSE type END) as type,(sum(downloads)) as downloads FROM sfcountries GROUP BY version,type"
+    #Sourceforge + Ice only data(*4)
+    q3 <-"SELECT version,type,(sum(viewed))*3 as downloads FROM osgeodowndata2011 WHERE Version < 6 GROUP BY version, type UNION SELECT version,(CASE WHEN type Like '7z' Then 'vm' WHEN type Like 'iso' THEN 'full' ELSE type END) as type,(sum(downloads)) as downloads FROM sfcountries WHERE Version < 7 GROUP BY version,type"
 
     d5 <- dbGetQuery(con,q3)
 
     #get the widths of each release
     d4a <- dbReadTable(con,"release")
     d4 <- d4a[1:8,]
-    widths <- diff(c(as.Date(d4$time), max(as.Date(d4$time)+100)))
+    widths <- diff(c(as.Date(d4a$time), max(as.Date(d4a$time))))
     #nwidths = unlist(widths)
     #reshape data for plotting
     temp <- cast(d5,version~type)
-    barplot(rbind(temp[,2],temp[,3],temp[,4]),ylim=c(0,25000),names.arg=temp$version, col=colors,width=as.vector(widths),space=.15,ylab="Number of Downloads",xlab="Release Number")
-    legend("topleft",legend=c("iso","mini","vm"),fill=colors,horiz=TRUE)
-
+    barplot(rbind(temp[,2],temp[,3],temp[,4]),ylim=c(0,25000),names.arg=temp$version, col=rev(colors),width=as.vector(widths),space=.15,ylab="Number of Downloads",xlab="Release Number")
+    legend("topleft",legend=c("vm","mini","iso"),fill=colors,horiz=TRUE)
+   
 }
 
 end <- function(con){dbDisconnect(con)}
@@ -102,7 +107,7 @@ stackPlot <- function(con){
     #png(file="OSGeoLiveInfographic.png", width=400,height=800, units="px")
     pdf(file="OSGeoLiveInfographic.pdf", width=8.5,height=11)
     par(mfrow=c(3,1))
-    colors <- c(gray(0.2),gray(0.5),gray(0.8))
+    colors <- c(gray(0.8),gray(0.5),gray(0.2))
     ReleaseSizes(con,colors)
     DownloadPlot(con,colors)
     CommittersByDate(con)
