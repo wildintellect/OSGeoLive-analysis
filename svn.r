@@ -56,8 +56,9 @@ ReleaseSizes <- function(con,colors){
     barplot(sizes,beside=TRUE, names.arg=d4  $version,ylim=c(0,6),ylab="Size in GB",xlab="Release Number",col=colors,space=c(0,.75))
     legend("topleft",legend=c("vm","mini","iso"),fill=colors,horiz=TRUE)
     #Add lines showing max size allowed for iso and mini
-    abline(h=c(3.8,4.7),lty=c(3,2),col="black")
-
+    linetypes = c(3,2)    
+    abline(h=c(3.8,4.7),lty=linetypes,col="black")
+    legend("topright",legend=c("4GB usb Limit","4.7 GB DVD Limit"),lty=linetypes,horiz=TRUE)
 }
 
 DownloadPlot <- function(con,colors){
@@ -79,7 +80,15 @@ DownloadPlot <- function(con,colors){
     temp <- cast(d5,version~type)
     barplot(rbind(temp[,2],temp[,3],temp[,4]),ylim=c(0,25000),names.arg=temp$version, col=rev(colors),width=as.vector(widths),space=.15,ylab="Number of Downloads",xlab="Release Number")
     legend("topleft",legend=c("vm","mini","iso"),fill=colors,horiz=TRUE)
-   
+    
+    #draw a box around the estimated values
+    #rect(xleft=0,ybottom=0,xright=1215,ytop=18000,angle=45,density=3,col=gray(0.65))
+    rect(xleft=0,ybottom=0,xright=1215,ytop=18000,angle=45,col=gray(1,alpha=0.3),border=FALSE)
+    rect(xleft=0,ybottom=0,xright=1215,ytop=18000,angle=45,col=gray(.4,alpha=0.5),density=2)
+
+    text(x=600,y=15000,"Estimated Values",col=gray(0.2))
+
+       
 }
 
 end <- function(con){dbDisconnect(con)}
