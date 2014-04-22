@@ -322,11 +322,13 @@ fancyplot <- function(con){
     allcolors <- as.data.frame(rainbow(length(subregion)))
     #coltable <- (cbind(allcolors,subregion))
     row.names(allcolors) <- subregion
+    names(allcolors) <- "colors"
     
     #2 on page
     par(mfrow=c(2,1))
     
-    colset <- coltable[coltable$subregion %in% unique(d2$subregion),1]
+    #colset <- coltable[coltable$subregion %in% unique(d2$subregion),1]
+    colset <- row.names %in% unique(d2$subregion)
     #colset <- brewer.pal(9,"Set1")
     barplot(d2t,col=colset)
     legend("topleft",legend=rownames(d2t),fill=colset)
