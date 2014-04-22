@@ -319,27 +319,30 @@ fancyplot <- function(con){
 
     #There are 10 distinct subregions currently
     subregion <- unique(c(d3$subregion,d2$subregion))
-    allcolors <- as.data.frame(rainbow(length(subregion)))
-    #coltable <- (cbind(allcolors,subregion))
-    row.names(allcolors) <- subregion
-    names(allcolors) <- "colors"
+    allcolors <- (rainbow(length(subregion)))
+    names(allcolors) <- subregion
+    
     
     #2 on page
+    pdf(file="RegionalParticipation.pdf",width=6,height=9)
     par(mfrow=c(2,1))
     
     #colset <- coltable[coltable$subregion %in% unique(d2$subregion),1]
-    colset <- row.names %in% unique(d2$subregion)
+    #colset <- row.names %in% unique(d2$subregion)
+    colset <- allcolors[names(allcolors) %in% unique(d2$subregion)]
     #colset <- brewer.pal(9,"Set1")
-    barplot(d2t,col=colset)
+    barplot(d2t,col=colset,xlab="Release",ylab="Contributors")
     legend("topleft",legend=rownames(d2t),fill=colset)
 
     #Trans plot - TODO merge somehow with contrin plot
     d3t <-xtabs(count~subregion+release,data=d3)
 
-    colset <- coltable[coltable$subregion %in% unique(d3$subregion),1]
+    colset <- allcolors[names(allcolors) %in% unique(d3$subregion)]
+    #colset <- coltable[coltable$subregion %in% unique(d3$subregion),1]
     #colset <- brewer.pal(9,"Set1")
-    barplot(d3t,col=colset)
+    barplot(d3t,col=colset,xlab="Release",ylab="Translators")
     legend("topleft",legend=rownames(d3t),fill=colset)
+    dev.off()
 
     #get total number of releases
     cnt <- length(d1)
