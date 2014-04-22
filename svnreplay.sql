@@ -147,3 +147,18 @@ UPDATE Translators SET name = 'avk_h' WHERE email Like 'avk_h mail.ru';
 UPDATE Translators SET name = 'kuzkok' WHERE email Like 'kuzkok';
 UPDATE Translators SET name = 'Yoichi Kayama' WHERE name Like 'YoichiKayama';
 UPDATE Translators SET name = 'Marc-André Barbeau' WHERE name Like 'Marc-Andre Barbeau';
+
+
+--Fix Contributors table too
+UPDATE Contributors SET name = 'Jody Garnett' WHERE name Like 'Jody Garnett%';
+UPDATE Contributors SET name = 'Marc-André Barbeau' WHERE name Like 'Marc-Andre Barbeau';
+UPDATE Contributors SET name = 'Eike Hinderk Jürrens' WHERE name Like 'Eike Hinderk Jrrens';
+UPDATE Contributors SET name = 'François Prunayre' WHERE name Like 'Fran?ois Prunayre';
+UPDATE Contributors SET name = 'Johan van de Wauw' WHERE name Like 'Johan Van de Wauw';
+UPDATE Contributors SET name = 'Michaël Michaud' WHERE name Like 'Micha?l Michaud';
+UPDATE Contributors SET name = 'Pirmin Kalberer' WHERE name Like 'Pirmin kalberer';
+UPDATE Contributors SET name = 'Sergio Baños' WHERE name Like 'Sergio Ba?os';
+UPDATE Contributors SET name = 'Gérald Fenoy' WHERE name Like 'Grald Fenoy';
+UPDATE Contributors SET name = 'Nathaniel V. Kelso' WHERE name Like 'Nathaniel Kelso';
+
+

@@ -345,7 +345,7 @@ GROUP BY version,type
 --Query returns count of people per country per release
 CREATE View ContribRegion AS
 SELECT country,b.release as release,count(distinct(name))as count,subregion  
-FROM (SELECT c.country,c.name, c.rev,region_un,subregion FROM contributors as c,mapContribTime as d WHERE c.country = d.country) as a,
+FROM (SELECT c.country,c.name, c.rev,region_un,subregion FROM contributors as c,mapcountries as d WHERE c.country = d.name) as a,
 svnversion as b 
 WHERE a.rev = b.rev 
 GROUP BY country, b.release 

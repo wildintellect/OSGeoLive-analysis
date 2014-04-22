@@ -250,7 +250,7 @@ OSanalysis <- function(con){
     typebyos <- dbReadTable(con,"TypeByOS")
     typebyos.cont <- as.matrix((typebyos[,-1]))
     row.names(typebyos.cont) <- typebyos[,1]
-    typebyos.lt <- likelihood.test(typebyos)
+    typebyos.lt <- likelihood.test(typebyos.cont)
     capture.output(print(typebyos.lt),file=of,append=TRUE)
 
     #	Log likelihood ratio (G-test) test of independence without correction
@@ -266,7 +266,7 @@ OSanalysis <- function(con){
     transSQL <- 'SELECT country,count(name) as translators FROM translators as a,(SELECT max(rev) as mrev FROM "translators") as b WHERE rev = mrev GROUP BY Country;'
     trans <- dbGetQuery(con,transSQL)
     country.df <- merge(downs,contrib,all.x=TRUE)
-    country.df <- merge(country.cont,trans,all.x=TRUE)
+    country.df <- merge(country.df,trans,all.x=TRUE)
     #Replace NA with 0
     country.df[is.na(country.df)] <- 0
     #Convert to martix contingency table
@@ -278,7 +278,10 @@ OSanalysis <- function(con){
     #data:  country.cont
     #Log likelihood ratio statistic (G) = 367.4859, X-squared df = 320,
     #p-value = 0.03457
-    cor.s = cor.test(country.cont[,1],country.cont[,2],method="kendall")
+    #This test comes out different now, there was a bug in the code before
+        
+    #Maybe correlation test is unecessary?
+    #cor.s = cor.test(country.cont[,1],country.cont[,2],method="kendall")
     
     
 
@@ -301,24 +304,38 @@ fancyplot <- function(con){
     #Get a List of the release dates and versions
     d1 <- dbReadTable(con,"release")
     #d2 <- dbReadTable(con,"ContribRegion")
-    d2sql <- "SELECT release,subregion,sum(count) as count FROM ContribRegion GROUP BY release,subregion"    
+    #Query returns count of people per country per release
+    d2sql <- "SELECT release,subregion,sum(count) as count FROM ContribRegion GROUP BY release,subregion ORDER BY subregion"    
     d2 <- dbGetQuery(con,d2sql)
 
     #d3sql <- "SELECT release,subregion,sum(count) as Tcount FROM TransRegion GROUP BY release,subregion"    
     #d3 <- dbGetQuery(con,d3sql)
-    d3 <- dbReadTable(con,"TransRegion")
+    d3sql <- "SELECT * FROM TransRegion ORDER BY subregion"
+    #d3 <- dbReadTable(con,"TransRegion")
+    d3 <- dbGetQuery(con,d3sql)
     
     #Contrib plot
     d2t <-xtabs(count~subregion+release,data=d2)
 
-    colset <- brewer.pal(9,"Set1")
+    #There are 10 distinct subregions currently
+    subregion <- unique(c(d3$subregion,d2$subregion))
+    allcolors <- as.data.frame(rainbow(length(subregion)))
+    #coltable <- (cbind(allcolors,subregion))
+    row.names(allcolors) <- subregion
+    
+    #2 on page
+    par(mfrow=c(2,1))
+    
+    colset <- coltable[coltable$subregion %in% unique(d2$subregion),1]
+    #colset <- brewer.pal(9,"Set1")
     barplot(d2t,col=colset)
     legend("topleft",legend=rownames(d2t),fill=colset)
 
     #Trans plot - TODO merge somehow with contrin plot
     d3t <-xtabs(count~subregion+release,data=d3)
 
-    colset <- brewer.pal(9,"Set1")
+    colset <- coltable[coltable$subregion %in% unique(d3$subregion),1]
+    #colset <- brewer.pal(9,"Set1")
     barplot(d3t,col=colset)
     legend("topleft",legend=rownames(d3t),fill=colset)
 
@@ -326,8 +343,7 @@ fancyplot <- function(con){
     cnt <- length(d1)
 
 
-    #Query returns count of people per country per release
-    d2 <- "SELECT release,subregion,sum(count) as count FROM ContribRegion GROUP BY release,subregion"
+
 
 
 
@@ -337,7 +353,7 @@ fancyplot <- function(con){
     #row 3, line graph of contributors and translators
     #ltest <- rbind(seq(1,7),rep(8,7),rep(9,7))
     #dynamic version
-    ltest <- rbind(seq(1,cnt),rep(cnt+1,cnt),rep(cnt+2,cnt))
-    nf <- layout(ltest)
-    layout.show(nf)
+    #ltest <- rbind(seq(1,cnt),rep(cnt+1,cnt),rep(cnt+2,cnt))
+    #nf <- layout(ltest)
+    #layout.show(nf)
 }
