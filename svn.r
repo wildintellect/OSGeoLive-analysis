@@ -86,7 +86,7 @@ DownloadPlot <- function(con,colors){
     rect(xleft=0,ybottom=0,xright=1215,ytop=18000,angle=45,col=gray(1,alpha=0.3),border=FALSE)
     rect(xleft=0,ybottom=0,xright=1215,ytop=18000,angle=45,col=gray(.4,alpha=0.5),density=2)
 
-    text(x=600,y=15000,"Estimated Values",col=gray(0.2))
+    text(x=600,y=19000,"Estimated Values",col=gray(0.2))
 
        
 }
