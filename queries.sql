@@ -302,8 +302,9 @@ ORDER BY country;
 
 
 --Contingency, type by OS
+DROP VIEW if exists TypeByOS;
 CREATE VIEW TypeByOS AS
-SELECT type, sum("win") as Windows, sum("mac") as Mac, sum("lin") as Linux, sum("other") as Other
+SELECT type, sum("win")*1 as Windows, sum("mac")*1 as Mac, sum("lin")*1 as Linux, sum("other")*1 as Other
 FROM "sfosbycountry"
 GROUP BY Type;
 

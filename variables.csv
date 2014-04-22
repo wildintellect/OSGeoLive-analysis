@@ -6,7 +6,7 @@ pop,Population,Natural Earth
 economy,Economic ranking 1-9,Natural Earth
 income,Income ranking 1-9,Natural Earth
 downbypop,Download Total divided by Population Estimate,calculated
-OoklaAverage,Average Internet speed,Ooka
+OoklaAverage,Average Internet speed,Ookla
 ITUbroadband,Estimate of percent of population with wired Internet access above 256 kpbs,ITU
 AkUniqueIP,Total Unique IP Addresses,Akamai
 AkAverage,Average Internet Speed,Akamai

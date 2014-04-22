@@ -10,7 +10,7 @@ start <- function(){
 
 end <- function(con){dbDisconnect(con)}
 
-makeplots <- function(){
+makeplots <- function(con){
     d1 <- dbReadTable(con,"byVersion")
     d2 <- dbReadTable(con,"byType")
 
@@ -32,7 +32,7 @@ makeplots <- function(){
 }
 
 
-makemaps <- function(){
+makemaps <- function(con){
     ### Plotting maps
     #loading spatialite views as sp objects
     require(rgdal)
@@ -94,7 +94,7 @@ makemaps <- function(){
 }
 
 
-fixITUdata <- function(){
+fixITUdata <- function(con){
     ## Reshape ITU data to long format and save back to sqlite
     # Assumes db is already connected
     library(reshape2)
@@ -108,7 +108,7 @@ fixITUdata <- function(){
 }
 
 
-exploreplots <- function(){
+exploreplots <- function(con){
     codes <- unique(dspeed$country_code)
     plot(range(as.POSIXct(dspeed$date)),range(dspeed$download_kbps))
     colors <- rainbow(length(codes))
@@ -127,13 +127,13 @@ exploreplots <- function(){
 
 
 #Regression test download data against country metrics
-downloadregression <- function(){
+downloadregression <- function(con){
     require(car)
     downdata <-dbReadTable(con,"Metrics2012wAkamai")
     #Scatterplot is diagnostic
     scatterplotMatrix(downdata[-(1:4)])
     #do I need to do more sophisticated analysis considering interaction between variables?
-    lmresult <-lm(downbypop ~ economy+income+average+akamaibroadband,downdata)
+    lmresult <-lm(downbypop ~ economy+income+akaverage+akbroadband,downdata)
     capture.output(lmresult,of="download-regression.txt")    
     par(mfrow=c(2,2))
     plot(lmresult)
@@ -170,7 +170,7 @@ spatialauto <- function(){
 }
 
 
-testRandom <- function(){
+testRandom <- function(con){
     #Set the seed to the psuedo random number generator for repeatable results
     set.seed(9)
     require(randomForest)
@@ -189,36 +189,44 @@ testRandom <- function(){
     #ntree can be change
     #Potentially use tuneRF to find the mtry and ntree values to use
     # itu-broadband had nulls values
-    downdata.rf <- randomForest(downbypop ~ economy+income+avg+uniqueip+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex, data=downdata, subset=train, keep.forest=TRUE,importance = TRUE)
+    downdata.rf <- randomForest(downbypop ~ economy+income+ooklaaverage+akuniqueip+akaverage+akpeak+akhighbroadband+akbroadband+aknarrowband+DemIndex, data=downdata, subset=train, keep.forest=TRUE,importance = TRUE)
     importance(downdata.rf)
     
     #party might be better since its a mix of categorical(ordinal) and (interval)
-    downdata.cf <- cforest(downbypop ~ economy+income+avg+uniqueip+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex, data=downdata, subset=train)
+    downdata.cf <- cforest(downbypop ~ economy+income+ooklaaverage+akuniqueip+akaverage+akpeak+akhighbroadband+akbroadband+aknarrowband+DemIndex, data=downdata, subset=train)
     
 
     #Is the formula right?
     #Maybe don't need to divided downloads by population, so that forest can tell if population matters
     #uniqueip is dangerous since number of ip's is highly controlled, and early adopters have larger share - maybe this makes it a good measure?
-    downdata.cf <- cforest(downloads ~ pop+economy+income+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex+itubroadband, data=downdata, subset=train)
+    
+    #Population is a big driver, is it better to just multiply downbypop*100? to make it more readable
+    #downdata.cf <- cforest(downloads ~ pop+economy+income+average+peak+highbroadband+akamaibroadband+narrowband+DemIndex+itubroadband, data=downdata, subset=train)
     
     #Try to figure out which variables are important, conditional means assume the variables are correlated
     downdata.varimp <- varimp(downdata.cf, conditional=TRUE)
 
     #Plot with a line at the abs(of the biggest negative)
     #http://www.stanford.edu/~stephsus/R-randomforest-guide.pdf
+    pdf(file="ImportantVariables.pdf",width=6,height=8)
     par(oma=c(2,4,2,2))
     barplot(sort(downdata.varimp),horiz=TRUE, las=1)
     abline(v=abs(min(downdata.varimp)), col='red',lty='longdash', lwd=2)
+    dev.off()
 
     require(corrgram)
+    pdf(file="CorrelationMatrix.pdf",width=6,height=6)
     corrgram(downdata, order=TRUE, lower.panel=panel.shade,  upper.panel=panel.pie, text.panel=panel.txt,  main="OSGeo Download, PCA ordered") 
-
+    dev.off()
        
 }
 
 
-OSanalysis <- function(){
+OSanalysis <- function(con){
     require(Deducer)
+    #file to hold output of tests
+    of <- "ContingencyResults.txt"
+    capture.output(print(date()),file=of,append=FALSE)
 
     #Two nominal variables - County and Operating System
     #http://udel.edu/~mcdonald/statgtestind.html
@@ -227,8 +235,9 @@ OSanalysis <- function(){
     downbyos.mat <- as.matrix(downbyos[1,-1]/sum(downbyos[1,-1])*100)
     downbyos.cont <- rbind(downbyos.mat,compbyos)
     row.names(downbyos.cont) <- c("downloads","computers")      
-    chisq.test(downbyos.cont)
-    likelihood.test(downbyos.cont)
+    #chisq.test(downbyos.cont)
+    downbyos.lt <- likelihood.test(downbyos.cont)
+    capture.output(print(downbyos.lt),file=of,append=TRUE)
     #	Pearson's Chi-squared test
     #data:  downbyos.cont
     #X-squared = 25.4531, df = 3, p-value = 1.241e-05
@@ -239,9 +248,10 @@ OSanalysis <- function(){
 
     #Contigency analysis of Type of Download by OS of Downloader 
     typebyos <- dbReadTable(con,"TypeByOS")
-    typebyos.cont <- as.matrix(as.integer(typebyos[,-1]))
+    typebyos.cont <- as.matrix((typebyos[,-1]))
     row.names(typebyos.cont) <- typebyos[,1]
-    likelihood.test(typebyos)
+    typebyos.lt <- likelihood.test(typebyos)
+    capture.output(print(typebyos.lt),file=of,append=TRUE)
 
     #	Log likelihood ratio (G-test) test of independence without correction
     #data:  typebyos.cont
@@ -262,8 +272,8 @@ OSanalysis <- function(){
     #Convert to martix contingency table
     country.cont <- as.matrix(country.df[,-1])
     row.names(country.cont) <- country.df[,1]
-    likelihood.test(country.cont)
-
+    country.lt <- likelihood.test(country.cont)
+    capture.output(print(country.lt),file=of,append=TRUE)
     #Log likelihood ratio (G-test) test of independence without correction
     #data:  country.cont
     #Log likelihood ratio statistic (G) = 367.4859, X-squared df = 320,
@@ -277,8 +287,8 @@ OSanalysis <- function(){
     countrybyos <- dbReadTable(con,"CountryByOS")
     countrybyos.cont <- as.matrix(countrybyos[,-1])
     row.names(countrybyos.cont) <- countrybyos[,1]
-    likelihood.test(countrybyos.cont)
-    
+    countrybyos.lt <- likelihood.test(countrybyos.cont)
+    capture.output(print(countrybyos.lt),file=of,append=TRUE)
     #Log likelihood ratio (G-test) test of independence without correction
     #data:  countrybyos.cont
     #Log likelihood ratio statistic (G) = 10848.92, X-squared df = 480,
@@ -286,7 +296,7 @@ OSanalysis <- function(){
     
 }
 
-fancyplot <- function(){
+fancyplot <- function(con){
     require(RColorBrewer)
     #Get a List of the release dates and versions
     d1 <- dbReadTable(con,"release")
