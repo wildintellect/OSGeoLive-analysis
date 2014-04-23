@@ -318,39 +318,62 @@ fancyplot <- function(con){
     d2t <-xtabs(count~subregion+release,data=d2)
 
     #There are 10 distinct subregions currently
-    subregion <- unique(c(d3$subregion,d2$subregion))
-    allcolors <- (rainbow(length(subregion)))
-    names(allcolors) <- subregion
+    #subregion <- unique(c(d3$subregion,d2$subregion))
+    #allcolors <- (rainbow(length(subregion)))
+    #names(allcolors) <- subregion
     
     
     #2 on page
     pdf(file="RegionalParticipation.pdf",width=6,height=9)
-    par(mfrow=c(2,1))
+    #par(mfrow=c(2,1))
     
     #colset <- coltable[coltable$subregion %in% unique(d2$subregion),1]
     #colset <- row.names %in% unique(d2$subregion)
-    colset <- allcolors[names(allcolors) %in% unique(d2$subregion)]
+    #colset <- allcolors[names(allcolors) %in% unique(d2$subregion)]
     #colset <- brewer.pal(9,"Set1")
-    barplot(d2t,col=colset,xlab="Release",ylab="Contributors")
-    legend("topleft",legend=rownames(d2t),fill=colset)
+    #barplot(d2t,col=colset,xlab="Release",ylab="Contributors")
+    #legend("topleft",legend=rownames(d2t),fill=colset)
 
     #Trans plot - TODO merge somehow with contrin plot
     d3t <-xtabs(count~subregion+release,data=d3)
 
-    colset <- allcolors[names(allcolors) %in% unique(d3$subregion)]
+    #colset <- allcolors[names(allcolors) %in% unique(d3$subregion)]
     #colset <- coltable[coltable$subregion %in% unique(d3$subregion),1]
     #colset <- brewer.pal(9,"Set1")
-    barplot(d3t,col=colset,xlab="Release",ylab="Translators")
-    legend("topleft",legend=rownames(d3t),fill=colset)
-    dev.off()
+    #barplot(d3t,col=colset,xlab="Release",ylab="Translators")
+    #legend("topleft",legend=rownames(d3t),fill=colset)
+    #dev.off()
 
     #get total number of releases
     cnt <- length(d1)
 
+    #try the ggplot2 way
+    require(ggplot2)
+    require(grid)
+    require(gridExtra)
+    #TODO Make the number of colors variable for more regions
+    #n <- if
+    colset <- brewer.pal(10,"Paired")
+    names(colset) <- subregion
+    collegend <- scale_fill_manual(values=colset)
+    gC <- ggplot(d2, aes(release,count,fill=subregion))+geom_bar()+coord_flip() + scale_y_reverse()+theme(legend.position="none")+ggtitle("Contributors")+scale_fill_manual(values=colset)
+    gT <- ggplot(d3, aes(release,count,fill=subregion))+geom_bar()+coord_flip()+ggtitle("Translators")+scale_fill_manual(values=colset)+theme(legend.position="top")
+    #gLeg <- legend("center",legend=names(colset),fill=colset)
+    #TODO Broken
+    #gLeg <- grid.draw(guide_legend(collegend$legend_desc()))
+    grid.arrange(gC,gT,grid.draw(gLeg),ncol=3)
 
+    #Alt idea, plot a map as a 3rd chart below with legend of dissolved countries by subregion    
 
-
-
+    #multiplot(gC,gT,cols=2)
+    #gl <-grid.layout(1,2)    
+    #grid.newpage()
+    #pushViewport(viewport(layout = gl))
+    #pushViewport(viewport(layout.pos.col=1,layout.pos.row=1))
+    #print(gC,vp=subplot(1,1))
+    #pushViewport(viewport(layout.pos.col=2,layout.pos.row=1))
+    #print(gT,vp=subplot(1,2))
+    #scale_fill_manual(values=region_cols)
 
     #Setup a stacked set of plots
     #row 1, map by version
@@ -362,3 +385,50 @@ fancyplot <- function(con){
     #nf <- layout(ltest)
     #layout.show(nf)
 }
+
+# Multiple plot function
+# http://www.cookbook-r.com/Graphs/Multiple_graphs_on_one_page_%28ggplot2%29/
+# ggplot objects can be passed in ..., or to plotlist (as a list of ggplot objects)
+# - cols:   Number of columns in layout
+# - layout: A matrix specifying the layout. If present, 'cols' is ignored.
+#
+# If the layout is something like matrix(c(1,2,3,3), nrow=2, byrow=TRUE),
+# then plot 1 will go in the upper left, 2 will go in the upper right, and
+# 3 will go all the way across the bottom.
+#
+multiplot <- function(..., plotlist=NULL, file, cols=1, layout=NULL) {
+  require(grid)
+
+  # Make a list from the ... arguments and plotlist
+  plots <- c(list(...), plotlist)
+
+  numPlots = length(plots)
+
+  # If layout is NULL, then use 'cols' to determine layout
+  if (is.null(layout)) {
+    # Make the panel
+    # ncol: Number of columns of plots
+    # nrow: Number of rows needed, calculated from # of cols
+    layout <- matrix(seq(1, cols * ceiling(numPlots/cols)),
+                    ncol = cols, nrow = ceiling(numPlots/cols))
+  }
+
+ if (numPlots==1) {
+    print(plots[[1]])
+
+  } else {
+    # Set up the page
+    grid.newpage()
+    pushViewport(viewport(layout = grid.layout(nrow(layout), ncol(layout))))
+
+    # Make each plot, in the correct location
+    for (i in 1:numPlots) {
+      # Get the i,j matrix positions of the regions that contain this subplot
+      matchidx <- as.data.frame(which(layout == i, arr.ind = TRUE))
+
+      print(plots[[i]], vp = viewport(layout.pos.row = matchidx$row,
+                                      layout.pos.col = matchidx$col))
+    }
+  }
+}
+
