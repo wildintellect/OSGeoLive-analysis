@@ -367,3 +367,28 @@ JOIN mapcountries as m
 ON a.country = m.name
 GROUP BY release,subregion
 
+
+--Build a subregion map
+--Buffer to remove slivers, will need to be clipped by coastlines after if it needs to match
+CREATE VIEW subregions AS
+SELECT subregion,CastToMultiPolygon(GUnion(Buffer(Geometry,0.00001))) as geometry
+FROM ne_110m_admin_0_countries
+GROUP BY subregion;
+
+--register it as spatial, case sensite now, not viewable in QGIS?
+INSERT INTO views_geometry_columns
+(view_name, view_geometry, view_rowid, f_table_name, f_geometry_column)
+VALUES ('subregions', 'geometry', 'ROWID', 'ne_110m_admin_0_countries', 'Geometry');
+
+--OR as a table
+CREATE TABLE subregionsT AS
+SELECT subregion,CastToMultiPolygon(GUnion(Buffer(Geometry,0.00001))) as geometry
+FROM ne_110m_admin_0_countries
+GROUP BY subregion;
+SELECT RecoverGeometryColumn('subregionsT', 'geometry',
+  4326, 'MULTIPOLYGON', 'XY');
+
+--Compare area with buffer applied
+SELECT subregion,AREA(CastToMultiPolygon(GUnion(Buffer(Geometry,0.00001)))) as geometry, Area(CastToMultiPolygon(GUnion(Geometry))) as nobuff
+FROM ne_110m_admin_0_countries
+GROUP BY subregion;

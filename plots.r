@@ -301,6 +301,7 @@ OSanalysis <- function(con){
 
 fancyplot <- function(con){
     require(RColorBrewer)
+    require(rgdal)
     #Get a List of the release dates and versions
     d1 <- dbReadTable(con,"release")
     #d2 <- dbReadTable(con,"ContribRegion")
@@ -361,9 +362,20 @@ fancyplot <- function(con){
     #gLeg <- legend("center",legend=names(colset),fill=colset)
     #TODO Broken
     #gLeg <- grid.draw(guide_legend(collegend$legend_desc()))
-    grid.arrange(gC,gT,grid.draw(gLeg),ncol=3)
+   
 
     #Alt idea, plot a map as a 3rd chart below with legend of dissolved countries by subregion    
+    ne <- readOGR("osgeolivedata.sqlite","subregionsT",disambiguateFIDs=TRUE)    
+    
+    #utah = readOGR(dsn=".", layer="eco_l3_ut")
+    #utah@data$id = rownames(utah@data)
+    ne.poly = fortify(ne, region="subregion")
+    #utah.df = join(utah.points, utah@data, by="id")
+    #ne.poly <- 
+    #ggplot(ne.poly,aes())+geom_polygon()
+    gmap <- ggplot(ne.poly)+aes(long,lat,group=group,fill=id)+geom_polygon()+geom_path(color="white")+coord_equal()+scale_fill_manual(values=colset)
+     grid.arrange(gC,gT,gmap,ncol=2,nrow=2)
+
 
     #multiplot(gC,gT,cols=2)
     #gl <-grid.layout(1,2)    
