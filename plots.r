@@ -311,10 +311,14 @@ fancyplot <- function(con){
 
     #d3sql <- "SELECT release,subregion,sum(count) as Tcount FROM TransRegion GROUP BY release,subregion"    
     #d3 <- dbGetQuery(con,d3sql)
-    d3sql <- "SELECT * FROM TransRegion ORDER BY subregion"
+    d3sql <- "SELECT release,subregion,count FROM TransRegion ORDER BY subregion"
     #d3 <- dbReadTable(con,"TransRegion")
     d3 <- dbGetQuery(con,d3sql)
-    
+       
+
+    #Add fake data to make the graphs match nice.
+    d3 <- rbind(d3,c("2","Western Europe",0),c("3","Western Europe",0),c("4","Western Europe",0))
+    d3$count <- as.integer(d3$count)
     #Contrib plot
     d2t <-xtabs(count~subregion+release,data=d2)
 
@@ -325,56 +329,78 @@ fancyplot <- function(con){
     
     
     #2 on page
-    pdf(file="RegionalParticipation.pdf",width=6,height=9)
+    pdf(file="RegionalParticipation.pdf",width=7,height=10)
     #par(mfrow=c(2,1))
-    
+    layout(matrix(c(1,2,3,3), 2, 2, byrow = TRUE))
+    colset <- brewer.pal(10,"Paired")
+    names(colset) <- sort(subregion)
+
     #colset <- coltable[coltable$subregion %in% unique(d2$subregion),1]
     #colset <- row.names %in% unique(d2$subregion)
     #colset <- allcolors[names(allcolors) %in% unique(d2$subregion)]
     #colset <- brewer.pal(9,"Set1")
-    #barplot(d2t,col=colset,xlab="Release",ylab="Contributors")
-    #legend("topleft",legend=rownames(d2t),fill=colset)
-
+    colset1 <- colset[names(colset) %in% unique(d2$subregion)]
+    barplot(d2t,col=colset1,xlab="Contributors",ylab="Release",horiz=TRUE,xlim=rev(range(0,90)))
+    #legend("topleft",legend=rownames(d2t),fill=colset1)
+    
     #Trans plot - TODO merge somehow with contrin plot
     d3t <-xtabs(count~subregion+release,data=d3)
 
     #colset <- allcolors[names(allcolors) %in% unique(d3$subregion)]
     #colset <- coltable[coltable$subregion %in% unique(d3$subregion),1]
     #colset <- brewer.pal(9,"Set1")
-    #barplot(d3t,col=colset,xlab="Release",ylab="Translators")
-    #legend("topleft",legend=rownames(d3t),fill=colset)
+    colset2 <- colset[names(colset) %in% unique(d3$subregion)]
+    barplot(d3t,col=colset2,xlab="Translators",horiz=TRUE)
+    #legend("topleft",legend=rownames(d3t),fill=colset2)
     #dev.off()
 
     #get total number of releases
     cnt <- length(d1)
 
     #try the ggplot2 way
-    require(ggplot2)
-    require(grid)
-    require(gridExtra)
+    #require(ggplot2)
+    #require(grid)
+    #require(gridExtra)
     #TODO Make the number of colors variable for more regions
     #n <- if
-    colset <- brewer.pal(10,"Paired")
-    names(colset) <- subregion
-    collegend <- scale_fill_manual(values=colset)
-    gC <- ggplot(d2, aes(release,count,fill=subregion))+geom_bar()+coord_flip() + scale_y_reverse()+theme(legend.position="none")+ggtitle("Contributors")+scale_fill_manual(values=colset)
-    gT <- ggplot(d3, aes(release,count,fill=subregion))+geom_bar()+coord_flip()+ggtitle("Translators")+scale_fill_manual(values=colset)+theme(legend.position="top")
+    #colset <- brewer.pal(10,"Paired")
+    #names(colset) <- subregion
+    #collegend <- scale_fill_manual(values=colset)
+    #gC <- ggplot(d2, aes(release,count,fill=subregion))+geom_bar()+coord_flip() + scale_y_reverse()+theme(legend.position="none")+ggtitle("Contributors")+scale_fill_manual(values=colset)
+    #gT <- ggplot(d3, aes(release,count,fill=subregion))+geom_bar()+coord_flip()+ggtitle("Translators")+scale_fill_manual(values=colset)+theme(legend.position="none")
     #gLeg <- legend("center",legend=names(colset),fill=colset)
     #TODO Broken
     #gLeg <- grid.draw(guide_legend(collegend$legend_desc()))
    
 
     #Alt idea, plot a map as a 3rd chart below with legend of dissolved countries by subregion    
-    ne <- readOGR("osgeolivedata.sqlite","subregionsT",disambiguateFIDs=TRUE)    
+    nesregion <- readOGR("osgeolivedata.sqlite","subregionsT",disambiguateFIDs=TRUE)    
     
     #utah = readOGR(dsn=".", layer="eco_l3_ut")
     #utah@data$id = rownames(utah@data)
-    ne.poly = fortify(ne, region="subregion")
+    nesregion.filter <- nesregion[nesregion@data$subregion %in% names(colset),]
+    nesregion.filter@data$subregion <- factor(nesregion.filter@data$subregion)
+
+    plot(nesregion,col="white",bg="gray")
+    plot(nesregion.filter,col=colset,add=TRUE)
+    legend("right",legend=names(colset),fill=colset)  
+    dev.off()    
+    #spplot(nesregion.filter,col.regions=colset)
+
+    #nesregion.poly = fortify(nesregion.filter,region="subregion")
+    #nesregion.bpoly = fortify(nesregion,region="subregion")
+    #ne.poly = fortify(ne, region="subregion")
     #utah.df = join(utah.points, utah@data, by="id")
     #ne.poly <- 
     #ggplot(ne.poly,aes())+geom_polygon()
-    gmap <- ggplot(ne.poly)+aes(long,lat,group=group,fill=id)+geom_polygon()+geom_path(color="white")+coord_equal()+scale_fill_manual(values=colset)
-     grid.arrange(gC,gT,gmap,ncol=2,nrow=2)
+    #gmap <- ggplot(ne.polyaes(long,lat,group=group,fill=id)+geom_polygon()+geom_path(color="white")+coord_equal()+scale_fill_manual(values=colset,guide = guide_legend(title = NULL))
+
+    #gmap <- ggplot()+geom_polygon(data=nesregion.bpoly,aes(long,lat),fill="gray80")
+
+#geom_polygon(ne.poly,aes(long,lat,group=group,fill=id))+geom_path(color="white")+coord_equal()+scale_fill_manual(values=colset,guide = guide_legend(title = NULL))
+
+    #theme(legend.position="bottom")
+    #grid.arrange(gC,gT,gmap,ncol=2,nrow=2)
 
 
     #multiplot(gC,gT,cols=2)
