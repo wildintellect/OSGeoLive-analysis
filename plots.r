@@ -323,15 +323,15 @@ fancyplot <- function(con){
     d2t <-xtabs(count~subregion+release,data=d2)
 
     #There are 10 distinct subregions currently
-    #subregion <- unique(c(d3$subregion,d2$subregion))
+    subregion <- unique(c(d3$subregion,d2$subregion))
     #allcolors <- (rainbow(length(subregion)))
     #names(allcolors) <- subregion
     
     
     #2 on page
-    pdf(file="RegionalParticipation.pdf",width=7,height=10)
+    pdf(file="RegionalParticipation.pdf",width=10,height=7)
     #par(mfrow=c(2,1))
-    layout(matrix(c(1,2,3,3), 2, 2, byrow = TRUE))
+    layout(matrix(c(1,2,1,2,3,4), 3, 2, byrow = TRUE))
     colset <- brewer.pal(10,"Paired")
     names(colset) <- sort(subregion)
 
@@ -340,7 +340,7 @@ fancyplot <- function(con){
     #colset <- allcolors[names(allcolors) %in% unique(d2$subregion)]
     #colset <- brewer.pal(9,"Set1")
     colset1 <- colset[names(colset) %in% unique(d2$subregion)]
-    barplot(d2t,col=colset1,xlab="Contributors",ylab="Release",horiz=TRUE,xlim=rev(range(0,90)))
+    barplot(d2t,col=colset1,xlab="Contributors",horiz=TRUE,xlim=rev(range(0,90)),las=1,yaxt="n")
     #legend("topleft",legend=rownames(d2t),fill=colset1)
     
     #Trans plot - TODO merge somehow with contrin plot
@@ -350,7 +350,7 @@ fancyplot <- function(con){
     #colset <- coltable[coltable$subregion %in% unique(d3$subregion),1]
     #colset <- brewer.pal(9,"Set1")
     colset2 <- colset[names(colset) %in% unique(d3$subregion)]
-    barplot(d3t,col=colset2,xlab="Translators",horiz=TRUE)
+    barplot(d3t,col=colset2,xlab="Translators",ylab="Release",horiz=TRUE,las=1)
     #legend("topleft",legend=rownames(d3t),fill=colset2)
     #dev.off()
 
@@ -381,10 +381,17 @@ fancyplot <- function(con){
     nesregion.filter <- nesregion[nesregion@data$subregion %in% names(colset),]
     nesregion.filter@data$subregion <- factor(nesregion.filter@data$subregion)
 
+    opar <- par()
+    par(mar=c(0,0,0,0)) 
+    plot(0, 0, type = "n", bty = "n", xaxt = "n", yaxt = "n",ann=FALSE)
+    legend("top",legend=names(colset),fill=colset,cex=1.25)
+
+    par(mar=c(2,0,0,2)) 
     plot(nesregion,col="white",bg="gray")
-    plot(nesregion.filter,col=colset,add=TRUE)
-    legend("right",legend=names(colset),fill=colset)  
+    plot(nesregion.filter,col=colset,add=TRUE)  
     dev.off()    
+
+    par <- opar
     #spplot(nesregion.filter,col.regions=colset)
 
     #nesregion.poly = fortify(nesregion.filter,region="subregion")
