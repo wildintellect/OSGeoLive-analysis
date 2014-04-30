@@ -175,6 +175,7 @@ testRandom <- function(con){
     set.seed(9)
     require(randomForest)
     require(ROCR)
+    require(party)
     downdata <-dbReadTable(con,"Metrics2012wDemIndex")
     #Set the seed?, is this necessary?
     #set.seed(1)
