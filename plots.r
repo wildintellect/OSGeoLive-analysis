@@ -229,7 +229,7 @@ OSanalysis <- function(con){
     of <- "ContingencyResults.txt"
     capture.output(print(date()),file=of,append=FALSE)
 
-    #Two nominal variables - County and Operating System
+    #Two nominal variables - Country and Operating System
     #http://udel.edu/~mcdonald/statgtestind.html
     downbyos <- dbReadTable(con,"TotDownByOs")
     compbyos <- c(92.02,6.81,1.16,0.00)
@@ -252,6 +252,7 @@ OSanalysis <- function(con){
     typebyos.cont <- as.matrix((typebyos[,-1]))
     row.names(typebyos.cont) <- typebyos[,1]
     typebyos.lt <- likelihood.test(typebyos.cont)
+    capture.output(print(typebyos.cont),file=of,append=TRUE)
     capture.output(print(typebyos.lt),file=of,append=TRUE)
 
     #	Log likelihood ratio (G-test) test of independence without correction

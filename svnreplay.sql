@@ -161,4 +161,16 @@ UPDATE Contributors SET name = 'Sergio Baños' WHERE name Like 'Sergio Ba?os';
 UPDATE Contributors SET name = 'Gérald Fenoy' WHERE name Like 'Grald Fenoy';
 UPDATE Contributors SET name = 'Nathaniel V. Kelso' WHERE name Like 'Nathaniel Kelso';
 
+-----
+-- Number of Unique people
+-----
+SELECT distinct(c.name),t.name FROM contributors as c
+LEFT JOIN translators as t ON
+c.name Like t.name
+ORDER BY t.name;
 
+SELECT distinct(t.name),c.name FROM translators as t
+LEFT JOIN contributors as c ON
+c.name Like t.name
+ORDER BY c.name;
+--87 contributors,88 translators, 15 people are both
