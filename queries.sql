@@ -201,7 +201,7 @@ JOIN
     JOIN mapcountries as d
     ON c.country_code = d.iso_a2) 
 as b
-ON a.iso_a2 = b.iso_a2
+ON a.iso_a2 = b.iso_a2;
 
 --Complete set of data for anaylsis
 --problem, no data on broadband for 2012, should take max from any previous year or drop?
@@ -209,14 +209,14 @@ CREATE VIEW Metrics2012wITU AS
 SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.avg as OoklaAverage,b."2012" as ITUbroadband
 FROM Metrics2012noITU as a
 JOIN "ITU-Subscriptions" as b
-ON a.iso_a2 = b.iso_a2
+ON a.iso_a2 = b.iso_a2;
 
 -- join akamai data
 CREATE VIEW Metrics2012wAkamai AS
 SELECT a.country,a.iso_a2,a.downloads,a.pop,a.economy,a.income,a.downbypop, a.OoklaAverage,a.itubroadband,b."uniqueip" as AkUniqueIP, b."average" as AkAverage, b."peak" as AkPeak, b."highbroadband" as AkHighBroadband, b."broadband"as AkBroadband, b."narrowband" as AkNarrowband
 FROM Metrics2012wITU as a
 JOIN akamai2013 as b
-ON a.iso_a2 = b.iso_a2
+ON a.iso_a2 = b.iso_a2;
 
 
 --check polity data
@@ -231,18 +231,18 @@ a.AkUniqueIP,a.AkAverage, a.AkPeak, a.AkHighBroadband, a.AkBroadband, a.AkNarrow
 b."polity2",b."durable"
 FROM Metrics2012wAkamai as a
 JOIN polity as b
-ON a.iso_a2 = b.iso2c
+ON a.iso_a2 = b.iso2c;
 
 --add isoa2 to democracy index
 --check matches
 SELECT Country, b.iso_a2
 FROM DemocracyIndex2012 as a
 LEFT JOIN mapcountries as b
-ON b.name = a.country 
+ON b.name = a.country; 
 
 --add the iso codes
 UPDATE DemocracyIndex2012 SET isoa2 = 
-(SELECT mapcountries.iso_a2 FROM mapcountries WHERE  mapcountries.name = country )
+(SELECT mapcountries.iso_a2 FROM mapcountries WHERE  mapcountries.name = country );
 
 --join democracyindex, 130 matches
 CREATE VIEW Metrics2012wDemIndex AS
@@ -251,7 +251,7 @@ a.AkUniqueIP,a.AkAverage, a.AkPeak, a.AkHighBroadband, a.AkBroadband, a.AkNarrow
 b."2012" as DemIndex
 FROM Metrics2012wAkamai as a
 JOIN DemocracyIndex2012 as b
-ON a.iso_a2 = b.isoa2
+ON a.iso_a2 = b.isoa2;
 
 
 --UN Regions

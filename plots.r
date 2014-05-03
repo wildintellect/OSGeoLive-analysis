@@ -190,11 +190,14 @@ testRandom <- function(con){
     #ntree can be change
     #Potentially use tuneRF to find the mtry and ntree values to use
     # itu-broadband had nulls values
-    downdata.rf <- randomForest(downbypop ~ economy+income+ooklaaverage+akuniqueip+akaverage+akpeak+akhighbroadband+akbroadband+aknarrowband+DemIndex, data=downdata, subset=train, keep.forest=TRUE,importance = TRUE)
-    importance(downdata.rf)
+    #downdata.rf <- randomForest(downbypop ~ economy+income+ooklaaverage+akuniqueip+akaverage+akpeak+akhighbroadband+akbroadband+aknarrowband+DemIndex, data=downdata, subset=train, keep.forest=TRUE,importance = TRUE)
+    #importance(downdata.rf)
     
     #party might be better since its a mix of categorical(ordinal) and (interval)
-    downdata.cf <- cforest(downbypop ~ economy+income+ooklaaverage+akuniqueip+akaverage+akpeak+akhighbroadband+akbroadband+aknarrowband+DemIndex, data=downdata, subset=train)
+    #party is supposed to be better for highly correlated data (see papers)
+    #ITU has 2 NA, count as zero?
+    downdata[is.na(downdata)] <- 0
+    downdata.cf <- cforest(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data=downdata, subset=train)
     
 
     #Is the formula right?
@@ -211,7 +214,7 @@ testRandom <- function(con){
     #http://www.stanford.edu/~stephsus/R-randomforest-guide.pdf
     pdf(file="ImportantVariables.pdf",width=6,height=8)
     par(oma=c(2,4,2,2))
-    barplot(sort(downdata.varimp),horiz=TRUE, las=1)
+    barplot(sort(downdata.varimp),horiz=TRUE, las=1,xlab="")
     abline(v=abs(min(downdata.varimp)), col='red',lty='longdash', lwd=2)
     dev.off()
 
