@@ -173,10 +173,14 @@ spatialauto <- function(){
 testRandom <- function(con){
     #Set the seed to the psuedo random number generator for repeatable results
     set.seed(9)
-    require(randomForest)
-    require(ROCR)
+    #require(randomForest)
+    #require(ROCR)
     require(party)
-    downdata <-dbReadTable(con,"Metrics2012wDemIndex")
+    #downdata <-dbReadTable(con,"Metrics2012wDemIndex")
+    # Filter out null ITU
+    dsql <- 'SELECT * FROM "Metrics2012wDemIndex" WHERE ITUbroadband IS NOT NULL'
+    downdata <- dbGetQuery(con,dsql)
+    
     #Set the seed?, is this necessary?
     #set.seed(1)
     #split the data into training and test data, 1/2
