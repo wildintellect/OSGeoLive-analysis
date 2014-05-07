@@ -200,9 +200,9 @@ testRandom <- function(con){
     #party might be better since its a mix of categorical(ordinal) and (interval)
     #party is supposed to be better for highly correlated data (see papers)
     #ITU has 2 NA, count as zero?
-    downdata[is.na(downdata)] <- 0
-    downdata.cf <- cforest(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data=downdata, subset=train)
-    
+    #downdata[is.na(downdata)] <- 0
+    #downdata.cf <- cforest(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data=downdata, subset=train)
+    downdata.cf <- cforest(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data=downdata)
 
     #Is the formula right?
     #Maybe don't need to divided downloads by population, so that forest can tell if population matters
@@ -214,9 +214,13 @@ testRandom <- function(con){
     #Try to figure out which variables are important, conditional means assume the variables are correlated
     downdata.varimp <- varimp(downdata.cf, conditional=TRUE)
 
+    #save results to file
+    of <- "ForestResults.txt"
+    capture.output(print(downdata.cf),file=of,append=TRUE)
+
     #Plot with a line at the abs(of the biggest negative)
     #http://www.stanford.edu/~stephsus/R-randomforest-guide.pdf
-    pdf(file="ImportantVariables.pdf",width=6,height=8)
+    pdf(file="ImportantVariables-notrain.pdf",width=6,height=8)
     par(oma=c(2,4,2,2))
     barplot(sort(downdata.varimp),horiz=TRUE, las=1,xlab="")
     abline(v=abs(min(downdata.varimp)), col='red',lty='longdash', lwd=2)
@@ -268,14 +272,21 @@ OSanalysis <- function(con){
     #p-value < 2.2e-16
     
     #Contingency analysis of Countries by Downloads, Contributors and Translators
+    ### Disabling separate columns in favor of combined
     downsSQL <- 'SELECT "country", sum(total) as downloads FROM "sfosbycountry"GROUP BY country ORDER BY country;'
     downs <- dbGetQuery(con,downsSQL)
-    contribSQL <- 'SELECT country,count(name) as contributors FROM contributors as a, (SELECT max(rev) as mrev FROM "contributors") as b WHERE rev = mrev GROUP BY Country;'
-    contrib <- dbGetQuery(con,contribSQL)
-    transSQL <- 'SELECT country,count(name) as translators FROM translators as a,(SELECT max(rev) as mrev FROM "translators") as b WHERE rev = mrev GROUP BY Country;'
-    trans <- dbGetQuery(con,transSQL)
-    country.df <- merge(downs,contrib,all.x=TRUE)
-    country.df <- merge(country.df,trans,all.x=TRUE)
+    #contribSQL <- 'SELECT country,count(name) as contributors FROM contributors as a, (SELECT max(rev) as mrev FROM "contributors") as b WHERE rev = mrev GROUP BY Country;'
+    #contrib <- dbGetQuery(con,contribSQL)
+    #transSQL <- 'SELECT country,count(name) as translators FROM translators as a,(SELECT max(rev) as mrev FROM "translators") as b WHERE rev = mrev GROUP BY Country;'
+    #trans <- dbGetQuery(con,transSQL)
+    
+    #combined Contrib+Translators, overlap removed
+    combineSQL  <- 'SELECT country,count(name) FROM (SELECT distinct(name),max(country) as country FROM (SELECT distinct(name),country FROM contributors UNION SELECT distinct(name),country FROM translators) GROUP BY name) GROUP BY country;'
+    combined <- dbGetQuery(con,combineSQL) 
+    
+    #country.df <- merge(downs,contrib,all.x=TRUE)
+    #country.df <- merge(country.df,trans,all.x=TRUE)
+    country.df <- merge(downs,combined,all.x=TRUE)
     #Replace NA with 0
     country.df[is.na(country.df)] <- 0
     #Convert to martix contingency table

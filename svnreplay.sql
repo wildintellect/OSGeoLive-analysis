@@ -131,7 +131,7 @@ UPDATE Translators SET name = 'Assumpció Termens' WHERE name Like 'Assumpcio Te
 UPDATE Translators SET name = 'Javier Sánchez' WHERE name Like 'Javier Sanchez';
 UPDATE Translators SET name = 'Jesús Gómez' WHERE name Like 'JesÃºs GÃ³mez';
 UPDATE Translators SET name = 'Jorge Arévalo' WHERE name Like 'Jorge ArÃ©valo';
-UPDATE Translators SET name = 'Lucía Sanjaime' WHERE name Like 'LucÃ­a Sanjaime';
+UPDATE Translators SET name = 'Lucía Sanjaime' WHERE name Like 'LucÃ­a Sanjaime' OR name Like 'Lucia Sanjaime';
 UPDATE Translators SET name = 'Roberto Antolín' WHERE name Like 'Roberto AntolÃ­n';
 UPDATE Translators SET name = 'Òscar Fonts' WHERE name Like 'Oscar Fonts' OR name LIKE 'Ã’scar Fonts';
 UPDATE Translators SET name = 'Daniel Kastl' WHERE name Like 'DanielKastl';
@@ -147,7 +147,7 @@ UPDATE Translators SET name = 'avk_h' WHERE email Like 'avk_h mail.ru';
 UPDATE Translators SET name = 'kuzkok' WHERE email Like 'kuzkok';
 UPDATE Translators SET name = 'Yoichi Kayama' WHERE name Like 'YoichiKayama';
 UPDATE Translators SET name = 'Marc-André Barbeau' WHERE name Like 'Marc-Andre Barbeau';
-
+UPDATE Translators SET name = 'Marco Puppin' WHERE name Like 'MarcoPuppin';
 
 --Fix Contributors table too
 UPDATE Contributors SET name = 'Jody Garnett' WHERE name Like 'Jody Garnett%';
@@ -161,16 +161,29 @@ UPDATE Contributors SET name = 'Sergio Baños' WHERE name Like 'Sergio Ba?os';
 UPDATE Contributors SET name = 'Gérald Fenoy' WHERE name Like 'Grald Fenoy';
 UPDATE Contributors SET name = 'Nathaniel V. Kelso' WHERE name Like 'Nathaniel Kelso';
 
+--Moved countries, counting current country which is also in more revisions
+UPDATE Contributors SET country='Switzerland' WHERE name Like 'Activity Workshop';
+
 -----
 -- Number of Unique people
 -----
 SELECT distinct(c.name),t.name FROM contributors as c
 LEFT JOIN translators as t ON
 c.name Like t.name
-ORDER BY t.name;
+ORDER BY t.name; --15 matches
 
 SELECT distinct(t.name),c.name FROM translators as t
 LEFT JOIN contributors as c ON
 c.name Like t.name
-ORDER BY c.name;
---87 contributors,88 translators, 15 people are both
+ORDER BY c.name; --15 matches
+--87 contributors,86 translators, 15 people are both
+
+--max forces Daniel Kastl to Japan where he's based
+SELECT country,count(name) FROM (
+SELECT distinct(name),max(country) as country FROM
+    (SELECT distinct(name),country FROM contributors
+    UNION 
+    SELECT distinct(name),country FROM translators)
+GROUP BY name
+)
+GROUP BY country;
