@@ -181,8 +181,7 @@ testRandom <- function(con){
     dsql <- 'SELECT * FROM "Metrics2012wDemIndex" WHERE ITUbroadband IS NOT NULL'
     downdata <- dbGetQuery(con,dsql)
     
-    #Set the seed?, is this necessary?
-    #set.seed(1)
+    #Set the seed, same seed = same random selection
     #split the data into training and test data, 1/2
     train = sample(1:nrow(downdata),nrow(downdata)/2)
 
@@ -201,8 +200,8 @@ testRandom <- function(con){
     #party is supposed to be better for highly correlated data (see papers)
     #ITU has 2 NA, count as zero?
     #downdata[is.na(downdata)] <- 0
-    #downdata.cf <- cforest(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data=downdata, subset=train)
-    downdata.cf <- cforest(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data=downdata)
+    downdata.cf <- cforest(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data=downdata, subset=train, control = cforest_unbiased(ntree = 1000))
+    #downdata.cf <- cforest(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data=downdata)
 
     #Is the formula right?
     #Maybe don't need to divided downloads by population, so that forest can tell if population matters
@@ -214,17 +213,19 @@ testRandom <- function(con){
     #Try to figure out which variables are important, conditional means assume the variables are correlated
     downdata.varimp <- varimp(downdata.cf, conditional=TRUE)
 
-    #save results to file
+    #save results to file, nothing useful to save?
     of <- "ForestResults.txt"
     capture.output(print(downdata.cf),file=of,append=TRUE)
 
     #Plot with a line at the abs(of the biggest negative)
     #http://www.stanford.edu/~stephsus/R-randomforest-guide.pdf
     pdf(file="ImportantVariables-notrain.pdf",width=6,height=8)
+    opar<-par()
     par(oma=c(2,4,2,2))
     barplot(sort(downdata.varimp),horiz=TRUE, las=1,xlab="")
     abline(v=abs(min(downdata.varimp)), col='red',lty='longdash', lwd=2)
     dev.off()
+    par(opar)
 
     require(corrgram)
     pdf(file="CorrelationMatrix.pdf",width=6,height=6)
