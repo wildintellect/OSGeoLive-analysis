@@ -1,0 +1,33 @@
+[1] "Wed May  7 12:53:58 2014"
+
+	Log likelihood ratio (G-test) test of independence without correction
+
+data:  downbyos.cont
+Log likelihood ratio statistic (G) = 27.7473, X-squared df = 3, p-value
+= 4.104e-06
+
+     Windows  Mac Linux Other
+7z     13219 2053  3512   649
+iso    27015 1420  6339  1343
+mini    8632  653  3591   621
+
+	Log likelihood ratio (G-test) test of independence without correction
+
+data:  typebyos.cont
+Log likelihood ratio statistic (G) = 1509.037, X-squared df = 6,
+p-value < 2.2e-16
+
+
+	Log likelihood ratio (G-test) test of independence without correction
+
+data:  country.cont
+Log likelihood ratio statistic (G) = 254.7918, X-squared df = 172,
+p-value = 4.178e-05
+
+
+	Log likelihood ratio (G-test) test of independence without correction
+
+data:  countrybyos.cont
+Log likelihood ratio statistic (G) = 10182.03, X-squared df = 516,
+p-value < 2.2e-16
+
