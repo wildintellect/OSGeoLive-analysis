@@ -181,13 +181,14 @@ testRandom <- function(con){
     dsql <- 'SELECT * FROM "Metrics2012wDemIndex" WHERE ITUbroadband IS NOT NULL'
     downdata <- dbGetQuery(con,dsql)
     
-    #Set the seed, same seed = same random selection
-    #split the data into training and test data, 1/2
-    train = sample(1:nrow(downdata),nrow(downdata)/2)
-
     #economy and income should probably be factors
     downdata$economy <- as.factor(downdata$economy)
     downdata$income <- as.factor(downdata$income)
+    #Set the seed, same seed = same random selection
+    #split the data into training and test data, 1/2 - use 75% of data for training 25% for testing
+    #train = sample(1:nrow(downdata),nrow(downdata)/2)
+    train = sample(1:nrow(downdata),floor(nrow(downdata)*.75))
+
     #build a random forest regression
     #mtry default is p/3 unless doing bagging
     #ntree can be change
@@ -215,7 +216,7 @@ testRandom <- function(con){
 
     #save results to file, nothing useful to save?
     of <- "ForestResults.txt"
-    capture.output(print(downdata.cf),file=of,append=TRUE)
+    capture.output(print(downdata.cf),file=of,append=FALSE)
 
     #Plot with a line at the abs(of the biggest negative)
     #http://www.stanford.edu/~stephsus/R-randomforest-guide.pdf
@@ -227,13 +228,80 @@ testRandom <- function(con){
     dev.off()
     par(opar)
 
+    #For testing get the inverse of the training data
+    testdata <- downdata[-train,]
+
     require(corrgram)
     pdf(file="CorrelationMatrix.pdf",width=6,height=6)
     corrgram(downdata, order=TRUE, lower.panel=panel.shade,  upper.panel=panel.pie, text.panel=panel.txt,  main="OSGeo Download, PCA ordered") 
     dev.off()
-       
+
+    require(car)
+    pdf(file="ScatterPlotMatrix.pdf",width=11,height=8.5)
+    scatterplotMatrix(economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex,data=downdata)
+    dev.off()
+
+    #Posthoc testing
+    #http://stats.stackexchange.com/questions/77290/does-party-package-in-r-provide-out-of-bag-estimates-of-error-for-random-forest
+    require(caret)
+    require(parallel)
+    ooberror <- caret:::cforestStats(downdata.cf)
+
+    #Save the model error estimates
+    capture.output(print(ooberror),file=of,append=TRUE)
+    
 }
 
+caretForest <- function(con){
+
+    #Set the seed to the psuedo random number generator for repeatable results
+    set.seed(9)
+    #require(randomForest)
+    #require(ROCR)
+    require(party)
+    require(doMC) #caret can be done in parrallel
+    registerDoMC(cores = 4)
+
+    #downdata <-dbReadTable(con,"Metrics2012wDemIndex")
+    # Filter out null ITU
+    dsql <- 'SELECT * FROM "Metrics2012wDemIndex" WHERE ITUbroadband IS NOT NULL'
+    downdata <- dbGetQuery(con,dsql)
+
+    #Stratified random sampling - didn't really work 
+    #inTrain <- createDataPartition(downdata$downbypop,p=0.8,list=FALSE)
+
+    #Setup the Caret model with cforest
+    mod1 <- train(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data = downdata,method = "cforest",trControl = trainControl(method = "oob",allowParallel = TRUE, number = 10, repeats = 10),controls = cforest_unbiased(ntree = 10000))
+
+    #When doing more than 1 at a time turn off parallel
+    #mod1 <- train(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data = downdata,method = "cforest",trControl = trainControl(method = "oob",allowParallel = FALSE, number = 10, repeats = 10),controls = cforest_unbiased(ntree = 10000))
+
+    test.varimp <- varimp(mod1$finalModel,conditional=TRUE)
+    
+    #Plot important variables
+    pdf(file="ImportantVariables-caret.pdf",width=6,height=8)
+    barplot(sort(test.varimp),horiz=TRUE,las=1,xlab="")
+    abline(v=abs(min(test.varimp)), col='red',lty='longdash', lwd=2)
+    dev.off()
+
+    of <- "CaretCForestResults.txt"
+    capture.output(print(mod1),file=of,append=FALSE)
+    capture.output(print(test.varimp),file=of,append=TRUE)
+
+    #What it does when DemIndex is dropped
+    mod2 <- train(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband, data = downdata,method = "cforest",trControl = trainControl(method = "oob",allowParallel = TRUE, number = 10, repeats = 10),controls = cforest_unbiased(ntree = 10000))
+
+    test.varimp2 <- varimp(mod2$finalModel,conditional=TRUE)
+    of <- "CaretCForestResults.txt"
+    capture.output(print(mod2),file=of,append=TRUE)
+    capture.output(print(test.varimp2),file=of,append=TRUE)
+
+    pdf(file="ImportantVariables-NoDemIndex.pdf",width=6,height=8)
+    barplot(sort(test.varimp2),horiz=TRUE,las=1,xlab="")
+    abline(v=abs(min(test.varimp2)), col='red',lty='longdash', lwd=2)
+    dev.off()
+
+}
 
 OSanalysis <- function(con){
     require(Deducer)
