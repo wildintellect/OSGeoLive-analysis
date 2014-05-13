@@ -255,10 +255,12 @@ testRandom <- function(con){
 caretForest <- function(con){
 
     #Set the seed to the psuedo random number generator for repeatable results
-    set.seed(9)
+    set.seed(10)
     #require(randomForest)
     #require(ROCR)
     require(party)
+    require(caret)
+    require(parallel)
     require(doMC) #caret can be done in parrallel
     registerDoMC(cores = 4)
 
@@ -278,11 +280,15 @@ caretForest <- function(con){
 
     test.varimp <- varimp(mod1$finalModel,conditional=TRUE)
     
+    
     #Plot important variables
     pdf(file="ImportantVariables-caret.pdf",width=6,height=8)
+    opar<-par()
+    par(oma=c(2,4,2,2))
     barplot(sort(test.varimp),horiz=TRUE,las=1,xlab="")
     abline(v=abs(min(test.varimp)), col='red',lty='longdash', lwd=2)
     dev.off()
+    par(opar)
 
     of <- "CaretCForestResults.txt"
     capture.output(print(mod1),file=of,append=FALSE)
@@ -297,9 +303,12 @@ caretForest <- function(con){
     capture.output(print(test.varimp2),file=of,append=TRUE)
 
     pdf(file="ImportantVariables-NoDemIndex.pdf",width=6,height=8)
+    opar<-par()
+    par(oma=c(2,4,2,2))
     barplot(sort(test.varimp2),horiz=TRUE,las=1,xlab="")
     abline(v=abs(min(test.varimp2)), col='red',lty='longdash', lwd=2)
     dev.off()
+    par(opar)
 
 }
 
