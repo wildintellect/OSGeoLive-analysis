@@ -1,0 +1,48 @@
+Conditional Inference Random Forest 
+
+128 samples
+ 15 predictors
+
+No pre-processing
+Resampling: Out of Bag Resampling 
+
+Summary of sample sizes:  
+
+Resampling results across tuning parameters:
+
+  mtry  RMSE     Rsquared
+  2     0.00173  0.302   
+  4     0.00172  0.31    
+  6     0.00171  0.311   
+
+RMSE was used to select the optimal model using  the smallest value.
+The final value used for the model was mtry = 6. 
+        economy          income    OoklaAverage    ITUbroadband      AkUniqueIP 
+   3.184223e-09    1.171040e-08   -1.176308e-08    1.083594e-08   -9.676347e-09 
+      AkAverage          AkPeak AkHighBroadband     AkBroadband    AkNarrowband 
+   1.484320e-09    1.234698e-08   -7.518233e-09   -4.845753e-09   -2.561349e-09 
+       DemIndex 
+   1.409829e-07 
+Conditional Inference Random Forest 
+
+128 samples
+ 15 predictors
+
+No pre-processing
+Resampling: Out of Bag Resampling 
+
+Summary of sample sizes:  
+
+Resampling results across tuning parameters:
+
+  mtry  RMSE     Rsquared
+  2     0.00175  0.283   
+  4     0.00174  0.284   
+  6     0.00175  0.281   
+
+RMSE was used to select the optimal model using  the smallest value.
+The final value used for the model was mtry = 4. 
+        economy          income    OoklaAverage    ITUbroadband      AkUniqueIP 
+   1.718347e-08    5.542788e-08   -1.719179e-08    3.438777e-08   -1.229829e-08 
+      AkAverage          AkPeak AkHighBroadband     AkBroadband    AkNarrowband 
+   1.230463e-08    2.452885e-08   -9.393263e-09    1.447610e-09   -2.984636e-09 
