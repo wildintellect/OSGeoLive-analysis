@@ -3,9 +3,9 @@ country,Country Name,Natural Earth
 iso_a2,Country ISO 2 Letter Code,Natural Earth
 downloads,Total Number of Downloads,OSGeo-Live Sourceforge
 pop,Population,Natural Earth
-economy,Economic ranking 1-9,Natural Earth
-income,Income ranking 1-9,Natural Earth
-downbypop,Download Total divided by Population Estimate,calculated
+economy,Economic ranking 1-7,Natural Earth
+income,Income ranking 1-5,Natural Earth
+downbypop,Download Total divided by Population Estimate,(downloads/pop)*100
 OoklaAverage,Average Internet speed,Ookla
 ITUbroadband,Estimate of percent of population with wired Internet access above 256 kpbs,ITU
 AkUniqueIP,Total Unique IP Addresses,Akamai
