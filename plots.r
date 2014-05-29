@@ -394,6 +394,13 @@ OSanalysis <- function(con){
     #data:  countrybyos.cont
     #Log likelihood ratio statistic (G) = 10848.92, X-squared df = 480,
     #p-value < 2.2e-16
+    countrymelt <- melt(countrybyos)
+    pdf(file="CountryOSVariation.pdf",width=6,height=8)
+    opar<-par()
+    boxplot(value~variable,data=countrymelt,ylab="Percentage of Downloaders")
+    dev.off()
+    par(opar)
+
     
 }
 
