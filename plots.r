@@ -314,6 +314,7 @@ caretForest <- function(con){
 
 OSanalysis <- function(con){
     require(Deducer)
+    require(polytomous)
     #file to hold output of tests
     of <- "ContingencyResults.txt"
     capture.output(print(date()),file=of,append=FALSE)
@@ -402,6 +403,22 @@ OSanalysis <- function(con){
     par(opar)
 
     
+}
+
+fullcont <- function(con){
+    require(polytomous)    
+    #Standard Chi square
+    typebyos.chi <- chisq.test(typebyos.cont)
+    #Standard Posthoc
+    typebyos.post <- chisq.posthoc(typebyos.cont)
+
+    #percent deviation
+    ((typebyos.cont-typebyos.chi$expected)/typebyos.chi$expected)*100
+    #Residuals - contributions to the solution
+    typebyos.chi$residuals
+
+    #Posthoc tests on Chisq, includes G2 stat too
+    typebyos.a <- associations(typebyos.cont)
 }
 
 fancyplot <- function(con){
