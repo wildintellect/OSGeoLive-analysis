@@ -268,13 +268,15 @@ ORDER BY a."Country"
 /* Contingency table building */
 SELECT "country", sum("win") as windows, sum("mac") as mac, sum("lin") as linux, sum("other") as other
 FROM "sfosbycountry"
-GROUP BY country
+WHERE Version <= 6.5
+GROUP BY country;
 
 
 --Total counts per type
 CREATE View TotDownByOs AS
 SELECT 'downloads' as type, sum("win") as Windows, sum("mac") as Mac, sum("lin") as Linux, sum("other") as Other
 FROM "sfosbycountry"
+WHERE Version <= 6.5;
 
 --ADD total to each entry
 ALTER TABLE "sfosbycountry"
@@ -297,6 +299,7 @@ ORDER BY country;
 CREATE VIEW CountryByOS AS
 SELECT "country",(sum("win")*1.0/sum(total))*100 as Windows, (sum("mac")*1.0/sum(total))*100 as Mac, (sum("lin")*1.0/sum(total))*100 as Linux, (sum("other")*1.0/sum(total))*100 as Other
 FROM "sfosbycountry"
+WHERE Version <= 6.5
 GROUP BY country
 ORDER BY country;
 
@@ -306,6 +309,7 @@ DROP VIEW if exists TypeByOS;
 CREATE VIEW TypeByOS AS
 SELECT type, sum("win")*1 as Windows, sum("mac")*1 as Mac, sum("lin")*1 as Linux, sum("other")*1 as Other
 FROM "sfosbycountry"
+WHERE Version <= 6.5
 GROUP BY Type;
 
 --Contingency, Country by Downloads, Contributors, Translators

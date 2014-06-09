@@ -313,22 +313,25 @@ caretForest <- function(con){
 }
 
 OSanalysis <- function(con){
-    require(Deducer)
-    require(polytomous)
+    #require(Deducer)
+    #require(polytomous)
+    require(reshape2)
     #file to hold output of tests
-    of <- "ContingencyResults.txt"
-    capture.output(print(date()),file=of,append=FALSE)
+    #of <- "ContingencyResults.txt"
+    #capture.output(print(date()),file=of,append=FALSE)
 
     #Two nominal variables - Country and Operating System
     #http://udel.edu/~mcdonald/statgtestind.html
+    of <- "TotDownByOs.txt"
     downbyos <- dbReadTable(con,"TotDownByOs")
     compbyos <- c(92.02,6.81,1.16,0.00)
     downbyos.mat <- as.matrix(downbyos[1,-1]/sum(downbyos[1,-1])*100)
     downbyos.cont <- rbind(downbyos.mat,compbyos)
     row.names(downbyos.cont) <- c("downloads","computers")      
     #chisq.test(downbyos.cont)
-    downbyos.lt <- likelihood.test(downbyos.cont)
-    capture.output(print(downbyos.lt),file=of,append=TRUE)
+    #downbyos.lt <- likelihood.test(downbyos.cont)
+    #capture.output(print(downbyos.lt),file=of,append=TRUE)
+    fullcont(con,downbyos.cont,of)
     #	Pearson's Chi-squared test
     #data:  downbyos.cont
     #X-squared = 25.4531, df = 3, p-value = 1.241e-05
@@ -337,22 +340,12 @@ OSanalysis <- function(con){
     #Convert to percentages, calculate min, max, avg, std_dev by column
 
 
-    #Contigency analysis of Type of Download by OS of Downloader 
-    typebyos <- dbReadTable(con,"TypeByOS")
-    typebyos.cont <- as.matrix((typebyos[,-1]))
-    row.names(typebyos.cont) <- typebyos[,1]
-    typebyos.lt <- likelihood.test(typebyos.cont)
-    capture.output(print(typebyos.cont),file=of,append=TRUE)
-    capture.output(print(typebyos.lt),file=of,append=TRUE)
-
-    #	Log likelihood ratio (G-test) test of independence without correction
-    #data:  typebyos.cont
-    #Log likelihood ratio statistic (G) = 950.6209, X-squared df = 6,
-    #p-value < 2.2e-16
+  
     
     #Contingency analysis of Countries by Downloads, Contributors and Translators
+    of <- "CountryCont.txt"
     ### Disabling separate columns in favor of combined
-    downsSQL <- 'SELECT "country", sum(total) as downloads FROM "sfosbycountry"GROUP BY country ORDER BY country;'
+    downsSQL <- 'SELECT "country", sum(total) as downloads FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY country;'
     downs <- dbGetQuery(con,downsSQL)
     #contribSQL <- 'SELECT country,count(name) as contributors FROM contributors as a, (SELECT max(rev) as mrev FROM "contributors") as b WHERE rev = mrev GROUP BY Country;'
     #contrib <- dbGetQuery(con,contribSQL)
@@ -361,6 +354,7 @@ OSanalysis <- function(con){
     
     #combined Contrib+Translators, overlap removed
     combineSQL  <- 'SELECT country,count(name) FROM (SELECT distinct(name),max(country) as country FROM (SELECT distinct(name),country FROM contributors UNION SELECT distinct(name),country FROM translators) GROUP BY name) GROUP BY country;'
+    #TODO limit by version
     combined <- dbGetQuery(con,combineSQL) 
     
     #country.df <- merge(downs,contrib,all.x=TRUE)
@@ -371,8 +365,9 @@ OSanalysis <- function(con){
     #Convert to martix contingency table
     country.cont <- as.matrix(country.df[,-1])
     row.names(country.cont) <- country.df[,1]
-    country.lt <- likelihood.test(country.cont)
-    capture.output(print(country.lt),file=of,append=TRUE)
+    #country.lt <- likelihood.test(country.cont)
+    #capture.output(print(country.lt),file=of,append=TRUE)
+    fullcont(con,country.cont,of)
     #Log likelihood ratio (G-test) test of independence without correction
     #data:  country.cont
     #Log likelihood ratio statistic (G) = 367.4859, X-squared df = 320,
@@ -386,39 +381,74 @@ OSanalysis <- function(con){
 
     #Contingency analysis of Countries By OS variation
     # the tails of Windows use(none/100) seem to have something in common
+    of <- "CountryByOS.txt"
     countrybyos <- dbReadTable(con,"CountryByOS")
     countrybyos.cont <- as.matrix(countrybyos[,-1])
     row.names(countrybyos.cont) <- countrybyos[,1]
-    countrybyos.lt <- likelihood.test(countrybyos.cont)
-    capture.output(print(countrybyos.lt),file=of,append=TRUE)
+    #countrybyos.lt <- likelihood.test(countrybyos.cont)
+    #capture.output(print(countrybyos.lt),file=of,append=TRUE)
+    fullcont(con,countrybyos.cont,of)
     #Log likelihood ratio (G-test) test of independence without correction
     #data:  countrybyos.cont
     #Log likelihood ratio statistic (G) = 10848.92, X-squared df = 480,
     #p-value < 2.2e-16
     countrymelt <- melt(countrybyos)
     pdf(file="CountryOSVariation.pdf",width=6,height=8)
-    opar<-par()
+    #opar<-par()
     boxplot(value~variable,data=countrymelt,ylab="Percentage of Downloaders")
     dev.off()
-    par(opar)
+    #par(opar)
 
+
+    #Contigency analysis of Type of Download by OS of Downloader 
+    of <- "TypeByOs.txt"
+    typebyos <- dbReadTable(con,"TypeByOS")
+    typebyos.cont <- as.matrix((typebyos[,-1]))
+    row.names(typebyos.cont) <- typebyos[,1]
+    typebyos.trans <- t(typebyos.cont)
+    #typebyos.lt <- likelihood.test(typebyos.trans)
+    #capture.output(print(typebyos.trans),file=of,append=FALSE)
+    #capture.output(print(typebyos.lt),file=of,append=TRUE)
+    fullcont(con,typebyos.trans,of)
+
+    #	Log likelihood ratio (G-test) test of independence without correction
+    #data:  typebyos.cont
+    #Log likelihood ratio statistic (G) = 950.6209, X-squared df = 6,
+    #p-value < 2.2e-16
     
 }
 
-fullcont <- function(con){
-    require(polytomous)    
+fullcont <- function(con,cont,of){
+    require(polytomous)
+    require(vcd)
+    require(Deducer)
+    
+    capture.output(print(date()),file=of,append=FALSE)
+    capture.output(print(cont),file=of,append=TRUE)
     #Standard Chi square
-    typebyos.chi <- chisq.test(typebyos.cont)
+    cont.chi <- chisq.test(cont)
+    capture.output(print(cont.chi),file=of,append=TRUE)
+
     #Standard Posthoc
-    typebyos.post <- chisq.posthoc(typebyos.cont)
+    cont.post <- chisq.posthoc(cont)
+    capture.output(print(cont.post),file=of,append=TRUE)
+
+    #Gstat
+    cont.like <- likelihood.test(cont)
+    capture.output(print(cont.like),file=of,append=TRUE)
 
     #percent deviation
-    ((typebyos.cont-typebyos.chi$expected)/typebyos.chi$expected)*100
+    cont.dev <- ((cont-cont.chi$expected)/cont.chi$expected)*100
+    capture.output(print(cont.dev),file=of,append=TRUE)
+    
     #Residuals - contributions to the solution
-    typebyos.chi$residuals
+    #capture.output(print(cont.chi$residuals),file=of,append=TRUE)
 
     #Posthoc tests on Chisq, includes G2 stat too
-    typebyos.a <- associations(typebyos.cont)
+    cont.a <- associations(cont)
+    capture.output(print(cont.a),file=of,append=TRUE)
+    cont.b <- assocstats(cont)
+    capture.output(print(cont.b),file=of,append=TRUE)
 }
 
 fancyplot <- function(con){
