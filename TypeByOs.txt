@@ -1,0 +1,180 @@
+[1] "Mon Jun  9 16:14:38 2014"
+          7z   iso mini
+Windows 8290 14822 5647
+Mac     1435   818  504
+Linux   2241  4031 2434
+Other    385   907  379
+
+	Pearson's Chi-squared test
+
+data:  cont
+X-squared = 1045.65, df = 6, p-value < 2.2e-16
+
+$ctable
+          7z   iso mini
+Windows 8290 14822 5647
+Mac     1435   818  504
+Linux   2241  4031 2434
+Other    385   907  379
+
+$X2.df1
+[1] 3.841459
+
+$X2.df
+[1] 12.59159
+
+$cells
+$cells$X2
+                7z         iso       mini
+Windows  -4.204109   34.239065 -41.717218
+Mac     476.240923 -212.341186 -12.515458
+Linux   -41.335442  -14.084452 175.111121
+Other   -23.522222    9.052345   1.286815
+
+$cells$X2.df.sign
+        7z iso mini
+Windows  0   +    -
+Mac      +   -    0
+Linux    -   -    +
+Other    -   0    0
+
+$cells$X2.df1.sign
+        7z iso mini
+Windows  -   +    -
+Mac      +   -    -
+Linux    -   -    +
+Other    -   +    0
+
+$cells$std.pearson.residuals
+               7z        iso       mini
+Windows -4.360738  14.650796 -13.011020
+Mac     26.887267 -21.136238  -4.128453
+Linux   -8.601988  -5.911324  16.769691
+Other   -5.894254   4.304746   1.305805
+
+$cells$std.pearson.residuals.sign
+        7z iso mini
+Windows  -   +    -
+Mac      +   -    -
+Linux    -   -    +
+Other    -   +    0
+
+
+
+	Log likelihood ratio (G-test) test of independence without correction
+
+data:  cont
+Log likelihood ratio statistic (G) = 981.2727, X-squared df = 6,
+p-value < 2.2e-16
+
+                7z        iso       mini
+Windows  -2.226741   4.923152  -8.233616
+Mac      76.544615 -39.597511 -14.565480
+Linux   -12.690292  -5.738915  30.659660
+Other   -21.850965  10.501745   5.999148
+$alpha.X2
+[1] 1.194688e-222
+
+$alpha.G2
+[1] 1.00368e-208
+
+$beta
+[1] 5.7948e-185
+
+$power
+[1] 1
+
+$effect.size
+[1] 0.1579874
+
+$likelihood.ratio
+[1] 981.2727
+
+$cramers.v
+[1] 0.111714
+
+$lambda.RC
+[1] 0
+
+$lambda.CR
+[1] 0.02894675
+
+$tau.RC
+[1] 0.007486548
+
+$tau.CR
+[1] 0.01306367
+
+$uc.RC
+[1] 0.01312513
+
+$uc.CR
+[1] 0.01126974
+
+$uc.sym
+[1] 0.01212688
+
+$p.lambda.RC
+[1] NaN
+
+$p.lambda.CR
+[1] 9.865312e-40
+
+$p.tau.RC
+[1] 5.450727e-200
+
+$p.tau.CR
+[1] 3.188567e-233
+
+$p.uc.RC
+[1] 7.748849e-54
+
+$p.uc.CR
+[1] 3.333889e-53
+
+$var.lambda.RC
+[1] 0
+
+$var.lambda.CR
+[1] 4.815413e-06
+
+$var.tau.RC
+[1] 3.893821e-07
+
+$var.tau.CR
+[1] 7.617721e-07
+
+$var.uc.RC
+[1] 7.218502e-07
+
+$var.uc.CR
+[1] 5.387524e-07
+
+$ASE.lambda.RC
+[1] 0
+
+$ASE.lambda.CR
+[1] 0.002194405
+
+$ASE.tau.RC
+[1] 0.0006240049
+
+$ASE.tau.CR
+[1] 0.0008727956
+
+$ASE.uc.RC
+[1] 0.0008496177
+
+$ASE.uc.CR
+[1] 0.0007339975
+
+$noncentrality
+[1] 1045.65
+
+                     X^2 df P(> X^2)
+Likelihood Ratio  981.27  6        0
+Pearson          1045.65  6        0
+
+Phi-Coefficient   : 0.158 
+Contingency Coeff.: 0.156 
+Cramer's V        : 0.112 

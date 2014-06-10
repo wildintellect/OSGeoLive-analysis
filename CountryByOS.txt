@@ -1,0 +1,2272 @@
+[1] "Mon Jun  9 16:14:38 2014"
+                                                  Windows         Mac
+Albania                                        100.000000   0.0000000
+Algeria                                         92.857143   4.7619048
+Andorra                                          0.000000   0.0000000
+Angola                                          85.000000   0.0000000
+Anonymous Proxy                                 73.056995   0.0000000
+Antigua and Barbuda                            100.000000   0.0000000
+Argentina                                       76.600442   0.5518764
+Armenia                                         25.000000   0.0000000
+Asia/Pacific Region (specific country unknown)  25.000000   0.0000000
+Australia                                       71.683168  15.4455446
+Austria                                         55.108696   5.9782609
+Azerbaijan                                      92.307692   0.0000000
+Bahamas                                        100.000000   0.0000000
+Bahrain                                        100.000000   0.0000000
+Bangladesh                                      88.461538   0.0000000
+Belarus                                         68.750000   6.2500000
+Belgium                                         78.145695   5.9602649
+Belize                                         100.000000   0.0000000
+Benin                                          100.000000   0.0000000
+Bhutan                                         100.000000   0.0000000
+Bolivia                                         41.188119   0.0000000
+Bosnia and Herzegovina                          78.571429   3.5714286
+Botswana                                       100.000000   0.0000000
+Brazil                                          61.124498   3.6144578
+Brunei Darussalam                              100.000000   0.0000000
+Bulgaria                                        93.939394   0.0000000
+Burkina Faso                                   100.000000   0.0000000
+Cambodia                                        92.857143   0.0000000
+Cameroon                                         3.707995   0.0000000
+Canada                                          52.971846   9.0719499
+Cape Verde                                      14.285714   0.0000000
+Chile                                           81.264637   5.6206089
+China                                           82.640587   1.3447433
+Colombia                                        72.633745   4.1152263
+Congo - Kinshasa                               100.000000   0.0000000
+Costa Rica                                      78.313253   2.4096386
+Croatia                                         89.814815   7.4074074
+Cyprus                                           7.692308   0.0000000
+Czech Republic                                  73.796791   2.1390374
+Denmark                                         89.583333   4.1666667
+Djibouti                                       100.000000   0.0000000
+Dominica                                       100.000000   0.0000000
+Dominican Republic                              70.967742   0.0000000
+Ecuador                                         66.666667   8.9026915
+Egypt                                           56.250000   0.0000000
+El Salvador                                     94.444444   0.0000000
+Estonia                                         15.909091   0.0000000
+Ethiopia                                        96.296296   0.0000000
+Europe (specific country unknown)               98.305085   0.0000000
+Fiji                                           100.000000   0.0000000
+Finland                                         52.857143  12.8571429
+France                                          56.061668   9.2501752
+French Guiana                                    0.000000 100.0000000
+Gabon                                          100.000000   0.0000000
+Georgia                                         95.833333   0.0000000
+Germany                                         74.062038   4.9335303
+Ghana                                           93.333333   0.0000000
+Greece                                          79.491833   1.4519056
+Guadeloupe                                      85.714286   0.0000000
+Guatemala                                       97.590361   0.0000000
+Guernsey                                       100.000000   0.0000000
+Honduras                                        92.500000   2.5000000
+Hong Kong                                       80.487805  12.1951220
+Hungary                                         76.923077   3.0769231
+Iceland                                         75.000000   0.0000000
+India                                           82.447342   1.4042126
+Indonesia                                       73.149742  10.4991394
+Iraq                                            80.000000   0.0000000
+Ireland                                         48.484848   7.0707071
+Israel                                          79.220779   5.1948052
+Italy                                           69.286257   4.1002278
+Ivory Coast                                    100.000000   0.0000000
+Japan                                           75.342466  12.9158513
+Jordan                                         100.000000   0.0000000
+Kazakhstan                                      97.222222   0.0000000
+Kenya                                           31.081081   0.0000000
+Korea                                           87.218045   7.5187970
+Kuwait                                          66.666667   0.0000000
+Kyrgyzstan                                     100.000000   0.0000000
+Lao People's Democratic Republic                33.333333   0.0000000
+Latvia                                         100.000000   0.0000000
+Lebanon                                        100.000000   0.0000000
+Lithuania                                       79.411765   2.9411765
+Luxembourg                                      64.285714   7.1428571
+Macedonia                                       81.818182   9.0909091
+Madagascar                                      35.087719   0.0000000
+Malawi                                         100.000000   0.0000000
+Malaysia                                        89.361702   3.5460993
+Maldives                                       100.000000   0.0000000
+Mali                                            86.666667  13.3333333
+Malta                                          100.000000   0.0000000
+Martinique                                     100.000000   0.0000000
+Mauritania                                     100.000000   0.0000000
+Mauritius                                      100.000000   0.0000000
+Mexico                                          83.146697   2.7995521
+Moldova                                         76.000000   0.0000000
+Monaco                                         100.000000   0.0000000
+Mongolia                                        96.153846   0.0000000
+Montenegro                                      86.206897   0.0000000
+Morocco                                         89.655172   6.8965517
+Myanmar                                        100.000000   0.0000000
+Namibia                                         91.666667   0.0000000
+Nepal                                           99.484536   0.0000000
+Netherlands                                     74.770642   9.4036697
+New Caledonia                                  100.000000   0.0000000
+New Zealand                                     66.346154   1.9230769
+Nicaragua                                       84.375000   0.0000000
+Niger                                          100.000000   0.0000000
+Nigeria                                         66.666667   3.0303030
+Northern Mariana Islands                       100.000000   0.0000000
+Norway                                          79.090909  11.8181818
+Oman                                           100.000000   0.0000000
+Pakistan                                        91.428571   0.0000000
+Panama                                          66.666667   0.0000000
+Paraguay                                        84.090909   0.0000000
+Peru                                            63.513514   0.0000000
+Philippines                                     54.151625   2.8880866
+Poland                                          79.456907   2.3612751
+Portugal                                        81.769437   2.4128686
+Puerto Rico                                    100.000000   0.0000000
+Qatar                                           87.500000  12.5000000
+Reunion                                         66.666667   0.0000000
+Romania                                         76.092545   2.5706941
+Russia                                          73.735199   0.7534984
+Rwanda                                         100.000000   0.0000000
+San Marino                                     100.000000   0.0000000
+Satellite Provider                             100.000000   0.0000000
+Saudi Arabia                                    63.414634   9.7560976
+Senegal                                         44.776119  53.7313433
+Serbia                                          91.666667   0.0000000
+Singapore                                        9.381663  90.1918977
+Slovakia                                        77.906977   0.0000000
+Slovenia                                        67.567568   0.0000000
+Solomon Islands                                  0.000000   0.0000000
+Somalia                                        100.000000   0.0000000
+South Africa                                    48.710602  28.6532951
+Spain                                           68.427919   5.6751468
+Sri Lanka                                       58.646617   1.5037594
+Suriname                                         0.000000   0.0000000
+Sweden                                          59.574468   8.5106383
+Switzerland                                     58.965517  14.1379310
+Taiwan                                          74.122807   3.9473684
+Tajikistan                                      16.666667   0.0000000
+Tanzania                                         2.097902   0.0000000
+Thailand                                        60.957643   9.9447514
+Togo                                           100.000000   0.0000000
+Trinidad and Tobago                             87.500000   0.0000000
+Tunisia                                         60.344828   1.7241379
+Turkey                                          92.274678   1.2875536
+Uganda                                          33.333333   0.0000000
+Ukraine                                         67.616580   0.5181347
+United Arab Emirates                            92.777778   0.5555556
+United Kingdom                                  71.565802   9.7022094
+United States                                   66.814929  11.8932508
+Uruguay                                         52.659574   4.7872340
+Uzbekistan                                     100.000000   0.0000000
+Vanuatu                                        100.000000   0.0000000
+Venezuela                                       44.591029   1.0554090
+Viet Nam                                        57.831325   0.0000000
+Virgin Islands                                 100.000000   0.0000000
+Yemen                                          100.000000   0.0000000
+Zambia                                          14.285714   0.0000000
+Zimbabwe                                        98.812352   0.0000000
+                                                     Linux       Other
+Albania                                          0.0000000   0.0000000
+Algeria                                          2.3809524   0.0000000
+Andorra                                        100.0000000   0.0000000
+Angola                                           0.0000000  15.0000000
+Anonymous Proxy                                  6.2176166  20.7253886
+Antigua and Barbuda                              0.0000000   0.0000000
+Argentina                                       19.7571744   3.0905077
+Armenia                                         62.5000000  12.5000000
+Asia/Pacific Region (specific country unknown)   0.0000000  75.0000000
+Australia                                       10.2970297   2.5742574
+Austria                                         38.2608696   0.6521739
+Azerbaijan                                       7.6923077   0.0000000
+Bahamas                                          0.0000000   0.0000000
+Bahrain                                          0.0000000   0.0000000
+Bangladesh                                      11.5384615   0.0000000
+Belarus                                         25.0000000   0.0000000
+Belgium                                         14.5695364   1.3245033
+Belize                                           0.0000000   0.0000000
+Benin                                            0.0000000   0.0000000
+Bhutan                                           0.0000000   0.0000000
+Bolivia                                         58.0198020   0.7920792
+Bosnia and Herzegovina                           7.1428571  10.7142857
+Botswana                                         0.0000000   0.0000000
+Brazil                                          31.6465863   3.6144578
+Brunei Darussalam                                0.0000000   0.0000000
+Bulgaria                                         6.0606061   0.0000000
+Burkina Faso                                     0.0000000   0.0000000
+Cambodia                                         0.0000000   7.1428571
+Cameroon                                        95.8285052   0.4634994
+Canada                                          36.2877998   1.6684046
+Cape Verde                                      71.4285714  14.2857143
+Chile                                           12.4121780   0.7025761
+China                                            8.8019560   7.2127139
+Colombia                                        19.9588477   3.2921811
+Congo - Kinshasa                                 0.0000000   0.0000000
+Costa Rica                                      19.2771084   0.0000000
+Croatia                                          1.8518519   0.9259259
+Cyprus                                          92.3076923   0.0000000
+Czech Republic                                  21.9251337   2.1390374
+Denmark                                          5.2083333   1.0416667
+Djibouti                                         0.0000000   0.0000000
+Dominica                                         0.0000000   0.0000000
+Dominican Republic                              29.0322581   0.0000000
+Ecuador                                         23.8095238   0.6211180
+Egypt                                           25.0000000  18.7500000
+El Salvador                                      5.5555556   0.0000000
+Estonia                                         84.0909091   0.0000000
+Ethiopia                                         3.7037037   0.0000000
+Europe (specific country unknown)                1.6949153   0.0000000
+Fiji                                             0.0000000   0.0000000
+Finland                                         31.4285714   2.8571429
+France                                          23.0553609  11.6327961
+French Guiana                                    0.0000000   0.0000000
+Gabon                                            0.0000000   0.0000000
+Georgia                                          4.1666667   0.0000000
+Germany                                         16.9867061   4.0177253
+Ghana                                            6.6666667   0.0000000
+Greece                                          13.6116152   5.4446461
+Guadeloupe                                      14.2857143   0.0000000
+Guatemala                                        2.4096386   0.0000000
+Guernsey                                         0.0000000   0.0000000
+Honduras                                         5.0000000   0.0000000
+Hong Kong                                        4.8780488   2.4390244
+Hungary                                         19.2307692   0.7692308
+Iceland                                         25.0000000   0.0000000
+India                                           11.8355065   4.3129388
+Indonesia                                       14.4578313   1.8932874
+Iraq                                            20.0000000   0.0000000
+Ireland                                         44.4444444   0.0000000
+Israel                                          12.9870130   2.5974026
+Italy                                           25.0949127   1.5186029
+Ivory Coast                                      0.0000000   0.0000000
+Japan                                            8.2191781   3.5225049
+Jordan                                           0.0000000   0.0000000
+Kazakhstan                                       2.7777778   0.0000000
+Kenya                                           65.5405405   3.3783784
+Korea                                            3.7593985   1.5037594
+Kuwait                                           0.0000000  33.3333333
+Kyrgyzstan                                       0.0000000   0.0000000
+Lao People's Democratic Republic                16.6666667  50.0000000
+Latvia                                           0.0000000   0.0000000
+Lebanon                                          0.0000000   0.0000000
+Lithuania                                       17.6470588   0.0000000
+Luxembourg                                      28.5714286   0.0000000
+Macedonia                                        9.0909091   0.0000000
+Madagascar                                      64.9122807   0.0000000
+Malawi                                           0.0000000   0.0000000
+Malaysia                                         4.9645390   2.1276596
+Maldives                                         0.0000000   0.0000000
+Mali                                             0.0000000   0.0000000
+Malta                                            0.0000000   0.0000000
+Martinique                                       0.0000000   0.0000000
+Mauritania                                       0.0000000   0.0000000
+Mauritius                                        0.0000000   0.0000000
+Mexico                                          13.6058231   0.4479283
+Moldova                                         24.0000000   0.0000000
+Monaco                                           0.0000000   0.0000000
+Mongolia                                         3.8461538   0.0000000
+Montenegro                                      13.7931034   0.0000000
+Morocco                                          3.4482759   0.0000000
+Myanmar                                          0.0000000   0.0000000
+Namibia                                          8.3333333   0.0000000
+Nepal                                            0.5154639   0.0000000
+Netherlands                                     13.0733945   2.7522936
+New Caledonia                                    0.0000000   0.0000000
+New Zealand                                     29.8076923   1.9230769
+Nicaragua                                       15.6250000   0.0000000
+Niger                                            0.0000000   0.0000000
+Nigeria                                         18.1818182  12.1212121
+Northern Mariana Islands                         0.0000000   0.0000000
+Norway                                           9.0909091   0.0000000
+Oman                                             0.0000000   0.0000000
+Pakistan                                         4.7619048   3.8095238
+Panama                                          33.3333333   0.0000000
+Paraguay                                        13.6363636   2.2727273
+Peru                                            35.5855856   0.9009009
+Philippines                                     23.4657040  19.4945848
+Poland                                          13.5773318   4.6044864
+Portugal                                        14.8793566   0.9383378
+Puerto Rico                                      0.0000000   0.0000000
+Qatar                                            0.0000000   0.0000000
+Reunion                                         33.3333333   0.0000000
+Romania                                         18.7660668   2.5706941
+Russia                                          20.9903122   4.5209903
+Rwanda                                           0.0000000   0.0000000
+San Marino                                       0.0000000   0.0000000
+Satellite Provider                               0.0000000   0.0000000
+Saudi Arabia                                    24.3902439   2.4390244
+Senegal                                          1.4925373   0.0000000
+Serbia                                           8.3333333   0.0000000
+Singapore                                        0.4264392   0.0000000
+Slovakia                                        20.9302326   1.1627907
+Slovenia                                        29.7297297   2.7027027
+Solomon Islands                                100.0000000   0.0000000
+Somalia                                          0.0000000   0.0000000
+South Africa                                    17.4785100   5.1575931
+Spain                                           23.0267449   2.8701892
+Sri Lanka                                       18.0451128  21.8045113
+Suriname                                         0.0000000 100.0000000
+Sweden                                          19.1489362  12.7659574
+Switzerland                                     23.1034483   3.7931034
+Taiwan                                           2.1929825  19.7368421
+Tajikistan                                       0.0000000  83.3333333
+Tanzania                                        97.9020979   0.0000000
+Thailand                                         5.3406998  23.7569061
+Togo                                             0.0000000   0.0000000
+Trinidad and Tobago                             12.5000000   0.0000000
+Tunisia                                         34.4827586   3.4482759
+Turkey                                           4.2918455   2.1459227
+Uganda                                          44.4444444  22.2222222
+Ukraine                                         29.7927461   2.0725389
+United Arab Emirates                             4.4444444   2.2222222
+United Kingdom                                  11.1431316   7.5888569
+United States                                   16.0703926   5.2214272
+Uruguay                                         41.4893617   1.0638298
+Uzbekistan                                       0.0000000   0.0000000
+Vanuatu                                          0.0000000   0.0000000
+Venezuela                                       50.3957784   3.9577836
+Viet Nam                                        36.1445783   6.0240964
+Virgin Islands                                   0.0000000   0.0000000
+Yemen                                            0.0000000   0.0000000
+Zambia                                          42.8571429  42.8571429
+Zimbabwe                                         1.1876485   0.0000000
+
+	Pearson's Chi-squared test
+
+data:  cont
+X-squared = 18318.7, df = 486, p-value < 2.2e-16
+
+$ctable
+                                                  Windows         Mac
+Albania                                        100.000000   0.0000000
+Algeria                                         92.857143   4.7619048
+Andorra                                          0.000000   0.0000000
+Angola                                          85.000000   0.0000000
+Anonymous Proxy                                 73.056995   0.0000000
+Antigua and Barbuda                            100.000000   0.0000000
+Argentina                                       76.600442   0.5518764
+Armenia                                         25.000000   0.0000000
+Asia/Pacific Region (specific country unknown)  25.000000   0.0000000
+Australia                                       71.683168  15.4455446
+Austria                                         55.108696   5.9782609
+Azerbaijan                                      92.307692   0.0000000
+Bahamas                                        100.000000   0.0000000
+Bahrain                                        100.000000   0.0000000
+Bangladesh                                      88.461538   0.0000000
+Belarus                                         68.750000   6.2500000
+Belgium                                         78.145695   5.9602649
+Belize                                         100.000000   0.0000000
+Benin                                          100.000000   0.0000000
+Bhutan                                         100.000000   0.0000000
+Bolivia                                         41.188119   0.0000000
+Bosnia and Herzegovina                          78.571429   3.5714286
+Botswana                                       100.000000   0.0000000
+Brazil                                          61.124498   3.6144578
+Brunei Darussalam                              100.000000   0.0000000
+Bulgaria                                        93.939394   0.0000000
+Burkina Faso                                   100.000000   0.0000000
+Cambodia                                        92.857143   0.0000000
+Cameroon                                         3.707995   0.0000000
+Canada                                          52.971846   9.0719499
+Cape Verde                                      14.285714   0.0000000
+Chile                                           81.264637   5.6206089
+China                                           82.640587   1.3447433
+Colombia                                        72.633745   4.1152263
+Congo - Kinshasa                               100.000000   0.0000000
+Costa Rica                                      78.313253   2.4096386
+Croatia                                         89.814815   7.4074074
+Cyprus                                           7.692308   0.0000000
+Czech Republic                                  73.796791   2.1390374
+Denmark                                         89.583333   4.1666667
+Djibouti                                       100.000000   0.0000000
+Dominica                                       100.000000   0.0000000
+Dominican Republic                              70.967742   0.0000000
+Ecuador                                         66.666667   8.9026915
+Egypt                                           56.250000   0.0000000
+El Salvador                                     94.444444   0.0000000
+Estonia                                         15.909091   0.0000000
+Ethiopia                                        96.296296   0.0000000
+Europe (specific country unknown)               98.305085   0.0000000
+Fiji                                           100.000000   0.0000000
+Finland                                         52.857143  12.8571429
+France                                          56.061668   9.2501752
+French Guiana                                    0.000000 100.0000000
+Gabon                                          100.000000   0.0000000
+Georgia                                         95.833333   0.0000000
+Germany                                         74.062038   4.9335303
+Ghana                                           93.333333   0.0000000
+Greece                                          79.491833   1.4519056
+Guadeloupe                                      85.714286   0.0000000
+Guatemala                                       97.590361   0.0000000
+Guernsey                                       100.000000   0.0000000
+Honduras                                        92.500000   2.5000000
+Hong Kong                                       80.487805  12.1951220
+Hungary                                         76.923077   3.0769231
+Iceland                                         75.000000   0.0000000
+India                                           82.447342   1.4042126
+Indonesia                                       73.149742  10.4991394
+Iraq                                            80.000000   0.0000000
+Ireland                                         48.484848   7.0707071
+Israel                                          79.220779   5.1948052
+Italy                                           69.286257   4.1002278
+Ivory Coast                                    100.000000   0.0000000
+Japan                                           75.342466  12.9158513
+Jordan                                         100.000000   0.0000000
+Kazakhstan                                      97.222222   0.0000000
+Kenya                                           31.081081   0.0000000
+Korea                                           87.218045   7.5187970
+Kuwait                                          66.666667   0.0000000
+Kyrgyzstan                                     100.000000   0.0000000
+Lao People's Democratic Republic                33.333333   0.0000000
+Latvia                                         100.000000   0.0000000
+Lebanon                                        100.000000   0.0000000
+Lithuania                                       79.411765   2.9411765
+Luxembourg                                      64.285714   7.1428571
+Macedonia                                       81.818182   9.0909091
+Madagascar                                      35.087719   0.0000000
+Malawi                                         100.000000   0.0000000
+Malaysia                                        89.361702   3.5460993
+Maldives                                       100.000000   0.0000000
+Mali                                            86.666667  13.3333333
+Malta                                          100.000000   0.0000000
+Martinique                                     100.000000   0.0000000
+Mauritania                                     100.000000   0.0000000
+Mauritius                                      100.000000   0.0000000
+Mexico                                          83.146697   2.7995521
+Moldova                                         76.000000   0.0000000
+Monaco                                         100.000000   0.0000000
+Mongolia                                        96.153846   0.0000000
+Montenegro                                      86.206897   0.0000000
+Morocco                                         89.655172   6.8965517
+Myanmar                                        100.000000   0.0000000
+Namibia                                         91.666667   0.0000000
+Nepal                                           99.484536   0.0000000
+Netherlands                                     74.770642   9.4036697
+New Caledonia                                  100.000000   0.0000000
+New Zealand                                     66.346154   1.9230769
+Nicaragua                                       84.375000   0.0000000
+Niger                                          100.000000   0.0000000
+Nigeria                                         66.666667   3.0303030
+Northern Mariana Islands                       100.000000   0.0000000
+Norway                                          79.090909  11.8181818
+Oman                                           100.000000   0.0000000
+Pakistan                                        91.428571   0.0000000
+Panama                                          66.666667   0.0000000
+Paraguay                                        84.090909   0.0000000
+Peru                                            63.513514   0.0000000
+Philippines                                     54.151625   2.8880866
+Poland                                          79.456907   2.3612751
+Portugal                                        81.769437   2.4128686
+Puerto Rico                                    100.000000   0.0000000
+Qatar                                           87.500000  12.5000000
+Reunion                                         66.666667   0.0000000
+Romania                                         76.092545   2.5706941
+Russia                                          73.735199   0.7534984
+Rwanda                                         100.000000   0.0000000
+San Marino                                     100.000000   0.0000000
+Satellite Provider                             100.000000   0.0000000
+Saudi Arabia                                    63.414634   9.7560976
+Senegal                                         44.776119  53.7313433
+Serbia                                          91.666667   0.0000000
+Singapore                                        9.381663  90.1918977
+Slovakia                                        77.906977   0.0000000
+Slovenia                                        67.567568   0.0000000
+Solomon Islands                                  0.000000   0.0000000
+Somalia                                        100.000000   0.0000000
+South Africa                                    48.710602  28.6532951
+Spain                                           68.427919   5.6751468
+Sri Lanka                                       58.646617   1.5037594
+Suriname                                         0.000000   0.0000000
+Sweden                                          59.574468   8.5106383
+Switzerland                                     58.965517  14.1379310
+Taiwan                                          74.122807   3.9473684
+Tajikistan                                      16.666667   0.0000000
+Tanzania                                         2.097902   0.0000000
+Thailand                                        60.957643   9.9447514
+Togo                                           100.000000   0.0000000
+Trinidad and Tobago                             87.500000   0.0000000
+Tunisia                                         60.344828   1.7241379
+Turkey                                          92.274678   1.2875536
+Uganda                                          33.333333   0.0000000
+Ukraine                                         67.616580   0.5181347
+United Arab Emirates                            92.777778   0.5555556
+United Kingdom                                  71.565802   9.7022094
+United States                                   66.814929  11.8932508
+Uruguay                                         52.659574   4.7872340
+Uzbekistan                                     100.000000   0.0000000
+Vanuatu                                        100.000000   0.0000000
+Venezuela                                       44.591029   1.0554090
+Viet Nam                                        57.831325   0.0000000
+Virgin Islands                                 100.000000   0.0000000
+Yemen                                          100.000000   0.0000000
+Zambia                                          14.285714   0.0000000
+Zimbabwe                                        98.812352   0.0000000
+                                                     Linux       Other
+Albania                                          0.0000000   0.0000000
+Algeria                                          2.3809524   0.0000000
+Andorra                                        100.0000000   0.0000000
+Angola                                           0.0000000  15.0000000
+Anonymous Proxy                                  6.2176166  20.7253886
+Antigua and Barbuda                              0.0000000   0.0000000
+Argentina                                       19.7571744   3.0905077
+Armenia                                         62.5000000  12.5000000
+Asia/Pacific Region (specific country unknown)   0.0000000  75.0000000
+Australia                                       10.2970297   2.5742574
+Austria                                         38.2608696   0.6521739
+Azerbaijan                                       7.6923077   0.0000000
+Bahamas                                          0.0000000   0.0000000
+Bahrain                                          0.0000000   0.0000000
+Bangladesh                                      11.5384615   0.0000000
+Belarus                                         25.0000000   0.0000000
+Belgium                                         14.5695364   1.3245033
+Belize                                           0.0000000   0.0000000
+Benin                                            0.0000000   0.0000000
+Bhutan                                           0.0000000   0.0000000
+Bolivia                                         58.0198020   0.7920792
+Bosnia and Herzegovina                           7.1428571  10.7142857
+Botswana                                         0.0000000   0.0000000
+Brazil                                          31.6465863   3.6144578
+Brunei Darussalam                                0.0000000   0.0000000
+Bulgaria                                         6.0606061   0.0000000
+Burkina Faso                                     0.0000000   0.0000000
+Cambodia                                         0.0000000   7.1428571
+Cameroon                                        95.8285052   0.4634994
+Canada                                          36.2877998   1.6684046
+Cape Verde                                      71.4285714  14.2857143
+Chile                                           12.4121780   0.7025761
+China                                            8.8019560   7.2127139
+Colombia                                        19.9588477   3.2921811
+Congo - Kinshasa                                 0.0000000   0.0000000
+Costa Rica                                      19.2771084   0.0000000
+Croatia                                          1.8518519   0.9259259
+Cyprus                                          92.3076923   0.0000000
+Czech Republic                                  21.9251337   2.1390374
+Denmark                                          5.2083333   1.0416667
+Djibouti                                         0.0000000   0.0000000
+Dominica                                         0.0000000   0.0000000
+Dominican Republic                              29.0322581   0.0000000
+Ecuador                                         23.8095238   0.6211180
+Egypt                                           25.0000000  18.7500000
+El Salvador                                      5.5555556   0.0000000
+Estonia                                         84.0909091   0.0000000
+Ethiopia                                         3.7037037   0.0000000
+Europe (specific country unknown)                1.6949153   0.0000000
+Fiji                                             0.0000000   0.0000000
+Finland                                         31.4285714   2.8571429
+France                                          23.0553609  11.6327961
+French Guiana                                    0.0000000   0.0000000
+Gabon                                            0.0000000   0.0000000
+Georgia                                          4.1666667   0.0000000
+Germany                                         16.9867061   4.0177253
+Ghana                                            6.6666667   0.0000000
+Greece                                          13.6116152   5.4446461
+Guadeloupe                                      14.2857143   0.0000000
+Guatemala                                        2.4096386   0.0000000
+Guernsey                                         0.0000000   0.0000000
+Honduras                                         5.0000000   0.0000000
+Hong Kong                                        4.8780488   2.4390244
+Hungary                                         19.2307692   0.7692308
+Iceland                                         25.0000000   0.0000000
+India                                           11.8355065   4.3129388
+Indonesia                                       14.4578313   1.8932874
+Iraq                                            20.0000000   0.0000000
+Ireland                                         44.4444444   0.0000000
+Israel                                          12.9870130   2.5974026
+Italy                                           25.0949127   1.5186029
+Ivory Coast                                      0.0000000   0.0000000
+Japan                                            8.2191781   3.5225049
+Jordan                                           0.0000000   0.0000000
+Kazakhstan                                       2.7777778   0.0000000
+Kenya                                           65.5405405   3.3783784
+Korea                                            3.7593985   1.5037594
+Kuwait                                           0.0000000  33.3333333
+Kyrgyzstan                                       0.0000000   0.0000000
+Lao People's Democratic Republic                16.6666667  50.0000000
+Latvia                                           0.0000000   0.0000000
+Lebanon                                          0.0000000   0.0000000
+Lithuania                                       17.6470588   0.0000000
+Luxembourg                                      28.5714286   0.0000000
+Macedonia                                        9.0909091   0.0000000
+Madagascar                                      64.9122807   0.0000000
+Malawi                                           0.0000000   0.0000000
+Malaysia                                         4.9645390   2.1276596
+Maldives                                         0.0000000   0.0000000
+Mali                                             0.0000000   0.0000000
+Malta                                            0.0000000   0.0000000
+Martinique                                       0.0000000   0.0000000
+Mauritania                                       0.0000000   0.0000000
+Mauritius                                        0.0000000   0.0000000
+Mexico                                          13.6058231   0.4479283
+Moldova                                         24.0000000   0.0000000
+Monaco                                           0.0000000   0.0000000
+Mongolia                                         3.8461538   0.0000000
+Montenegro                                      13.7931034   0.0000000
+Morocco                                          3.4482759   0.0000000
+Myanmar                                          0.0000000   0.0000000
+Namibia                                          8.3333333   0.0000000
+Nepal                                            0.5154639   0.0000000
+Netherlands                                     13.0733945   2.7522936
+New Caledonia                                    0.0000000   0.0000000
+New Zealand                                     29.8076923   1.9230769
+Nicaragua                                       15.6250000   0.0000000
+Niger                                            0.0000000   0.0000000
+Nigeria                                         18.1818182  12.1212121
+Northern Mariana Islands                         0.0000000   0.0000000
+Norway                                           9.0909091   0.0000000
+Oman                                             0.0000000   0.0000000
+Pakistan                                         4.7619048   3.8095238
+Panama                                          33.3333333   0.0000000
+Paraguay                                        13.6363636   2.2727273
+Peru                                            35.5855856   0.9009009
+Philippines                                     23.4657040  19.4945848
+Poland                                          13.5773318   4.6044864
+Portugal                                        14.8793566   0.9383378
+Puerto Rico                                      0.0000000   0.0000000
+Qatar                                            0.0000000   0.0000000
+Reunion                                         33.3333333   0.0000000
+Romania                                         18.7660668   2.5706941
+Russia                                          20.9903122   4.5209903
+Rwanda                                           0.0000000   0.0000000
+San Marino                                       0.0000000   0.0000000
+Satellite Provider                               0.0000000   0.0000000
+Saudi Arabia                                    24.3902439   2.4390244
+Senegal                                          1.4925373   0.0000000
+Serbia                                           8.3333333   0.0000000
+Singapore                                        0.4264392   0.0000000
+Slovakia                                        20.9302326   1.1627907
+Slovenia                                        29.7297297   2.7027027
+Solomon Islands                                100.0000000   0.0000000
+Somalia                                          0.0000000   0.0000000
+South Africa                                    17.4785100   5.1575931
+Spain                                           23.0267449   2.8701892
+Sri Lanka                                       18.0451128  21.8045113
+Suriname                                         0.0000000 100.0000000
+Sweden                                          19.1489362  12.7659574
+Switzerland                                     23.1034483   3.7931034
+Taiwan                                           2.1929825  19.7368421
+Tajikistan                                       0.0000000  83.3333333
+Tanzania                                        97.9020979   0.0000000
+Thailand                                         5.3406998  23.7569061
+Togo                                             0.0000000   0.0000000
+Trinidad and Tobago                             12.5000000   0.0000000
+Tunisia                                         34.4827586   3.4482759
+Turkey                                           4.2918455   2.1459227
+Uganda                                          44.4444444  22.2222222
+Ukraine                                         29.7927461   2.0725389
+United Arab Emirates                             4.4444444   2.2222222
+United Kingdom                                  11.1431316   7.5888569
+United States                                   16.0703926   5.2214272
+Uruguay                                         41.4893617   1.0638298
+Uzbekistan                                       0.0000000   0.0000000
+Vanuatu                                          0.0000000   0.0000000
+Venezuela                                       50.3957784   3.9577836
+Viet Nam                                        36.1445783   6.0240964
+Virgin Islands                                   0.0000000   0.0000000
+Yemen                                            0.0000000   0.0000000
+Zambia                                          42.8571429  42.8571429
+Zimbabwe                                         1.1876485   0.0000000
+
+$X2.df1
+[1] 3.841459
+
+$X2.df
+[1] 538.3931
+
+$cells
+$cells$X2
+                                                     Windows           Mac
+Albania                                          7.855543381 -3.921890e+00
+Algeria                                          3.925984239  1.799195e-01
+Andorra                                        -75.626151091 -3.921890e+00
+Angola                                           1.161887021 -3.921890e+00
+Anonymous Proxy                                 -0.087278856 -3.921890e+00
+Antigua and Barbuda                              7.855543381 -3.921890e+00
+Argentina                                        0.012551767 -2.895796e+00
+Armenia                                        -33.890488109 -3.921890e+00
+Asia/Pacific Region (specific country unknown) -33.890488109 -3.921890e+00
+Australia                                       -0.205578532  3.385985e+01
+Austria                                         -5.566407540  1.078220e+00
+Azerbaijan                                       3.679597776 -3.921890e+00
+Bahamas                                          7.855543381 -3.921890e+00
+Bahrain                                          7.855543381 -3.921890e+00
+Bangladesh                                       2.178441803 -3.921890e+00
+Belarus                                         -0.625199791  1.382011e+00
+Belgium                                          0.083940585  1.059431e+00
+Belize                                           7.855543381 -3.921890e+00
+Benin                                            7.855543381 -3.921890e+00
+Bhutan                                           7.855543381 -3.921890e+00
+Bolivia                                        -15.682115910 -3.921890e+00
+Bosnia and Herzegovina                           0.114704495 -3.131738e-02
+Botswana                                         7.855543381 -3.921890e+00
+Brazil                                          -2.780756915 -2.409926e-02
+Brunei Darussalam                                7.855543381 -3.921890e+00
+Bulgaria                                         4.434641441 -3.921890e+00
+Burkina Faso                                     7.855543381 -3.921890e+00
+Cambodia                                         3.925984239 -3.921890e+00
+Cameroon                                       -68.391965589 -3.921890e+00
+Canada                                          -6.786244528  6.762840e+00
+Cape Verde                                     -49.753281546 -3.921890e+00
+Chile                                            0.420390604  7.357792e-01
+China                                            0.650599132 -1.693491e+00
+Colombia                                        -0.118404744  9.530833e-03
+Congo - Kinshasa                                 7.855543381 -3.921890e+00
+Costa Rica                                       0.095476454 -5.831129e-01
+Croatia                                          2.662018037  3.097698e+00
+Cyprus                                         -61.023958146 -3.921890e+00
+Czech Republic                                  -0.044251316 -8.104673e-01
+Denmark                                          2.575867386  1.527721e-02
+Djibouti                                         7.855543381 -3.921890e+00
+Dominica                                         7.855543381 -3.921890e+00
+Dominican Republic                              -0.286948040 -3.921890e+00
+Ecuador                                         -1.061436553  6.325619e+00
+Egypt                                           -4.964357245 -3.921890e+00
+El Salvador                                      4.682615202 -3.921890e+00
+Estonia                                        -47.154684264 -3.921890e+00
+Ethiopia                                         5.649565615 -3.921890e+00
+Europe (specific country unknown)                6.801007645 -3.921890e+00
+Fiji                                             7.855543381 -3.921890e+00
+Finland                                         -6.855138447  2.035721e+01
+France                                          -5.061331293  7.239015e+00
+French Guiana                                  -75.626151091  2.353713e+03
+Gabon                                            7.855543381 -3.921890e+00
+Georgia                                          5.399325607 -3.921890e+00
+Germany                                         -0.032349240  2.609496e-01
+Ghana                                            4.145977264 -3.921890e+00
+Greece                                           0.197596951 -1.555582e+00
+Guadeloupe                                       1.345704610 -3.921890e+00
+Guatemala                                        6.379096775 -3.921890e+00
+Guernsey                                         7.855543381 -3.921890e+00
+Honduras                                         3.764924869 -5.155095e-01
+Hong Kong                                        0.312533128  1.745239e+01
+Hungary                                          0.022241203 -1.820473e-01
+Iceland                                         -0.005184254 -3.921890e+00
+India                                            0.615245455 -1.616236e+00
+Indonesia                                       -0.081091035  1.103045e+01
+Iraq                                             0.252962157 -3.921890e+00
+Ireland                                         -9.740682245  2.528130e+00
+Israel                                           0.170858244  4.131459e-01
+Italy                                           -0.531486279  8.109435e-03
+Ivory Coast                                      7.855543381 -3.921890e+00
+Japan                                           -0.001064147  2.062560e+01
+Jordan                                           7.855543381 -3.921890e+00
+Kazakhstan                                       6.167050439 -3.921890e+00
+Kenya                                          -26.237792530 -3.921890e+00
+Korea                                            1.776792883  3.298853e+00
+Kuwait                                          -1.061436553 -3.921890e+00
+Kyrgyzstan                                       7.855543381 -3.921890e+00
+Lao People's Democratic Republic               -23.651639123 -3.921890e+00
+Latvia                                           7.855543381 -3.921890e+00
+Lebanon                                          7.855543381 -3.921890e+00
+Lithuania                                        0.189496229 -2.452387e-01
+Luxembourg                                      -1.700542803  2.645313e+00
+Macedonia                                        0.506983946  6.812724e+00
+Madagascar                                     -21.730108283 -3.921890e+00
+Malawi                                           7.855543381 -3.921890e+00
+Malaysia                                         2.494710620 -3.600783e-02
+Maldives                                         7.855543381 -3.921890e+00
+Mali                                             1.611783522  2.258484e+01
+Malta                                            7.855543381 -3.921890e+00
+Martinique                                       7.855543381 -3.921890e+00
+Mauritania                                       7.855543381 -3.921890e+00
+Mauritius                                        7.855543381 -3.921890e+00
+Mexico                                           0.747870979 -3.211826e-01
+Moldova                                          0.001848078 -3.921890e+00
+Monaco                                           7.855543381 -3.921890e+00
+Mongolia                                         5.571964969 -3.921890e+00
+Montenegro                                       1.480336800 -3.921890e+00
+Morocco                                          2.602452147  2.256211e+00
+Myanmar                                          7.855543381 -3.921890e+00
+Namibia                                          3.402237668 -3.921890e+00
+Nepal                                            7.526794980 -3.921890e+00
+Netherlands                                     -0.009677809  7.662098e+00
+New Caledonia                                    7.855543381 -3.921890e+00
+New Zealand                                     -1.138737694 -1.018706e+00
+Nicaragua                                        1.012114938 -3.921890e+00
+Niger                                            7.855543381 -3.921890e+00
+Nigeria                                         -1.061436553 -2.026899e-01
+Northern Mariana Islands                         7.855543381 -3.921890e+00
+Norway                                           0.158735409  1.589831e+01
+Oman                                             7.855543381 -3.921890e+00
+Pakistan                                         3.301985952 -3.921890e+00
+Panama                                          -1.061436553 -3.921890e+00
+Paraguay                                         0.947451734 -3.921890e+00
+Peru                                            -1.940016608 -3.921890e+00
+Philippines                                     -6.097828378 -2.725088e-01
+Poland                                           0.194042518 -6.210065e-01
+Portugal                                         0.499033220 -5.806246e-01
+Puerto Rico                                      7.855543381 -3.921890e+00
+Qatar                                            1.864279563  1.876237e+01
+Reunion                                         -1.061436553 -3.921890e+00
+Romania                                          0.002876297 -4.655232e-01
+Russia                                          -0.047281254 -2.559660e+00
+Rwanda                                           7.855543381 -3.921890e+00
+San Marino                                       7.855543381 -3.921890e+00
+Satellite Provider                               7.855543381 -3.921890e+00
+Saudi Arabia                                    -1.971819853  8.678972e+00
+Senegal                                        -12.584594633  6.325984e+02
+Serbia                                           3.402237668 -3.921890e+00
+Singapore                                      -58.026649832  1.897686e+03
+Slovakia                                         0.068787920 -3.921890e+00
+Slovenia                                        -0.858707834 -3.921890e+00
+Solomon Islands                                -75.626151091 -3.921890e+00
+Somalia                                          7.855543381 -3.921890e+00
+South Africa                                    -9.579315984  1.559560e+02
+Spain                                           -0.685140561  7.837825e-01
+Sri Lanka                                       -3.812234120 -1.490954e+00
+Suriname                                       -75.626151091 -3.921890e+00
+Sweden                                          -3.406976603  5.368995e+00
+Switzerland                                     -3.670380104  2.661153e+01
+Taiwan                                          -0.029884417  1.655177e-04
+Tajikistan                                     -45.965856432 -3.921890e+00
+Tanzania                                       -71.488543606 -3.921890e+00
+Thailand                                        -2.845115540  9.249330e+00
+Togo                                             7.855543381 -3.921890e+00
+Trinidad and Tobago                              1.864279563 -3.921890e+00
+Tunisia                                         -3.087805537 -1.231578e+00
+Turkey                                           3.665047711 -1.769486e+00
+Uganda                                         -23.651639123 -3.921890e+00
+Ukraine                                         -0.848294183 -2.954073e+00
+United Arab Emirates                             3.889901757 -2.889476e+00
+United Kingdom                                  -0.217999113  8.519385e+00
+United States                                   -1.026597630  1.620203e+01
+Uruguay                                         -6.974619681  1.909335e-01
+Uzbekistan                                       7.855543381 -3.921890e+00
+Vanuatu                                          7.855543381 -3.921890e+00
+Venezuela                                      -12.736054762 -2.095090e+00
+Viet Nam                                        -4.187120729 -3.921890e+00
+Virgin Islands                                   7.855543381 -3.921890e+00
+Yemen                                            7.855543381 -3.921890e+00
+Zambia                                         -49.753281546 -3.921890e+00
+Zimbabwe                                         7.108650694 -3.921890e+00
+                                                       Linux         Other
+Albania                                        -1.572628e+01 -4.725680e+00
+Algeria                                        -1.132485e+01 -4.725680e+00
+Andorra                                         4.516046e+02 -4.725680e+00
+Angola                                         -1.572628e+01  2.233788e+01
+Anonymous Proxy                                -5.749272e+00  5.417013e+01
+Antigua and Barbuda                            -1.572628e+01 -4.725680e+00
+Argentina                                       1.033183e+00 -5.657996e-01
+Armenia                                         1.391163e+02  1.278971e+01
+Asia/Pacific Region (specific country unknown) -1.572628e+01  1.045031e+03
+Australia                                      -1.874362e+00 -9.794608e-01
+Austria                                         3.229040e+01 -3.511336e+00
+Azerbaijan                                     -4.104257e+00 -4.725680e+00
+Bahamas                                        -1.572628e+01 -4.725680e+00
+Bahrain                                        -1.572628e+01 -4.725680e+00
+Bangladesh                                     -1.115192e+00 -4.725680e+00
+Belarus                                         5.468675e+00 -4.725680e+00
+Belgium                                        -8.508391e-02 -2.447902e+00
+Belize                                         -1.572628e+01 -4.725680e+00
+Benin                                          -1.572628e+01 -4.725680e+00
+Bhutan                                         -1.572628e+01 -4.725680e+00
+Bolivia                                         1.137422e+02 -3.274283e+00
+Bosnia and Herzegovina                         -4.684842e+00  7.589046e+00
+Botswana                                       -1.572628e+01 -4.725680e+00
+Brazil                                          1.611673e+01 -2.612988e-01
+Brunei Darussalam                              -1.572628e+01 -4.725680e+00
+Bulgaria                                       -5.940708e+00 -4.725680e+00
+Burkina Faso                                   -1.572628e+01 -4.725680e+00
+Cambodia                                       -1.572628e+01  1.236382e+00
+Cameroon                                        4.080029e+02 -3.844141e+00
+Canada                                          2.688342e+01 -1.977902e+00
+Cape Verde                                      1.972969e+02  1.933992e+01
+Chile                                          -6.984020e-01 -3.424981e+00
+China                                          -3.048798e+00  1.308878e+00
+Colombia                                        1.139153e+00 -4.348409e-01
+Congo - Kinshasa                               -1.572628e+01 -4.725680e+00
+Costa Rica                                      8.017402e-01 -4.725680e+00
+Croatia                                        -1.224064e+01 -3.055249e+00
+Cyprus                                          3.729244e+02 -4.725680e+00
+Czech Republic                                  2.443413e+00 -1.415821e+00
+Denmark                                        -7.034543e+00 -2.871958e+00
+Djibouti                                       -1.572628e+01 -4.725680e+00
+Dominica                                       -1.572628e+01 -4.725680e+00
+Dominican Republic                              1.125817e+01 -4.725680e+00
+Ecuador                                         4.154756e+00 -3.565080e+00
+Egypt                                           5.468675e+00  4.161974e+01
+El Salvador                                    -6.577755e+00 -4.725680e+00
+Estonia                                         2.971919e+02 -4.725680e+00
+Ethiopia                                       -9.191133e+00 -4.725680e+00
+Europe (specific country unknown)              -1.251912e+01 -4.725680e+00
+Fiji                                           -1.572628e+01 -4.725680e+00
+Finland                                         1.567834e+01 -7.388208e-01
+France                                          3.415649e+00  1.009553e+01
+French Guiana                                  -1.572628e+01 -4.725680e+00
+Gabon                                          -1.572628e+01 -4.725680e+00
+Georgia                                        -8.496901e+00 -4.725680e+00
+Germany                                         1.010205e-01 -1.060587e-01
+Ghana                                          -5.219072e+00 -4.725680e+00
+Greece                                         -2.843522e-01  1.093837e-01
+Guadeloupe                                     -1.319592e-01 -4.725680e+00
+Guatemala                                      -1.127622e+01 -4.725680e+00
+Guernsey                                       -1.572628e+01 -4.725680e+00
+Honduras                                       -7.315975e+00 -4.725680e+00
+Hong Kong                                      -7.483277e+00 -1.106464e+00
+Hungary                                         7.809509e-01 -3.312431e+00
+Iceland                                         5.468675e+00 -4.725680e+00
+India                                          -9.625996e-01 -3.604881e-02
+Indonesia                                      -1.023102e-01 -1.697628e+00
+Iraq                                            1.161412e+00 -4.725680e+00
+Ireland                                         5.244299e+01 -4.725680e+00
+Israel                                         -4.771363e-01 -9.585000e-01
+Italy                                           5.581187e+00 -2.176479e+00
+Ivory Coast                                    -1.572628e+01 -4.725680e+00
+Japan                                          -3.583592e+00 -3.063326e-01
+Jordan                                         -1.572628e+01 -4.725680e+00
+Kazakhstan                                     -1.066137e+01 -4.725680e+00
+Kenya                                           1.577907e+02 -3.841185e-01
+Korea                                          -9.106174e+00 -2.196673e+00
+Kuwait                                         -1.572628e+01  1.731810e+02
+Kyrgyzstan                                     -1.572628e+01 -4.725680e+00
+Lao People's Democratic Republic                5.623257e-02  4.337501e+02
+Latvia                                         -1.572628e+01 -4.725680e+00
+Lebanon                                        -1.572628e+01 -4.725680e+00
+Lithuania                                       2.346007e-01 -4.725680e+00
+Luxembourg                                      1.049186e+01 -4.725680e+00
+Macedonia                                      -2.799654e+00 -4.725680e+00
+Madagascar                                      1.538357e+02 -4.725680e+00
+Malawi                                         -1.572628e+01 -4.725680e+00
+Malaysia                                       -7.364428e+00 -1.428304e+00
+Maldives                                       -1.572628e+01 -4.725680e+00
+Mali                                           -1.572628e+01 -4.725680e+00
+Malta                                          -1.572628e+01 -4.725680e+00
+Martinique                                     -1.572628e+01 -4.725680e+00
+Mauritania                                     -1.572628e+01 -4.725680e+00
+Mauritius                                      -1.572628e+01 -4.725680e+00
+Mexico                                         -2.859121e-01 -3.872280e+00
+Moldova                                         4.352871e+00 -4.725680e+00
+Monaco                                         -1.572628e+01 -4.725680e+00
+Mongolia                                       -8.974620e+00 -4.725680e+00
+Montenegro                                     -2.376384e-01 -4.725680e+00
+Morocco                                        -9.585825e+00 -4.725680e+00
+Myanmar                                        -1.572628e+01 -4.725680e+00
+Namibia                                        -3.475434e+00 -4.725680e+00
+Nepal                                          -1.471225e+01 -4.725680e+00
+Netherlands                                    -4.475182e-01 -8.240620e-01
+New Caledonia                                  -1.572628e+01 -4.725680e+00
+New Zealand                                     1.260859e+01 -1.662106e+00
+Nicaragua                                      -6.522474e-04 -4.725680e+00
+Niger                                          -1.572628e+01 -4.725680e+00
+Nigeria                                         3.834138e-01  1.157376e+01
+Northern Mariana Islands                       -1.572628e+01 -4.725680e+00
+Norway                                         -2.799654e+00 -4.725680e+00
+Oman                                           -1.572628e+01 -4.725680e+00
+Pakistan                                       -7.644370e+00 -1.776129e-01
+Panama                                          1.971276e+01 -4.725680e+00
+Paraguay                                       -2.777355e-01 -1.273251e+00
+Peru                                            2.507854e+01 -3.095625e+00
+Philippines                                     3.808829e+00  4.615644e+01
+Poland                                         -2.936470e-01 -3.108090e-03
+Portugal                                       -4.561012e-02 -3.035322e+00
+Puerto Rico                                    -1.572628e+01 -4.725680e+00
+Qatar                                          -1.572628e+01 -4.725680e+00
+Reunion                                         1.971276e+01 -4.725680e+00
+Romania                                         5.875713e-01 -9.827080e-01
+Russia                                          1.762022e+00 -8.865982e-03
+Rwanda                                         -1.572628e+01 -4.725680e+00
+San Marino                                     -1.572628e+01 -4.725680e+00
+Satellite Provider                             -1.572628e+01 -4.725680e+00
+Saudi Arabia                                    4.773175e+00 -1.106464e+00
+Senegal                                        -1.288286e+01 -4.725680e+00
+Serbia                                         -3.475434e+00 -4.725680e+00
+Singapore                                      -1.488496e+01 -4.725680e+00
+Slovakia                                        1.722031e+00 -2.686212e+00
+Slovenia                                        1.246936e+01 -8.659995e-01
+Solomon Islands                                 4.516046e+02 -4.725680e+00
+Somalia                                        -1.572628e+01 -4.725680e+00
+South Africa                                    1.952346e-01  3.947561e-02
+Spain                                           3.389028e+00 -7.285397e-01
+Sri Lanka                                       3.419112e-01  6.172371e+01
+Suriname                                       -1.572628e+01  1.920823e+03
+Sweden                                          7.449049e-01  1.367974e+01
+Switzerland                                     3.460617e+00 -1.840367e-01
+Taiwan                                         -1.164612e+01  4.768309e+01
+Tajikistan                                     -1.572628e+01  1.307571e+03
+Tanzania                                        4.294001e+02 -4.725680e+00
+Thailand                                       -6.858600e+00  7.664243e+01
+Togo                                           -1.572628e+01 -4.725680e+00
+Trinidad and Tobago                            -6.618779e-01 -4.725680e+00
+Tunisia                                         2.237055e+01 -3.452965e-01
+Turkey                                         -8.313872e+00 -1.408294e+00
+Uganda                                          5.244299e+01  6.477989e+01
+Ukraine                                         1.258184e+01 -1.489554e+00
+United Arab Emirates                           -8.093446e+00 -1.326222e+00
+United Kingdom                                 -1.335678e+00  1.734731e+00
+United States                                   7.529702e-03  5.200637e-02
+Uruguay                                         4.220556e+01 -2.837506e+00
+Uzbekistan                                     -1.572628e+01 -4.725680e+00
+Vanuatu                                        -1.572628e+01 -4.725680e+00
+Venezuela                                       7.643093e+01 -1.247788e-01
+Viet Nam                                        2.651021e+01  3.567499e-01
+Virgin Islands                                 -1.572628e+01 -4.725680e+00
+Yemen                                          -1.572628e+01 -4.725680e+00
+Zambia                                          4.680597e+01  3.076824e+02
+Zimbabwe                                       -1.344067e+01 -4.725680e+00
+
+$cells$X2.df.sign
+                                               Windows Mac Linux Other
+Albania                                              0   0     0     0
+Algeria                                              0   0     0     0
+Andorra                                              0   0     0     0
+Angola                                               0   0     0     0
+Anonymous Proxy                                      0   0     0     0
+Antigua and Barbuda                                  0   0     0     0
+Argentina                                            0   0     0     0
+Armenia                                              0   0     0     0
+Asia/Pacific Region (specific country unknown)       0   0     0     +
+Australia                                            0   0     0     0
+Austria                                              0   0     0     0
+Azerbaijan                                           0   0     0     0
+Bahamas                                              0   0     0     0
+Bahrain                                              0   0     0     0
+Bangladesh                                           0   0     0     0
+Belarus                                              0   0     0     0
+Belgium                                              0   0     0     0
+Belize                                               0   0     0     0
+Benin                                                0   0     0     0
+Bhutan                                               0   0     0     0
+Bolivia                                              0   0     0     0
+Bosnia and Herzegovina                               0   0     0     0
+Botswana                                             0   0     0     0
+Brazil                                               0   0     0     0
+Brunei Darussalam                                    0   0     0     0
+Bulgaria                                             0   0     0     0
+Burkina Faso                                         0   0     0     0
+Cambodia                                             0   0     0     0
+Cameroon                                             0   0     0     0
+Canada                                               0   0     0     0
+Cape Verde                                           0   0     0     0
+Chile                                                0   0     0     0
+China                                                0   0     0     0
+Colombia                                             0   0     0     0
+Congo - Kinshasa                                     0   0     0     0
+Costa Rica                                           0   0     0     0
+Croatia                                              0   0     0     0
+Cyprus                                               0   0     0     0
+Czech Republic                                       0   0     0     0
+Denmark                                              0   0     0     0
+Djibouti                                             0   0     0     0
+Dominica                                             0   0     0     0
+Dominican Republic                                   0   0     0     0
+Ecuador                                              0   0     0     0
+Egypt                                                0   0     0     0
+El Salvador                                          0   0     0     0
+Estonia                                              0   0     0     0
+Ethiopia                                             0   0     0     0
+Europe (specific country unknown)                    0   0     0     0
+Fiji                                                 0   0     0     0
+Finland                                              0   0     0     0
+France                                               0   0     0     0
+French Guiana                                        0   +     0     0
+Gabon                                                0   0     0     0
+Georgia                                              0   0     0     0
+Germany                                              0   0     0     0
+Ghana                                                0   0     0     0
+Greece                                               0   0     0     0
+Guadeloupe                                           0   0     0     0
+Guatemala                                            0   0     0     0
+Guernsey                                             0   0     0     0
+Honduras                                             0   0     0     0
+Hong Kong                                            0   0     0     0
+Hungary                                              0   0     0     0
+Iceland                                              0   0     0     0
+India                                                0   0     0     0
+Indonesia                                            0   0     0     0
+Iraq                                                 0   0     0     0
+Ireland                                              0   0     0     0
+Israel                                               0   0     0     0
+Italy                                                0   0     0     0
+Ivory Coast                                          0   0     0     0
+Japan                                                0   0     0     0
+Jordan                                               0   0     0     0
+Kazakhstan                                           0   0     0     0
+Kenya                                                0   0     0     0
+Korea                                                0   0     0     0
+Kuwait                                               0   0     0     0
+Kyrgyzstan                                           0   0     0     0
+Lao People's Democratic Republic                     0   0     0     0
+Latvia                                               0   0     0     0
+Lebanon                                              0   0     0     0
+Lithuania                                            0   0     0     0
+Luxembourg                                           0   0     0     0
+Macedonia                                            0   0     0     0
+Madagascar                                           0   0     0     0
+Malawi                                               0   0     0     0
+Malaysia                                             0   0     0     0
+Maldives                                             0   0     0     0
+Mali                                                 0   0     0     0
+Malta                                                0   0     0     0
+Martinique                                           0   0     0     0
+Mauritania                                           0   0     0     0
+Mauritius                                            0   0     0     0
+Mexico                                               0   0     0     0
+Moldova                                              0   0     0     0
+Monaco                                               0   0     0     0
+Mongolia                                             0   0     0     0
+Montenegro                                           0   0     0     0
+Morocco                                              0   0     0     0
+Myanmar                                              0   0     0     0
+Namibia                                              0   0     0     0
+Nepal                                                0   0     0     0
+Netherlands                                          0   0     0     0
+New Caledonia                                        0   0     0     0
+New Zealand                                          0   0     0     0
+Nicaragua                                            0   0     0     0
+Niger                                                0   0     0     0
+Nigeria                                              0   0     0     0
+Northern Mariana Islands                             0   0     0     0
+Norway                                               0   0     0     0
+Oman                                                 0   0     0     0
+Pakistan                                             0   0     0     0
+Panama                                               0   0     0     0
+Paraguay                                             0   0     0     0
+Peru                                                 0   0     0     0
+Philippines                                          0   0     0     0
+Poland                                               0   0     0     0
+Portugal                                             0   0     0     0
+Puerto Rico                                          0   0     0     0
+Qatar                                                0   0     0     0
+Reunion                                              0   0     0     0
+Romania                                              0   0     0     0
+Russia                                               0   0     0     0
+Rwanda                                               0   0     0     0
+San Marino                                           0   0     0     0
+Satellite Provider                                   0   0     0     0
+Saudi Arabia                                         0   0     0     0
+Senegal                                              0   +     0     0
+Serbia                                               0   0     0     0
+Singapore                                            0   +     0     0
+Slovakia                                             0   0     0     0
+Slovenia                                             0   0     0     0
+Solomon Islands                                      0   0     0     0
+Somalia                                              0   0     0     0
+South Africa                                         0   0     0     0
+Spain                                                0   0     0     0
+Sri Lanka                                            0   0     0     0
+Suriname                                             0   0     0     +
+Sweden                                               0   0     0     0
+Switzerland                                          0   0     0     0
+Taiwan                                               0   0     0     0
+Tajikistan                                           0   0     0     +
+Tanzania                                             0   0     0     0
+Thailand                                             0   0     0     0
+Togo                                                 0   0     0     0
+Trinidad and Tobago                                  0   0     0     0
+Tunisia                                              0   0     0     0
+Turkey                                               0   0     0     0
+Uganda                                               0   0     0     0
+Ukraine                                              0   0     0     0
+United Arab Emirates                                 0   0     0     0
+United Kingdom                                       0   0     0     0
+United States                                        0   0     0     0
+Uruguay                                              0   0     0     0
+Uzbekistan                                           0   0     0     0
+Vanuatu                                              0   0     0     0
+Venezuela                                            0   0     0     0
+Viet Nam                                             0   0     0     0
+Virgin Islands                                       0   0     0     0
+Yemen                                                0   0     0     0
+Zambia                                               0   0     0     0
+Zimbabwe                                             0   0     0     0
+
+$cells$X2.df1.sign
+                                               Windows Mac Linux Other
+Albania                                              +   -     -     -
+Algeria                                              +   0     -     -
+Andorra                                              -   -     +     -
+Angola                                               0   -     -     +
+Anonymous Proxy                                      0   -     -     +
+Antigua and Barbuda                                  +   -     -     -
+Argentina                                            0   0     0     0
+Armenia                                              -   -     +     +
+Asia/Pacific Region (specific country unknown)       -   -     -     +
+Australia                                            0   +     0     0
+Austria                                              -   0     +     0
+Azerbaijan                                           0   -     -     -
+Bahamas                                              +   -     -     -
+Bahrain                                              +   -     -     -
+Bangladesh                                           0   -     0     -
+Belarus                                              0   0     +     -
+Belgium                                              0   0     0     0
+Belize                                               +   -     -     -
+Benin                                                +   -     -     -
+Bhutan                                               +   -     -     -
+Bolivia                                              -   -     +     0
+Bosnia and Herzegovina                               0   0     -     +
+Botswana                                             +   -     -     -
+Brazil                                               0   0     +     0
+Brunei Darussalam                                    +   -     -     -
+Bulgaria                                             +   -     -     -
+Burkina Faso                                         +   -     -     -
+Cambodia                                             +   -     -     0
+Cameroon                                             -   -     +     -
+Canada                                               -   +     +     0
+Cape Verde                                           -   -     +     +
+Chile                                                0   0     0     0
+China                                                0   0     0     0
+Colombia                                             0   0     0     0
+Congo - Kinshasa                                     +   -     -     -
+Costa Rica                                           0   0     0     -
+Croatia                                              0   0     -     0
+Cyprus                                               -   -     +     -
+Czech Republic                                       0   0     0     0
+Denmark                                              0   0     -     0
+Djibouti                                             +   -     -     -
+Dominica                                             +   -     -     -
+Dominican Republic                                   0   -     +     -
+Ecuador                                              0   +     +     0
+Egypt                                                -   -     +     +
+El Salvador                                          +   -     -     -
+Estonia                                              -   -     +     -
+Ethiopia                                             +   -     -     -
+Europe (specific country unknown)                    +   -     -     -
+Fiji                                                 +   -     -     -
+Finland                                              -   +     +     0
+France                                               -   +     0     +
+French Guiana                                        -   +     -     -
+Gabon                                                +   -     -     -
+Georgia                                              +   -     -     -
+Germany                                              0   0     0     0
+Ghana                                                +   -     -     -
+Greece                                               0   0     0     0
+Guadeloupe                                           0   -     0     -
+Guatemala                                            +   -     -     -
+Guernsey                                             +   -     -     -
+Honduras                                             0   0     -     -
+Hong Kong                                            0   +     -     0
+Hungary                                              0   0     0     0
+Iceland                                              0   -     +     -
+India                                                0   0     0     0
+Indonesia                                            0   +     0     0
+Iraq                                                 0   -     0     -
+Ireland                                              -   0     +     -
+Israel                                               0   0     0     0
+Italy                                                0   0     +     0
+Ivory Coast                                          +   -     -     -
+Japan                                                0   +     0     0
+Jordan                                               +   -     -     -
+Kazakhstan                                           +   -     -     -
+Kenya                                                -   -     +     0
+Korea                                                0   0     -     0
+Kuwait                                               0   -     -     +
+Kyrgyzstan                                           +   -     -     -
+Lao People's Democratic Republic                     -   -     0     +
+Latvia                                               +   -     -     -
+Lebanon                                              +   -     -     -
+Lithuania                                            0   0     0     -
+Luxembourg                                           0   0     +     -
+Macedonia                                            0   +     0     -
+Madagascar                                           -   -     +     -
+Malawi                                               +   -     -     -
+Malaysia                                             0   0     -     0
+Maldives                                             +   -     -     -
+Mali                                                 0   +     -     -
+Malta                                                +   -     -     -
+Martinique                                           +   -     -     -
+Mauritania                                           +   -     -     -
+Mauritius                                            +   -     -     -
+Mexico                                               0   0     0     -
+Moldova                                              0   -     +     -
+Monaco                                               +   -     -     -
+Mongolia                                             +   -     -     -
+Montenegro                                           0   -     0     -
+Morocco                                              0   0     -     -
+Myanmar                                              +   -     -     -
+Namibia                                              0   -     0     -
+Nepal                                                +   -     -     -
+Netherlands                                          0   +     0     0
+New Caledonia                                        +   -     -     -
+New Zealand                                          0   0     +     0
+Nicaragua                                            0   -     0     -
+Niger                                                +   -     -     -
+Nigeria                                              0   0     0     +
+Northern Mariana Islands                             +   -     -     -
+Norway                                               0   +     0     -
+Oman                                                 +   -     -     -
+Pakistan                                             0   -     -     0
+Panama                                               0   -     +     -
+Paraguay                                             0   -     0     0
+Peru                                                 0   -     +     0
+Philippines                                          -   0     0     +
+Poland                                               0   0     0     0
+Portugal                                             0   0     0     0
+Puerto Rico                                          +   -     -     -
+Qatar                                                0   +     -     -
+Reunion                                              0   -     +     -
+Romania                                              0   0     0     0
+Russia                                               0   0     0     0
+Rwanda                                               +   -     -     -
+San Marino                                           +   -     -     -
+Satellite Provider                                   +   -     -     -
+Saudi Arabia                                         0   +     +     0
+Senegal                                              -   +     -     -
+Serbia                                               0   -     0     -
+Singapore                                            -   +     -     -
+Slovakia                                             0   -     0     0
+Slovenia                                             0   -     +     0
+Solomon Islands                                      -   -     +     -
+Somalia                                              +   -     -     -
+South Africa                                         -   +     0     0
+Spain                                                0   0     0     0
+Sri Lanka                                            0   0     0     +
+Suriname                                             -   -     -     +
+Sweden                                               0   +     0     +
+Switzerland                                          0   +     0     0
+Taiwan                                               0   0     -     +
+Tajikistan                                           -   -     -     +
+Tanzania                                             -   -     +     -
+Thailand                                             0   +     -     +
+Togo                                                 +   -     -     -
+Trinidad and Tobago                                  0   -     0     -
+Tunisia                                              0   0     +     0
+Turkey                                               0   0     -     0
+Uganda                                               -   -     +     +
+Ukraine                                              0   0     +     0
+United Arab Emirates                                 +   0     -     0
+United Kingdom                                       0   +     0     0
+United States                                        0   +     0     0
+Uruguay                                              -   0     +     0
+Uzbekistan                                           +   -     -     -
+Vanuatu                                              +   -     -     -
+Venezuela                                            -   0     +     0
+Viet Nam                                             -   -     +     0
+Virgin Islands                                       +   -     -     -
+Yemen                                                +   -     -     -
+Zambia                                               -   -     +     +
+Zimbabwe                                             +   -     -     -
+
+$cells$std.pearson.residuals
+                                                    Windows         Mac
+Albania                                          5.69458859 -2.02661747
+Algeria                                          4.02576587  0.43407342
+Andorra                                        -17.66892945 -2.02661747
+Angola                                           2.19006088 -2.02661747
+Anonymous Proxy                                 -0.60024529 -2.02661747
+Antigua and Barbuda                              5.69458859 -2.02661747
+Argentina                                        0.22762852 -1.74143806
+Armenia                                        -11.82804994 -2.02661747
+Asia/Pacific Region (specific country unknown) -11.82804994 -2.02661747
+Australia                                       -0.92121949  5.95479181
+Austria                                         -4.79359940  1.06261947
+Azerbaijan                                       3.89739489 -2.02661747
+Bahamas                                          5.69458859 -2.02661747
+Bahrain                                          5.69458859 -2.02661747
+Bangladesh                                       2.99879804 -2.02661747
+Belarus                                         -1.60651080  1.20303933
+Belgium                                          0.58865418  1.05332014
+Belize                                           5.69458859 -2.02661747
+Benin                                            5.69458859 -2.02661747
+Bhutan                                           5.69458859 -2.02661747
+Bolivia                                         -8.04593588 -2.02661747
+Bosnia and Herzegovina                           0.68812044 -0.18109930
+Botswana                                         5.69458859 -2.02661747
+Brazil                                          -3.38809634 -0.15886414
+Brunei Darussalam                                5.69458859 -2.02661747
+Bulgaria                                         4.27861780 -2.02661747
+Burkina Faso                                     5.69458859 -2.02661747
+Cambodia                                         4.02576587 -2.02661747
+Cameroon                                       -16.80261128 -2.02661747
+Canada                                          -5.29284273  2.66126810
+Cape Verde                                     -14.33128401 -2.02661747
+Chile                                            1.31734867  0.87780457
+China                                            1.63881895 -1.33172799
+Colombia                                        -0.69913137  0.09990552
+Congo - Kinshasa                                 5.69458859 -2.02661747
+Costa Rica                                       0.62780154 -0.78144858
+Croatia                                          3.31497101  1.80112392
+Cyprus                                         -15.87173575 -2.02661747
+Czech Republic                                  -0.42740277 -0.92128038
+Denmark                                          3.26088879  0.12648706
+Djibouti                                         5.69458859 -2.02661747
+Dominica                                         5.69458859 -2.02661747
+Dominican Republic                              -1.08836826 -2.02661747
+Ecuador                                         -2.09325076  2.57380464
+Egypt                                           -4.52695055 -2.02661747
+El Salvador                                      4.39661536 -2.02661747
+Estonia                                        -13.95200612 -2.02661747
+Ethiopia                                         4.82927310 -2.02661747
+Europe (specific country unknown)                5.29859675 -2.02661747
+Fiji                                             5.69458859 -2.02661747
+Finland                                         -5.31964134  4.61724794
+France                                          -4.57095157  2.75336512
+French Guiana                                  -17.66892945 49.64789132
+Gabon                                            5.69458859 -2.02661747
+Georgia                                          4.72110867 -2.02661747
+Germany                                         -0.36543175  0.52276007
+Ghana                                            4.13702072 -2.02661747
+Greece                                           0.90315930 -1.27635237
+Guadeloupe                                       2.35694315 -2.02661747
+Guatemala                                        5.13161225 -2.02661747
+Guernsey                                         5.69458859 -2.02661747
+Honduras                                         3.94232473 -0.73475475
+Hong Kong                                        1.13585336  4.27515189
+Hungary                                          0.30300750 -0.43663259
+Iceland                                         -0.14629092 -2.02661747
+India                                            1.59367017 -1.30099749
+Indonesia                                       -0.57857633  3.39876125
+Iraq                                             1.02188498 -2.02661747
+Ireland                                         -6.34116313  1.62713568
+Israel                                           0.83983159  0.65777260
+Italy                                           -1.48122238  0.09215510
+Ivory Coast                                      5.69458859 -2.02661747
+Japan                                           -0.06627888  4.64758523
+Jordan                                           5.69458859 -2.02661747
+Kazakhstan                                       5.04560197 -2.02661747
+Kenya                                          -10.40729546 -2.02661747
+Korea                                            2.70827425  1.85868394
+Kuwait                                          -2.09325076 -2.02661747
+Kyrgyzstan                                       5.69458859 -2.02661747
+Lao People's Democratic Republic                -9.88109010 -2.02661747
+Latvia                                           5.69458859 -2.02661747
+Lebanon                                          5.69458859 -2.02661747
+Lithuania                                        0.88445252 -0.50677898
+Luxembourg                                      -2.64952500  1.66441887
+Macedonia                                        1.44667622  2.67106515
+Madagascar                                      -9.47120382 -2.02661747
+Malawi                                           5.69458859 -2.02661747
+Malaysia                                         3.20910794 -0.19418808
+Maldives                                         5.69458859 -2.02661747
+Mali                                             2.57945285  4.86331703
+Malta                                            5.69458859 -2.02661747
+Martinique                                       5.69458859 -2.02661747
+Mauritania                                       5.69458859 -2.02661747
+Mauritius                                        5.69458859 -2.02661747
+Mexico                                           1.75706399 -0.57996269
+Moldova                                          0.08734426 -2.02661747
+Monaco                                           5.69458859 -2.02661747
+Mongolia                                         4.79599174 -2.02661747
+Montenegro                                       2.47203437 -2.02661747
+Morocco                                          3.27767293  1.53714176
+Myanmar                                          5.69458859 -2.02661747
+Namibia                                          3.74762875 -2.02661747
+Nepal                                            5.57415808 -2.02661747
+Netherlands                                     -0.19987697  2.83268267
+New Caledonia                                    5.69458859 -2.02661747
+New Zealand                                     -2.16813383 -1.03287692
+Nicaragua                                        2.04403889 -2.02661747
+Niger                                            5.69458859 -2.02661747
+Nigeria                                         -2.09325076 -0.46072327
+Northern Mariana Islands                         5.69458859 -2.02661747
+Norway                                           0.80948936  4.08036993
+Oman                                             5.69458859 -2.02661747
+Pakistan                                         3.69200133 -2.02661747
+Panama                                          -2.09325076 -2.02661747
+Paraguay                                         1.97766526 -2.02661747
+Peru                                            -2.82993826 -2.02661747
+Philippines                                     -5.01720488 -0.53421289
+Poland                                           0.89499928 -0.80644017
+Portugal                                         1.43528771 -0.77977946
+Puerto Rico                                      5.69458859 -2.02661747
+Qatar                                            2.77414883  4.43269613
+Reunion                                         -2.09325076 -2.02661747
+Romania                                          0.10896602 -0.69822393
+Russia                                          -0.44179290 -1.63725088
+Rwanda                                           5.69458859 -2.02661747
+San Marino                                       5.69458859 -2.02661747
+Satellite Provider                               5.69458859 -2.02661747
+Saudi Arabia                                    -2.85303996  3.01479802
+Senegal                                         -7.20765272 25.73879024
+Serbia                                           3.74762875 -2.02661747
+Singapore                                      -15.47704289 44.57960261
+Slovakia                                         0.53288111 -2.02661747
+Slovenia                                        -1.88276861 -2.02661747
+Solomon Islands                                -17.66892945 -2.02661747
+Somalia                                          5.69458859 -2.02661747
+South Africa                                    -6.28841923 12.77983204
+Spain                                           -1.68176023  0.90598675
+Sri Lanka                                       -3.96701662 -1.24955719
+Suriname                                       -17.66892945 -2.02661747
+Sweden                                          -3.75023785  2.37121306
+Switzerland                                     -3.89251019  5.27908894
+Taiwan                                          -0.35123406  0.01316577
+Tajikistan                                     -13.77500978 -2.02661747
+Tanzania                                       -17.17878571 -2.02661747
+Thailand                                        -3.42707960  3.11228396
+Togo                                             5.69458859 -2.02661747
+Trinidad and Tobago                              2.77414883 -2.02661747
+Tunisia                                         -3.57025477 -1.13567766
+Turkey                                           3.88968161 -1.36128045
+Uganda                                          -9.88109010 -2.02661747
+Ukraine                                         -1.87131751 -1.75887390
+United Arab Emirates                             4.00722339 -1.73953687
+United Kingdom                                  -0.94864037  2.98695159
+United States                                   -2.05861137  4.11916147
+Uruguay                                         -5.36580027  0.44716220
+Uzbekistan                                       5.69458859 -2.02661747
+Vanuatu                                          5.69458859 -2.02661747
+Venezuela                                       -7.25089634 -1.48124007
+Viet Nam                                        -4.15749733 -2.02661747
+Virgin Islands                                   5.69458859 -2.02661747
+Yemen                                            5.69458859 -2.02661747
+Zambia                                         -14.33128401 -2.02661747
+Zimbabwe                                         5.41711212 -2.02661747
+                                                     Linux       Other
+Albania                                        -4.33314475 -2.23398633
+Algeria                                        -3.67710836 -2.23398633
+Andorra                                        23.22038375 -2.23398633
+Angola                                         -4.33314475  4.85701355
+Anonymous Proxy                                -2.61997199  7.56359554
+Antigua and Barbuda                            -4.33314475 -2.23398633
+Argentina                                       1.11065393 -0.77300034
+Armenia                                        12.88781056  3.67518023
+Asia/Pacific Region (specific country unknown) -4.33314475 33.22101308
+Australia                                      -1.49594974 -1.01704906
+Austria                                         6.20907485 -1.92568199
+Azerbaijan                                     -2.21364256 -2.23398633
+Bahamas                                        -4.33314475 -2.23398633
+Bahrain                                        -4.33314475 -2.23398633
+Bangladesh                                     -1.15389146 -2.23398633
+Belarus                                         2.55523737 -2.23398633
+Belgium                                        -0.31872338 -1.60784948
+Belize                                         -4.33314475 -2.23398633
+Benin                                          -4.33314475 -2.23398633
+Bhutan                                         -4.33314475 -2.23398633
+Bolivia                                        11.65335792 -1.85954410
+Bosnia and Herzegovina                         -2.36503557  2.83101358
+Botswana                                       -4.33314475 -2.23398633
+Brazil                                          4.38660644 -0.52531166
+Brunei Darussalam                              -4.33314475 -2.23398633
+Bulgaria                                       -2.66323393 -2.23398633
+Burkina Faso                                   -4.33314475 -2.23398633
+Cambodia                                       -4.33314475  1.14268028
+Cameroon                                       22.07098975 -2.01487471
+Canada                                          5.66542451 -1.44527589
+Cape Verde                                     15.34794704  4.51934689
+Chile                                          -0.91315175 -1.90185519
+China                                          -1.90789530  1.17570391
+Colombia                                        1.16622205 -0.67766263
+Congo - Kinshasa                               -4.33314475 -2.23398633
+Costa Rica                                      0.97837882 -2.23398633
+Croatia                                        -3.82289422 -1.79627029
+Cyprus                                         21.10088156 -2.23398633
+Czech Republic                                  1.70800321 -1.22279206
+Denmark                                        -2.89806514 -1.74155579
+Djibouti                                       -4.33314475 -2.23398633
+Dominica                                       -4.33314475 -2.23398633
+Dominican Republic                              3.66626675 -2.23398633
+Ecuador                                         2.22721918 -1.94036315
+Egypt                                           2.55523737  6.62976352
+El Salvador                                    -2.80239317 -2.23398633
+Estonia                                        18.83686785 -2.23398633
+Ethiopia                                       -3.31264369 -2.23398633
+Europe (specific country unknown)              -3.86613579 -2.23398633
+Fiji                                           -4.33314475 -2.23398633
+Finland                                         4.32653564 -0.88331969
+France                                          2.01942069  3.26522404
+French Guiana                                  -4.33314475 -2.23398633
+Gabon                                          -4.33314475 -2.23398633
+Georgia                                        -3.18508106 -2.23398633
+Germany                                         0.34729214 -0.33467371
+Ghana                                          -2.49624285 -2.23398633
+Greece                                         -0.58266446  0.33987932
+Guadeloupe                                     -0.39692639 -2.23398633
+Guatemala                                      -3.66920430 -2.23398633
+Guernsey                                       -4.33314475 -2.23398633
+Honduras                                       -2.95546833 -2.23398633
+Hong Kong                                      -2.98907019 -1.08097822
+Hungary                                         0.96561073 -1.87034531
+Iceland                                         2.55523737 -2.23398633
+India                                          -1.07204509 -0.19511642
+Indonesia                                      -0.34950208 -1.33896627
+Iraq                                            1.17756095 -2.23398633
+Ireland                                         7.91286792 -2.23398633
+Israel                                         -0.75476443 -1.00610757
+Italy                                           2.58138917 -1.51609214
+Ivory Coast                                    -4.33314475 -2.23398633
+Japan                                          -2.06847117 -0.56878088
+Jordan                                         -4.33314475 -2.23398633
+Kazakhstan                                     -3.56776896 -2.23398633
+Kenya                                          13.72558677 -0.63691429
+Korea                                          -3.29729781 -1.52310915
+Kuwait                                         -4.33314475 13.52379118
+Kyrgyzstan                                     -4.33314475 -2.23398633
+Lao People's Democratic Republic                0.25911000 21.40267994
+Latvia                                         -4.33314475 -2.23398633
+Lebanon                                        -4.33314475 -2.23398633
+Lithuania                                       0.52924263 -2.23398633
+Luxembourg                                      3.53929196 -2.23398633
+Macedonia                                      -1.82827852 -2.23398633
+Madagascar                                     13.55247901 -2.23398633
+Malawi                                         -4.33314475 -2.23398633
+Malaysia                                       -2.96523908 -1.22817075
+Maldives                                       -4.33314475 -2.23398633
+Mali                                           -4.33314475 -2.23398633
+Malta                                          -4.33314475 -2.23398633
+Martinique                                     -4.33314475 -2.23398633
+Mauritania                                     -4.33314475 -2.23398633
+Mauritius                                      -4.33314475 -2.23398633
+Mexico                                         -0.58426041 -2.02223568
+Moldova                                         2.27970209 -2.23398633
+Monaco                                         -4.33314475 -2.23398633
+Mongolia                                       -3.27339365 -2.23398633
+Montenegro                                     -0.53265806 -2.23398633
+Morocco                                        -3.38302308 -2.23398633
+Myanmar                                        -4.33314475 -2.23398633
+Namibia                                        -2.03701738 -2.23398633
+Nepal                                          -4.19111625 -2.23398633
+Netherlands                                    -0.73096327 -0.93288544
+New Caledonia                                  -4.33314475 -2.23398633
+New Zealand                                     3.87992625 -1.32488379
+Nicaragua                                      -0.02790592 -2.23398633
+Niger                                          -4.33314475 -2.23398633
+Nigeria                                         0.67658770  3.49611458
+Northern Mariana Islands                       -4.33314475 -2.23398633
+Norway                                         -1.82827852 -2.23398633
+Oman                                           -4.33314475 -2.23398633
+Pakistan                                       -3.02107196 -0.43309748
+Panama                                          4.85136475 -2.23398633
+Paraguay                                       -0.57584541 -1.15959241
+Peru                                            5.47193972 -1.80810046
+Philippines                                     2.13248468  6.98175359
+Poland                                         -0.59211077 -0.05729216
+Portugal                                       -0.23335700 -1.79040278
+Puerto Rico                                    -4.33314475 -2.23398633
+Qatar                                          -4.33314475 -2.23398633
+Reunion                                         4.85136475 -2.23398633
+Romania                                         0.83756882 -1.01873357
+Russia                                          1.45042689 -0.09676355
+Rwanda                                         -4.33314475 -2.23398633
+San Marino                                     -4.33314475 -2.23398633
+Satellite Provider                             -4.33314475 -2.23398633
+Saudi Arabia                                    2.38722805 -1.08097822
+Senegal                                        -3.92189806 -2.23398633
+Serbia                                         -2.03701738 -2.23398633
+Singapore                                      -4.21564569 -2.23398633
+Slovakia                                        1.43387284 -1.68429642
+Slovenia                                        3.85844480 -0.95632870
+Solomon Islands                                23.22038375 -2.23398633
+Somalia                                        -4.33314475 -2.23398633
+South Africa                                    0.48280149  0.20417981
+Spain                                           2.01153598 -0.87715226
+Sri Lanka                                       0.63892054  8.07373279
+Suriname                                       -4.33314475 45.03934621
+Sweden                                          0.94306283  3.80090718
+Switzerland                                     2.03267046 -0.44085993
+Taiwan                                         -3.72890070  7.09627667
+Tajikistan                                     -4.33314475 37.16045746
+Tanzania                                       22.64233770 -2.23398633
+Thailand                                       -2.86159350  8.99669488
+Togo                                           -4.33314475 -2.23398633
+Trinidad and Tobago                            -0.88895369 -2.23398633
+Tunisia                                         5.16807197 -0.60387142
+Turkey                                         -3.15058988 -1.21953714
+Uganda                                          7.91286792  8.27119868
+Ukraine                                         3.87580804 -1.25422815
+United Arab Emirates                           -3.10854348 -1.18346783
+United Kingdom                                 -1.26281881  1.35351921
+United States                                   0.09481545  0.23435631
+Uruguay                                         7.09863835 -1.73107854
+Uzbekistan                                     -4.33314475 -2.23398633
+Vanuatu                                        -4.33314475 -2.23398633
+Venezuela                                       9.55267040 -0.36301011
+Viet Nam                                        5.62596194  0.61380478
+Virgin Islands                                 -4.33314475 -2.23398633
+Yemen                                          -4.33314475 -2.23398633
+Zambia                                          7.47551032 18.02601333
+Zimbabwe                                       -4.00590569 -2.23398633
+
+$cells$std.pearson.residuals.sign
+                                               Windows Mac Linux Other
+Albania                                              +   -     -     -
+Algeria                                              +   0     -     -
+Andorra                                              -   -     +     -
+Angola                                               +   -     -     +
+Anonymous Proxy                                      0   -     -     +
+Antigua and Barbuda                                  +   -     -     -
+Argentina                                            0   0     0     0
+Armenia                                              -   -     +     +
+Asia/Pacific Region (specific country unknown)       -   -     -     +
+Australia                                            0   +     0     0
+Austria                                              -   0     +     0
+Azerbaijan                                           +   -     -     -
+Bahamas                                              +   -     -     -
+Bahrain                                              +   -     -     -
+Bangladesh                                           +   -     0     -
+Belarus                                              0   0     +     -
+Belgium                                              0   0     0     0
+Belize                                               +   -     -     -
+Benin                                                +   -     -     -
+Bhutan                                               +   -     -     -
+Bolivia                                              -   -     +     0
+Bosnia and Herzegovina                               0   0     -     +
+Botswana                                             +   -     -     -
+Brazil                                               -   0     +     0
+Brunei Darussalam                                    +   -     -     -
+Bulgaria                                             +   -     -     -
+Burkina Faso                                         +   -     -     -
+Cambodia                                             +   -     -     0
+Cameroon                                             -   -     +     -
+Canada                                               -   +     +     0
+Cape Verde                                           -   -     +     +
+Chile                                                0   0     0     0
+China                                                0   0     0     0
+Colombia                                             0   0     0     0
+Congo - Kinshasa                                     +   -     -     -
+Costa Rica                                           0   0     0     -
+Croatia                                              +   0     -     0
+Cyprus                                               -   -     +     -
+Czech Republic                                       0   0     0     0
+Denmark                                              +   0     -     0
+Djibouti                                             +   -     -     -
+Dominica                                             +   -     -     -
+Dominican Republic                                   0   -     +     -
+Ecuador                                              -   +     +     0
+Egypt                                                -   -     +     +
+El Salvador                                          +   -     -     -
+Estonia                                              -   -     +     -
+Ethiopia                                             +   -     -     -
+Europe (specific country unknown)                    +   -     -     -
+Fiji                                                 +   -     -     -
+Finland                                              -   +     +     0
+France                                               -   +     +     +
+French Guiana                                        -   +     -     -
+Gabon                                                +   -     -     -
+Georgia                                              +   -     -     -
+Germany                                              0   0     0     0
+Ghana                                                +   -     -     -
+Greece                                               0   0     0     0
+Guadeloupe                                           +   -     0     -
+Guatemala                                            +   -     -     -
+Guernsey                                             +   -     -     -
+Honduras                                             +   0     -     -
+Hong Kong                                            0   +     -     0
+Hungary                                              0   0     0     0
+Iceland                                              0   -     +     -
+India                                                0   0     0     0
+Indonesia                                            0   +     0     0
+Iraq                                                 0   -     0     -
+Ireland                                              -   0     +     -
+Israel                                               0   0     0     0
+Italy                                                0   0     +     0
+Ivory Coast                                          +   -     -     -
+Japan                                                0   +     -     0
+Jordan                                               +   -     -     -
+Kazakhstan                                           +   -     -     -
+Kenya                                                -   -     +     0
+Korea                                                +   0     -     0
+Kuwait                                               -   -     -     +
+Kyrgyzstan                                           +   -     -     -
+Lao People's Democratic Republic                     -   -     0     +
+Latvia                                               +   -     -     -
+Lebanon                                              +   -     -     -
+Lithuania                                            0   0     0     -
+Luxembourg                                           -   0     +     -
+Macedonia                                            0   +     0     -
+Madagascar                                           -   -     +     -
+Malawi                                               +   -     -     -
+Malaysia                                             +   0     -     0
+Maldives                                             +   -     -     -
+Mali                                                 +   +     -     -
+Malta                                                +   -     -     -
+Martinique                                           +   -     -     -
+Mauritania                                           +   -     -     -
+Mauritius                                            +   -     -     -
+Mexico                                               0   0     0     -
+Moldova                                              0   -     +     -
+Monaco                                               +   -     -     -
+Mongolia                                             +   -     -     -
+Montenegro                                           +   -     0     -
+Morocco                                              +   0     -     -
+Myanmar                                              +   -     -     -
+Namibia                                              +   -     -     -
+Nepal                                                +   -     -     -
+Netherlands                                          0   +     0     0
+New Caledonia                                        +   -     -     -
+New Zealand                                          -   0     +     0
+Nicaragua                                            +   -     0     -
+Niger                                                +   -     -     -
+Nigeria                                              -   0     0     +
+Northern Mariana Islands                             +   -     -     -
+Norway                                               0   +     0     -
+Oman                                                 +   -     -     -
+Pakistan                                             +   -     -     0
+Panama                                               -   -     +     -
+Paraguay                                             0   -     0     0
+Peru                                                 -   -     +     0
+Philippines                                          -   0     +     +
+Poland                                               0   0     0     0
+Portugal                                             0   0     0     0
+Puerto Rico                                          +   -     -     -
+Qatar                                                +   +     -     -
+Reunion                                              -   -     +     -
+Romania                                              0   0     0     0
+Russia                                               0   0     0     0
+Rwanda                                               +   -     -     -
+San Marino                                           +   -     -     -
+Satellite Provider                                   +   -     -     -
+Saudi Arabia                                         -   +     +     0
+Senegal                                              -   +     -     -
+Serbia                                               +   -     -     -
+Singapore                                            -   +     -     -
+Slovakia                                             0   -     0     0
+Slovenia                                             0   -     +     0
+Solomon Islands                                      -   -     +     -
+Somalia                                              +   -     -     -
+South Africa                                         -   +     0     0
+Spain                                                0   0     +     0
+Sri Lanka                                            -   0     0     +
+Suriname                                             -   -     -     +
+Sweden                                               -   +     0     +
+Switzerland                                          -   +     +     0
+Taiwan                                               0   0     -     +
+Tajikistan                                           -   -     -     +
+Tanzania                                             -   -     +     -
+Thailand                                             -   +     -     +
+Togo                                                 +   -     -     -
+Trinidad and Tobago                                  +   -     0     -
+Tunisia                                              -   0     +     0
+Turkey                                               +   0     -     0
+Uganda                                               -   -     +     +
+Ukraine                                              0   0     +     0
+United Arab Emirates                                 +   0     -     0
+United Kingdom                                       0   +     0     0
+United States                                        -   +     0     0
+Uruguay                                              -   0     +     0
+Uzbekistan                                           +   -     -     -
+Vanuatu                                              +   -     -     -
+Venezuela                                            -   0     +     0
+Viet Nam                                             -   -     +     0
+Virgin Islands                                       +   -     -     -
+Yemen                                                +   -     -     -
+Zambia                                               -   -     +     +
+Zimbabwe                                             +   -     -     -
+
+
+
+	Log likelihood ratio (G-test) test of independence without correction
+
+data:  cont
+Log likelihood ratio statistic (G) = 10814.63, X-squared df = 486,
+p-value < 2.2e-16
+
+                                                    Windows          Mac
+Albania                                          32.2293923 -100.0000000
+Algeria                                          22.7844357   21.4186165
+Andorra                                        -100.0000000 -100.0000000
+Angola                                           12.3949834 -100.0000000
+Anonymous Proxy                                  -3.3971797 -100.0000000
+Antigua and Barbuda                              32.2293923 -100.0000000
+Argentina                                         1.2882983  -85.9283060
+Armenia                                         -66.9426519 -100.0000000
+Asia/Pacific Region (specific country unknown)  -66.9426519 -100.0000000
+Australia                                        -5.2137822  293.8290966
+Austria                                         -27.1301066   52.4331544
+Azerbaijan                                       22.0579006 -100.0000000
+Bahamas                                          32.2293923 -100.0000000
+Bahrain                                          32.2293923 -100.0000000
+Bangladesh                                       16.9721547 -100.0000000
+Belarus                                          -9.0922928   59.3619341
+Belgium                                           3.3315781   51.9742948
+Belize                                           32.2293923 -100.0000000
+Benin                                            32.2293923 -100.0000000
+Bhutan                                           32.2293923 -100.0000000
+Bolivia                                         -45.5372008 -100.0000000
+Bosnia and Herzegovina                            3.8945225   -8.9360376
+Botswana                                         32.2293923 -100.0000000
+Brazil                                          -19.1754478   -7.8388815
+Brunei Darussalam                                32.2293923 -100.0000000
+Bulgaria                                         24.2154897 -100.0000000
+Burkina Faso                                     32.2293923 -100.0000000
+Cambodia                                         22.7844357 -100.0000000
+Cameroon                                        -95.0969403 -100.0000000
+Canada                                          -29.9556504  131.3157584
+Cape Verde                                      -81.1100868 -100.0000000
+Chile                                             7.4557357   43.3137768
+China                                             9.2751457  -65.7118577
+Colombia                                         -3.9568406    4.9296686
+Congo - Kinshasa                                 32.2293923 -100.0000000
+Costa Rica                                        3.5531385  -38.5592543
+Croatia                                          18.7615838   88.8734034
+Cyprus                                          -89.8285083 -100.0000000
+Czech Republic                                   -2.4189511  -45.4590172
+Denmark                                          18.4554973    6.2412894
+Djibouti                                         32.2293923 -100.0000000
+Dominica                                         32.2293923 -100.0000000
+Dominican Republic                               -6.1597861 -100.0000000
+Ecuador                                         -11.8470718  127.0000221
+Egypt                                           -25.6209668 -100.0000000
+El Salvador                                      24.8833149 -100.0000000
+Estonia                                         -78.9635058 -100.0000000
+Ethiopia                                         27.3320074 -100.0000000
+Europe (specific country unknown)                29.9882161 -100.0000000
+Fiji                                             32.2293923 -100.0000000
+Finland                                         -30.1073212  227.8302645
+France                                          -25.8699973  135.8601295
+French Guiana                                  -100.0000000 2449.7909459
+Gabon                                            32.2293923 -100.0000000
+Georgia                                          26.7198343 -100.0000000
+Germany                                          -2.0682167   25.7947084
+Ghana                                            23.4140995 -100.0000000
+Greece                                            5.1115677  -62.9794418
+Guadeloupe                                       13.3394791 -100.0000000
+Guatemala                                        29.0431419 -100.0000000
+Guernsey                                         32.2293923 -100.0000000
+Honduras                                         22.3121879  -36.2552264
+Hong Kong                                         6.4285353  210.9501154
+Hungary                                           1.7149171  -21.5448940
+Iceland                                          -0.8279558 -100.0000000
+India                                             9.0196193  -64.1955133
+Indonesia                                        -3.2745409  167.7061062
+Iraq                                              5.7835138 -100.0000000
+Ireland                                         -35.8887795   80.2882487
+Israel                                            4.7531549   32.4566725
+Italy                                            -8.3832039    4.5472370
+Ivory Coast                                      32.2293923 -100.0000000
+Japan                                            -0.3751154  229.3272063
+Jordan                                           32.2293923 -100.0000000
+Kazakhstan                                       28.5563536 -100.0000000
+Kenya                                           -58.9016754 -100.0000000
+Korea                                            15.3278910   91.7136050
+Kuwait                                          -11.8470718 -100.0000000
+Kyrgyzstan                                       32.2293923 -100.0000000
+Lao People's Democratic Republic                -55.9235359 -100.0000000
+Latvia                                           32.2293923 -100.0000000
+Lebanon                                          32.2293923 -100.0000000
+Lithuania                                         5.0056939  -25.0061486
+Luxembourg                                      -14.9953907   82.1279247
+Macedonia                                         8.1876846  131.7991769
+Madagascar                                      -53.6037220 -100.0000000
+Malawi                                           32.2293923 -100.0000000
+Malaysia                                         18.1624357   -9.5818814
+Maldives                                         32.2293923 -100.0000000
+Mali                                             14.5988067  239.9721261
+Malta                                            32.2293923 -100.0000000
+Martinique                                       32.2293923 -100.0000000
+Mauritania                                       32.2293923 -100.0000000
+Mauritius                                        32.2293923 -100.0000000
+Mexico                                            9.9443715  -28.6172748
+Moldova                                           0.4943381 -100.0000000
+Monaco                                           32.2293923 -100.0000000
+Mongolia                                         27.1436464 -100.0000000
+Montenegro                                       13.9908554 -100.0000000
+Morocco                                          18.5504896   75.8476514
+Myanmar                                          32.2293923 -100.0000000
+Namibia                                          21.2102763 -100.0000000
+Nepal                                            31.5477975 -100.0000000
+Netherlands                                      -1.1312342  139.7739192
+New Caledonia                                    32.2293923 -100.0000000
+New Zealand                                     -12.2708840  -50.9655587
+Nicaragua                                        11.5685497 -100.0000000
+Niger                                            32.2293923 -100.0000000
+Nigeria                                         -11.8470718  -22.7336077
+Northern Mariana Islands                         32.2293923 -100.0000000
+Norway                                            4.5814284  201.3389300
+Oman                                             32.2293923 -100.0000000
+Pakistan                                         20.8954444 -100.0000000
+Panama                                          -11.8470718 -100.0000000
+Paraguay                                         11.1928981 -100.0000000
+Peru                                            -16.0164671 -100.0000000
+Philippines                                     -28.3956359  -26.3598283
+Poland                                            5.0653849  -39.7924216
+Portugal                                          8.1232296  -38.4768941
+Puerto Rico                                      32.2293923 -100.0000000
+Qatar                                            15.7007183  218.7238682
+Reunion                                         -11.8470718 -100.0000000
+Romania                                           0.6167098  -34.4526749
+Russia                                           -2.5003943  -80.7873664
+Rwanda                                           32.2293923 -100.0000000
+San Marino                                       32.2293923 -100.0000000
+Satellite Provider                               32.2293923 -100.0000000
+Saudi Arabia                                    -16.1472146  148.7600923
+Senegal                                         -40.7928094 1270.0369262
+Serbia                                           21.2102763 -100.0000000
+Singapore                                       -87.5946839 2199.7048403
+Slovakia                                          3.0159219 -100.0000000
+Slovenia                                        -10.6558160 -100.0000000
+Solomon Islands                                -100.0000000 -100.0000000
+Somalia                                          32.2293923 -100.0000000
+South Africa                                    -35.5902674  630.5991249
+Spain                                            -9.5181784   44.7043785
+Sri Lanka                                       -22.4519353  -61.6572790
+Suriname                                       -100.0000000 -100.0000000
+Sweden                                          -21.2250429  117.0034848
+Switzerland                                     -22.0302549  260.4876855
+Taiwan                                           -1.9878627    0.6496426
+Tajikistan                                      -77.9617680 -100.0000000
+Tanzania                                        -97.2259568 -100.0000000
+Thailand                                        -19.3960795  153.5703703
+Togo                                             32.2293923 -100.0000000
+Trinidad and Tobago                              15.7007183 -100.0000000
+Tunisia                                         -20.2064012  -56.0380871
+Turkey                                           22.0142461  -67.1700737
+Uganda                                          -55.9235359 -100.0000000
+Ukraine                                         -10.5910068  -86.7886479
+United Arab Emirates                             22.6794917  -85.8344947
+United Kingdom                                   -5.3689748  147.3860572
+United States                                   -11.6510249  203.2530326
+Uruguay                                         -30.3685647   22.0644602
+Uzbekistan                                       32.2293923 -100.0000000
+Vanuatu                                          32.2293923 -100.0000000
+Venezuela                                       -41.0375533  -73.0892776
+Viet Nam                                        -23.5299900 -100.0000000
+Virgin Islands                                   32.2293923 -100.0000000
+Yemen                                            32.2293923 -100.0000000
+Zambia                                          -81.1100868 -100.0000000
+Zimbabwe                                         30.6589720 -100.0000000
+                                                      Linux       Other
+Albania                                        -100.0000000 -100.000000
+Algeria                                         -84.8600397 -100.000000
+Andorra                                         535.8783306 -100.000000
+Angola                                         -100.0000000  217.414649
+Anonymous Proxy                                 -60.4635235  338.569463
+Antigua and Barbuda                            -100.0000000 -100.000000
+Argentina                                        25.6315907  -34.601838
+Armenia                                         297.4239566  164.512208
+Asia/Pacific Region (specific country unknown) -100.0000000 1487.073245
+Australia                                       -34.5234194  -45.526199
+Austria                                         143.2925787  -86.199363
+Azerbaijan                                      -51.0862823 -100.000000
+Bahamas                                        -100.0000000 -100.000000
+Bahrain                                        -100.0000000 -100.000000
+Bangladesh                                      -26.6294234 -100.000000
+Belarus                                          58.9695826 -100.000000
+Belgium                                          -7.3554750  -71.972216
+Belize                                         -100.0000000 -100.000000
+Benin                                          -100.0000000 -100.000000
+Bhutan                                         -100.0000000 -100.000000
+Bolivia                                         268.9353482  -83.238830
+Bosnia and Herzegovina                          -54.5801192  126.724749
+Botswana                                       -100.0000000 -100.000000
+Brazil                                          101.2337849  -23.514542
+Brunei Darussalam                              -100.0000000 -100.000000
+Bulgaria                                        -61.4619194 -100.000000
+Burkina Faso                                   -100.0000000 -100.000000
+Cambodia                                       -100.0000000   51.149833
+Cameroon                                        509.3526992  -90.191900
+Canada                                          130.7462555  -64.694930
+Cape Verde                                      354.1988076  202.299666
+Chile                                           -21.0736498  -85.132803
+China                                           -44.0302692   52.628071
+Colombia                                         26.9139878  -30.334233
+Congo - Kinshasa                               -100.0000000 -100.000000
+Costa Rica                                       22.5789553 -100.000000
+Croatia                                         -88.2244754  -80.406503
+Cyprus                                          486.9646129 -100.000000
+Czech Republic                                   39.4171741  -54.735879
+Denmark                                         -66.8813369  -77.957316
+Djibouti                                       -100.0000000 -100.000000
+Dominica                                       -100.0000000 -100.000000
+Dominican Republic                               84.6098379 -100.000000
+Ecuador                                          51.3996025  -86.856536
+Egypt                                            58.9695826  296.768311
+El Salvador                                     -64.6734261 -100.000000
+Estonia                                         434.7158689 -100.000000
+Ethiopia                                        -76.4489507 -100.000000
+Europe (specific country unknown)               -89.2224012 -100.000000
+Fiji                                           -100.0000000 -100.000000
+Finland                                          99.8474753  -39.540067
+France                                           46.6040440  146.161326
+French Guiana                                  -100.0000000 -100.000000
+Gabon                                          -100.0000000 -100.000000
+Georgia                                         -73.5050696 -100.000000
+Germany                                           8.0147829  -14.981010
+Ghana                                           -57.6081113 -100.000000
+Greece                                          -13.4466882   15.214029
+Guadeloupe                                       -9.1602385 -100.000000
+Guatemala                                       -84.6776306 -100.000000
+Guernsey                                       -100.0000000 -100.000000
+Honduras                                        -68.2060835 -100.000000
+Hong Kong                                       -68.9815448  -48.387862
+Hungary                                          22.2842943  -83.722326
+Iceland                                          58.9695826 -100.000000
+India                                           -24.7405787   -8.734003
+Indonesia                                        -8.0657835  -59.936189
+Iraq                                             27.1756661 -100.000000
+Ireland                                         182.6125914 -100.000000
+Israel                                          -17.4183986  -45.036424
+Italy                                            59.5731118  -67.864880
+Ivory Coast                                    -100.0000000 -100.000000
+Japan                                           -47.7360276  -25.460356
+Jordan                                         -100.0000000 -100.000000
+Kazakhstan                                      -82.3367130 -100.000000
+Kenya                                           316.7580951  -28.510214
+Korea                                           -76.0947996  -68.178983
+Kuwait                                         -100.0000000  605.365887
+Kyrgyzstan                                     -100.0000000 -100.000000
+Lao People's Democratic Republic                  5.9797218  958.048830
+Latvia                                         -100.0000000 -100.000000
+Lebanon                                        -100.0000000 -100.000000
+Lithuania                                        12.2138230 -100.000000
+Luxembourg                                       81.6795230 -100.000000
+Macedonia                                       -42.1928790 -100.000000
+Madagascar                                      312.7631269 -100.000000
+Malawi                                         -100.0000000 -100.000000
+Malaysia                                        -68.4315722  -54.976646
+Maldives                                       -100.0000000 -100.000000
+Mali                                           -100.0000000 -100.000000
+Malta                                          -100.0000000 -100.000000
+Martinique                                     -100.0000000 -100.000000
+Mauritania                                     -100.0000000 -100.000000
+Mauritius                                      -100.0000000 -100.000000
+Mexico                                          -13.4835194  -90.521399
+Moldova                                          52.6107993 -100.000000
+Monaco                                         -100.0000000 -100.000000
+Mongolia                                        -75.5431411 -100.000000
+Montenegro                                      -12.2926441 -100.000000
+Morocco                                         -78.0731610 -100.000000
+Myanmar                                        -100.0000000 -100.000000
+Namibia                                         -47.0101391 -100.000000
+Nepal                                           -96.7222766 -100.000000
+Netherlands                                     -16.8691173  -41.758780
+New Caledonia                                  -100.0000000 -100.000000
+New Zealand                                      89.5406562  -59.305814
+Nicaragua                                        -0.6440108 -100.000000
+Niger                                          -100.0000000 -100.000000
+Nigeria                                          15.6142419  156.496686
+Northern Mariana Islands                       -100.0000000 -100.000000
+Norway                                          -42.1928790 -100.000000
+Oman                                           -100.0000000 -100.000000
+Pakistan                                        -69.7200795  -19.386756
+Panama                                          111.9594435 -100.000000
+Paraguay                                        -13.2893186  -51.906871
+Peru                                            126.2810276  -80.936057
+Philippines                                      49.2133267  312.524454
+Poland                                          -13.6646895   -2.564571
+Portugal                                         -5.3853958  -80.143856
+Puerto Rico                                    -100.0000000 -100.000000
+Qatar                                          -100.0000000 -100.000000
+Reunion                                         111.9594435 -100.000000
+Romania                                          19.3293525  -45.601603
+Russia                                           33.4728466   -4.331430
+Rwanda                                         -100.0000000 -100.000000
+San Marino                                     -100.0000000 -100.000000
+Satellite Provider                             -100.0000000 -100.000000
+Saudi Arabia                                     55.0922758  -48.387862
+Senegal                                         -90.5092786 -100.000000
+Serbia                                          -47.0101391 -100.000000
+Singapore                                       -97.2883653 -100.000000
+Slovakia                                         33.0908134  -75.394213
+Slovenia                                         89.0449091  -42.808171
+Solomon Islands                                 535.8783306 -100.000000
+Somalia                                        -100.0000000 -100.000000
+South Africa                                     11.1420578    9.139707
+Spain                                            46.4220813  -39.263994
+Sri Lanka                                        14.7449619  361.404753
+Suriname                                       -100.0000000 2016.097660
+Sweden                                           21.7639356  170.140127
+Switzerland                                      46.9098212  -19.734227
+Taiwan                                          -86.0552998  317.650854
+Tajikistan                                     -100.0000000 1663.414717
+Tanzania                                        522.5382258 -100.000000
+Thailand                                        -66.0396472  402.719334
+Togo                                           -100.0000000 -100.000000
+Trinidad and Tobago                             -20.5152087 -100.000000
+Tunisia                                         119.2683899  -27.031115
+Turkey                                          -72.7090845  -54.590179
+Uganda                                          182.6125914  370.243924
+Ukraine                                          89.4456166  -56.143054
+United Arab Emirates                            -71.7387409  -52.975608
+United Kingdom                                  -29.1432408   60.587623
+United States                                     2.1881440   10.490499
+Uruguay                                         163.8218606  -77.488323
+Uzbekistan                                     -100.0000000 -100.000000
+Vanuatu                                        -100.0000000 -100.000000
+Venezuela                                       220.4558342  -16.249433
+Viet Nam                                        129.8355412   27.475763
+Virgin Islands                                 -100.0000000 -100.000000
+Yemen                                          -100.0000000 -100.000000
+Zambia                                          172.5192845  806.898997
+Zimbabwe                                        -92.4480008 -100.000000
+$alpha.X2
+[1] 0
+
+$alpha.G2
+[1] 0
+
+$beta
+[1] 0
+
+$power
+[1] 1
+
+$effect.size
+[1] 1.060116
+
+$likelihood.ratio
+[1] 10814.63
+
+$cramers.v
+[1] 0.6120585
+
+$lambda.RC
+[1] 0.01851852
+
+$lambda.CR
+[1] 0.2982847
+
+$tau.RC
+[1] 0.006937325
+
+$tau.CR
+[1] 0.3744632
+
+$uc.RC
+[1] 0.06512629
+
+$uc.CR
+[1] 0.4289137
+
+$uc.sym
+[1] 0.1130822
+
+$p.lambda.RC
+[1] 8.78868e-42
+
+$p.lambda.CR
+[1] 7.922407e-222
+
+$p.tau.RC
+[1] 0
+
+$p.tau.CR
+[1] 0
+
+$p.uc.RC
+[1] 0
+
+$p.uc.CR
+[1] 0
+
+$var.lambda.RC
+[1] 1.869916e-06
+
+$var.lambda.CR
+[1] 8.801997e-05
+
+$var.tau.RC
+[1] 7.886952e-08
+
+$var.tau.CR
+[1] 4.140738e-05
+
+$var.uc.RC
+[1] 1.238215e-06
+
+$var.uc.CR
+[1] 3.12753e-05
+
+$ASE.lambda.RC
+[1] 0.001367449
+
+$ASE.lambda.CR
+[1] 0.009381896
+
+$ASE.tau.RC
+[1] 0.0002808372
+
+$ASE.tau.CR
+[1] 0.006434857
+
+$ASE.uc.RC
+[1] 0.001112751
+
+$ASE.uc.CR
+[1] 0.005592432
+
+$noncentrality
+[1] 18318.7
+
+                   X^2  df P(> X^2)
+Likelihood Ratio 10815 486        0
+Pearson          18319 486        0
+
+Phi-Coefficient   : 1.06 
+Contingency Coeff.: 0.727 
+Cramer's V        : 0.612 
