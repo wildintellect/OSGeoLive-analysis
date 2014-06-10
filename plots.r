@@ -262,7 +262,7 @@ caretForest <- function(con){
     require(caret)
     require(parallel)
     require(doMC) #caret can be done in parrallel
-    registerDoMC(cores = 4)
+    registerDoMC(cores = 2)
 
     #downdata <-dbReadTable(con,"Metrics2012wDemIndex")
     # Filter out null ITU
@@ -284,11 +284,11 @@ caretForest <- function(con){
     #Plot important variables
     pdf(file="ImportantVariables-caret.pdf",width=6,height=8)
     opar<-par()
-    par(oma=c(2,4,2,2))
+    #par(oma=c(2,4,2,2))
     barplot(sort(test.varimp),horiz=TRUE,las=1,xlab="")
     abline(v=abs(min(test.varimp)), col='red',lty='longdash', lwd=2)
     dev.off()
-    par(opar)
+    #par(opar)
 
     of <- "CaretCForestResults.txt"
     capture.output(print(mod1),file=of,append=FALSE)
@@ -303,12 +303,12 @@ caretForest <- function(con){
     capture.output(print(test.varimp2),file=of,append=TRUE)
 
     pdf(file="ImportantVariables-NoDemIndex.pdf",width=6,height=8)
-    opar<-par()
+    #opar<-par()
     par(oma=c(2,4,2,2))
     barplot(sort(test.varimp2),horiz=TRUE,las=1,xlab="")
     abline(v=abs(min(test.varimp2)), col='red',lty='longdash', lwd=2)
     dev.off()
-    par(opar)
+    #par(opar)
 
 }
 

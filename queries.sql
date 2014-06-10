@@ -43,7 +43,8 @@ CREATE TABLE mapsfdownbycountry as
 SELECT a.country,a.downloads,b.iso_a2,b.region_un,b.subregion,b.geometry 
 FROM 
     (SELECT country, sum(downloads) as downloads 
-    FROM sfcountries 
+    FROM sfcountries
+    WHERE version <= 6.5 
     GROUP BY country) as a
     JOIN mapcountries as b 
     ON country = name_long;
