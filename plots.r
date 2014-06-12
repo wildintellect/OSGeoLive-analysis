@@ -368,14 +368,12 @@ OSanalysis <- function(con){
     #country.lt <- likelihood.test(country.cont)
     #capture.output(print(country.lt),file=of,append=TRUE)
     fullcont(con,country.cont,of)
-    #Log likelihood ratio (G-test) test of independence without correction
-    #data:  country.cont
-    #Log likelihood ratio statistic (G) = 367.4859, X-squared df = 320,
-    #p-value = 0.03457
-    #This test comes out different now, there was a bug in the code before
-        
-    #Maybe correlation test is unecessary?
-    #cor.s = cor.test(country.cont[,1],country.cont[,2],method="kendall")
+    #Posthoc correlation test, or should it be a correlation test instead of a g-test?
+    cor.k = cor.test(country.cont[,1],country.cont[,2],method="kendall")
+    capture.output(print(cor.s),file=of,append=TRUE)
+    #Don't use Pearson's not looking for linear effect, data not normally distributed.
+    cor.p = cor.test(country.cont[,1],country.cont[,2],method="pearson")
+    capture.output(print(cor.p),file=of,append=TRUE)
     
     
 
@@ -388,10 +386,6 @@ OSanalysis <- function(con){
     #countrybyos.lt <- likelihood.test(countrybyos.cont)
     #capture.output(print(countrybyos.lt),file=of,append=TRUE)
     fullcont(con,countrybyos.cont,of)
-    #Log likelihood ratio (G-test) test of independence without correction
-    #data:  countrybyos.cont
-    #Log likelihood ratio statistic (G) = 10848.92, X-squared df = 480,
-    #p-value < 2.2e-16
     countrymelt <- melt(countrybyos)
     pdf(file="CountryOSVariation.pdf",width=6,height=8)
     #opar<-par()
@@ -410,15 +404,11 @@ OSanalysis <- function(con){
     #capture.output(print(typebyos.trans),file=of,append=FALSE)
     #capture.output(print(typebyos.lt),file=of,append=TRUE)
     fullcont(con,typebyos.trans,of)
-
-    #	Log likelihood ratio (G-test) test of independence without correction
-    #data:  typebyos.cont
-    #Log likelihood ratio statistic (G) = 950.6209, X-squared df = 6,
-    #p-value < 2.2e-16
     
 }
 
 fullcont <- function(con,cont,of){
+    #Function runs chisq, g-test and posthoc tests on contingency tables
     require(polytomous)
     require(vcd)
     require(Deducer)

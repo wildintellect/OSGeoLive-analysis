@@ -1450,3 +1450,25 @@ Pearson          278.31 162 3.5746e-08
 Phi-Coefficient   : 0.081 
 Contingency Coeff.: 0.081 
 Cramer's V        : 0.081 
+
+	Kendall's rank correlation tau
+
+data:  country.cont[, 1] and country.cont[, 2]
+z = 6.9494, p-value = 3.668e-12
+alternative hypothesis: true tau is not equal to 0
+sample estimates:
+      tau 
+0.4357114 
+
+
+	Pearson's product-moment correlation
+
+data:  country.cont[, 1] and country.cont[, 2]
+t = 11.7286, df = 161, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ 0.5862317 0.7538452
+sample estimates:
+      cor 
+0.6787831 
+
