@@ -347,10 +347,7 @@ OSanalysis <- function(con){
     ### Disabling separate columns in favor of combined
     downsSQL <- 'SELECT "country", sum(total) as downloads FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY country;'
     downs <- dbGetQuery(con,downsSQL)
-    #contribSQL <- 'SELECT country,count(name) as contributors FROM contributors as a, (SELECT max(rev) as mrev FROM "contributors") as b WHERE rev = mrev GROUP BY Country;'
-    #contrib <- dbGetQuery(con,contribSQL)
-    #transSQL <- 'SELECT country,count(name) as translators FROM translators as a,(SELECT max(rev) as mrev FROM "translators") as b WHERE rev = mrev GROUP BY Country;'
-    #trans <- dbGetQuery(con,transSQL)
+    
     
     #combined Contrib+Translators, overlap removed
     combineSQL  <- 'SELECT country,count(name) as participants FROM (SELECT distinct(name),max(country) as country FROM (SELECT distinct(name),country FROM contributors UNION SELECT distinct(name),country FROM translators) GROUP BY name) GROUP BY country;'
@@ -376,7 +373,26 @@ OSanalysis <- function(con){
     cor.p = cor.test(country.cont[,1],country.cont[,2],method="pearson")
     capture.output(print(cor.p),file=of,append=TRUE)
     
+    #subset only those countries with participants
+    #TODO split contributors and translators
+    #contribSQL <- 'SELECT country,count(name) as contributors FROM contributors as a, (SELECT max(rev) as mrev FROM "contributors") as b WHERE rev = mrev GROUP BY Country;'
+    #contrib <- dbGetQuery(con,contribSQL)
+    #transSQL <- 'SELECT country,count(name) as translators FROM translators as a,(SELECT max(rev) as mrev FROM "translators") as b WHERE rev = mrev GROUP BY Country;'
+    #trans <- dbGetQuery(con,transSQL)
+    #country.df <- merge(downs,contrib,all.x=TRUE)
+    #country.df <- merge(country.df,trans,all.x=TRUE)
+        
+    country.part <- country.df[country.df$participants > 0,]
+    country.partmatrix <- as.matrix(country.part[,-1])
+    row.names(country.partmatrix) <- country.part[,1]
+    country.dist <- dist(country.partmatrix)
+    country.clust <- hclust(country.dist)
     
+    #optional use ggplot2 based dendrogram plot with rotate
+    require(ggplot2)
+    require(ggdendro)
+    country.dendro <- dendro_data(country.clust)
+    ggdendrogram(country.dendro, rotate=TRUE)
 
     #Contingency analysis of Countries By OS variation
     # the tails of Windows use(none/100) seem to have something in common
