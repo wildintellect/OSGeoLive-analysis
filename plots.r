@@ -353,7 +353,7 @@ OSanalysis <- function(con){
     #trans <- dbGetQuery(con,transSQL)
     
     #combined Contrib+Translators, overlap removed
-    combineSQL  <- 'SELECT country,count(name) FROM (SELECT distinct(name),max(country) as country FROM (SELECT distinct(name),country FROM contributors UNION SELECT distinct(name),country FROM translators) GROUP BY name) GROUP BY country;'
+    combineSQL  <- 'SELECT country,count(name) as participants FROM (SELECT distinct(name),max(country) as country FROM (SELECT distinct(name),country FROM contributors UNION SELECT distinct(name),country FROM translators) GROUP BY name) GROUP BY country;'
     #TODO limit by version
     combined <- dbGetQuery(con,combineSQL) 
     
@@ -367,8 +367,9 @@ OSanalysis <- function(con){
     row.names(country.cont) <- country.df[,1]
     #country.lt <- likelihood.test(country.cont)
     #capture.output(print(country.lt),file=of,append=TRUE)
-    fullcont(con,country.cont,of)
-    #Posthoc correlation test, or should it be a correlation test instead of a g-test?
+    #Not appropriate to treat as contingency table    
+    #fullcont(con,country.cont,of)
+    #correlation test instead for non-parametric data (regression won't work here - non-normal data, no easy transform)
     cor.k = cor.test(country.cont[,1],country.cont[,2],method="kendall")
     capture.output(print(cor.s),file=of,append=TRUE)
     #Don't use Pearson's not looking for linear effect, data not normally distributed.
