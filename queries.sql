@@ -397,3 +397,15 @@ SELECT RecoverGeometryColumn('subregionsT', 'geometry',
 SELECT subregion,AREA(CastToMultiPolygon(GUnion(Buffer(Geometry,0.00001)))) as geometry, Area(CastToMultiPolygon(GUnion(Geometry))) as nobuff
 FROM ne_110m_admin_0_countries
 GROUP BY subregion;
+
+-------
+-- Top 25 comparisons
+--
+-------
+SELECT country,downloads FROM Metrics2012wDemIndex
+ORDER BY downloads DESC
+Limit 25;
+
+SELECT country,downloads,downbypop FROM Metrics2012wDemIndex
+ORDER BY downbypop DESC
+Limit 25;
