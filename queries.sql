@@ -409,3 +409,8 @@ Limit 25;
 SELECT country,downloads,downbypop FROM Metrics2012wDemIndex
 ORDER BY downbypop DESC
 Limit 25;
+
+-- Breaking down the patterns
+'SELECT country, sum(mac) as mac FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY mac DESC'
+
+'SELECT country, sum(lin) as linux FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY linux DESC'
