@@ -1,6 +1,6 @@
 Conditional Inference Random Forest 
 
-123 samples
+129 samples
  15 predictors
 
 No pre-processing
@@ -11,21 +11,21 @@ Summary of sample sizes:
 Resampling results across tuning parameters:
 
   mtry  RMSE     Rsquared
-  2     0.00177  0.305   
-  4     0.00176  0.31    
-  6     0.00175  0.315   
+  2     0.00174  0.315   
+  4     0.00173  0.323   
+  6     0.00172  0.323   
 
 RMSE was used to select the optimal model using  the smallest value.
 The final value used for the model was mtry = 6. 
         economy          income    OoklaAverage    ITUbroadband      AkUniqueIP 
-   3.021866e-09    3.687999e-08   -1.428037e-08    2.036610e-08   -9.033387e-09 
+   4.352186e-09    2.698238e-08   -7.632263e-09    1.740439e-08   -8.014480e-09 
       AkAverage          AkPeak AkHighBroadband     AkBroadband    AkNarrowband 
-   9.011651e-09    1.597867e-08   -1.101459e-08   -8.049154e-10    4.104733e-09 
+  -8.870865e-11    1.602048e-08   -5.845940e-09   -8.814519e-09   -6.326301e-09 
        DemIndex 
-   1.308169e-07 
+   1.639988e-07 
 Conditional Inference Random Forest 
 
-123 samples
+129 samples
  15 predictors
 
 No pre-processing
@@ -36,13 +36,13 @@ Summary of sample sizes:
 Resampling results across tuning parameters:
 
   mtry  RMSE     Rsquared
-  2     0.00179  0.286   
-  4     0.00178  0.293   
-  6     0.00178  0.29    
+  2     0.00176  0.293   
+  4     0.00175  0.296   
+  6     0.00176  0.291   
 
 RMSE was used to select the optimal model using  the smallest value.
 The final value used for the model was mtry = 4. 
         economy          income    OoklaAverage    ITUbroadband      AkUniqueIP 
-   2.102822e-08    7.246542e-08   -1.969772e-08    4.652402e-08   -1.265296e-08 
+   2.524682e-08    7.852759e-08   -1.321862e-08    4.575539e-08   -1.386154e-08 
       AkAverage          AkPeak AkHighBroadband     AkBroadband    AkNarrowband 
-   3.526566e-08    1.975955e-08   -1.433806e-08    2.509170e-09    1.697069e-09 
+   1.350460e-08    2.526364e-08   -9.278909e-09    3.555895e-09    2.883288e-09 

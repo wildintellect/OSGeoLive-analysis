@@ -262,7 +262,7 @@ caretForest <- function(con){
     require(caret)
     require(parallel)
     require(doMC) #caret can be done in parrallel
-    registerDoMC(cores = 2)
+    registerDoMC(cores = 4)
 
     #downdata <-dbReadTable(con,"Metrics2012wDemIndex")
     # Filter out null ITU
