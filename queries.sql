@@ -23,6 +23,8 @@ UPDATE sfcountries SET country="Russian Federation" WHERE country LIKE "%Russia%
 UPDATE sfcountries SET country="Republic of Korea" WHERE country LIKE "%Korea%";
 UPDATE sfcountries SET country="Lao PDR" WHERE country LIKE "%Lao%";
 UPDATE sfcountries SET country="Democratic Republic of the Congo" WHERE country LIKE "%Kinshasa%";
+UPDATE sfcountries SET country="Palestine" WHERE country LIKE "%Palestinian%";
+UPDATE sfcountries SET country="Falkland Islands" WHERE country LIKE "Falkland%";
 UPDATE sfcountries SET country="Côte d'Ivoire" WHERE country LIKE "%Ivory Coast%";
 
 --'
@@ -414,3 +416,19 @@ Limit 25;
 'SELECT country, sum(mac) as mac FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY mac DESC'
 
 'SELECT country, sum(lin) as linux FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY linux DESC'
+
+
+-------
+--Countries with Akamai but no downloads
+SELECT a.iso_a2,average
+FROM akamai2013 as a
+WHERE a.iso_a2 NOT IN
+(SELECT b."iso_a2"
+FROM "mapsfdownbycountry" as b)
+
+--Inverse
+SELECT a.iso_a2,average
+FROM akamai2013 as a
+WHERE a.iso_a2 IN
+(SELECT b."iso_a2"
+FROM "mapsfdownbycountry" as b)
