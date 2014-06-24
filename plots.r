@@ -283,8 +283,8 @@ caretForest <- function(con){
     
     #Plot important variables
     pdf(file="ImportantVariables-caret.pdf",width=6,height=8)
-    opar<-par()
-    #par(oma=c(2,4,2,2))
+    #opar<-par()
+    par(oma=c(2,4,2,2))
     barplot(sort(test.varimp),horiz=TRUE,las=1,xlab="")
     abline(v=abs(min(test.varimp)), col='red',lty='longdash', lwd=2)
     dev.off()
