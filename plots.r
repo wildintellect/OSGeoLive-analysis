@@ -347,7 +347,9 @@ OSanalysis <- function(con){
     ### Disabling separate columns in favor of combined
     downsSQL <- 'SELECT "country", sum(total) as downloads FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY country;'
     downs <- dbGetQuery(con,downsSQL)
-    
+    #note 90% of the downloads from ~45 countries
+    sum(sort(downs$downloads,decreasing=TRUE)[0:45])/sum(downs$downloads)
+
     
     #combined Contrib+Translators, overlap removed
     combineSQL  <- 'SELECT country,count(name) as participants FROM (SELECT distinct(name),max(country) as country FROM (SELECT distinct(name),country FROM contributors UNION SELECT distinct(name),country FROM translators) GROUP BY name) GROUP BY country;'
