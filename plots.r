@@ -94,6 +94,21 @@ makemaps <- function(con){
 }
 
 
+downmap <- function(con){
+
+    #import base map layers
+    #Import all countries
+    #Import just the downloads and downloads/pop
+    #reproject 
+    vand.proj <- "+proj=vandg +lon_0=0 +x_0=0 +y_0=0 +R_A +a=6371000 +b=6371000 +units=m +no_defs"
+    
+    #plot and cut-off extra whitespace
+    #Colorbrewer single color scale purple?
+    #Plot 1 downloads
+    #Plot 2 downloads by population
+}
+
+
 fixITUdata <- function(con){
     ## Reshape ITU data to long format and save back to sqlite
     # Assumes db is already connected
