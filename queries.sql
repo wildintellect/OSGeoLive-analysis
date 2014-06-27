@@ -38,6 +38,34 @@ SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1)*1 as economy
 UNION
 SELECT sovereignt,name,name_long,iso_a2,pop_est,substr(economy,1,1)*1 as economy, substr(income_grp,1,1)*1 as income,"region_un", "subregion",GEOMETRY FROM ne_10m_admin_0_map_units WHERE  sovereignt LIKE "France";
 
+--World Plot, 110 scale world level, no antarctica
+--CREATE VIEW mapcountries AS
+SELECT sovereignt,name,name_long,iso_a2,"region_un", "subregion",GEOMETRY 
+FROM ne_110m_admin_0_countries 
+WHERE name NOT IN ('France','Antarctica')
+UNION
+SELECT sovereignt,name,name_long,iso_a2,"region_un", "subregion",GEOMETRY 
+FROM ne_110m_admin_0_countries
+WHERE sovereignt LIKE 'France';
+
+--France ends up with -99 needs a fix
+UPDATE ne_110m_admin_0_map_units SET iso_a2 = 'FR' WHERE name Like 'France';
+-- Join 110m to download data
+CREATE TABLE map110downloads AS
+SELECT a.sovereignt,a.name,a.name_long,a.iso_a2,a."region_un", a."subregion",b.downloads,b.downbypop,geometry 
+FROM "map110" as a
+LEFT JOIN Metrics2012noITU as b
+ON a.iso_a2 = b.iso_a2;
+-- register as spatial table
+SELECT RecoverGeometryColumn('map110downloads', 'geometry',
+  4326, 'MULTIPOLYGON', 'XY');
+
+--register as spatial view
+--INSERT INTO views_geometry_columns
+--(view_name, view_geometry, view_rowid, f_table_name, f_geometry_column)
+--VALUES ('map110downloads', 'geometry', 'ROWID', 'ne_110m_admin_0_countries', 'Geometry');
+
+
 -- Join the data for a map, VIEW doesn't carry column type correctly
 -- What about % of population
 DROP TABLE IF EXISTS mapsfdownbycountry;

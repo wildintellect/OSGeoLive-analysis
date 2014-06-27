@@ -97,12 +97,17 @@ makemaps <- function(con){
 }
 
 downmap <- function(con){
-
+    require(rgdal)
     #import base map layers
+    #Create projection
+    vand.proj <- "+proj=vandg +lon_0=0 +x_0=0 +y_0=0 +R_A +a=6371000 +b=6371000 +units=m +no_defs"
+    # Import table then merge with Spatial
+    ne <- readOGR("osgeolivedata.sqlite","map110downloads",disambiguateFIDs=TRUE)
+    ne.vand <- spTransform(ne,CRS(vand.proj))
     #Import all countries
     #Import just the downloads and downloads/pop
     #reproject 
-    vand.proj <- "+proj=vandg +lon_0=0 +x_0=0 +y_0=0 +R_A +a=6371000 +b=6371000 +units=m +no_defs"
+    
     
     #plot and cut-off extra whitespace
     #Colorbrewer single color scale purple?
