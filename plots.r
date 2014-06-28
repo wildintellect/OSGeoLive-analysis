@@ -97,7 +97,7 @@ makemaps <- function(con){
 
 downmap <- function(con){
     #Plot downloads vs Percent downloads/population
-
+    require(lattice)
     require(rgdal)
     require(RColorBrewer)
     require(sp)
@@ -109,11 +109,11 @@ downmap <- function(con){
     ne.vand <- spTransform(ne,CRS(vand.proj))
 
 
-    par(mfrow=c(2,1))    
+    #par(mfrow=c(2,1))    
     #apply factor over log of data into 9 groups with
     #Colorbrewer single color scale purple?    
     #colset <- brewer.pal(9,"RdPu")
-    colset <- c("#FFFFFF",brewer.pal(5,"RdPu"))
+    colset <- c("#FFFFFF",brewer.pal(5,"YlGn"))
      
     #plot and cut-off extra whitespace
     #q6 <- classIntervals(ne.vand$downloads,n=6,style="quantile")
@@ -121,22 +121,33 @@ downmap <- function(con){
     #b6q <- classIntervals(noz,n=5,style="quantile",intervalClosure="right")
     #b6q$brks[6] <- b6q$brks[6]+1
     #Plot 1 downloads
-    brks <- c(4,20,100,500,2500,5200)
-    p1 <- spplot(ne.vand,"downloads",at=brks,col.regions=colset,col=gray(.7),colorkey=FALSE,main="Downloads",key.space="right")
+    brks <- c(1,20,100,500,2500,5200)
+    #p1label <- levels(factor(c(0,paste(brks,"+")[1:5])))    
+    p1label <- c("0","1-19","20-99","100-499","500-2499","2500+")    
+    #p1 <- spplot(ne.vand,"downloads",at=brks,col.regions=colset,col=gray(.7),colorkey=list(space="bottom"),main="Downloads",key.space="bottom")
     #p1 <- spplot(ne.vand,"downloads",col.regions=colset,col=gray(.8),cuts=5,do.log=TRUE)
-
+    p1 <- spplot(ne.vand,"downloads",at=brks,col.regions=colset,col=gray(.7),colorkey=FALSE,key=list(text=list(p1label),col=colset,space="bottom",rectangle=TRUE),main="Downloads",key.space="bottom")
 
     #Plot 2 downloads by population
     #q6 <- classIntervals(ne.vand$downbypop,n=6,style="quantile")
-    brks2 <- c(.00047,.0009,.0019,.0038,.0075,.016)    
+    #brks2 <- c(.00047,.0009,.0019,.0038,.0075,.016)
+    #brks2 <- c(.00001,.00005,.0001,.0005,.01,.016)
+    brks2 <- c(0,.00001,.00005,.0001,.0005,.01,.02)    
     #p2 <- spplot(ne.vand,"downbypop",at=q6$brks,col.regions=colset,col=gray(.8))
     #p2 <- spplot(ne.vand,"downbypop",col.regions=colset,col=gray(.8),cuts=5,do.log=TRUE, main="Downloads by Percent of Population")
-    p2 <- spplot(ne.vand,"downbypop",at=brks2,col.regions=colset,col=gray(.7),colorkey=TRUE,main="Downloads by Percent of Population",key.space="right")
+    #p2label <- levels(factor(c(0,paste(brks2,"+")[1:5])))
+    p2label <-  c("0","0.00001+","0.00005","0.0001+","0.0005+","0.01+")
+    #p2 <- spplot(ne.vand,"downbypop",at=brks2,col.regions=colset,col=gray(.7),colorkey=list(space="bottom"),main="Downloads by Percent of Population",key.space="bottom")
+    colset2 <- c("#FFFFFF",brewer.pal(6,"YlGn"))
 
+   p2 <- spplot(ne.vand,"downbypop",at=brks2,col.regions=colset,col=gray(.7),colorkey=FALSE,key=list(text=list(p2label),col=colset2,space="bottom",rectangle=TRUE),main="Downloads by Percent of Population")
+
+
+    pdf("DownloadMap.pdf",width=7,height=10)
     #Actually layout plots with Trellis
     print(p1,split=c(1,1,1,2),more=TRUE)
     print(p2,split=c(1,2,1,2))
-
+    dev.off()
 }
 
 

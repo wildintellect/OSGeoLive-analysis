@@ -430,11 +430,11 @@ GROUP BY subregion;
 -- Top 25 comparisons
 --
 -------
-SELECT country,downloads FROM Metrics2012wDemIndex
+SELECT country,downloads FROM Metrics2012noITU
 ORDER BY downloads DESC
 Limit 25;
 
-SELECT country,downloads,downbypop FROM Metrics2012wDemIndex
+SELECT country,downbypop,downloads FROM Metrics2012noITU
 ORDER BY downbypop DESC
 Limit 25;
 
