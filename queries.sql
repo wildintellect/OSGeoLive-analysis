@@ -52,18 +52,16 @@ WHERE sovereignt LIKE 'France';
 UPDATE ne_110m_admin_0_map_units SET iso_a2 = 'FR' WHERE name Like 'France';
 -- Join 110m to download data
 CREATE TABLE map110downloads AS
-SELECT a.sovereignt,a.name,a.name_long,a.iso_a2,a."region_un", a."subregion",b.downloads,b.downbypop,geometry 
+SELECT a.sovereignt,a.name,a.name_long,a.iso_a2,a."region_un", a."subregion",(b.downloads*1) as downloads,(b.downbypop*1.0) as downbypop,geometry 
 FROM "map110" as a
 LEFT JOIN Metrics2012noITU as b
 ON a.iso_a2 = b.iso_a2;
--- register as spatial table
-SELECT RecoverGeometryColumn('map110downloads', 'geometry',
+-- register as spatial table, case sensitive Geometry
+SELECT RecoverGeometryColumn('map110downloads', 'Geometry',
   4326, 'MULTIPOLYGON', 'XY');
 
---register as spatial view
---INSERT INTO views_geometry_columns
---(view_name, view_geometry, view_rowid, f_table_name, f_geometry_column)
---VALUES ('map110downloads', 'geometry', 'ROWID', 'ne_110m_admin_0_countries', 'Geometry');
+--Get rid of nulls, make sure downloads is int and downbypop is double
+UPDATE map110downloads SET downloads = 0,downbypop = 0.0 WHERE downloads IS NULL;
 
 
 -- Join the data for a map, VIEW doesn't carry column type correctly

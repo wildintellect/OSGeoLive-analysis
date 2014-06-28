@@ -39,7 +39,6 @@ makemaps <- function(con){
     ### Plotting maps
     #loading spatialite views as sp objects
     require(rgdal)
-    require(RSQLite)
     require(reshape)
     require(RColorBrewer)
     #DB connection is global for now
@@ -97,22 +96,47 @@ makemaps <- function(con){
 }
 
 downmap <- function(con){
+    #Plot downloads vs Percent downloads/population
+
     require(rgdal)
+    require(RColorBrewer)
+    require(sp)
     #import base map layers
     #Create projection
     vand.proj <- "+proj=vandg +lon_0=0 +x_0=0 +y_0=0 +R_A +a=6371000 +b=6371000 +units=m +no_defs"
     # Import table then merge with Spatial
     ne <- readOGR("osgeolivedata.sqlite","map110downloads",disambiguateFIDs=TRUE)
     ne.vand <- spTransform(ne,CRS(vand.proj))
-    #Import all countries
-    #Import just the downloads and downloads/pop
-    #reproject 
-    
-    
+
+
+    par(mfrow=c(2,1))    
+    #apply factor over log of data into 9 groups with
+    #Colorbrewer single color scale purple?    
+    #colset <- brewer.pal(9,"RdPu")
+    colset <- c("#FFFFFF",brewer.pal(5,"RdPu"))
+     
     #plot and cut-off extra whitespace
-    #Colorbrewer single color scale purple?
+    #q6 <- classIntervals(ne.vand$downloads,n=6,style="quantile")
+    #noz <- ne.vand$downloads[ne.vand$downloads != 0]
+    #b6q <- classIntervals(noz,n=5,style="quantile",intervalClosure="right")
+    #b6q$brks[6] <- b6q$brks[6]+1
     #Plot 1 downloads
+    brks <- c(4,20,100,500,2500,5200)
+    p1 <- spplot(ne.vand,"downloads",at=brks,col.regions=colset,col=gray(.7),colorkey=FALSE,main="Downloads",key.space="right")
+    #p1 <- spplot(ne.vand,"downloads",col.regions=colset,col=gray(.8),cuts=5,do.log=TRUE)
+
+
     #Plot 2 downloads by population
+    #q6 <- classIntervals(ne.vand$downbypop,n=6,style="quantile")
+    brks2 <- c(.00047,.0009,.0019,.0038,.0075,.016)    
+    #p2 <- spplot(ne.vand,"downbypop",at=q6$brks,col.regions=colset,col=gray(.8))
+    #p2 <- spplot(ne.vand,"downbypop",col.regions=colset,col=gray(.8),cuts=5,do.log=TRUE, main="Downloads by Percent of Population")
+    p2 <- spplot(ne.vand,"downbypop",at=brks2,col.regions=colset,col=gray(.7),colorkey=TRUE,main="Downloads by Percent of Population",key.space="right")
+
+    #Actually layout plots with Trellis
+    print(p1,split=c(1,1,1,2),more=TRUE)
+    print(p2,split=c(1,2,1,2))
+
 }
 
 
@@ -198,7 +222,7 @@ fancyplot <- function(con){
     nesregion.filter <- nesregion[nesregion@data$subregion %in% names(colset),]
     nesregion.filter@data$subregion <- factor(nesregion.filter@data$subregion)
 
-    opar <- par()
+    #opar <- par()
     par(mar=c(0,0,0,0)) 
     plot(0, 0, type = "n", bty = "n", xaxt = "n", yaxt = "n",ann=FALSE)
     legend("top",legend=names(colset),fill=colset,cex=1.25)
@@ -208,7 +232,7 @@ fancyplot <- function(con){
     plot(nesregion.filter,col=colset,add=TRUE)  
     dev.off()    
 
-    par <- opar
+    #par <- opar
     #spplot(nesregion.filter,col.regions=colset)
 
     #nesregion.poly = fortify(nesregion.filter,region="subregion")
