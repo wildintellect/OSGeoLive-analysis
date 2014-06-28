@@ -1,6 +1,15 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="2.2.0-Valmiera">
+<qgis projectname="" version="2.4.0-Chugiak">
     <title></title>
+    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="">
+        <customproperties/>
+        <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="map110downloads20140627235217181" name="Downloads">
+            <customproperties/>
+        </layer-tree-layer>
+        <layer-tree-layer expanded="1" checked="Qt::Checked" id="Downloads_copy20140628000156028" name="Downloads By Percent Pop.">
+            <customproperties/>
+        </layer-tree-layer>
+    </layer-tree-group>
     <relations/>
     <mapcanvas>
         <units>meters</units>
@@ -28,7 +37,13 @@
             <layer_coordinate_transform destAuthId="EPSG:53029" srcAuthId="EPSG:4326" srcDatumTransform="-1" destDatumTransform="-1" layerid="map110downloads20140627235217181"/>
         </layer_coordinate_transform_info>
     </mapcanvas>
-    <legend updateDrawingOrder="true" activeLayer="Downloads_copy20140628000156028">
+    <layer-tree-canvas>
+        <custom-order enabled="0">
+            <item>map110downloads20140627235217181</item>
+            <item>Downloads_copy20140628000156028</item>
+        </custom-order>
+    </layer-tree-canvas>
+    <legend updateDrawingOrder="true">
         <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="Downloads" showFeatureCount="0">
             <filegroup open="true" hidden="false">
                 <legendlayerfile isInOverview="0" layerid="map110downloads20140627235217181" visible="0"/>
@@ -44,17 +59,20 @@
         <Composition snapGridTolerance="2" gridVisible="0" printResolution="300" paperWidth="215.9" snapGridOffsetX="0" guidesVisible="1" snapGridResolution="10" snapGridOffsetY="0" alignmentSnap="1" snapping="0" numPages="1" paperHeight="279.4" alignmentSnapTolerance="2" smartGuides="1" printAsRaster="0" generateWorldFile="0">
             <symbol alpha="1" type="fill" name="">
                 <layer pass="0" class="SimpleFill" locked="0">
+                    <prop k="border_width_map_unit_scale" v="0,0"/>
                     <prop k="border_width_unit" v="MM"/>
                     <prop k="color" v="255,255,255,255"/>
                     <prop k="color_border" v="0,0,0,255"/>
+                    <prop k="joinstyle" v="bevel"/>
                     <prop k="offset" v="0,0"/>
+                    <prop k="offset_map_unit_scale" v="0,0"/>
                     <prop k="offset_unit" v="MM"/>
                     <prop k="style" v="solid"/>
                     <prop k="style_border" v="no"/>
                     <prop k="width_border" v="0.26"/>
                 </layer>
             </symbol>
-            <ComposerLegend symbolWidth="7" title="" boxSpace="2" splitLayer="0" equalColumnWidth="0" symbolHeight="4" wmsLegendHeight="25" wrapChar="" fontColor="#000000" columnSpace="2" wmsLegendWidth="50" columnCount="1">
+            <ComposerLegend symbolWidth="7" title="" boxSpace="2" splitLayer="0" equalColumnWidth="0" titleAlignment="1" symbolHeight="4" wmsLegendHeight="25" wrapChar="" fontColor="#000000" columnSpace="2" wmsLegendWidth="50" columnCount="1">
                 <styles>
                     <style marginBottom="2" name="title" font="Ubuntu,16,-1,5,50,0,0,0,0,0"/>
                     <style marginTop="2" name="group" font="Ubuntu,14,-1,5,50,0,0,0,0,0"/>
@@ -64,14 +82,17 @@
                 </styles>
                 <Model autoUpdate="1">
                     <LayerItem layerId="Downloads_copy20140628000156028" userText="" style="subgroup" text="Downloads By Percent Pop." showFeatureCount="0">
-                        <VectorClassificationItemNg userText="" text="0.0 - 0.0">
+                        <VectorClassificationItemNg userText="0" text="0">
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="255,255,255,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -84,10 +105,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="255,255,204,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -100,10 +124,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="194,230,153,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -116,10 +143,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="120,198,121,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -132,10 +162,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="49,163,84,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -148,10 +181,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="0,104,55,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -162,12 +198,12 @@
                         </VectorClassificationItemNg>
                     </LayerItem>
                 </Model>
-                <ComposerItem width="56.5" x="4.33697" transparency="0" y="227.951" height="47.5" positionMode="0" frame="false" outlineWidth="0.3" zValue="5" itemRotation="0" lastValidViewScaleFactor="2.15906" uuid="{ebc42df0-08d1-4910-af06-56e3aa099515}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem pagey="227.951" page="1" id="" lastValidViewScaleFactor="2.15906" positionMode="0" positionLock="false" x="4.33697" y="227.951" zValue="4" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="56.5" outlineWidth="0.3" uuid="{ebc42df0-08d1-4910-af06-56e3aa099515}" height="47.5" itemRotation="0" frame="false" pagex="4.33697">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
             </ComposerLegend>
-            <ComposerLegend symbolWidth="7" title="" boxSpace="2" splitLayer="0" equalColumnWidth="0" symbolHeight="4" wmsLegendHeight="25" wrapChar="" fontColor="#000000" columnSpace="2" wmsLegendWidth="50" columnCount="1">
+            <ComposerLegend symbolWidth="7" title="" boxSpace="2" splitLayer="0" equalColumnWidth="0" titleAlignment="1" symbolHeight="4" wmsLegendHeight="25" wrapChar="" fontColor="#000000" columnSpace="2" wmsLegendWidth="50" columnCount="1">
                 <styles>
                     <style marginBottom="2" name="title" font="Ubuntu,16,-1,5,50,0,0,0,0,0"/>
                     <style marginTop="2" name="group" font="Ubuntu,14,-1,5,50,0,0,0,0,0"/>
@@ -177,14 +213,17 @@
                 </styles>
                 <Model autoUpdate="1">
                     <LayerItem layerId="map110downloads20140627235217181" userText="" style="subgroup" text="Downloads" showFeatureCount="0">
-                        <VectorClassificationItemNg userText="" text="0.0 - 0.0">
+                        <VectorClassificationItemNg userText="0" text="0">
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="255,255,255,255"/>
                                         <prop k="color_border" v="203,203,203,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -197,10 +236,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="255,255,204,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -213,10 +255,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="194,230,153,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -229,10 +274,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="120,198,121,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -245,10 +293,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="49,163,84,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -261,10 +312,13 @@
                             <symbols>
                                 <symbol alpha="1" type="fill" name="classificationSymbol">
                                     <layer pass="0" class="SimpleFill" locked="0">
+                                        <prop k="border_width_map_unit_scale" v="0,0"/>
                                         <prop k="border_width_unit" v="MM"/>
                                         <prop k="color" v="0,104,55,255"/>
                                         <prop k="color_border" v="214,214,214,255"/>
+                                        <prop k="joinstyle" v="bevel"/>
                                         <prop k="offset" v="0,0"/>
+                                        <prop k="offset_map_unit_scale" v="0,0"/>
                                         <prop k="offset_unit" v="MM"/>
                                         <prop k="style" v="solid"/>
                                         <prop k="style_border" v="solid"/>
@@ -275,7 +329,7 @@
                         </VectorClassificationItemNg>
                     </LayerItem>
                 </Model>
-                <ComposerItem width="31" x="4.85" transparency="0" y="88.85" height="47.5" positionMode="0" frame="false" outlineWidth="0.3" zValue="3" itemRotation="0" lastValidViewScaleFactor="2.15906" uuid="{e467702d-958d-4454-8fc2-0818fec72dbc}" id="" background="true" blendMode="0" positionLock="false">
+                <ComposerItem pagey="88.85" page="1" id="" lastValidViewScaleFactor="2.15906" positionMode="0" positionLock="false" x="4.85" y="88.85" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="31" outlineWidth="0.3" uuid="{e467702d-958d-4454-8fc2-0818fec72dbc}" height="47.5" itemRotation="0" frame="false" pagex="4.85">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -284,10 +338,13 @@
                 <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
                     <symbol alpha="0.3" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="255,0,0,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="no"/>
@@ -295,7 +352,7 @@
                         </layer>
                     </symbol>
                 </overviewFrame>
-                <Extent ymin="-10497925.01883179135620594" xmin="-21010217.4664304330945015" ymax="16715309.03292571566998959" xmax="21010217.4664304181933403"/>
+                <Extent ymin="-10497925.01883179135620594" xmin="-21010217.4664304330945015" ymax="16715309.03292571194469929" xmax="21010217.4664304181933403"/>
                 <LayerSet>
                     <Layer>map110downloads20140627235217181</Layer>
                 </LayerSet>
@@ -308,14 +365,17 @@
                             <prop k="capstyle" v="flat"/>
                             <prop k="color" v="0,0,0,255"/>
                             <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
                             <prop k="customdash_unit" v="MM"/>
                             <prop k="draw_inside_polygon" v="0"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="penstyle" v="solid"/>
                             <prop k="use_custom_dash" v="0"/>
                             <prop k="width" v="0.3"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
                             <prop k="width_unit" v="MM"/>
                         </layer>
                     </symbol>
@@ -323,8 +383,8 @@
                         <fontColor alpha="255" red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <AtlasMap fixedScale="0" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem width="210" x="3" transparency="0" y="2" height="136" positionMode="0" frame="true" outlineWidth="0.3" zValue="2" itemRotation="0" lastValidViewScaleFactor="2.15906" uuid="{344a35b1-605f-4b77-9ad1-64a6a3ba5602}" id="" background="true" blendMode="0" positionLock="false">
+                <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem pagey="2" page="1" id="" lastValidViewScaleFactor="2.15906" positionMode="0" positionLock="false" x="3" y="2" zValue="2" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="210" outlineWidth="0.3" uuid="{344a35b1-605f-4b77-9ad1-64a6a3ba5602}" height="136" itemRotation="0" frame="true" pagex="3">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -333,10 +393,13 @@
                 <overviewFrame overviewBlendMode="0" overviewFrameMap="-1" overviewCentered="false" overviewInverted="false">
                     <symbol alpha="0.3" type="fill" name="">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="255,0,0,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="no"/>
@@ -357,14 +420,17 @@
                             <prop k="capstyle" v="flat"/>
                             <prop k="color" v="0,0,0,255"/>
                             <prop k="customdash" v="5;2"/>
+                            <prop k="customdash_map_unit_scale" v="0,0"/>
                             <prop k="customdash_unit" v="MM"/>
                             <prop k="draw_inside_polygon" v="0"/>
                             <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="penstyle" v="solid"/>
                             <prop k="use_custom_dash" v="0"/>
                             <prop k="width" v="0.3"/>
+                            <prop k="width_map_unit_scale" v="0,0"/>
                             <prop k="width_unit" v="MM"/>
                         </layer>
                     </symbol>
@@ -372,8 +438,8 @@
                         <fontColor alpha="255" red="0" blue="0" green="0"/>
                     </Annotation>
                 </Grid>
-                <AtlasMap fixedScale="0" atlasDriven="0" margin="0.10000000000000001"/>
-                <ComposerItem width="210" x="3" transparency="0" y="141" height="136" positionMode="0" frame="true" outlineWidth="0.3" zValue="1" itemRotation="0" lastValidViewScaleFactor="2.15906" uuid="{2e805de0-755f-4025-bc08-e87e4f133818}" id="" background="true" blendMode="0" positionLock="false">
+                <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
+                <ComposerItem pagey="141" page="1" id="" lastValidViewScaleFactor="2.15906" positionMode="0" positionLock="false" x="3" y="141" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="210" outlineWidth="0.3" uuid="{2e805de0-755f-4025-bc08-e87e4f133818}" height="136" itemRotation="0" frame="true" pagex="3">
                     <FrameColor alpha="255" red="0" blue="0" green="0"/>
                     <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
                 </ComposerItem>
@@ -417,10 +483,13 @@
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="255,255,255,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -429,10 +498,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="1">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="255,255,204,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -441,10 +513,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="2">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="194,230,153,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -453,10 +528,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="3">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="120,198,121,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -465,10 +543,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="4">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="49,163,84,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -477,10 +558,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="5">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="0,104,55,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -491,10 +575,13 @@
                 <source-symbol>
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="1,26,243,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -657,14 +744,30 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="downbypop"/>
-                <edittype labelontop="0" editable="1" type="0" name="downloads"/>
-                <edittype labelontop="0" editable="1" type="0" name="iso_a2"/>
-                <edittype labelontop="0" editable="1" type="0" name="name"/>
-                <edittype labelontop="0" editable="1" type="0" name="name_long"/>
-                <edittype labelontop="0" editable="1" type="0" name="region_un"/>
-                <edittype labelontop="0" editable="1" type="0" name="sovereignt"/>
-                <edittype labelontop="0" editable="1" type="0" name="subregion"/>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="sovereignt">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="name_long">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="iso_a2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="region_un">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="subregion">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="downloads">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="downbypop">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
             <editform>.</editform>
             <editforminit></editforminit>
@@ -711,10 +814,13 @@
                 <symbols>
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="255,255,255,255"/>
                             <prop k="color_border" v="203,203,203,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -723,10 +829,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="1">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="255,255,204,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -735,10 +844,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="2">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="194,230,153,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -747,10 +859,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="3">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="120,198,121,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -759,10 +874,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="4">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="49,163,84,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -771,10 +889,13 @@
                     </symbol>
                     <symbol alpha="1" type="fill" name="5">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="0,104,55,255"/>
                             <prop k="color_border" v="214,214,214,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -785,10 +906,13 @@
                 <source-symbol>
                     <symbol alpha="1" type="fill" name="0">
                         <layer pass="0" class="SimpleFill" locked="0">
+                            <prop k="border_width_map_unit_scale" v="0,0"/>
                             <prop k="border_width_unit" v="MM"/>
                             <prop k="color" v="1,26,243,255"/>
                             <prop k="color_border" v="0,0,0,255"/>
+                            <prop k="joinstyle" v="bevel"/>
                             <prop k="offset" v="0,0"/>
+                            <prop k="offset_map_unit_scale" v="0,0"/>
                             <prop k="offset_unit" v="MM"/>
                             <prop k="style" v="solid"/>
                             <prop k="style_border" v="solid"/>
@@ -951,19 +1075,35 @@
                 <selectedonly on=""/>
             </labelattributes>
             <edittypes>
-                <edittype labelontop="0" editable="1" type="0" name="downbypop"/>
-                <edittype labelontop="0" editable="1" type="0" name="downloads"/>
-                <edittype labelontop="0" editable="1" type="0" name="iso_a2"/>
-                <edittype labelontop="0" editable="1" type="0" name="name"/>
-                <edittype labelontop="0" editable="1" type="0" name="name_long"/>
-                <edittype labelontop="0" editable="1" type="0" name="region_un"/>
-                <edittype labelontop="0" editable="1" type="0" name="sovereignt"/>
-                <edittype labelontop="0" editable="1" type="0" name="subregion"/>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="sovereignt">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="name">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="name_long">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="iso_a2">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="region_un">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="subregion">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="downloads">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
+                <edittype labelontop="0" editable="1" widgetv2type="TextEdit" name="downbypop">
+                    <widgetv2config IsMultiline="0" fieldEditable="1" UseHtml="0" labelOnTop="0"/>
+                </edittype>
             </edittypes>
-            <editform></editform>
+            <editform>.</editform>
             <editforminit></editforminit>
             <featformsuppress>0</featformsuppress>
-            <annotationform></annotationform>
+            <annotationform>.</annotationform>
             <editorlayout>generatedlayout</editorlayout>
             <excludeAttributesWMS/>
             <excludeAttributesWFS/>
@@ -990,8 +1130,8 @@
             <DegreeFormat type="QString">D</DegreeFormat>
         </PositionPrecision>
         <WCSUrl type="QString"></WCSUrl>
-        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSContactPhone type="QString"></WMSContactPhone>
+        <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
         <WMSServiceAbstract type="QString"></WMSServiceAbstract>
         <WMSAddWktGeometry type="bool">false</WMSAddWktGeometry>
         <Measure>
