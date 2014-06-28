@@ -126,7 +126,7 @@ downmap <- function(con){
     p1label <- c("0","1-19","20-99","100-499","500-2499","2500+")    
     #p1 <- spplot(ne.vand,"downloads",at=brks,col.regions=colset,col=gray(.7),colorkey=list(space="bottom"),main="Downloads",key.space="bottom")
     #p1 <- spplot(ne.vand,"downloads",col.regions=colset,col=gray(.8),cuts=5,do.log=TRUE)
-    p1 <- spplot(ne.vand,"downloads",at=brks,col.regions=colset,col=gray(.7),colorkey=FALSE,key=list(text=list(p1label),col=colset,space="bottom",rectangle=TRUE),main="Downloads",key.space="bottom")
+    p1 <- spplot(ne.vand,"downloads",at=brks,col.regions=colset,col=gray(.7),colorkey=FALSE,key=list(text=list(p1label),col.fill=colset,space="bottom",rectangle=TRUE),main="Downloads",key.space="bottom")
 
     #Plot 2 downloads by population
     #q6 <- classIntervals(ne.vand$downbypop,n=6,style="quantile")
