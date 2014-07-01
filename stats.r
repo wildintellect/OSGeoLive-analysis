@@ -220,7 +220,7 @@ OSanalysis <- function(con){
     downsSQL <- 'SELECT "country", sum(total) as downloads FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY country;'
     downs <- dbGetQuery(con,downsSQL)
     #note 90% of the downloads from ~45 countries
-    sum(sort(downs$downloads,decreasing=TRUE)[0:45])/sum(downs$downloads)
+    info1<- sum(sort(downs$downloads,decreasing=TRUE)[0:45])/sum(downs$downloads)
 
     
     #combined Contrib+Translators, overlap removed
@@ -231,6 +231,13 @@ OSanalysis <- function(con){
     #country.df <- merge(downs,contrib,all.x=TRUE)
     #country.df <- merge(country.df,trans,all.x=TRUE)
     country.df <- merge(downs,combined,all.x=TRUE)
+    
+    #How much of the downloads is from countries with no participation
+    info2 <- sum(country.df[is.na(country.df$participants),2])/sum(country.df$downloads)
+    #number of countries without participants
+    length(country.df[is.na(country.df$participants),1])
+    
+    
     #Replace NA with 0
     country.df[is.na(country.df)] <- 0
     #Convert to martix contingency table
