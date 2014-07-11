@@ -1,5 +1,10 @@
 --Spatial Queries
 
+--Total downloads 6.0+6.5
+SELECT sum("downloads")
+FROM "sfbymonth"
+WHERE version <=6.5
+
 --Join data based on country
 SELECT a.country,a.downloads, b.name FROM 
     (SELECT country, sum(downloads) as downloads 
