@@ -448,6 +448,17 @@ Limit 25;
 
 'SELECT country, sum(lin) as linux FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY linux DESC'
 
+--Is there a pattern to where high linux downloads occurs?
+SELECT * 
+FROM (
+SELECT country, sum(lin) as linux 
+FROM "sfosbycountry" 
+WHERE Version <= 6.5 
+GROUP BY country ) as a
+JOIN
+CountryByOS as b
+ON a.country = b.country
+ORDER by a.linux DESC, b.linux DESC;
 
 -------
 --Countries with Akamai but no downloads
