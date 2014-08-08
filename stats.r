@@ -305,6 +305,39 @@ OSanalysis <- function(con){
     
 }
 
+
+importantvargraphs <- function(con){
+    #Based on the caretForest analysis, post-hoc visualization of the relationship between dependent and important independant variables.
+    #opar <- par()
+    dsql <- 'SELECT * FROM "Metrics2012wDemIndex" WHERE ITUbroadband IS NOT NULL'
+    downdata <- dbGetQuery(con,dsql)
+
+    samewidth <- 1
+
+    pdf(file="ImportantVarGraph.pdf",width=9,height=6)
+    par(mfrow=c(2,2),mar=c(4,5,1,1),cex=0.6)
+
+    plot(downbypop~DemIndex, data=downdata,ylab="downbypop (%)",xlab="DemIndex (0-10)")
+    abline(lm(downdata$downbypop~downdata$DemIndex), col="red", lwd=samewidth)
+    lines(lowess(downdata$DemIndex,downdata$downbypop), col="blue", lwd=samewidth)
+    legend("topleft",legend=c("Linear Regression Fit","LOWESS Regression Fit"),fill=c("red","blue"))
+
+    boxplot(downbypop~income, data=downdata, xlab="Income",ylab="downbypop (%)")
+
+    plot(downbypop~ITUbroadband, data=downdata,xlab="ITUbroadband (% of population)",ylab="downbypop (%)")
+    abline(lm(downdata$downbypop~downdata$ITUbroadband), col="red", lwd=samewidth)
+    lines(lowess(downdata$ITUbroadband,downdata$downbypop), col="blue", lwd=samewidth)
+
+    plot((downdata$AkPeak/1000),downdata$downbypop,xlab="AkPeak (Mbps)",ylab="downbypop (%)")
+    Mbps <- downdata$AkPeak/1000
+    abline(lm(downdata$downbypop~Mbps), col="red", lwd=samewidth)
+    lines(lowess((downdata$AkPeak/1000),downdata$downbypop), col="blue", lwd=samewidth)
+    dev.off()
+    #par <- opar
+}
+
+
+
 fullcont <- function(con,cont,of){
     #Function runs chisq, g-test and posthoc tests on contingency tables
     require(polytomous)
