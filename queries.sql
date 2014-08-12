@@ -337,6 +337,19 @@ WHERE Version <= 6.5
 GROUP BY country
 ORDER BY country;
 
+--Country by OS, counts and percentages to compare against internet speed
+CREATE VIEW CountryByOSCounts AS
+SELECT "country",sum(win) as winC,sum(mac) as macC,sum(lin) as linC, sum(other) as otherC,(sum("win")*1.0/sum(total))*100 as Windows, (sum("mac")*1.0/sum(total))*100 as Mac, (sum("lin")*1.0/sum(total))*100 as Linux, (sum("other")*1.0/sum(total))*100 as Other
+FROM "sfosbycountry"
+WHERE Version <= 6.5
+GROUP BY country
+ORDER BY country;
+-- Join with Metrics, current name mistmatch
+SELECT * 
+FROM "Metrics2012wDemIndex" as b
+LEFT Join "CountryByOSCounts" as a
+ON a.country = b.country;
+
 
 --Contingency, type by OS
 DROP VIEW if exists TypeByOS;
