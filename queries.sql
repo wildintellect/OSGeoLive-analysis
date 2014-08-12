@@ -33,6 +33,18 @@ UPDATE sfcountries SET country="Falkland Islands" WHERE country LIKE "Falkland%"
 UPDATE sfcountries SET country="Côte d'Ivoire" WHERE country LIKE "%Ivory Coast%";
 
 --'
+--Also fix the country names for other sourceforge tables
+UPDATE sfosbycountry SET country="Vietnam" WHERE country LIKE "%Viet Nam%";
+UPDATE sfosbycountry SET country="Russian Federation" WHERE country LIKE "%Russia%";
+UPDATE sfosbycountry SET country="Republic of Korea" WHERE country LIKE "%Korea%";
+UPDATE sfosbycountry SET country="Lao PDR" WHERE country LIKE "%Lao%";
+UPDATE sfosbycountry SET country="Democratic Republic of the Congo" WHERE country LIKE "%Kinshasa%";
+UPDATE sfosbycountry SET country="Palestine" WHERE country LIKE "%Palestinian%";
+UPDATE sfosbycountry SET country="Falkland Islands" WHERE country LIKE "Falkland%";
+UPDATE sfosbycountry SET country="Côte d'Ivoire" WHERE country LIKE "%Ivory Coast%";
+
+--'
+
 
 -- Map Units from Natural Earth didn't pan out
 -- However splitting France does help
@@ -345,7 +357,8 @@ WHERE Version <= 6.5
 GROUP BY country
 ORDER BY country;
 -- Join with Metrics, current name mistmatch
-SELECT * 
+CREATE VIEW CountryOSwMetrics AS
+SELECT a.country,iso_a2,downloads,pop,economy,income,downbypop,OoklaAverage,ITUbroadband,AkUniqueIP,AkAverage,AkPeak,AkHighBroadband,AkBroadband,AkNarrowband,DemIndex,winC,macC,linC,otherC,Windows,Mac,Linux,Other 
 FROM "Metrics2012wDemIndex" as b
 LEFT Join "CountryByOSCounts" as a
 ON a.country = b.country;

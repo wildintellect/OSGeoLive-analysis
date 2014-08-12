@@ -284,9 +284,7 @@ fancyplot <- function(con){
 }
 
 MacVnet <- function(con){
-    dsql <- 'SELECT * FROM "Metrics2012wDemIndex" WHERE ITUbroadband IS NOT NULL'
-    downdata <- dbGetQuery(con,dsql)
-    bycountry <- dbReadTable(con,"CountryByOSCounts")
+    bycountry <- dbReadTable(con,"CountryOSwMetrics")
     
 }
 
