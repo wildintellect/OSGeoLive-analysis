@@ -463,11 +463,30 @@ GROUP BY subregion;
 -------
 SELECT country,downloads FROM Metrics2012noITU
 ORDER BY downloads DESC
-Limit 25;
+Limit 10;
 
 SELECT country,downbypop,downloads FROM Metrics2012noITU
 ORDER BY downbypop DESC
-Limit 25;
+Limit 10;
+
+--Mac top 10
+SELECT country as Country,MacC as 'Count',Mac as Percent FROM "CountryOSwMetrics"
+ORDER BY MacC DESC
+Limit 10;
+
+SELECT country as Country,Mac as Percent,MacC as 'Count' FROM "CountryOSwMetrics"
+ORDER BY Mac DESC
+Limit 10;
+
+--Linux top 10
+SELECT country as Country,linux as Percent,linC as 'Count' FROM "CountryOSwMetrics"
+ORDER BY linux DESC
+Limit 10;
+
+SELECT country as Country,linC as 'Count',linux as Percent FROM "CountryOSwMetrics"
+ORDER BY linC DESC
+Limit 10;
+
 
 -- Breaking down the patterns
 'SELECT country, sum(mac) as mac FROM "sfosbycountry" WHERE Version <= 6.5 GROUP BY country ORDER BY mac DESC'
