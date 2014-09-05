@@ -15,7 +15,10 @@
 %\setbeamercolor{block body}{fg=white}
 %\setbeamerfont{frametitle}{parent=structure,size=\huge}
 
+\usepackage{graphicx}
+\usepackage{datatool}
 \usepackage{listings}
+\usepackage{caption}
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
@@ -54,23 +57,23 @@
   %\footnote{Creative Commons Attribution Share-alike Non-commercial}
 \end{frame}
 
-\begin{frame}{Citizen Science aka Crowdsourcing}
-    \vspace{-1in}
-	\begin{itemize}
-		\item I
-			\begin{itemize}
-				\item A
-				\item B
-				\item C
-			\end{itemize}		
-		\item II
-			\begin{itemize}
-				\item A
-				\item B
-				\item C
-			\end{itemize} 
-	\end{itemize}
-\end{frame}
+%\begin{frame}{Citizen Science aka Crowdsourcing}
+%    \vspace{-1in}
+%	\begin{itemize}
+%		\item I
+%			\begin{itemize}
+%				\item A
+%				\item B
+%				\item C
+%			\end{itemize}		
+%		\item II
+%			\begin{itemize}
+%				\item A
+%				\item B
+%				\item C
+%			\end{itemize} 
+%	\end{itemize}
+%\end{frame}
 
 \section{Downloads}
 
@@ -81,7 +84,53 @@
 		\begin{center}
 			\includegraphics[width=.6\textwidth]{DownloadMapQGIS.pdf}
 		\end{center}
-	\end{minipage}	
+	\end{minipage}
+	%\footnote{\tiny{Projection: Van der Grinten I}}
+\end{frame}
+
+\DTLloadrawdb{top10down}{top10downloads.csv}
+\DTLloadrawdb{top10downbypop}{top10downbypop.csv}
+
+\begin{frame}{OSGeo-Live Downloads: Top 10 Countries \\ \tiny{(Versions 6.0 \& 6.5)}}
+\vspace{-.5in}
+	%\begin{minipage}{\textwidth}
+	\begin{scriptsize}
+	\begin{columns}[T]
+	\begin{column}{0.3\textwidth}
+		
+		\begin{table}
+		\centering
+		\caption{\scriptsize{Total Downloads}}
+	%\caption{}
+	%\begin{subtable}
+		\begin{tabular}{l}
+			\DTLdisplaydb{top10down}		
+		\end{tabular}
+	%\end{subtable}
+	%\qquad
+		\end{table}
+	\end{column}
+	\begin{column}{0.05\textwidth}
+	\end{column}
+	\begin{column}{0.6\textwidth}
+		
+		\begin{table}
+		\centering
+		\caption{\scriptsize{Downloads by Percent Population}}
+	%\begin{subtable}{1\linewidth}\centering
+		\begin{tabular}{l}
+	%		\centering
+			\DTLdisplaydb{top10downbypop}
+		\end{tabular}
+		
+	%\end{subtable}
+		
+		\label{table:top10}
+		\end{table}
+	\end{column}
+	\end{columns}
+	\end{scriptsize}		
+	%\end{minipage}	
 \end{frame}
 
 \section{Participation}
