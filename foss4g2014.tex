@@ -3,10 +3,10 @@
 %\usetheme{roadkill}
 %\usecolortheme[]{albatross}
 \setbeamertemplate{navigation symbols}{} 
-%\usebackgroundtemplate{
-%	\includegraphics[width=\paperwidth,
-%	height=\paperheight]{roadkill.png}
-%}
+\usebackgroundtemplate{
+	\includegraphics[width=\paperwidth,
+	height=\paperheight]{backdrop.png}
+}
 %\setbeamertemplate{itemize items}{\includegraphics[width=10px]{reflector.jpg}}
 
 %\definecolor{safetyorange}{RGB}{232, 118, 0}
@@ -19,6 +19,7 @@
 \usepackage{datatool}
 \usepackage{listings}
 \usepackage{caption}
+\usepackage{changepage}
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
@@ -93,13 +94,14 @@
 
 \begin{frame}{OSGeo-Live Downloads: Top 10 Countries \\ \tiny{(Versions 6.0 \& 6.5)}}
 \vspace{-.5in}
+%\begin{adjustwidth}{-2em}{0em}
 	%\begin{minipage}{\textwidth}
 	\begin{scriptsize}
 	\begin{columns}[T]
 	\begin{column}{0.3\textwidth}
 		
 		\begin{table}
-		\centering
+		%\centering
 		\caption{\scriptsize{Total Downloads}}
 	%\caption{}
 	%\begin{subtable}
@@ -110,12 +112,12 @@
 	%\qquad
 		\end{table}
 	\end{column}
-	\begin{column}{0.05\textwidth}
+	\begin{column}{0.001\textwidth}
 	\end{column}
-	\begin{column}{0.6\textwidth}
+	\begin{column}{0.62\textwidth}
 		
 		\begin{table}
-		\centering
+		%\centering
 		\caption{\scriptsize{Downloads by Percent Population}}
 	%\begin{subtable}{1\linewidth}\centering
 		\begin{tabular}{l}
@@ -131,6 +133,7 @@
 	\end{columns}
 	\end{scriptsize}		
 	%\end{minipage}	
+%\end{adjustwidth}
 \end{frame}
 
 \section{Participation}
