@@ -21,6 +21,10 @@
 \usepackage{listings}
 \usepackage{caption}
 \usepackage{changepage}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{listings}
 
 \usepackage{hyperref}
 \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue}
@@ -77,65 +81,152 @@
 %	\end{itemize}
 %\end{frame}
 
+\begin{frame}{Definitions}
+	\begin{itemize}
+		\item Knowledge Diffusion - spread of awareness of an innovation
+		\item Adoption - actual implementation of knowledge, innovation, or product
+		\item Barrier - something that slows or stops the rate of diffusion or adoption \footnote{Barrier is a negative term, as opposed to studying how to increase rates.}
+		\item Pro-innovation Bias - tendency to cast diffusion and adoption as positives
+	\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}{OSGeo-Live}
+\begin{minipage}{\textwidth}
+		\begin{center}
+			\includegraphics[width=1.0\textwidth]{livemenu8.pdf}
+		\end{center}
+		\url{http:://live.osgeo.org}
+	\end{minipage}
+\end{frame}
+
 \section{Downloads}
 
+\begin{frame}{History}
+\vspace{-.25in}
+	\begin{minipage}{\textwidth}
+		\begin{center}
+			\includegraphics[width=0.6\textwidth]{OSGeoLiveInfographic.pdf}
+		\end{center}
+	\end{minipage}
+%	\begin{reference}{35mm}{85mm}
+%		\tiny {Projection: Van der Grinten I}
+%  \end{reference} 
+\end{frame}
 
-\begin{frame}{Downloads}
+
+\begin{frame}{Maps}
 \vspace{-.25in}
 	\begin{minipage}{\textwidth}
 		\begin{center}
 			\includegraphics[width=.6\textwidth]{DownloadMapQGIS.pdf}
 		\end{center}
 	\end{minipage}
-	%\footnote{\tiny{Projection: Van der Grinten I}}
+%	\begin{reference}{35mm}{85mm}
+%		\tiny {Projection: Van der Grinten I}
+%  \end{reference} 
 \end{frame}
 
+%All the date files
 \DTLloadrawdb{top10down}{top10downloads.csv}
 \DTLloadrawdb{top10downbypop}{top10downbypop.csv}
+\DTLloadrawdb{top10linux-percent}{top10linux-percent.csv}
+\DTLloadrawdb{top10linux-count}{top10linux-count.csv}
+\DTLloadrawdb{top10mac-percent}{top10mac-percent.csv}
+\DTLloadrawdb{top10mac-count}{top10mac-count.csv}
 
 \begin{frame}{OSGeo-Live Downloads: Top 10 Countries \\ \tiny{(Versions 6.0 \& 6.5)}}
 \vspace{-.5in}
-%\begin{adjustwidth}{-2em}{0em}
-	%\begin{minipage}{\textwidth}
 	\begin{scriptsize}
 	\begin{columns}[T]
-	\begin{column}{0.3\textwidth}
-		
+	\begin{column}{0.3\textwidth}		
 		\begin{table}
-		%\centering
 		\caption{\scriptsize{Total Downloads}}
-	%\caption{}
-	%\begin{subtable}
 		\begin{tabular}{l}
 			\DTLdisplaydb{top10down}		
 		\end{tabular}
-	%\end{subtable}
-	%\qquad
 		\end{table}
 	\end{column}
+	
 	\begin{column}{0.001\textwidth}
 	\end{column}
+	
 	\begin{column}{0.62\textwidth}
 		
 		\begin{table}
 		%\centering
 		\caption{\scriptsize{Downloads by Percent Population}}
-	%\begin{subtable}{1\linewidth}\centering
-		\begin{tabular}{l}
-	%		\centering
-			\DTLdisplaydb{top10downbypop}
-		\end{tabular}
-		
-	%\end{subtable}
-		
+			\begin{tabular}{l}
+				\DTLdisplaydb{top10downbypop}
+			\end{tabular}
 		\label{table:top10}
 		\end{table}
 	\end{column}
 	\end{columns}
-	\end{scriptsize}		
-	%\end{minipage}	
-%\end{adjustwidth}
+	\end{scriptsize}
 \end{frame}
+
+\begin{frame}{Breakdown}
+\vspace{-.3in}
+	\begin{tiny}
+	\begin{columns}[T]
+	\begin{column}{0.5\textwidth}	
+	
+	\vspace{.2in}
+	\centering
+	{\normalsize Linux}
+	\vspace{-.2in}
+	
+		\begin{table}
+		\caption{\scriptsize{Total Downloads}}
+		\begin{tabular}{l}
+			\DTLdisplaydb{top10linux-count}		
+		\end{tabular}
+		\end{table}
+		\vspace{-.3in}
+		\begin{table}
+		%\centering
+		\caption{\scriptsize{Percent of Country's}}
+			\begin{tabular}{l}
+				\DTLdisplaydb{top10linux-percent}
+			\end{tabular}
+		\label{table:top10}
+		\end{table}
+	\end{column}
+	
+	\begin{column}{0.001\textwidth}
+	\end{column}
+	
+	\begin{column}{0.5\textwidth}
+		\vspace{.2in}
+		\centering
+		{\normalsize Mac}
+		\vspace{-.2in}
+		\begin{table}
+		%\centering
+		\caption{\scriptsize{Total Downloads}}
+			\begin{tabular}{l}
+				\DTLdisplaydb{top10mac-count}
+			\end{tabular}
+		\label{table:top10}
+		\end{table}
+		\vspace{-.3in}
+		\begin{table}
+		%\centering
+		\caption{\scriptsize{Percent of Country's}}
+			\begin{tabular}{l}
+				\DTLdisplaydb{top10mac-percent}
+			\end{tabular}
+		\label{table:top10}
+		\end{table}
+		
+	\end{column}
+	\end{columns}
+	\end{tiny}
+\end{frame}
+
 
 \section{Participation}
 \begin{frame}{Regional Participation}
@@ -148,10 +239,81 @@
 	\end{center}
 \end{frame}
 
+\section{Analysis}
+
+\DTLloadrawdb{variables}{variables-horiz.csv}
+\begin{frame}{Potential Barriers}
+\vspace{-.3in}
+	\begin{center}
+		\begin{scriptsize}
+			\DTLdisplaydb{variables}
+		\end{scriptsize}
+	\end{center}
+\end{frame}
+
+\begin{frame}[fragile]{Details}
+\vspace{-.3in}
+		%\centering
+		\begin{scriptsize}
+		\begin{columns}[T]
+		\begin{column}{0.5\textwidth}
+		%\subfloat[Economy Classification]{
+			\begin{table}
+			\caption{Economy Classification}
+			\begin{tabular}{l}
+				1. Developed region: G7\\ 
+				2. Developed region: nonG7\\ 
+				3. Emerging region: BRIC\\ 
+				4. Emerging region: MIKT\\ 
+				5. Emerging region: G20\\ 
+				6. Developing region\\ 
+				7. Least developed region\\		
+			\end{tabular}
+			\end{table}
+		\end{column}
+		%	\qquad
+		%\subfloat[Income Classification]{
+		\begin{column}{0.5\textwidth}
+			\begin{table}
+			\caption{Income Classification}
+			\begin{tabular}{l}
+					1. High income: OECD\\ 
+					2. High income: nonOECD\\ 
+					3. Upper middle income\\ 
+					4. Lower middle income\\ 
+					5. Low income
+			\end{tabular}
+			\end{table}
+			%\label{table:econ-n-income}
+		\end{column}
+		\end{columns}
+		
+%		\begin{normalsize}
+%			Regression Analysis with Random Forests
+%		\end{normalsize}
+		
+		%\label{lst:cForest}
+		\begin{lstlisting}[caption={Regression Analysis with Random Forests},label={lst:cForest},language={R},showspaces=false,breaklines=true]
+#Packages: party, caret, and if you want to use multi-core then: parallel, doMC 
+mod1 <- train(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data = downdata,method = "cforest",trControl = trainControl(method = "oob",allowParallel = TRUE, number = 10, repeats = 10),controls = cforest_unbiased(ntree = 10000))
+test.varimp <- varimp(mod1$finalModel,conditional=TRUE)		
+		\end{lstlisting}
+%		\begin{equation}
+%			\begin{split}
+%			\text{downbypop} \sim  &\text{ economy} + \text{income} + \text{OoklaAverage} + \text{ITUbroadband}\\
+%			&+ \text{AkUniqueIP}+\text{AkAverage}+\text{AkPeak}+\text{AkHighBroadband}\\
+%			&+ \text{AkBroadband}+\text{AkNarrowband}+\text{DemIndex}	
+%			\end{split}
+%			\label{eg:regression}
+%		\end{equation}
+		\end{scriptsize}
+\end{frame}
+
+
 \begin{frame}{Important Variables}
 	\begin{center}
 		\includegraphics[width=.5\textwidth]{ImportantVariables-caret.pdf}
-	\includegraphics[width=.5\textwidth]{ImportantVariables-NoDemIndex.pdf}
+		\includegraphics[width=.5\textwidth]{ImportantVariables-NoDemIndex.pdf}
 	\end{center}
 \end{frame}
 
