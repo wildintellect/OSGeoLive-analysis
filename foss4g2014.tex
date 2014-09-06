@@ -228,6 +228,44 @@
 \end{frame}
 
 
+\begin{frame}{Significant Variation}
+\centering
+\begin{tiny}
+\vspace{-.1in}
+\begin{table}
+\caption{\tiny World Internet connected desktop computers vs. OSGeo-Live downloaders.}
+\vspace{-.1in}
+	\begin{tabular}{c | c c c c }
+		%\hline
+ 		& Windows & Mac & Linux & Other \\ \hline
+		Desktop Computers & 92.02000 & 6.810000 & 1.16000 & 0.000000 \\ 
+		%OSGeo-Live Downloaders & 68.10947 & 6.738764 & 21.21359 & 3.938173 \\ 
+		% From TotDownByOS View in db
+		OSGeo-Live Downloaders & \textcolor{red}{68.6487} & 6.581052 & \textcolor{red}{20.78151} & 3.988733
+	\end{tabular}
+\end{table}
+\vspace{-.2in}
+\begin{table}
+\caption{\tiny Operating System vs. OSGeo-Live variant downloaded.}
+\vspace{-.1in}
+	\begin{tabular}{c | c c c }
+		& vm & iso & mini	\\	\hline
+		Windows& 8290 & 14822 & 5647 \\
+		Mac& \textcolor{red}{1435} & 818 & 504 \\
+		Linux& 2241 & 4031 & 2434 \\
+		Other& 385 & 907 & 379 \\
+	\end{tabular}
+\end{table}
+
+\end{tiny}
+\vspace{-.3in}
+
+\begin{center}
+\includegraphics[width=.4\textwidth]{CountryOSVariation.pdf}
+\end{center}
+
+\end{frame}
+
 \section{Participation}
 \begin{frame}{Regional Participation}
 \vspace{-.3in}
@@ -240,6 +278,14 @@
 \end{frame}
 
 \section{Analysis}
+
+\begin{frame}{Barriers}
+	\begin{itemize}
+		\item Economic - License, Hardware, Education, Time
+		\item Technical - Knowledge to operate software and hardware
+		\item Socio-cultural - Government or Corporate Policy, Social Norms 
+	\end{itemize}
+\end{frame}
 
 \DTLloadrawdb{variables}{variables-horiz.csv}
 \begin{frame}{Potential Barriers}
@@ -293,8 +339,8 @@
 %		\end{normalsize}
 		
 		%\label{lst:cForest}
-		\begin{lstlisting}[caption={Regression Analysis with Random Forests},label={lst:cForest},language={R},showspaces=false,breaklines=true]
-#Packages: party, caret, and if you want to use multi-core then: parallel, doMC 
+		\begin{lstlisting}[caption={Regression Analysis with Random Forests in R},label={lst:cForest},language={R},showspaces=false,breaklines=true]
+#Packages: party, caret, to use multi-core: parallel, doMC 
 mod1 <- train(downbypop ~ economy+income+OoklaAverage+ITUbroadband+AkUniqueIP+AkAverage+AkPeak+AkHighBroadband+AkBroadband+AkNarrowband+DemIndex, data = downdata,method = "cforest",trControl = trainControl(method = "oob",allowParallel = TRUE, number = 10, repeats = 10),controls = cforest_unbiased(ntree = 10000))
 test.varimp <- varimp(mod1$finalModel,conditional=TRUE)		
 		\end{lstlisting}
@@ -323,6 +369,30 @@ test.varimp <- varimp(mod1$finalModel,conditional=TRUE)
 			\includegraphics[width=1\textwidth]{ImportantVarGraph.pdf}	
 	\end{center}
 \end{frame}
+
+\section{conclusion}
+\begin{frame}{Wrap-up}
+	\begin{itemize}
+		\item Conclusions
+			\begin{itemize}
+				\item Mac users like Virtual Machines
+				\item OSGeo-Live is popular with Linux users
+				\item Having participants in the same country corresponds to downloads.
+				\item Culture is a big barrier
+				\item Fiscal and Technical issues still exist with FOSS
+			\end{itemize}					
+		\item Next
+			\begin{itemize}
+				\item Survey Questionnaire
+				\item Compare Projects
+				\item Test more specific data (e.g. GDP, English, Education)
+				\item Change over time
+				\item How fast of internet is good enough?
+			\end{itemize}
+		 
+	\end{itemize}
+\end{frame}
+
 
 \section{Credits}
 \begin{frame}{Special Thanks}
