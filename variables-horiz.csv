@@ -1,0 +1,17 @@
+Variable ,Description,Source
+country,Country Name,Natural Earth 
+iso_a2,Country ISO 2 Letter Code,Natural Earth
+downloads,Total Number of Downloads,OSGeo-Live
+pop,Population,Natural Earth
+downbypop,Downloads/Population,calculated
+economy,Economic ranking 1-7,Natural Earth (UN)
+income,Income ranking 1-5,Natural Earth (UN)
+OoklaAverage,Average Internet speed,Ookla
+ITUbroadband,Population \% wired Internet above 256 kpbs,ITU
+AkUniqueIP,Total Unique IP Addresses,Akamai
+AkAverage,Average Internet Speed,Akamai
+AkPeak,Peak Internet Speed,Akamai
+AkHighBroadband,Population \% wired Internet above 10 Mbps,Akamai
+AkBroadband,Population \% wired Internet above 4 Mbps,Akamai
+AkNarrowband,Population \% wired Internet below 4 Mbps,Akamai
+DemIndex,Democracy Index,EIU
