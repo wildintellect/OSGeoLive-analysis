@@ -233,7 +233,7 @@
 \begin{tiny}
 \vspace{-.1in}
 \begin{table}
-\caption{\tiny World Internet connected desktop computers vs. OSGeo-Live downloaders.}
+\caption{\tiny World Internet connected desktop computers vs. OSGeo-Live downloaders.*}
 \vspace{-.1in}
 	\begin{tabular}{c | c c c c }
 		%\hline
@@ -246,7 +246,7 @@
 \end{table}
 \vspace{-.2in}
 \begin{table}
-\caption{\tiny Operating System vs. OSGeo-Live variant downloaded.}
+\caption{\tiny Operating System vs. OSGeo-Live variant downloaded.*}
 \vspace{-.1in}
 	\begin{tabular}{c | c c c }
 		& vm & iso & mini	\\	\hline
@@ -263,6 +263,11 @@
 \begin{center}
 \includegraphics[width=.4\textwidth]{CountryOSVariation.pdf}
 \end{center}
+\vspace{-.1in}
+
+\begin{reference}{11mm}{93mm}
+\tiny{*Contingency table G-Statistic significant.}
+\end{reference}
 
 \end{frame}
 
@@ -274,7 +279,10 @@
 		\includegraphics[width=1\textwidth]{RegionalParticipation.pdf}
 		
 		%\hspace*{2em}\textbf{\url{http://www.wildlifecrossing.net/california/}}
+	
+	Kendall's Rank Correlation, strong correlation, downloaders and participants $\tau = 0.436$ (p-value = 3.668e-12)	
 	\end{center}
+	
 \end{frame}
 
 \section{Analysis}
@@ -283,7 +291,7 @@
 	\begin{itemize}
 		\item Economic - License, Hardware, Education, Time
 		\item Technical - Knowledge to operate software and hardware
-		\item Socio-cultural - Government or Corporate Policy, Social Norms 
+		\item Socio-cultural - Government or Corporate Policy, Social Network 
 	\end{itemize}
 \end{frame}
 
@@ -371,25 +379,45 @@ test.varimp <- varimp(mod1$finalModel,conditional=TRUE)
 \end{frame}
 
 \section{conclusion}
-\begin{frame}{Wrap-up}
+\begin{frame}{Conclusions}
 	\begin{itemize}
-		\item Conclusions
+		\item From the Data
+		\begin{itemize}
+			\item Mac users like Virtual Machines
+			\item OSGeo-Live is popular with Linux users
+			\item Having participants in the same country corresponds to downloads.
+			\item Culture is a big barrier
+			\item Fiscal and Technical issues still exist with FOSS
+		\end{itemize}
+		
+		\item Key's to FOSS
+		\begin{itemize}
+			\item Infinite Trial-ability
+			\item Re-invention potential
+			\item Translation?
+			\item Community
 			\begin{itemize}
-				\item Mac users like Virtual Machines
-				\item OSGeo-Live is popular with Linux users
-				\item Having participants in the same country corresponds to downloads.
-				\item Culture is a big barrier
-				\item Fiscal and Technical issues still exist with FOSS
-			\end{itemize}					
-		\item Next
-			\begin{itemize}
-				\item Survey Questionnaire
-				\item Compare Projects
-				\item Test more specific data (e.g. GDP, English, Education)
-				\item Change over time
-				\item How fast of internet is good enough?
+				\item Supply Side Institutions (e.g. OSGeo)
+				\item Informal Social Networks (e.g. Local Chapters)
 			\end{itemize}
-		 
+		\end{itemize}				
+		
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{What's Next}
+	\begin{itemize}
+			\item Confirmation \& Details - Survey Questionnaire
+			\item How fast of internet is good enough?
+			\item Compare Projects
+			\item Test more specific data ...
+			\begin{itemize}
+				\item Household income
+				\item English Proficiency
+				\item \% of Higher Education
+			\end{itemize}			 
+			\item Change over time
+
 	\end{itemize}
 \end{frame}
 
@@ -402,11 +430,15 @@ test.varimp <- varimp(mod1$finalModel,conditional=TRUE)
 		%\item Link Example %\begin{small}
 %\url{http://www.wildlifecrossing.net/california/android}
 %\end{small}
-		\item Questions?
-		\begin{center}
+	\end{itemize}
+			\begin{center}
+			Questions?\\
+			\url{http://github.com/wildintellect/?}\\
+			@aimandel
 			%\includegraphics[width=0.5\textwidth]{File.png}
 		\end{center}
-	\end{itemize}
+	
+
 \end{frame}
 
 
